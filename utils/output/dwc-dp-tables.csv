@@ -1,4 +1,4 @@
-rr:tableName,uri,dcterms:source,skos:prefLabel,skos:definition
+csvw:table,uri,dcterms:source,csvw:title,skos:definition
 agent-agent-role,http://rs.gbif.org/data-packages/dwc-dp/agent-agent-role,http://rs.gbif.org/sandbox/experimental/data-packages/dwc-dp/0.1/table-schemas/agent-agent-role.json,AgentAgentRole,A role filled by an Agent with respect to another Agent.
 agent-identifier,http://rs.gbif.org/data-packages/dwc-dp/agent-identifier,http://rs.gbif.org/sandbox/experimental/data-packages/dwc-dp/0.1/table-schemas/agent-identifier.json,AgentIdentifier,An identifier for an Agent.
 agent-media,http://rs.gbif.org/data-packages/dwc-dp/agent-media,http://rs.gbif.org/sandbox/experimental/data-packages/dwc-dp/0.1/table-schemas/agent-media.json,AgentMedia,A link establishing an Agent as content in a Media entity.
