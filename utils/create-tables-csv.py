@@ -6,7 +6,7 @@ from pathlib import Path
 
 root_dir = cfg.get_project_root()
 source_path = str(root_dir) + '/sources/dwc-dp/0.1/table-schemas'
-target_path = str(root_dir) + '/utils/output/'
+target_path = str(root_dir) + '/output/dwc-dp/'
 target_csv = Path(target_path + 'dwc-dp-tables.csv')
 
 def generate_tables_csv():
