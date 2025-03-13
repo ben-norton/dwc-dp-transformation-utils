@@ -1,5 +1,5 @@
-# frictionless-dwc-utils
-Utilities for interacting with DWC Frictionless Data Packages
+# dwc-dp-transformation-utils
+Utilities for interacting with Darwin Core Data Packages
 
 ## Resources
 | Title | URL                                              | Description                                                                          |
