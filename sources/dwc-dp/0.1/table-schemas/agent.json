@@ -60,5 +60,6 @@
             "iri": ""
         }
     ],
-    "primaryKey": "agentID"
+    "primaryKey": "agentID",
+    "foreignKeys": []
 }

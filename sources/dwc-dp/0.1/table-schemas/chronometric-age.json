@@ -8,7 +8,7 @@
         {
             "name": "chronometricAgeID",
             "description": "An identifier for a chrono:ChronometricAge.",
-            "type": "integer",
+            "type": "string",
             "format": "default",
             "comments": "Recommended best practice is to use a globally unique identifier.",
             "examples": "`https://www.canadianarchaeology.ca/samples/70673`",

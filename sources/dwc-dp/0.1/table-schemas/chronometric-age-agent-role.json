@@ -8,7 +8,7 @@
         {
             "name": "agentID",
             "description": "An identifier for an Agent.",
-            "type": "integer",
+            "type": "string",
             "format": "default",
             "comments": "Recommended best practice is to use a globally unique identifier.",
             "examples": "",
@@ -22,7 +22,7 @@
         {
             "name": "chronometricAgeID",
             "description": "An identifier a chrono:ChronometricAge.",
-            "type": "integer",
+            "type": "string",
             "format": "default",
             "comments": "Recommended best practice is to use a globally unique identifier.",
             "examples": "`https://www.canadianarchaeology.ca/samples/70673`",

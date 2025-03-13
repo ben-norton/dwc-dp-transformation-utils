@@ -8,7 +8,7 @@
         {
             "name": "mediaID",
             "description": "An identifier for a Media instance.",
-            "type": "integer",
+            "type": "string",
             "format": "default",
             "comments": "",
             "examples": "",
@@ -22,7 +22,7 @@
         {
             "name": "agentID",
             "description": "An identifier for an Agent.",
-            "type": "integer",
+            "type": "string",
             "format": "default",
             "comments": "Recommended best practice is to use a globally unique identifier.",
             "examples": "",
