@@ -9,18 +9,31 @@ Utilities for interacting with Darwin Core Data Packages
 | tableschema-py | https://github.com/frictionlessdata/tableschema-py | A Python implementation of the Table Schema standard superceeded by v5 documentation |
 
 
-## Namespaces
-Namespaces used in frictionless-dwc-utils project
 
-| Prefix  | URL                                                 | Title                                                     | 
-|---------|-----------------------------------------------------|-----------------------------------------------------------|
-| rr      | http://www.w3.org/ns/r2rml                          | R2RML: RDB to RDF Mapping Language Schema                 |
-| skos    | http://www.w3.org/2004/02/skos/core#                | SKOS Simple Knowledge Organization System Reference       |
-| dcterms | http://purl.org/dc/elements/1.1/                    | DCMI Metadata Terms                                       |
-| d2rq    | http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1# | The D2RQ Mapping Language                                 |
-| vann    | http://purl.org/vocab/vann/                         | VANN: A vocabulary for annotating vocabulary descriptions |
-| dsd     | https://w3id.org/dsd | The Data Source Description Vocabulary                    |
-| csvw    | http://www.w3.org/ns/csvw | CSVW Namespace Vocabulary Terms |
+## Column Glossary
+| Column | Definition |
+| -- | -- |
+| columnName | An atomic property that gives a single canonical name for a column. Adopted from CSVW |
+| csvw:datatype | An object property that contains either a single string that is the main datatype of the values of the cell or a datatype description object. |
+| csvw:format | An atomic property that contains either a single string or an object that defines the format of a value of this type |
+| dcterms:title | The title is the table name expressed in the standardized format used for Darwin Core classes, upper camel-casing. |
+| foreignKey | The name of the column that is the foreign key in a table relationship. The foreign key forms a join with a relatedPrimaryKey to establish the relationship. |
+| isForeignKey | Foreign key declaration expressed using a boolean value. A TRUE value indicates that the column is a foreign key in a table specified in tableName |
+| isPrimaryKey | Indication that the column is a primary key expressed as a boolean value |
+| isRequired | Declaration that values in a column are required for every record expressed as a boolean value. A TRUE value specifies the values are required. |
+| isUnique | Indication that the values in a column must be unique expressed as a boolean value |
+| minLength | The minimum number of individual characters required for a column expressed numerically |
+| relatedPrimaryKey | The name of the column that forms the relationship with the foreign key.  |
+| relatedTable | Table containing the primary key in the table relation  |
+| skos:definition | Descriptive statement that supplies a complete explanation of the intended meaning of the type and serves to differentiate it from related concepts. |
+| skos:example | Supplies an example of concept usage |
+| skos:note | A general note, for any purpose |
+| tableName | An atomic property that gives a single canonical name for a table. Adopted from CSVW |
+| uri | Uniform resource identifier expressed as a URL |
+| vann:preferredNamespacePrefix | The preferred namespace prefix to use when using terms from this vocabulary |
+
+
+
 
 ## KOS Resources
 
