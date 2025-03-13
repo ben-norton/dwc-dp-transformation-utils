@@ -1,4 +1,4 @@
-csvw:title,csvw:table,csvw:foreignKey,csvw:tableReference,csvw:columnReference
+dcterms:title,tableName,foreignKey,relatedTable,relatedPrimaryKey
 AgentAgentRole,agent-agent-role,agentID,agent,agentID
 AgentAgentRole,agent-agent-role,relatedAgentID,agent,agentID
 AgentIdentifier,agent-identifier,agentID,agent,agentID
