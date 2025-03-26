@@ -1,2 +1,2 @@
 @echo off
-.\.frictionless-dwc-venv\Scripts\activate
+.\.dwc-dp-transformations-venv\Scripts\activate

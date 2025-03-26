@@ -1,0 +1,7 @@
+agent.json
+collection.json
+media.json
+occurrence.json
+phylogenetic-tree.json
+protocol.json
+relationship.json

@@ -1,0 +1,35 @@
+# Order of Database Tables
+Database tables created from tableschemas must be done in a particular order to avoid missing foreign key errors.
+
+## Tableschemas are split into two categories: core classes and relational classes
+* Core classes are standalone concepts that form the basis for the entire model. They may be related to other tables, but conceptually stand alone without dependencies
+* Relational classes depend on related tables for context and represent relationships between the core classes. In relational schemas, these are represented as intermediary tables used for many-to-many relationships.
+Names of relational classes are compound terms where the core classes in the relationship are concatenated together.
+
+Core classes are created first followed by the relational classes.
+
+### Core Class Order
+agent.json
+collection.json
+media.json
+occurrence.json
+phylogenetic-tree.json
+protocol.json
+relationship.json
+event.json
+material.json
+chronometric-age.json
+genetic-sequence.json
+geological-context.json
+identification.json
+identification-taxon.json
+organism-interaction.json
+phylogenetic-tree.json
+phylogenetic-tree-tip.json
+survey.json
+survey-target.json
+
+
+
+
+

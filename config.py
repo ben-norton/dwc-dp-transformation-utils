@@ -9,3 +9,14 @@ def get_today():
     today = date.today()
     ts = today.strftime("%Y%m%d")
     return ts
+
+def get_dwc_dp_classes():
+    dwc_dp_classes =['Agent', 'AgentRole', 'Assertion',
+                     'ChronometricAge', 'Citation', 'Collection',
+                     'Event', 'GeneticSequence', 'GeologicalContext',
+                     'Identification', 'IdentificationTaxon',
+                     'Identifier','Material', 'Media', 'Occurrence',
+                     'OrganismInteraction', 'PhylogeneticTree', 'PhylogeneticTreeTip',
+                     'Protocol', 'Relationship', 'Survey', 'SurveyTarget']
+    return dwc_dp_classes
+

@@ -1,6 +1,9 @@
 # dwc-dp-transformation-utils
 Utilities for interacting with Darwin Core Data Packages
 
+To copy source files to project, you must checkout a copy of gbif/rs.gbif.org to a local directory and set the SRC_REPO_DIR variable in .env to the local directory. 
+
+
 ## Resources
 | Title | URL                                              | Description                                                                          |
 | -- |--------------------------------------------------|--------------------------------------------------------------------------------------|

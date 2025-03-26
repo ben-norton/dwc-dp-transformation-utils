@@ -2,7 +2,6 @@ import config as cfg
 import os
 import json
 import pandas as pd
-from tabulate import tabulate
 from pathlib import Path
 
 root_dir = cfg.get_project_root()
@@ -21,10 +20,12 @@ def generate_columns_csv():
 					data = json.load(f)
 					df = pd.json_normalize(data, record_path='fields', record_prefix='column_',meta=['name','title'])
 					columns_lst.append(df)
+
 	df_results = pd.concat(columns_lst, ignore_index=True)
 	df_results.rename(columns={'column_name': 'csvw:column', 'column_description': 'skos:description', 'column_type': 'csvw:datatype', 'column_format': 'csvw:format', 'column_comments': 'skos:note', 'column_examples': 'skos:example', 'column_namespace': 'vann:preferredNamespacePrefix', 'column_iri': 'iri', 'column_constraints.required': 'csvw:required', 'column_constraints.unique': 'dsd:isUnique', 'column_constraints.minimum': 'csvw:minLength', 'name': 'csvw:table', 'title': 'dcterms:title'}, inplace=True)
 	df_results = df_results[cols]
 	df_results.to_csv(target_csv, index=False)
+
 	#	print(tabulate(df, headers='keys', tablefmt='grid'))
 
 

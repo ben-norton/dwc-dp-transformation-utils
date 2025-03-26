@@ -1,11 +1,16 @@
 import config as cfg
 import os
 import urllib
+from dotenv import load_dotenv
+import os
 
+root_dir = cfg.get_project_root()
+load_dotenv()  # Load environment variables from .env file
+src_dir = os.getenv('SRC_REPO_PATH')
 
 root_dir = cfg.get_project_root()
 target_relative_path = 'dwc-dp/0.1/table-schemas'
-local_source_repo = 'G:/repos/tdwg/rs.gbif.org'
+local_source_repo = src_dir
 source_path = str(local_source_repo) + '/sandbox/experimental/data-packages/' + target_relative_path
 target_path = str(root_dir) + '/sources/' + target_relative_path
 base_remote_path = 'https://raw.githubusercontent.com/gbif/rs.gbif.org/refs/heads/master/sandbox/experimental/data-packages/dwc-dp/0.1/table-schemas/'

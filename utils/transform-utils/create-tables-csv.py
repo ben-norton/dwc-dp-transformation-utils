@@ -21,7 +21,7 @@ def generate_tables_csv():
 					lst = [data['name'], data['identifier'], data['url'], data['title'], data['description']]
 					tables_lst.append(lst)
 	df = pd.DataFrame(data=tables_lst, columns=cols)
-	df.rename(columns={'name':'table_name', 'identifier':'uri', 'url':'source', 'title':'csvw:title', 'description':'skos:definition'}, inplace=True)
+	#df.rename(columns={'name':'table_name', 'identifier':'uri', 'url':'source', 'title':'csvw:title', 'description':'skos:definition'}, inplace=True)
 	df.columns = ['csvw:table','uri','dcterms:source','csvw:title','skos:definition']
 	df.to_csv(target_csv, index=False)
 generate_tables_csv()

@@ -1,4 +1,4 @@
-dcterms:title,tableName,foreignKey,relatedTable,relatedPrimaryKey
+csvw:title,csvw:table,csvw:foreignKey,csvw:tableReference,csvw:columnReference
 AgentAgentRole,agent-agent-role,agentID,agent,agentID
 AgentAgentRole,agent-agent-role,relatedAgentID,agent,agentID
 AgentIdentifier,agent-identifier,agentID,agent,agentID
@@ -89,6 +89,7 @@ OrganismInteractionAssertion,organism-interaction-assertion,assertionProtocolID,
 OrganismInteractionCitation,organism-interaction-citation,organismInteractionID,organism-interaction,organismInteractionID
 OrganismInteractionMedia,organism-interaction-media,mediaID,media,mediaID
 OrganismInteractionMedia,organism-interaction-media,organismInteractionID,organism-interaction,organismInteractionID
+OrganismInteraction,organism-interaction,eventID,event,eventID
 OrganismInteraction,organism-interaction,subjectOccurrenceID,occurrence,occurrenceID
 OrganismInteraction,organism-interaction,relatedOccurrenceID,occurrence,occurrenceID
 PhylogeneticTreeAssertion,phylogenetic-tree-assertion,phylogeneticTreeID,phylogenetic-tree,phylogeneticTreeID
