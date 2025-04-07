@@ -26,7 +26,7 @@ meta = metadata.create_all(engine)
 root_dir = cfg.get_project_root()
 source_path = str(root_dir) + '/sources/dwc-dp/0.1/table-schemas'
 tableschemas = str(root_dir) + '/output/dwc-dp/tableschemas.csv'
-schemas = str(root_dir) + '/output/dwc-dp/ordered-schemas.csv'
+schemas = str(root_dir) + '/utils/config/ordered-schemas.csv'
 
 
 def generate_schema_list():
