@@ -192,5 +192,6 @@
             "iri": "http://rs.tdwg.org/dwc/terms/relationshipRemarks"
         }
     ],
-    "primaryKey": "relationshipID"
+    "primaryKey": "relationshipID",
+    "foreignKeys": []
 }

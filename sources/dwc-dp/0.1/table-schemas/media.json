@@ -150,5 +150,6 @@
             "iri": "http://purl.org/dc/terms/description"
         }
     ],
-    "primaryKey": "mediaID"
+    "primaryKey": "mediaID",
+    "foreignKeys": []
 }

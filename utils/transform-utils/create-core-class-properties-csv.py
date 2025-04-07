@@ -5,10 +5,10 @@ import pandas as pd
 from pathlib import Path
 
 root_dir = cfg.get_project_root()
-classes = cfg.get_dwc_dp_classes()
+classes = cfg.get_dwc_dp_core_classes()
 source_path = str(root_dir) + '/sources/dwc-dp/0.1/table-schemas'
 target_path = str(root_dir) + '/output/dwc-dp/'
-target_csv = Path(target_path + 'dwc-dp-properties.csv')
+target_csv = Path(target_path + 'dwc-dp-core-class-properties.csv')
 
 def generate_properties_csv():
 	columns_lst = []

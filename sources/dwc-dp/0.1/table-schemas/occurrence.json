@@ -400,5 +400,6 @@
             "iri": "http://rs.tdwg.org/dwc/terms/taxonRemarks"
         }
     ],
-    "primaryKey": "occurrenceID"
+    "primaryKey": "occurrenceID",
+    "foreignKeys": []
 }

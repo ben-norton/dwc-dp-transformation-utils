@@ -5,9 +5,10 @@ import pandas as pd
 from pathlib import Path
 
 root_dir = cfg.get_project_root()
+classes = cfg.get_dwc_dp_core_classes()
 source_path = str(root_dir) + '/sources/dwc-dp/0.1/table-schemas'
 target_path = str(root_dir) + '/output/dwc-dp/'
-target_csv = Path(target_path + 'dwc-dp-classes.csv')
+target_csv = Path(target_path + 'dwc-dp-core-classes.csv')
 
 def generate_tables_csv():
 	tables_lst = []
@@ -26,12 +27,14 @@ def generate_tables_csv():
 	df_results.columns = ['csvw:table', 'uri', 'dcterms:source', 'rdfs:Class', 'skos:definition']
 	df_results = df_results[cols]
 
+	# Filter core classes
+	df_final = df_results[df_results['rdfs:Class'].isin(classes)]
 	# Sort by Class
-	df_results.sort_values('rdfs:Class')
-	df_results.to_csv(target_csv, index=False)
+	df_final.sort_values('rdfs:Class')
+	df_final.to_csv(target_csv, index=False)
 
-	tables = df_results['csvw:table'].unique()
-	df_classes = df_results['csvw:table'].unique() + '.json'
+	tables = df_final['csvw:table'].unique()
+	df_classes = df_final['csvw:table'].unique() + '.json'
 
 	print(df_classes)
 

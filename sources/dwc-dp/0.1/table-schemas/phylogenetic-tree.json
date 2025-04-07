@@ -50,5 +50,6 @@
             "iri": ""
         }
     ],
-    "primaryKey": "phylogeneticTreeID"
+    "primaryKey": "phylogeneticTreeID",
+    "foreignKeys": []
 }
