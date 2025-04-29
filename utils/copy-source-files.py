@@ -1,6 +1,7 @@
 import config as cfg
 import os
 import urllib
+import time
 from dotenv import load_dotenv
 import os
 
@@ -18,6 +19,7 @@ base_remote_path = 'https://raw.githubusercontent.com/gbif/rs.gbif.org/refs/head
 if not os.path.exists(target_path):
     os.makedirs(target_path)
 
+# Copy Files in GitHub Repo to local Filesystem
 def copy(src, dest):
 	src_list = []
 	for name in os.listdir(src):
@@ -29,10 +31,19 @@ def copy(src, dest):
 		url = str(base_remote_path) + str(item)
 		file_name = os.path.basename(url)
 		local_path = os.path.join(target_path, file_name)
-		try:
-			urllib.request.urlretrieve(url, local_path)
-			print(url + ' --> ' + local_path)
-		except urllib.error.HTTPError as e:
+		process_requests(url,local_path)
+
+# Process File Requests. If Too Many Requests, Pause 5 seconds
+def process_requests(url, local_path):
+	try:
+		print(url + ' --> ' + local_path)
+		return urllib.request.urlretrieve(url, local_path)
+	except urllib.error.HTTPError as e:
+		if e.code == 429:
+			time.sleep(5)
+			return process_requests(url, local_path)
+		else:
 			print(e.reason)
+		raise
 
 copy(source_path,target_path)

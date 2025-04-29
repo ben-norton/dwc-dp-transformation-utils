@@ -1,2 +1,2 @@
 @echo off
-.\.dwc-dp-transformations-venv\Scripts\activate
+.\.dwc-dp-transformation-utils-venv\Scripts\activate
