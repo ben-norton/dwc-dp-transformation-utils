@@ -3,14 +3,11 @@
 --
 
 -- Dumped from database version 16.1
--- Dumped by pg_dump version 17.0
-
--- Started on 2025-03-26 14:23:23
+-- Dumped by pg_dump version 16.1
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
 SET idle_in_transaction_session_timeout = 0;
-SET transaction_timeout = 0;
 SET client_encoding = 'UTF8';
 SET standard_conforming_strings = on;
 SELECT pg_catalog.set_config('search_path', '', false);
@@ -18,57 +15,12 @@ SET check_function_bodies = false;
 SET xmloption = content;
 SET client_min_messages = warning;
 SET row_security = off;
-
-DROP DATABASE dwc_dp;
---
--- TOC entry 5431 (class 1262 OID 173086)
--- Name: dwc_dp; Type: DATABASE; Schema: -; Owner: postgres
---
-
-CREATE DATABASE dwc_dp WITH TEMPLATE = template0 ENCODING = 'UTF8'
-
-
-ALTER DATABASE dwc_dp OWNER TO postgres;
-
-\connect dwc_dp
-
-SET statement_timeout = 0;
-SET lock_timeout = 0;
-SET idle_in_transaction_session_timeout = 0;
-SET transaction_timeout = 0;
-SET client_encoding = 'UTF8';
-SET standard_conforming_strings = on;
-SELECT pg_catalog.set_config('search_path', '', false);
-SET check_function_bodies = false;
-SET xmloption = content;
-SET client_min_messages = warning;
-SET row_security = off;
-
---
--- TOC entry 4 (class 2615 OID 2200)
--- Name: public; Type: SCHEMA; Schema: -; Owner: pg_database_owner
---
-
-CREATE SCHEMA public;
-
-
-ALTER SCHEMA public OWNER TO pg_database_owner;
-
---
--- TOC entry 5432 (class 0 OID 0)
--- Dependencies: 4
--- Name: SCHEMA public; Type: COMMENT; Schema: -; Owner: pg_database_owner
---
-
-COMMENT ON SCHEMA public IS 'standard public schema';
-
 
 SET default_tablespace = '';
 
 SET default_table_access_method = heap;
 
 --
--- TOC entry 215 (class 1259 OID 176400)
 -- Name: agent; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -84,8 +36,6 @@ CREATE TABLE public.agent (
 ALTER TABLE public.agent OWNER TO postgres;
 
 --
--- TOC entry 5433 (class 0 OID 0)
--- Dependencies: 215
 -- Name: TABLE agent; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -93,8 +43,6 @@ COMMENT ON TABLE public.agent IS 'The name of an Agent preferred in searches and
 
 
 --
--- TOC entry 5434 (class 0 OID 0)
--- Dependencies: 215
 -- Name: COLUMN agent."agentID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -102,8 +50,6 @@ COMMENT ON COLUMN public.agent."agentID" IS 'An identifier for an Agent.';
 
 
 --
--- TOC entry 5435 (class 0 OID 0)
--- Dependencies: 215
 -- Name: COLUMN agent."agentType"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -111,8 +57,6 @@ COMMENT ON COLUMN public.agent."agentType" IS 'The category that best matches th
 
 
 --
--- TOC entry 5436 (class 0 OID 0)
--- Dependencies: 215
 -- Name: COLUMN agent."agentTypeIRI"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -120,8 +64,6 @@ COMMENT ON COLUMN public.agent."agentTypeIRI" IS 'The IRI of the controlled voca
 
 
 --
--- TOC entry 5437 (class 0 OID 0)
--- Dependencies: 215
 -- Name: COLUMN agent."agentTypeVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -129,8 +71,6 @@ COMMENT ON COLUMN public.agent."agentTypeVocabulary" IS 'The reference to the co
 
 
 --
--- TOC entry 5438 (class 0 OID 0)
--- Dependencies: 215
 -- Name: COLUMN agent."preferredAgentName"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -138,7 +78,6 @@ COMMENT ON COLUMN public.agent."preferredAgentName" IS 'The name of an Agent pre
 
 
 --
--- TOC entry 232 (class 1259 OID 176669)
 -- Name: agent-agent-role; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -157,8 +96,6 @@ CREATE TABLE public."agent-agent-role" (
 ALTER TABLE public."agent-agent-role" OWNER TO postgres;
 
 --
--- TOC entry 5439 (class 0 OID 0)
--- Dependencies: 232
 -- Name: TABLE "agent-agent-role"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -166,8 +103,6 @@ COMMENT ON TABLE public."agent-agent-role" IS 'The interval during which an Agen
 
 
 --
--- TOC entry 5440 (class 0 OID 0)
--- Dependencies: 232
 -- Name: COLUMN "agent-agent-role"."agentID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -175,8 +110,6 @@ COMMENT ON COLUMN public."agent-agent-role"."agentID" IS 'An identifier for an A
 
 
 --
--- TOC entry 5441 (class 0 OID 0)
--- Dependencies: 232
 -- Name: COLUMN "agent-agent-role"."relatedAgentID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -184,8 +117,6 @@ COMMENT ON COLUMN public."agent-agent-role"."relatedAgentID" IS 'An identifier f
 
 
 --
--- TOC entry 5442 (class 0 OID 0)
--- Dependencies: 232
 -- Name: COLUMN "agent-agent-role"."agentRole"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -193,8 +124,6 @@ COMMENT ON COLUMN public."agent-agent-role"."agentRole" IS 'The category that be
 
 
 --
--- TOC entry 5443 (class 0 OID 0)
--- Dependencies: 232
 -- Name: COLUMN "agent-agent-role"."agentRoleIRI"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -202,8 +131,6 @@ COMMENT ON COLUMN public."agent-agent-role"."agentRoleIRI" IS 'The IRI of the co
 
 
 --
--- TOC entry 5444 (class 0 OID 0)
--- Dependencies: 232
 -- Name: COLUMN "agent-agent-role"."agentRoleVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -211,8 +138,6 @@ COMMENT ON COLUMN public."agent-agent-role"."agentRoleVocabulary" IS 'The refere
 
 
 --
--- TOC entry 5445 (class 0 OID 0)
--- Dependencies: 232
 -- Name: COLUMN "agent-agent-role"."agentRoleOrder"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -220,8 +145,6 @@ COMMENT ON COLUMN public."agent-agent-role"."agentRoleOrder" IS 'The numerical p
 
 
 --
--- TOC entry 5446 (class 0 OID 0)
--- Dependencies: 232
 -- Name: COLUMN "agent-agent-role"."agentRoleDate"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -229,7 +152,6 @@ COMMENT ON COLUMN public."agent-agent-role"."agentRoleDate" IS 'The interval dur
 
 
 --
--- TOC entry 233 (class 1259 OID 176685)
 -- Name: agent-identifier; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -246,8 +168,6 @@ CREATE TABLE public."agent-identifier" (
 ALTER TABLE public."agent-identifier" OWNER TO postgres;
 
 --
--- TOC entry 5447 (class 0 OID 0)
--- Dependencies: 233
 -- Name: TABLE "agent-identifier"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -255,8 +175,6 @@ COMMENT ON TABLE public."agent-identifier" IS 'A language in which an Identifier
 
 
 --
--- TOC entry 5448 (class 0 OID 0)
--- Dependencies: 233
 -- Name: COLUMN "agent-identifier".identifier; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -264,8 +182,6 @@ COMMENT ON COLUMN public."agent-identifier".identifier IS 'An unambiguous refere
 
 
 --
--- TOC entry 5449 (class 0 OID 0)
--- Dependencies: 233
 -- Name: COLUMN "agent-identifier"."agentID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -273,8 +189,6 @@ COMMENT ON COLUMN public."agent-identifier"."agentID" IS 'An identifier for an A
 
 
 --
--- TOC entry 5450 (class 0 OID 0)
--- Dependencies: 233
 -- Name: COLUMN "agent-identifier"."identifierType"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -282,8 +196,6 @@ COMMENT ON COLUMN public."agent-identifier"."identifierType" IS 'The category or
 
 
 --
--- TOC entry 5451 (class 0 OID 0)
--- Dependencies: 233
 -- Name: COLUMN "agent-identifier"."identifierTypeIRI"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -291,8 +203,6 @@ COMMENT ON COLUMN public."agent-identifier"."identifierTypeIRI" IS 'The IRI of t
 
 
 --
--- TOC entry 5452 (class 0 OID 0)
--- Dependencies: 233
 -- Name: COLUMN "agent-identifier"."identifierTypeVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -300,8 +210,6 @@ COMMENT ON COLUMN public."agent-identifier"."identifierTypeVocabulary" IS 'The r
 
 
 --
--- TOC entry 5453 (class 0 OID 0)
--- Dependencies: 233
 -- Name: COLUMN "agent-identifier"."identifierLanguage"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -309,7 +217,6 @@ COMMENT ON COLUMN public."agent-identifier"."identifierLanguage" IS 'A language 
 
 
 --
--- TOC entry 234 (class 1259 OID 176695)
 -- Name: agent-media; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -325,8 +232,6 @@ CREATE TABLE public."agent-media" (
 ALTER TABLE public."agent-media" OWNER TO postgres;
 
 --
--- TOC entry 5454 (class 0 OID 0)
--- Dependencies: 234
 -- Name: TABLE "agent-media"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -334,8 +239,6 @@ COMMENT ON TABLE public."agent-media" IS 'Any vocabulary or formal classificatio
 
 
 --
--- TOC entry 5455 (class 0 OID 0)
--- Dependencies: 234
 -- Name: COLUMN "agent-media"."mediaID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -343,8 +246,6 @@ COMMENT ON COLUMN public."agent-media"."mediaID" IS 'An identifier for a Media i
 
 
 --
--- TOC entry 5456 (class 0 OID 0)
--- Dependencies: 234
 -- Name: COLUMN "agent-media"."agentID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -352,8 +253,6 @@ COMMENT ON COLUMN public."agent-media"."agentID" IS 'An identifier for an Agent.
 
 
 --
--- TOC entry 5457 (class 0 OID 0)
--- Dependencies: 234
 -- Name: COLUMN "agent-media"."mediaSubjectCategory"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -361,8 +260,6 @@ COMMENT ON COLUMN public."agent-media"."mediaSubjectCategory" IS 'A term to desc
 
 
 --
--- TOC entry 5458 (class 0 OID 0)
--- Dependencies: 234
 -- Name: COLUMN "agent-media"."mediaSubjectCategoryIRI"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -370,8 +267,6 @@ COMMENT ON COLUMN public."agent-media"."mediaSubjectCategoryIRI" IS 'The IRI of 
 
 
 --
--- TOC entry 5459 (class 0 OID 0)
--- Dependencies: 234
 -- Name: COLUMN "agent-media"."mediaSubjectCategoryVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -379,7 +274,6 @@ COMMENT ON COLUMN public."agent-media"."mediaSubjectCategoryVocabulary" IS 'Any 
 
 
 --
--- TOC entry 223 (class 1259 OID 176507)
 -- Name: chronometric-age; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -412,8 +306,6 @@ CREATE TABLE public."chronometric-age" (
 ALTER TABLE public."chronometric-age" OWNER TO postgres;
 
 --
--- TOC entry 5460 (class 0 OID 0)
--- Dependencies: 223
 -- Name: TABLE "chronometric-age"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -421,8 +313,6 @@ COMMENT ON TABLE public."chronometric-age" IS 'Comments or notes about a chrono:
 
 
 --
--- TOC entry 5461 (class 0 OID 0)
--- Dependencies: 223
 -- Name: COLUMN "chronometric-age"."chronometricAgeID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -430,8 +320,6 @@ COMMENT ON COLUMN public."chronometric-age"."chronometricAgeID" IS 'An identifie
 
 
 --
--- TOC entry 5462 (class 0 OID 0)
--- Dependencies: 223
 -- Name: COLUMN "chronometric-age"."eventID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -439,8 +327,6 @@ COMMENT ON COLUMN public."chronometric-age"."eventID" IS 'An identifier for a dw
 
 
 --
--- TOC entry 5463 (class 0 OID 0)
--- Dependencies: 223
 -- Name: COLUMN "chronometric-age"."verbatimChronometricAge"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -448,8 +334,6 @@ COMMENT ON COLUMN public."chronometric-age"."verbatimChronometricAge" IS 'The ve
 
 
 --
--- TOC entry 5464 (class 0 OID 0)
--- Dependencies: 223
 -- Name: COLUMN "chronometric-age"."chronometricAgeProtocol"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -457,8 +341,6 @@ COMMENT ON COLUMN public."chronometric-age"."chronometricAgeProtocol" IS 'A desc
 
 
 --
--- TOC entry 5465 (class 0 OID 0)
--- Dependencies: 223
 -- Name: COLUMN "chronometric-age"."chronometricAgeProtocolID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -466,8 +348,6 @@ COMMENT ON COLUMN public."chronometric-age"."chronometricAgeProtocolID" IS 'An i
 
 
 --
--- TOC entry 5466 (class 0 OID 0)
--- Dependencies: 223
 -- Name: COLUMN "chronometric-age"."uncalibratedChronometricAge"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -475,8 +355,6 @@ COMMENT ON COLUMN public."chronometric-age"."uncalibratedChronometricAge" IS 'Th
 
 
 --
--- TOC entry 5467 (class 0 OID 0)
--- Dependencies: 223
 -- Name: COLUMN "chronometric-age"."chronometricAgeConversionProtocol"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -484,8 +362,6 @@ COMMENT ON COLUMN public."chronometric-age"."chronometricAgeConversionProtocol" 
 
 
 --
--- TOC entry 5468 (class 0 OID 0)
--- Dependencies: 223
 -- Name: COLUMN "chronometric-age"."chronometricAgeConversionProtocolID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -493,8 +369,6 @@ COMMENT ON COLUMN public."chronometric-age"."chronometricAgeConversionProtocolID
 
 
 --
--- TOC entry 5469 (class 0 OID 0)
--- Dependencies: 223
 -- Name: COLUMN "chronometric-age"."earliestChronometricAge"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -502,8 +376,6 @@ COMMENT ON COLUMN public."chronometric-age"."earliestChronometricAge" IS 'The ma
 
 
 --
--- TOC entry 5470 (class 0 OID 0)
--- Dependencies: 223
 -- Name: COLUMN "chronometric-age"."earliestChronometricAgeReferenceSystem"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -511,8 +383,6 @@ COMMENT ON COLUMN public."chronometric-age"."earliestChronometricAgeReferenceSys
 
 
 --
--- TOC entry 5471 (class 0 OID 0)
--- Dependencies: 223
 -- Name: COLUMN "chronometric-age"."latestChronometricAge"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -520,8 +390,6 @@ COMMENT ON COLUMN public."chronometric-age"."latestChronometricAge" IS 'The mini
 
 
 --
--- TOC entry 5472 (class 0 OID 0)
--- Dependencies: 223
 -- Name: COLUMN "chronometric-age"."latestChronometricAgeReferenceSystem"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -529,8 +397,6 @@ COMMENT ON COLUMN public."chronometric-age"."latestChronometricAgeReferenceSyste
 
 
 --
--- TOC entry 5473 (class 0 OID 0)
--- Dependencies: 223
 -- Name: COLUMN "chronometric-age"."chronometricAgeUncertaintyInYears"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -538,8 +404,6 @@ COMMENT ON COLUMN public."chronometric-age"."chronometricAgeUncertaintyInYears" 
 
 
 --
--- TOC entry 5474 (class 0 OID 0)
--- Dependencies: 223
 -- Name: COLUMN "chronometric-age"."chronometricAgeUncertaintyMethod"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -547,8 +411,6 @@ COMMENT ON COLUMN public."chronometric-age"."chronometricAgeUncertaintyMethod" I
 
 
 --
--- TOC entry 5475 (class 0 OID 0)
--- Dependencies: 223
 -- Name: COLUMN "chronometric-age"."materialDated"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -556,8 +418,6 @@ COMMENT ON COLUMN public."chronometric-age"."materialDated" IS 'A description of
 
 
 --
--- TOC entry 5476 (class 0 OID 0)
--- Dependencies: 223
 -- Name: COLUMN "chronometric-age"."materialDatedID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -565,8 +425,6 @@ COMMENT ON COLUMN public."chronometric-age"."materialDatedID" IS 'An identifier 
 
 
 --
--- TOC entry 5477 (class 0 OID 0)
--- Dependencies: 223
 -- Name: COLUMN "chronometric-age"."materialDatedRelationship"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -574,8 +432,6 @@ COMMENT ON COLUMN public."chronometric-age"."materialDatedRelationship" IS 'The 
 
 
 --
--- TOC entry 5478 (class 0 OID 0)
--- Dependencies: 223
 -- Name: COLUMN "chronometric-age"."chronometricAgeDeterminedBy"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -583,8 +439,6 @@ COMMENT ON COLUMN public."chronometric-age"."chronometricAgeDeterminedBy" IS 'A 
 
 
 --
--- TOC entry 5479 (class 0 OID 0)
--- Dependencies: 223
 -- Name: COLUMN "chronometric-age"."chronometricAgeDeterminedByID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -592,8 +446,6 @@ COMMENT ON COLUMN public."chronometric-age"."chronometricAgeDeterminedByID" IS '
 
 
 --
--- TOC entry 5480 (class 0 OID 0)
--- Dependencies: 223
 -- Name: COLUMN "chronometric-age"."chronometricAgeDeterminedDate"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -601,8 +453,6 @@ COMMENT ON COLUMN public."chronometric-age"."chronometricAgeDeterminedDate" IS '
 
 
 --
--- TOC entry 5481 (class 0 OID 0)
--- Dependencies: 223
 -- Name: COLUMN "chronometric-age"."chronometricAgeReferences"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -610,8 +460,6 @@ COMMENT ON COLUMN public."chronometric-age"."chronometricAgeReferences" IS 'A li
 
 
 --
--- TOC entry 5482 (class 0 OID 0)
--- Dependencies: 223
 -- Name: COLUMN "chronometric-age"."chronometricAgeRemarks"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -619,7 +467,6 @@ COMMENT ON COLUMN public."chronometric-age"."chronometricAgeRemarks" IS 'Comment
 
 
 --
--- TOC entry 235 (class 1259 OID 176710)
 -- Name: chronometric-age-agent-role; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -638,8 +485,6 @@ CREATE TABLE public."chronometric-age-agent-role" (
 ALTER TABLE public."chronometric-age-agent-role" OWNER TO postgres;
 
 --
--- TOC entry 5483 (class 0 OID 0)
--- Dependencies: 235
 -- Name: TABLE "chronometric-age-agent-role"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -647,8 +492,6 @@ COMMENT ON TABLE public."chronometric-age-agent-role" IS 'The interval during wh
 
 
 --
--- TOC entry 5484 (class 0 OID 0)
--- Dependencies: 235
 -- Name: COLUMN "chronometric-age-agent-role"."agentID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -656,8 +499,6 @@ COMMENT ON COLUMN public."chronometric-age-agent-role"."agentID" IS 'An identifi
 
 
 --
--- TOC entry 5485 (class 0 OID 0)
--- Dependencies: 235
 -- Name: COLUMN "chronometric-age-agent-role"."chronometricAgeID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -665,8 +506,6 @@ COMMENT ON COLUMN public."chronometric-age-agent-role"."chronometricAgeID" IS 'A
 
 
 --
--- TOC entry 5486 (class 0 OID 0)
--- Dependencies: 235
 -- Name: COLUMN "chronometric-age-agent-role"."agentRole"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -674,8 +513,6 @@ COMMENT ON COLUMN public."chronometric-age-agent-role"."agentRole" IS 'The categ
 
 
 --
--- TOC entry 5487 (class 0 OID 0)
--- Dependencies: 235
 -- Name: COLUMN "chronometric-age-agent-role"."agentRoleIRI"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -683,8 +520,6 @@ COMMENT ON COLUMN public."chronometric-age-agent-role"."agentRoleIRI" IS 'The IR
 
 
 --
--- TOC entry 5488 (class 0 OID 0)
--- Dependencies: 235
 -- Name: COLUMN "chronometric-age-agent-role"."agentRoleVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -692,8 +527,6 @@ COMMENT ON COLUMN public."chronometric-age-agent-role"."agentRoleVocabulary" IS 
 
 
 --
--- TOC entry 5489 (class 0 OID 0)
--- Dependencies: 235
 -- Name: COLUMN "chronometric-age-agent-role"."agentRoleOrder"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -701,8 +534,6 @@ COMMENT ON COLUMN public."chronometric-age-agent-role"."agentRoleOrder" IS 'The 
 
 
 --
--- TOC entry 5490 (class 0 OID 0)
--- Dependencies: 235
 -- Name: COLUMN "chronometric-age-agent-role"."agentRoleDate"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -710,7 +541,6 @@ COMMENT ON COLUMN public."chronometric-age-agent-role"."agentRoleDate" IS 'The i
 
 
 --
--- TOC entry 236 (class 1259 OID 176726)
 -- Name: chronometric-age-assertion; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -741,8 +571,6 @@ CREATE TABLE public."chronometric-age-assertion" (
 ALTER TABLE public."chronometric-age-assertion" OWNER TO postgres;
 
 --
--- TOC entry 5491 (class 0 OID 0)
--- Dependencies: 236
 -- Name: TABLE "chronometric-age-assertion"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -750,8 +578,6 @@ COMMENT ON TABLE public."chronometric-age-assertion" IS 'Comments or notes about
 
 
 --
--- TOC entry 5492 (class 0 OID 0)
--- Dependencies: 236
 -- Name: COLUMN "chronometric-age-assertion"."assertionID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -759,8 +585,6 @@ COMMENT ON COLUMN public."chronometric-age-assertion"."assertionID" IS 'An ident
 
 
 --
--- TOC entry 5493 (class 0 OID 0)
--- Dependencies: 236
 -- Name: COLUMN "chronometric-age-assertion"."chronometricAgeID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -768,8 +592,6 @@ COMMENT ON COLUMN public."chronometric-age-assertion"."chronometricAgeID" IS 'An
 
 
 --
--- TOC entry 5494 (class 0 OID 0)
--- Dependencies: 236
 -- Name: COLUMN "chronometric-age-assertion"."assertionType"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -777,8 +599,6 @@ COMMENT ON COLUMN public."chronometric-age-assertion"."assertionType" IS 'The ca
 
 
 --
--- TOC entry 5495 (class 0 OID 0)
--- Dependencies: 236
 -- Name: COLUMN "chronometric-age-assertion"."assertionTypeIRI"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -786,8 +606,6 @@ COMMENT ON COLUMN public."chronometric-age-assertion"."assertionTypeIRI" IS 'The
 
 
 --
--- TOC entry 5496 (class 0 OID 0)
--- Dependencies: 236
 -- Name: COLUMN "chronometric-age-assertion"."assertionTypeVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -795,8 +613,6 @@ COMMENT ON COLUMN public."chronometric-age-assertion"."assertionTypeVocabulary" 
 
 
 --
--- TOC entry 5497 (class 0 OID 0)
--- Dependencies: 236
 -- Name: COLUMN "chronometric-age-assertion"."assertionMadeDate"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -804,8 +620,6 @@ COMMENT ON COLUMN public."chronometric-age-assertion"."assertionMadeDate" IS 'Th
 
 
 --
--- TOC entry 5498 (class 0 OID 0)
--- Dependencies: 236
 -- Name: COLUMN "chronometric-age-assertion"."assertionEffectiveDate"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -813,8 +627,6 @@ COMMENT ON COLUMN public."chronometric-age-assertion"."assertionEffectiveDate" I
 
 
 --
--- TOC entry 5499 (class 0 OID 0)
--- Dependencies: 236
 -- Name: COLUMN "chronometric-age-assertion"."assertionValue"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -822,8 +634,6 @@ COMMENT ON COLUMN public."chronometric-age-assertion"."assertionValue" IS 'An as
 
 
 --
--- TOC entry 5500 (class 0 OID 0)
--- Dependencies: 236
 -- Name: COLUMN "chronometric-age-assertion"."assertionValueIRI"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -831,8 +641,6 @@ COMMENT ON COLUMN public."chronometric-age-assertion"."assertionValueIRI" IS 'Th
 
 
 --
--- TOC entry 5501 (class 0 OID 0)
--- Dependencies: 236
 -- Name: COLUMN "chronometric-age-assertion"."assertionValueVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -840,8 +648,6 @@ COMMENT ON COLUMN public."chronometric-age-assertion"."assertionValueVocabulary"
 
 
 --
--- TOC entry 5502 (class 0 OID 0)
--- Dependencies: 236
 -- Name: COLUMN "chronometric-age-assertion"."assertionValueNumeric"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -849,8 +655,6 @@ COMMENT ON COLUMN public."chronometric-age-assertion"."assertionValueNumeric" IS
 
 
 --
--- TOC entry 5503 (class 0 OID 0)
--- Dependencies: 236
 -- Name: COLUMN "chronometric-age-assertion"."assertionUnit"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -858,8 +662,6 @@ COMMENT ON COLUMN public."chronometric-age-assertion"."assertionUnit" IS 'The un
 
 
 --
--- TOC entry 5504 (class 0 OID 0)
--- Dependencies: 236
 -- Name: COLUMN "chronometric-age-assertion"."assertionUnitIRI"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -867,8 +669,6 @@ COMMENT ON COLUMN public."chronometric-age-assertion"."assertionUnitIRI" IS 'The
 
 
 --
--- TOC entry 5505 (class 0 OID 0)
--- Dependencies: 236
 -- Name: COLUMN "chronometric-age-assertion"."assertionUnitVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -876,8 +676,6 @@ COMMENT ON COLUMN public."chronometric-age-assertion"."assertionUnitVocabulary" 
 
 
 --
--- TOC entry 5506 (class 0 OID 0)
--- Dependencies: 236
 -- Name: COLUMN "chronometric-age-assertion"."assertionBy"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -885,8 +683,6 @@ COMMENT ON COLUMN public."chronometric-age-assertion"."assertionBy" IS 'A list (
 
 
 --
--- TOC entry 5507 (class 0 OID 0)
--- Dependencies: 236
 -- Name: COLUMN "chronometric-age-assertion"."assertionByID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -894,8 +690,6 @@ COMMENT ON COLUMN public."chronometric-age-assertion"."assertionByID" IS 'An ide
 
 
 --
--- TOC entry 5508 (class 0 OID 0)
--- Dependencies: 236
 -- Name: COLUMN "chronometric-age-assertion"."assertionProtocol"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -903,8 +697,6 @@ COMMENT ON COLUMN public."chronometric-age-assertion"."assertionProtocol" IS 'Th
 
 
 --
--- TOC entry 5509 (class 0 OID 0)
--- Dependencies: 236
 -- Name: COLUMN "chronometric-age-assertion"."assertionProtocolID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -912,8 +704,6 @@ COMMENT ON COLUMN public."chronometric-age-assertion"."assertionProtocolID" IS '
 
 
 --
--- TOC entry 5510 (class 0 OID 0)
--- Dependencies: 236
 -- Name: COLUMN "chronometric-age-assertion"."assertionCitation"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -921,8 +711,6 @@ COMMENT ON COLUMN public."chronometric-age-assertion"."assertionCitation" IS 'A 
 
 
 --
--- TOC entry 5511 (class 0 OID 0)
--- Dependencies: 236
 -- Name: COLUMN "chronometric-age-assertion"."assertionRemarks"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -930,7 +718,6 @@ COMMENT ON COLUMN public."chronometric-age-assertion"."assertionRemarks" IS 'Com
 
 
 --
--- TOC entry 237 (class 1259 OID 176743)
 -- Name: chronometric-age-citation; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -955,8 +742,6 @@ CREATE TABLE public."chronometric-age-citation" (
 ALTER TABLE public."chronometric-age-citation" OWNER TO postgres;
 
 --
--- TOC entry 5512 (class 0 OID 0)
--- Dependencies: 237
 -- Name: TABLE "chronometric-age-citation"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -964,8 +749,6 @@ COMMENT ON TABLE public."chronometric-age-citation" IS 'Comments or notes about 
 
 
 --
--- TOC entry 5513 (class 0 OID 0)
--- Dependencies: 237
 -- Name: COLUMN "chronometric-age-citation"."citationID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -973,8 +756,6 @@ COMMENT ON COLUMN public."chronometric-age-citation"."citationID" IS 'An identif
 
 
 --
--- TOC entry 5514 (class 0 OID 0)
--- Dependencies: 237
 -- Name: COLUMN "chronometric-age-citation"."chronometricAgeID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -982,8 +763,6 @@ COMMENT ON COLUMN public."chronometric-age-citation"."chronometricAgeID" IS 'An 
 
 
 --
--- TOC entry 5515 (class 0 OID 0)
--- Dependencies: 237
 -- Name: COLUMN "chronometric-age-citation"."citationType"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -991,8 +770,6 @@ COMMENT ON COLUMN public."chronometric-age-citation"."citationType" IS 'The cate
 
 
 --
--- TOC entry 5516 (class 0 OID 0)
--- Dependencies: 237
 -- Name: COLUMN "chronometric-age-citation"."citationTypeIRI"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -1000,8 +777,6 @@ COMMENT ON COLUMN public."chronometric-age-citation"."citationTypeIRI" IS 'The I
 
 
 --
--- TOC entry 5517 (class 0 OID 0)
--- Dependencies: 237
 -- Name: COLUMN "chronometric-age-citation"."citationTypeVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -1009,8 +784,6 @@ COMMENT ON COLUMN public."chronometric-age-citation"."citationTypeVocabulary" IS
 
 
 --
--- TOC entry 5518 (class 0 OID 0)
--- Dependencies: 237
 -- Name: COLUMN "chronometric-age-citation"."bibliographicCitation"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -1018,8 +791,6 @@ COMMENT ON COLUMN public."chronometric-age-citation"."bibliographicCitation" IS 
 
 
 --
--- TOC entry 5519 (class 0 OID 0)
--- Dependencies: 237
 -- Name: COLUMN "chronometric-age-citation"."pageNumber"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -1027,8 +798,6 @@ COMMENT ON COLUMN public."chronometric-age-citation"."pageNumber" IS 'The number
 
 
 --
--- TOC entry 5520 (class 0 OID 0)
--- Dependencies: 237
 -- Name: COLUMN "chronometric-age-citation"."referenceID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -1036,8 +805,6 @@ COMMENT ON COLUMN public."chronometric-age-citation"."referenceID" IS 'An identi
 
 
 --
--- TOC entry 5521 (class 0 OID 0)
--- Dependencies: 237
 -- Name: COLUMN "chronometric-age-citation"."referenceType"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -1045,8 +812,6 @@ COMMENT ON COLUMN public."chronometric-age-citation"."referenceType" IS 'The cat
 
 
 --
--- TOC entry 5522 (class 0 OID 0)
--- Dependencies: 237
 -- Name: COLUMN "chronometric-age-citation"."referenceTypeIRI"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -1054,8 +819,6 @@ COMMENT ON COLUMN public."chronometric-age-citation"."referenceTypeIRI" IS 'The 
 
 
 --
--- TOC entry 5523 (class 0 OID 0)
--- Dependencies: 237
 -- Name: COLUMN "chronometric-age-citation"."referenceTypeVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -1063,8 +826,6 @@ COMMENT ON COLUMN public."chronometric-age-citation"."referenceTypeVocabulary" I
 
 
 --
--- TOC entry 5524 (class 0 OID 0)
--- Dependencies: 237
 -- Name: COLUMN "chronometric-age-citation"."referenceYear"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -1072,8 +833,6 @@ COMMENT ON COLUMN public."chronometric-age-citation"."referenceYear" IS 'The yea
 
 
 --
--- TOC entry 5525 (class 0 OID 0)
--- Dependencies: 237
 -- Name: COLUMN "chronometric-age-citation"."isPeerReviewed"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -1081,8 +840,6 @@ COMMENT ON COLUMN public."chronometric-age-citation"."isPeerReviewed" IS 'An ind
 
 
 --
--- TOC entry 5526 (class 0 OID 0)
--- Dependencies: 237
 -- Name: COLUMN "chronometric-age-citation"."citationRemarks"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -1090,7 +847,6 @@ COMMENT ON COLUMN public."chronometric-age-citation"."citationRemarks" IS 'Comme
 
 
 --
--- TOC entry 238 (class 1259 OID 176755)
 -- Name: chronometric-age-media; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -1106,8 +862,6 @@ CREATE TABLE public."chronometric-age-media" (
 ALTER TABLE public."chronometric-age-media" OWNER TO postgres;
 
 --
--- TOC entry 5527 (class 0 OID 0)
--- Dependencies: 238
 -- Name: TABLE "chronometric-age-media"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -1115,8 +869,6 @@ COMMENT ON TABLE public."chronometric-age-media" IS 'Any vocabulary or formal cl
 
 
 --
--- TOC entry 5528 (class 0 OID 0)
--- Dependencies: 238
 -- Name: COLUMN "chronometric-age-media"."mediaID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -1124,8 +876,6 @@ COMMENT ON COLUMN public."chronometric-age-media"."mediaID" IS 'An identifier fo
 
 
 --
--- TOC entry 5529 (class 0 OID 0)
--- Dependencies: 238
 -- Name: COLUMN "chronometric-age-media"."chronometricAgeID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -1133,8 +883,6 @@ COMMENT ON COLUMN public."chronometric-age-media"."chronometricAgeID" IS 'An ide
 
 
 --
--- TOC entry 5530 (class 0 OID 0)
--- Dependencies: 238
 -- Name: COLUMN "chronometric-age-media"."mediaSubjectCategory"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -1142,8 +890,6 @@ COMMENT ON COLUMN public."chronometric-age-media"."mediaSubjectCategory" IS 'A t
 
 
 --
--- TOC entry 5531 (class 0 OID 0)
--- Dependencies: 238
 -- Name: COLUMN "chronometric-age-media"."mediaSubjectCategoryIRI"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -1151,8 +897,6 @@ COMMENT ON COLUMN public."chronometric-age-media"."mediaSubjectCategoryIRI" IS '
 
 
 --
--- TOC entry 5532 (class 0 OID 0)
--- Dependencies: 238
 -- Name: COLUMN "chronometric-age-media"."mediaSubjectCategoryVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -1160,7 +904,6 @@ COMMENT ON COLUMN public."chronometric-age-media"."mediaSubjectCategoryVocabular
 
 
 --
--- TOC entry 239 (class 1259 OID 176770)
 -- Name: chronometric-age-protocol; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -1173,8 +916,6 @@ CREATE TABLE public."chronometric-age-protocol" (
 ALTER TABLE public."chronometric-age-protocol" OWNER TO postgres;
 
 --
--- TOC entry 5533 (class 0 OID 0)
--- Dependencies: 239
 -- Name: TABLE "chronometric-age-protocol"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -1182,8 +923,6 @@ COMMENT ON TABLE public."chronometric-age-protocol" IS 'An identifier a chrono:C
 
 
 --
--- TOC entry 5534 (class 0 OID 0)
--- Dependencies: 239
 -- Name: COLUMN "chronometric-age-protocol"."protocolID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -1191,8 +930,6 @@ COMMENT ON COLUMN public."chronometric-age-protocol"."protocolID" IS 'An identif
 
 
 --
--- TOC entry 5535 (class 0 OID 0)
--- Dependencies: 239
 -- Name: COLUMN "chronometric-age-protocol"."chronometricAgeID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -1200,7 +937,6 @@ COMMENT ON COLUMN public."chronometric-age-protocol"."chronometricAgeID" IS 'An 
 
 
 --
--- TOC entry 216 (class 1259 OID 176407)
 -- Name: collection; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -1218,8 +954,6 @@ CREATE TABLE public.collection (
 ALTER TABLE public.collection OWNER TO postgres;
 
 --
--- TOC entry 5536 (class 0 OID 0)
--- Dependencies: 216
 -- Name: TABLE collection; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -1227,8 +961,6 @@ COMMENT ON TABLE public.collection IS 'The name (or acronym) in use by an instit
 
 
 --
--- TOC entry 5537 (class 0 OID 0)
--- Dependencies: 216
 -- Name: COLUMN collection."collectionID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -1236,8 +968,6 @@ COMMENT ON COLUMN public.collection."collectionID" IS 'An identifier for a Colle
 
 
 --
--- TOC entry 5538 (class 0 OID 0)
--- Dependencies: 216
 -- Name: COLUMN collection."collectionType"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -1245,8 +975,6 @@ COMMENT ON COLUMN public.collection."collectionType" IS 'The category that best 
 
 
 --
--- TOC entry 5539 (class 0 OID 0)
--- Dependencies: 216
 -- Name: COLUMN collection."collectionName"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -1254,8 +982,6 @@ COMMENT ON COLUMN public.collection."collectionName" IS 'The name of a Collectio
 
 
 --
--- TOC entry 5540 (class 0 OID 0)
--- Dependencies: 216
 -- Name: COLUMN collection."collectionCode"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -1263,8 +989,6 @@ COMMENT ON COLUMN public.collection."collectionCode" IS 'The name, acronym, code
 
 
 --
--- TOC entry 5541 (class 0 OID 0)
--- Dependencies: 216
 -- Name: COLUMN collection."institutionID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -1272,8 +996,6 @@ COMMENT ON COLUMN public.collection."institutionID" IS 'The identifier for an in
 
 
 --
--- TOC entry 5542 (class 0 OID 0)
--- Dependencies: 216
 -- Name: COLUMN collection."institutionName"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -1281,8 +1003,6 @@ COMMENT ON COLUMN public.collection."institutionName" IS 'The name of an institu
 
 
 --
--- TOC entry 5543 (class 0 OID 0)
--- Dependencies: 216
 -- Name: COLUMN collection."institutionCode"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -1290,7 +1010,6 @@ COMMENT ON COLUMN public.collection."institutionCode" IS 'The name (or acronym) 
 
 
 --
--- TOC entry 240 (class 1259 OID 176785)
 -- Name: collection-agent-role; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -1309,8 +1028,6 @@ CREATE TABLE public."collection-agent-role" (
 ALTER TABLE public."collection-agent-role" OWNER TO postgres;
 
 --
--- TOC entry 5544 (class 0 OID 0)
--- Dependencies: 240
 -- Name: TABLE "collection-agent-role"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -1318,8 +1035,6 @@ COMMENT ON TABLE public."collection-agent-role" IS 'The interval during which an
 
 
 --
--- TOC entry 5545 (class 0 OID 0)
--- Dependencies: 240
 -- Name: COLUMN "collection-agent-role"."agentID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -1327,8 +1042,6 @@ COMMENT ON COLUMN public."collection-agent-role"."agentID" IS 'An identifier for
 
 
 --
--- TOC entry 5546 (class 0 OID 0)
--- Dependencies: 240
 -- Name: COLUMN "collection-agent-role"."collectionID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -1336,8 +1049,6 @@ COMMENT ON COLUMN public."collection-agent-role"."collectionID" IS 'An identifie
 
 
 --
--- TOC entry 5547 (class 0 OID 0)
--- Dependencies: 240
 -- Name: COLUMN "collection-agent-role"."agentRole"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -1345,8 +1056,6 @@ COMMENT ON COLUMN public."collection-agent-role"."agentRole" IS 'The category th
 
 
 --
--- TOC entry 5548 (class 0 OID 0)
--- Dependencies: 240
 -- Name: COLUMN "collection-agent-role"."agentRoleIRI"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -1354,8 +1063,6 @@ COMMENT ON COLUMN public."collection-agent-role"."agentRoleIRI" IS 'The IRI of t
 
 
 --
--- TOC entry 5549 (class 0 OID 0)
--- Dependencies: 240
 -- Name: COLUMN "collection-agent-role"."agentRoleVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -1363,8 +1070,6 @@ COMMENT ON COLUMN public."collection-agent-role"."agentRoleVocabulary" IS 'The r
 
 
 --
--- TOC entry 5550 (class 0 OID 0)
--- Dependencies: 240
 -- Name: COLUMN "collection-agent-role"."agentRoleOrder"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -1372,8 +1077,6 @@ COMMENT ON COLUMN public."collection-agent-role"."agentRoleOrder" IS 'The numeri
 
 
 --
--- TOC entry 5551 (class 0 OID 0)
--- Dependencies: 240
 -- Name: COLUMN "collection-agent-role"."agentRoleDate"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -1381,7 +1084,6 @@ COMMENT ON COLUMN public."collection-agent-role"."agentRoleDate" IS 'The interva
 
 
 --
--- TOC entry 241 (class 1259 OID 176801)
 -- Name: collection-assertion; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -1412,8 +1114,6 @@ CREATE TABLE public."collection-assertion" (
 ALTER TABLE public."collection-assertion" OWNER TO postgres;
 
 --
--- TOC entry 5552 (class 0 OID 0)
--- Dependencies: 241
 -- Name: TABLE "collection-assertion"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -1421,8 +1121,6 @@ COMMENT ON TABLE public."collection-assertion" IS 'Comments or notes about an As
 
 
 --
--- TOC entry 5553 (class 0 OID 0)
--- Dependencies: 241
 -- Name: COLUMN "collection-assertion"."assertionID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -1430,8 +1128,6 @@ COMMENT ON COLUMN public."collection-assertion"."assertionID" IS 'An identifier 
 
 
 --
--- TOC entry 5554 (class 0 OID 0)
--- Dependencies: 241
 -- Name: COLUMN "collection-assertion"."collectionID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -1439,8 +1135,6 @@ COMMENT ON COLUMN public."collection-assertion"."collectionID" IS 'An identifier
 
 
 --
--- TOC entry 5555 (class 0 OID 0)
--- Dependencies: 241
 -- Name: COLUMN "collection-assertion"."assertionType"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -1448,8 +1142,6 @@ COMMENT ON COLUMN public."collection-assertion"."assertionType" IS 'The category
 
 
 --
--- TOC entry 5556 (class 0 OID 0)
--- Dependencies: 241
 -- Name: COLUMN "collection-assertion"."assertionTypeIRI"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -1457,8 +1149,6 @@ COMMENT ON COLUMN public."collection-assertion"."assertionTypeIRI" IS 'The IRI o
 
 
 --
--- TOC entry 5557 (class 0 OID 0)
--- Dependencies: 241
 -- Name: COLUMN "collection-assertion"."assertionTypeVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -1466,8 +1156,6 @@ COMMENT ON COLUMN public."collection-assertion"."assertionTypeVocabulary" IS 'Th
 
 
 --
--- TOC entry 5558 (class 0 OID 0)
--- Dependencies: 241
 -- Name: COLUMN "collection-assertion"."assertionMadeDate"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -1475,8 +1163,6 @@ COMMENT ON COLUMN public."collection-assertion"."assertionMadeDate" IS 'The date
 
 
 --
--- TOC entry 5559 (class 0 OID 0)
--- Dependencies: 241
 -- Name: COLUMN "collection-assertion"."assertionEffectiveDate"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -1484,8 +1170,6 @@ COMMENT ON COLUMN public."collection-assertion"."assertionEffectiveDate" IS 'The
 
 
 --
--- TOC entry 5560 (class 0 OID 0)
--- Dependencies: 241
 -- Name: COLUMN "collection-assertion"."assertionValue"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -1493,8 +1177,6 @@ COMMENT ON COLUMN public."collection-assertion"."assertionValue" IS 'An asserted
 
 
 --
--- TOC entry 5561 (class 0 OID 0)
--- Dependencies: 241
 -- Name: COLUMN "collection-assertion"."assertionValueIRI"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -1502,8 +1184,6 @@ COMMENT ON COLUMN public."collection-assertion"."assertionValueIRI" IS 'The IRI 
 
 
 --
--- TOC entry 5562 (class 0 OID 0)
--- Dependencies: 241
 -- Name: COLUMN "collection-assertion"."assertionValueVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -1511,8 +1191,6 @@ COMMENT ON COLUMN public."collection-assertion"."assertionValueVocabulary" IS 'T
 
 
 --
--- TOC entry 5563 (class 0 OID 0)
--- Dependencies: 241
 -- Name: COLUMN "collection-assertion"."assertionValueNumeric"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -1520,8 +1198,6 @@ COMMENT ON COLUMN public."collection-assertion"."assertionValueNumeric" IS 'An a
 
 
 --
--- TOC entry 5564 (class 0 OID 0)
--- Dependencies: 241
 -- Name: COLUMN "collection-assertion"."assertionUnit"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -1529,8 +1205,6 @@ COMMENT ON COLUMN public."collection-assertion"."assertionUnit" IS 'The units as
 
 
 --
--- TOC entry 5565 (class 0 OID 0)
--- Dependencies: 241
 -- Name: COLUMN "collection-assertion"."assertionUnitIRI"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -1538,8 +1212,6 @@ COMMENT ON COLUMN public."collection-assertion"."assertionUnitIRI" IS 'The IRI f
 
 
 --
--- TOC entry 5566 (class 0 OID 0)
--- Dependencies: 241
 -- Name: COLUMN "collection-assertion"."assertionUnitVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -1547,8 +1219,6 @@ COMMENT ON COLUMN public."collection-assertion"."assertionUnitVocabulary" IS 'Th
 
 
 --
--- TOC entry 5567 (class 0 OID 0)
--- Dependencies: 241
 -- Name: COLUMN "collection-assertion"."assertionBy"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -1556,8 +1226,6 @@ COMMENT ON COLUMN public."collection-assertion"."assertionBy" IS 'A list (concat
 
 
 --
--- TOC entry 5568 (class 0 OID 0)
--- Dependencies: 241
 -- Name: COLUMN "collection-assertion"."assertionByID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -1565,8 +1233,6 @@ COMMENT ON COLUMN public."collection-assertion"."assertionByID" IS 'An identifie
 
 
 --
--- TOC entry 5569 (class 0 OID 0)
--- Dependencies: 241
 -- Name: COLUMN "collection-assertion"."assertionProtocol"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -1574,8 +1240,6 @@ COMMENT ON COLUMN public."collection-assertion"."assertionProtocol" IS 'The name
 
 
 --
--- TOC entry 5570 (class 0 OID 0)
--- Dependencies: 241
 -- Name: COLUMN "collection-assertion"."assertionProtocolID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -1583,8 +1247,6 @@ COMMENT ON COLUMN public."collection-assertion"."assertionProtocolID" IS 'An ide
 
 
 --
--- TOC entry 5571 (class 0 OID 0)
--- Dependencies: 241
 -- Name: COLUMN "collection-assertion"."assertionCitation"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -1592,8 +1254,6 @@ COMMENT ON COLUMN public."collection-assertion"."assertionCitation" IS 'A list (
 
 
 --
--- TOC entry 5572 (class 0 OID 0)
--- Dependencies: 241
 -- Name: COLUMN "collection-assertion"."assertionRemarks"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -1601,7 +1261,6 @@ COMMENT ON COLUMN public."collection-assertion"."assertionRemarks" IS 'Comments 
 
 
 --
--- TOC entry 242 (class 1259 OID 176818)
 -- Name: collection-media; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -1617,8 +1276,6 @@ CREATE TABLE public."collection-media" (
 ALTER TABLE public."collection-media" OWNER TO postgres;
 
 --
--- TOC entry 5573 (class 0 OID 0)
--- Dependencies: 242
 -- Name: TABLE "collection-media"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -1626,8 +1283,6 @@ COMMENT ON TABLE public."collection-media" IS 'Any vocabulary or formal classifi
 
 
 --
--- TOC entry 5574 (class 0 OID 0)
--- Dependencies: 242
 -- Name: COLUMN "collection-media"."mediaID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -1635,8 +1290,6 @@ COMMENT ON COLUMN public."collection-media"."mediaID" IS 'An identifier for a Me
 
 
 --
--- TOC entry 5575 (class 0 OID 0)
--- Dependencies: 242
 -- Name: COLUMN "collection-media"."collectionID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -1644,8 +1297,6 @@ COMMENT ON COLUMN public."collection-media"."collectionID" IS 'An identifier for
 
 
 --
--- TOC entry 5576 (class 0 OID 0)
--- Dependencies: 242
 -- Name: COLUMN "collection-media"."mediaSubjectCategory"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -1653,8 +1304,6 @@ COMMENT ON COLUMN public."collection-media"."mediaSubjectCategory" IS 'A term to
 
 
 --
--- TOC entry 5577 (class 0 OID 0)
--- Dependencies: 242
 -- Name: COLUMN "collection-media"."mediaSubjectCategoryIRI"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -1662,8 +1311,6 @@ COMMENT ON COLUMN public."collection-media"."mediaSubjectCategoryIRI" IS 'The IR
 
 
 --
--- TOC entry 5578 (class 0 OID 0)
--- Dependencies: 242
 -- Name: COLUMN "collection-media"."mediaSubjectCategoryVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -1671,7 +1318,6 @@ COMMENT ON COLUMN public."collection-media"."mediaSubjectCategoryVocabulary" IS 
 
 
 --
--- TOC entry 221 (class 1259 OID 176450)
 -- Name: event; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -1749,26 +1395,26 @@ CREATE TABLE public.event (
     "informationWithheld" text,
     "dataGeneralizations" text,
     "preferredSpatialRepresentation" text,
-    CONSTRAINT "event_coordinateUncertaintyInMeters_check" CHECK (("coordinateUncertaintyInMeters" >= 1)),
-    CONSTRAINT "event_coordinateUncertaintyInMeters_check1" CHECK (("coordinateUncertaintyInMeters" <= 20037509)),
-    CONSTRAINT event_day_check CHECK ((day <= 31)),
-    CONSTRAINT event_day_check1 CHECK ((day >= 1)),
-    CONSTRAINT "event_decimalLatitude_check" CHECK (("decimalLatitude" <= (90)::numeric)),
-    CONSTRAINT "event_decimalLatitude_check1" CHECK (("decimalLatitude" >= ('-90'::integer)::numeric)),
+    CONSTRAINT "event_coordinateUncertaintyInMeters_check" CHECK (("coordinateUncertaintyInMeters" <= 20037509)),
+    CONSTRAINT "event_coordinateUncertaintyInMeters_check1" CHECK (("coordinateUncertaintyInMeters" >= 1)),
+    CONSTRAINT event_day_check CHECK ((day >= 1)),
+    CONSTRAINT event_day_check1 CHECK ((day <= 31)),
+    CONSTRAINT "event_decimalLatitude_check" CHECK (("decimalLatitude" >= ('-90'::integer)::numeric)),
+    CONSTRAINT "event_decimalLatitude_check1" CHECK (("decimalLatitude" <= (90)::numeric)),
     CONSTRAINT "event_decimalLongitude_check" CHECK (("decimalLongitude" <= (180)::numeric)),
     CONSTRAINT "event_decimalLongitude_check1" CHECK (("decimalLongitude" >= ('-180'::integer)::numeric)),
-    CONSTRAINT "event_endDayOfYear_check" CHECK (("endDayOfYear" >= 1)),
-    CONSTRAINT "event_endDayOfYear_check1" CHECK (("endDayOfYear" <= 366)),
+    CONSTRAINT "event_endDayOfYear_check" CHECK (("endDayOfYear" <= 366)),
+    CONSTRAINT "event_endDayOfYear_check1" CHECK (("endDayOfYear" >= 1)),
     CONSTRAINT "event_maximumDepthInMeters_check" CHECK (("maximumDepthInMeters" <= (11000)::numeric)),
     CONSTRAINT "event_maximumDepthInMeters_check1" CHECK (("maximumDepthInMeters" >= (0)::numeric)),
     CONSTRAINT "event_maximumElevationInMeters_check" CHECK (("maximumElevationInMeters" <= (8850)::numeric)),
     CONSTRAINT "event_maximumElevationInMeters_check1" CHECK (("maximumElevationInMeters" >= ('-430'::integer)::numeric)),
-    CONSTRAINT "event_minimumDepthInMeters_check" CHECK (("minimumDepthInMeters" <= (11000)::numeric)),
-    CONSTRAINT "event_minimumDepthInMeters_check1" CHECK (("minimumDepthInMeters" >= (0)::numeric)),
-    CONSTRAINT "event_minimumElevationInMeters_check" CHECK (("minimumElevationInMeters" <= (8850)::numeric)),
-    CONSTRAINT "event_minimumElevationInMeters_check1" CHECK (("minimumElevationInMeters" >= ('-430'::integer)::numeric)),
-    CONSTRAINT event_month_check CHECK ((month >= 1)),
-    CONSTRAINT event_month_check1 CHECK ((month <= 12)),
+    CONSTRAINT "event_minimumDepthInMeters_check" CHECK (("minimumDepthInMeters" >= (0)::numeric)),
+    CONSTRAINT "event_minimumDepthInMeters_check1" CHECK (("minimumDepthInMeters" <= (11000)::numeric)),
+    CONSTRAINT "event_minimumElevationInMeters_check" CHECK (("minimumElevationInMeters" >= ('-430'::integer)::numeric)),
+    CONSTRAINT "event_minimumElevationInMeters_check1" CHECK (("minimumElevationInMeters" <= (8850)::numeric)),
+    CONSTRAINT event_month_check CHECK ((month <= 12)),
+    CONSTRAINT event_month_check1 CHECK ((month >= 1)),
     CONSTRAINT "event_pointRadiusSpatialFit_check" CHECK (("pointRadiusSpatialFit" >= (0)::numeric)),
     CONSTRAINT "event_startDayOfYear_check" CHECK (("startDayOfYear" >= 1)),
     CONSTRAINT "event_startDayOfYear_check1" CHECK (("startDayOfYear" <= 366))
@@ -1778,8 +1424,6 @@ CREATE TABLE public.event (
 ALTER TABLE public.event OWNER TO postgres;
 
 --
--- TOC entry 5579 (class 0 OID 0)
--- Dependencies: 221
 -- Name: TABLE event; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -1787,8 +1431,6 @@ COMMENT ON TABLE public.event IS 'An indication of which spatial representation 
 
 
 --
--- TOC entry 5580 (class 0 OID 0)
--- Dependencies: 221
 -- Name: COLUMN event."eventID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -1796,8 +1438,6 @@ COMMENT ON COLUMN public.event."eventID" IS 'An identifier for a dwc:Event.';
 
 
 --
--- TOC entry 5581 (class 0 OID 0)
--- Dependencies: 221
 -- Name: COLUMN event."parentEventID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -1805,8 +1445,6 @@ COMMENT ON COLUMN public.event."parentEventID" IS 'An identifier for a broader d
 
 
 --
--- TOC entry 5582 (class 0 OID 0)
--- Dependencies: 221
 -- Name: COLUMN event."preferredEventName"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -1814,8 +1452,6 @@ COMMENT ON COLUMN public.event."preferredEventName" IS 'The name of a dwc:Event 
 
 
 --
--- TOC entry 5583 (class 0 OID 0)
--- Dependencies: 221
 -- Name: COLUMN event."eventType"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -1823,8 +1459,6 @@ COMMENT ON COLUMN public.event."eventType" IS 'The category that best matches th
 
 
 --
--- TOC entry 5584 (class 0 OID 0)
--- Dependencies: 221
 -- Name: COLUMN event."datasetName"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -1832,8 +1466,6 @@ COMMENT ON COLUMN public.event."datasetName" IS 'A name for a dataset from which
 
 
 --
--- TOC entry 5585 (class 0 OID 0)
--- Dependencies: 221
 -- Name: COLUMN event."datasetID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -1841,8 +1473,6 @@ COMMENT ON COLUMN public.event."datasetID" IS 'An identifier for a dataset from 
 
 
 --
--- TOC entry 5586 (class 0 OID 0)
--- Dependencies: 221
 -- Name: COLUMN event."fieldNumber"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -1850,8 +1480,6 @@ COMMENT ON COLUMN public.event."fieldNumber" IS 'An identifier given to a dwc:Ev
 
 
 --
--- TOC entry 5587 (class 0 OID 0)
--- Dependencies: 221
 -- Name: COLUMN event."eventConductedBy"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -1859,8 +1487,6 @@ COMMENT ON COLUMN public.event."eventConductedBy" IS 'A list (concatenated and s
 
 
 --
--- TOC entry 5588 (class 0 OID 0)
--- Dependencies: 221
 -- Name: COLUMN event."eventConductedByID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -1868,8 +1494,6 @@ COMMENT ON COLUMN public.event."eventConductedByID" IS 'An identifier for the Ag
 
 
 --
--- TOC entry 5589 (class 0 OID 0)
--- Dependencies: 221
 -- Name: COLUMN event."eventDate"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -1877,8 +1501,6 @@ COMMENT ON COLUMN public.event."eventDate" IS 'The date or time interval during 
 
 
 --
--- TOC entry 5590 (class 0 OID 0)
--- Dependencies: 221
 -- Name: COLUMN event."eventTime"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -1886,8 +1508,6 @@ COMMENT ON COLUMN public.event."eventTime" IS 'The time or interval during which
 
 
 --
--- TOC entry 5591 (class 0 OID 0)
--- Dependencies: 221
 -- Name: COLUMN event."startDayOfYear"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -1895,8 +1515,6 @@ COMMENT ON COLUMN public.event."startDayOfYear" IS 'The earliest integer day of 
 
 
 --
--- TOC entry 5592 (class 0 OID 0)
--- Dependencies: 221
 -- Name: COLUMN event."endDayOfYear"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -1904,8 +1522,6 @@ COMMENT ON COLUMN public.event."endDayOfYear" IS 'The latest integer day of the 
 
 
 --
--- TOC entry 5593 (class 0 OID 0)
--- Dependencies: 221
 -- Name: COLUMN event.year; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -1913,8 +1529,6 @@ COMMENT ON COLUMN public.event.year IS 'The four-digit year in which a dwc:Event
 
 
 --
--- TOC entry 5594 (class 0 OID 0)
--- Dependencies: 221
 -- Name: COLUMN event.month; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -1922,8 +1536,6 @@ COMMENT ON COLUMN public.event.month IS 'The integer month in which a dwc:Event 
 
 
 --
--- TOC entry 5595 (class 0 OID 0)
--- Dependencies: 221
 -- Name: COLUMN event.day; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -1931,8 +1543,6 @@ COMMENT ON COLUMN public.event.day IS 'The integer day of the month on which a d
 
 
 --
--- TOC entry 5596 (class 0 OID 0)
--- Dependencies: 221
 -- Name: COLUMN event."verbatimEventDate"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -1940,8 +1550,6 @@ COMMENT ON COLUMN public.event."verbatimEventDate" IS 'The verbatim original rep
 
 
 --
--- TOC entry 5597 (class 0 OID 0)
--- Dependencies: 221
 -- Name: COLUMN event."verbatimLocality"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -1949,8 +1557,6 @@ COMMENT ON COLUMN public.event."verbatimLocality" IS 'The original textual descr
 
 
 --
--- TOC entry 5598 (class 0 OID 0)
--- Dependencies: 221
 -- Name: COLUMN event."verbatimElevation"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -1958,8 +1564,6 @@ COMMENT ON COLUMN public.event."verbatimElevation" IS 'The original description 
 
 
 --
--- TOC entry 5599 (class 0 OID 0)
--- Dependencies: 221
 -- Name: COLUMN event."verbatimDepth"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -1967,8 +1571,6 @@ COMMENT ON COLUMN public.event."verbatimDepth" IS 'The original description of t
 
 
 --
--- TOC entry 5600 (class 0 OID 0)
--- Dependencies: 221
 -- Name: COLUMN event."verbatimCoordinates"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -1976,8 +1578,6 @@ COMMENT ON COLUMN public.event."verbatimCoordinates" IS 'The verbatim original s
 
 
 --
--- TOC entry 5601 (class 0 OID 0)
--- Dependencies: 221
 -- Name: COLUMN event."verbatimLatitude"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -1985,8 +1585,6 @@ COMMENT ON COLUMN public.event."verbatimLatitude" IS 'The verbatim original lati
 
 
 --
--- TOC entry 5602 (class 0 OID 0)
--- Dependencies: 221
 -- Name: COLUMN event."verbatimLongitude"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -1994,8 +1592,6 @@ COMMENT ON COLUMN public.event."verbatimLongitude" IS 'The verbatim original lon
 
 
 --
--- TOC entry 5603 (class 0 OID 0)
--- Dependencies: 221
 -- Name: COLUMN event."verbatimCoordinateSystem"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2003,8 +1599,6 @@ COMMENT ON COLUMN public.event."verbatimCoordinateSystem" IS 'The coordinate for
 
 
 --
--- TOC entry 5604 (class 0 OID 0)
--- Dependencies: 221
 -- Name: COLUMN event."verbatimSRS"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2012,8 +1606,6 @@ COMMENT ON COLUMN public.event."verbatimSRS" IS 'The ellipsoid, geodetic datum, 
 
 
 --
--- TOC entry 5605 (class 0 OID 0)
--- Dependencies: 221
 -- Name: COLUMN event."georeferenceVerificationStatus"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2021,8 +1613,6 @@ COMMENT ON COLUMN public.event."georeferenceVerificationStatus" IS 'A categorica
 
 
 --
--- TOC entry 5606 (class 0 OID 0)
--- Dependencies: 221
 -- Name: COLUMN event.habitat; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2030,8 +1620,6 @@ COMMENT ON COLUMN public.event.habitat IS 'A category or description of the habi
 
 
 --
--- TOC entry 5607 (class 0 OID 0)
--- Dependencies: 221
 -- Name: COLUMN event."sampleSizeValue"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2039,8 +1627,6 @@ COMMENT ON COLUMN public.event."sampleSizeValue" IS 'A numeric value for a measu
 
 
 --
--- TOC entry 5608 (class 0 OID 0)
--- Dependencies: 221
 -- Name: COLUMN event."sampleSizeUnit"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2048,8 +1634,6 @@ COMMENT ON COLUMN public.event."sampleSizeUnit" IS 'The unit of measurement of t
 
 
 --
--- TOC entry 5609 (class 0 OID 0)
--- Dependencies: 221
 -- Name: COLUMN event."eventEffort"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2057,8 +1641,6 @@ COMMENT ON COLUMN public.event."eventEffort" IS 'The amount of effort expended d
 
 
 --
--- TOC entry 5610 (class 0 OID 0)
--- Dependencies: 221
 -- Name: COLUMN event."fieldNotes"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2066,8 +1648,6 @@ COMMENT ON COLUMN public.event."fieldNotes" IS 'One of a) an indicator of the ex
 
 
 --
--- TOC entry 5611 (class 0 OID 0)
--- Dependencies: 221
 -- Name: COLUMN event."eventCitation"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2075,8 +1655,6 @@ COMMENT ON COLUMN public.event."eventCitation" IS 'A list (concatenated and sepa
 
 
 --
--- TOC entry 5612 (class 0 OID 0)
--- Dependencies: 221
 -- Name: COLUMN event."eventRemarks"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2084,8 +1662,6 @@ COMMENT ON COLUMN public.event."eventRemarks" IS 'Comments or notes about a dwc:
 
 
 --
--- TOC entry 5613 (class 0 OID 0)
--- Dependencies: 221
 -- Name: COLUMN event."locationID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2093,8 +1669,6 @@ COMMENT ON COLUMN public.event."locationID" IS 'An identifier a dcterms:Location
 
 
 --
--- TOC entry 5614 (class 0 OID 0)
--- Dependencies: 221
 -- Name: COLUMN event."higherGeographyID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2102,8 +1676,6 @@ COMMENT ON COLUMN public.event."higherGeographyID" IS 'An identifier for the geo
 
 
 --
--- TOC entry 5615 (class 0 OID 0)
--- Dependencies: 221
 -- Name: COLUMN event."higherGeography"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2111,8 +1683,6 @@ COMMENT ON COLUMN public.event."higherGeography" IS 'A list (concatenated and se
 
 
 --
--- TOC entry 5616 (class 0 OID 0)
--- Dependencies: 221
 -- Name: COLUMN event.continent; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2120,8 +1690,6 @@ COMMENT ON COLUMN public.event.continent IS 'The name of the continent in which 
 
 
 --
--- TOC entry 5617 (class 0 OID 0)
--- Dependencies: 221
 -- Name: COLUMN event."waterBody"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2129,8 +1697,6 @@ COMMENT ON COLUMN public.event."waterBody" IS 'The name of the water body in whi
 
 
 --
--- TOC entry 5618 (class 0 OID 0)
--- Dependencies: 221
 -- Name: COLUMN event."islandGroup"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2138,8 +1704,6 @@ COMMENT ON COLUMN public.event."islandGroup" IS 'The name of the island group in
 
 
 --
--- TOC entry 5619 (class 0 OID 0)
--- Dependencies: 221
 -- Name: COLUMN event.island; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2147,8 +1711,6 @@ COMMENT ON COLUMN public.event.island IS 'The name of the island on or near whic
 
 
 --
--- TOC entry 5620 (class 0 OID 0)
--- Dependencies: 221
 -- Name: COLUMN event.country; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2156,8 +1718,6 @@ COMMENT ON COLUMN public.event.country IS 'The name of the country or major admi
 
 
 --
--- TOC entry 5621 (class 0 OID 0)
--- Dependencies: 221
 -- Name: COLUMN event."countryCode"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2165,8 +1725,6 @@ COMMENT ON COLUMN public.event."countryCode" IS 'The standard code for the count
 
 
 --
--- TOC entry 5622 (class 0 OID 0)
--- Dependencies: 221
 -- Name: COLUMN event."stateProvince"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2174,8 +1732,6 @@ COMMENT ON COLUMN public.event."stateProvince" IS 'The name of the next smaller 
 
 
 --
--- TOC entry 5623 (class 0 OID 0)
--- Dependencies: 221
 -- Name: COLUMN event.county; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2183,8 +1739,6 @@ COMMENT ON COLUMN public.event.county IS 'The full, unabbreviated name of the ne
 
 
 --
--- TOC entry 5624 (class 0 OID 0)
--- Dependencies: 221
 -- Name: COLUMN event.municipality; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2192,8 +1746,6 @@ COMMENT ON COLUMN public.event.municipality IS 'The full, unabbreviated name of 
 
 
 --
--- TOC entry 5625 (class 0 OID 0)
--- Dependencies: 221
 -- Name: COLUMN event.locality; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2201,8 +1753,6 @@ COMMENT ON COLUMN public.event.locality IS 'The specific description of the plac
 
 
 --
--- TOC entry 5626 (class 0 OID 0)
--- Dependencies: 221
 -- Name: COLUMN event."minimumElevationInMeters"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2210,8 +1760,6 @@ COMMENT ON COLUMN public.event."minimumElevationInMeters" IS 'The lower limit of
 
 
 --
--- TOC entry 5627 (class 0 OID 0)
--- Dependencies: 221
 -- Name: COLUMN event."maximumElevationInMeters"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2219,8 +1767,6 @@ COMMENT ON COLUMN public.event."maximumElevationInMeters" IS 'The upper limit of
 
 
 --
--- TOC entry 5628 (class 0 OID 0)
--- Dependencies: 221
 -- Name: COLUMN event."verticalDatum"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2228,8 +1774,6 @@ COMMENT ON COLUMN public.event."verticalDatum" IS 'The vertical datum used as th
 
 
 --
--- TOC entry 5629 (class 0 OID 0)
--- Dependencies: 221
 -- Name: COLUMN event."minimumDepthInMeters"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2237,8 +1781,6 @@ COMMENT ON COLUMN public.event."minimumDepthInMeters" IS 'The lesser depth of a 
 
 
 --
--- TOC entry 5630 (class 0 OID 0)
--- Dependencies: 221
 -- Name: COLUMN event."maximumDepthInMeters"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2246,8 +1788,6 @@ COMMENT ON COLUMN public.event."maximumDepthInMeters" IS 'The greater depth of a
 
 
 --
--- TOC entry 5631 (class 0 OID 0)
--- Dependencies: 221
 -- Name: COLUMN event."minimumDistanceAboveSurfaceInMeters"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2255,8 +1795,6 @@ COMMENT ON COLUMN public.event."minimumDistanceAboveSurfaceInMeters" IS 'The les
 
 
 --
--- TOC entry 5632 (class 0 OID 0)
--- Dependencies: 221
 -- Name: COLUMN event."maximumDistanceAboveSurfaceInMeters"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2264,8 +1802,6 @@ COMMENT ON COLUMN public.event."maximumDistanceAboveSurfaceInMeters" IS 'The gre
 
 
 --
--- TOC entry 5633 (class 0 OID 0)
--- Dependencies: 221
 -- Name: COLUMN event."locationRemarks"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2273,8 +1809,6 @@ COMMENT ON COLUMN public.event."locationRemarks" IS 'Comments or notes about a d
 
 
 --
--- TOC entry 5634 (class 0 OID 0)
--- Dependencies: 221
 -- Name: COLUMN event."decimalLatitude"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2282,8 +1816,6 @@ COMMENT ON COLUMN public.event."decimalLatitude" IS 'The geographic latitude (in
 
 
 --
--- TOC entry 5635 (class 0 OID 0)
--- Dependencies: 221
 -- Name: COLUMN event."decimalLongitude"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2291,8 +1823,6 @@ COMMENT ON COLUMN public.event."decimalLongitude" IS 'The geographic longitude (
 
 
 --
--- TOC entry 5636 (class 0 OID 0)
--- Dependencies: 221
 -- Name: COLUMN event."geodeticDatum"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2300,8 +1830,6 @@ COMMENT ON COLUMN public.event."geodeticDatum" IS 'The ellipsoid, geodetic datum
 
 
 --
--- TOC entry 5637 (class 0 OID 0)
--- Dependencies: 221
 -- Name: COLUMN event."coordinateUncertaintyInMeters"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2309,8 +1837,6 @@ COMMENT ON COLUMN public.event."coordinateUncertaintyInMeters" IS 'The horizonta
 
 
 --
--- TOC entry 5638 (class 0 OID 0)
--- Dependencies: 221
 -- Name: COLUMN event."coordinatePrecision"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2318,8 +1844,6 @@ COMMENT ON COLUMN public.event."coordinatePrecision" IS 'A decimal representatio
 
 
 --
--- TOC entry 5639 (class 0 OID 0)
--- Dependencies: 221
 -- Name: COLUMN event."pointRadiusSpatialFit"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2327,8 +1851,6 @@ COMMENT ON COLUMN public.event."pointRadiusSpatialFit" IS 'The ratio of the area
 
 
 --
--- TOC entry 5640 (class 0 OID 0)
--- Dependencies: 221
 -- Name: COLUMN event."footprintWKT"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2336,8 +1858,6 @@ COMMENT ON COLUMN public.event."footprintWKT" IS 'A Well-Known Text (WKT) repres
 
 
 --
--- TOC entry 5641 (class 0 OID 0)
--- Dependencies: 221
 -- Name: COLUMN event."footprintSRS"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2345,8 +1865,6 @@ COMMENT ON COLUMN public.event."footprintSRS" IS 'The ellipsoid, geodetic datum,
 
 
 --
--- TOC entry 5642 (class 0 OID 0)
--- Dependencies: 221
 -- Name: COLUMN event."footprintSpatialFit"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2354,8 +1872,6 @@ COMMENT ON COLUMN public.event."footprintSpatialFit" IS 'The ratio of the area o
 
 
 --
--- TOC entry 5643 (class 0 OID 0)
--- Dependencies: 221
 -- Name: COLUMN event."georeferencedBy"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2363,8 +1879,6 @@ COMMENT ON COLUMN public.event."georeferencedBy" IS 'A list (concatenated and se
 
 
 --
--- TOC entry 5644 (class 0 OID 0)
--- Dependencies: 221
 -- Name: COLUMN event."georeferencedByID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2372,8 +1886,6 @@ COMMENT ON COLUMN public.event."georeferencedByID" IS 'An identifier for the Age
 
 
 --
--- TOC entry 5645 (class 0 OID 0)
--- Dependencies: 221
 -- Name: COLUMN event."georeferencedDate"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2381,8 +1893,6 @@ COMMENT ON COLUMN public.event."georeferencedDate" IS 'The date on which a dcter
 
 
 --
--- TOC entry 5646 (class 0 OID 0)
--- Dependencies: 221
 -- Name: COLUMN event."georeferenceProtocol"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2390,8 +1900,6 @@ COMMENT ON COLUMN public.event."georeferenceProtocol" IS 'A description or refer
 
 
 --
--- TOC entry 5647 (class 0 OID 0)
--- Dependencies: 221
 -- Name: COLUMN event."georeferenceProtocolID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2399,8 +1907,6 @@ COMMENT ON COLUMN public.event."georeferenceProtocolID" IS 'An identifier for a 
 
 
 --
--- TOC entry 5648 (class 0 OID 0)
--- Dependencies: 221
 -- Name: COLUMN event."georeferenceSources"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2408,8 +1914,6 @@ COMMENT ON COLUMN public.event."georeferenceSources" IS 'A list (concatenated an
 
 
 --
--- TOC entry 5649 (class 0 OID 0)
--- Dependencies: 221
 -- Name: COLUMN event."georeferenceRemarks"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2417,8 +1921,6 @@ COMMENT ON COLUMN public.event."georeferenceRemarks" IS 'Comments or notes about
 
 
 --
--- TOC entry 5650 (class 0 OID 0)
--- Dependencies: 221
 -- Name: COLUMN event."informationWithheld"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2426,8 +1928,6 @@ COMMENT ON COLUMN public.event."informationWithheld" IS 'Additional information 
 
 
 --
--- TOC entry 5651 (class 0 OID 0)
--- Dependencies: 221
 -- Name: COLUMN event."dataGeneralizations"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2435,8 +1935,6 @@ COMMENT ON COLUMN public.event."dataGeneralizations" IS 'Actions taken to make t
 
 
 --
--- TOC entry 5652 (class 0 OID 0)
--- Dependencies: 221
 -- Name: COLUMN event."preferredSpatialRepresentation"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2444,7 +1942,6 @@ COMMENT ON COLUMN public.event."preferredSpatialRepresentation" IS 'An indicatio
 
 
 --
--- TOC entry 243 (class 1259 OID 176833)
 -- Name: event-agent-role; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -2463,8 +1960,6 @@ CREATE TABLE public."event-agent-role" (
 ALTER TABLE public."event-agent-role" OWNER TO postgres;
 
 --
--- TOC entry 5653 (class 0 OID 0)
--- Dependencies: 243
 -- Name: TABLE "event-agent-role"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2472,8 +1967,6 @@ COMMENT ON TABLE public."event-agent-role" IS 'The interval during which an Agen
 
 
 --
--- TOC entry 5654 (class 0 OID 0)
--- Dependencies: 243
 -- Name: COLUMN "event-agent-role"."agentID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2481,8 +1974,6 @@ COMMENT ON COLUMN public."event-agent-role"."agentID" IS 'An identifier for an A
 
 
 --
--- TOC entry 5655 (class 0 OID 0)
--- Dependencies: 243
 -- Name: COLUMN "event-agent-role"."eventID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2490,8 +1981,6 @@ COMMENT ON COLUMN public."event-agent-role"."eventID" IS 'An identifier for a dw
 
 
 --
--- TOC entry 5656 (class 0 OID 0)
--- Dependencies: 243
 -- Name: COLUMN "event-agent-role"."agentRole"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2499,8 +1988,6 @@ COMMENT ON COLUMN public."event-agent-role"."agentRole" IS 'The category that be
 
 
 --
--- TOC entry 5657 (class 0 OID 0)
--- Dependencies: 243
 -- Name: COLUMN "event-agent-role"."agentRoleIRI"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2508,8 +1995,6 @@ COMMENT ON COLUMN public."event-agent-role"."agentRoleIRI" IS 'The IRI of the co
 
 
 --
--- TOC entry 5658 (class 0 OID 0)
--- Dependencies: 243
 -- Name: COLUMN "event-agent-role"."agentRoleVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2517,8 +2002,6 @@ COMMENT ON COLUMN public."event-agent-role"."agentRoleVocabulary" IS 'The refere
 
 
 --
--- TOC entry 5659 (class 0 OID 0)
--- Dependencies: 243
 -- Name: COLUMN "event-agent-role"."agentRoleOrder"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2526,8 +2009,6 @@ COMMENT ON COLUMN public."event-agent-role"."agentRoleOrder" IS 'The numerical p
 
 
 --
--- TOC entry 5660 (class 0 OID 0)
--- Dependencies: 243
 -- Name: COLUMN "event-agent-role"."agentRoleDate"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2535,7 +2016,6 @@ COMMENT ON COLUMN public."event-agent-role"."agentRoleDate" IS 'The interval dur
 
 
 --
--- TOC entry 244 (class 1259 OID 176849)
 -- Name: event-assertion; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -2566,8 +2046,6 @@ CREATE TABLE public."event-assertion" (
 ALTER TABLE public."event-assertion" OWNER TO postgres;
 
 --
--- TOC entry 5661 (class 0 OID 0)
--- Dependencies: 244
 -- Name: TABLE "event-assertion"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2575,8 +2053,6 @@ COMMENT ON TABLE public."event-assertion" IS 'Comments or notes about an Asserti
 
 
 --
--- TOC entry 5662 (class 0 OID 0)
--- Dependencies: 244
 -- Name: COLUMN "event-assertion"."assertionID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2584,8 +2060,6 @@ COMMENT ON COLUMN public."event-assertion"."assertionID" IS 'An identifier for a
 
 
 --
--- TOC entry 5663 (class 0 OID 0)
--- Dependencies: 244
 -- Name: COLUMN "event-assertion"."eventID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2593,8 +2067,6 @@ COMMENT ON COLUMN public."event-assertion"."eventID" IS 'An identifier for a dwc
 
 
 --
--- TOC entry 5664 (class 0 OID 0)
--- Dependencies: 244
 -- Name: COLUMN "event-assertion"."assertionType"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2602,8 +2074,6 @@ COMMENT ON COLUMN public."event-assertion"."assertionType" IS 'The category that
 
 
 --
--- TOC entry 5665 (class 0 OID 0)
--- Dependencies: 244
 -- Name: COLUMN "event-assertion"."assertionTypeIRI"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2611,8 +2081,6 @@ COMMENT ON COLUMN public."event-assertion"."assertionTypeIRI" IS 'The IRI of the
 
 
 --
--- TOC entry 5666 (class 0 OID 0)
--- Dependencies: 244
 -- Name: COLUMN "event-assertion"."assertionTypeVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2620,8 +2088,6 @@ COMMENT ON COLUMN public."event-assertion"."assertionTypeVocabulary" IS 'The ref
 
 
 --
--- TOC entry 5667 (class 0 OID 0)
--- Dependencies: 244
 -- Name: COLUMN "event-assertion"."assertionMadeDate"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2629,8 +2095,6 @@ COMMENT ON COLUMN public."event-assertion"."assertionMadeDate" IS 'The date on w
 
 
 --
--- TOC entry 5668 (class 0 OID 0)
--- Dependencies: 244
 -- Name: COLUMN "event-assertion"."assertionEffectiveDate"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2638,8 +2102,6 @@ COMMENT ON COLUMN public."event-assertion"."assertionEffectiveDate" IS 'The date
 
 
 --
--- TOC entry 5669 (class 0 OID 0)
--- Dependencies: 244
 -- Name: COLUMN "event-assertion"."assertionValue"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2647,8 +2109,6 @@ COMMENT ON COLUMN public."event-assertion"."assertionValue" IS 'An asserted valu
 
 
 --
--- TOC entry 5670 (class 0 OID 0)
--- Dependencies: 244
 -- Name: COLUMN "event-assertion"."assertionValueIRI"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2656,8 +2116,6 @@ COMMENT ON COLUMN public."event-assertion"."assertionValueIRI" IS 'The IRI of th
 
 
 --
--- TOC entry 5671 (class 0 OID 0)
--- Dependencies: 244
 -- Name: COLUMN "event-assertion"."assertionValueVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2665,8 +2123,6 @@ COMMENT ON COLUMN public."event-assertion"."assertionValueVocabulary" IS 'The re
 
 
 --
--- TOC entry 5672 (class 0 OID 0)
--- Dependencies: 244
 -- Name: COLUMN "event-assertion"."assertionValueNumeric"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2674,8 +2130,6 @@ COMMENT ON COLUMN public."event-assertion"."assertionValueNumeric" IS 'An assert
 
 
 --
--- TOC entry 5673 (class 0 OID 0)
--- Dependencies: 244
 -- Name: COLUMN "event-assertion"."assertionUnit"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2683,8 +2137,6 @@ COMMENT ON COLUMN public."event-assertion"."assertionUnit" IS 'The units associa
 
 
 --
--- TOC entry 5674 (class 0 OID 0)
--- Dependencies: 244
 -- Name: COLUMN "event-assertion"."assertionUnitIRI"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2692,8 +2144,6 @@ COMMENT ON COLUMN public."event-assertion"."assertionUnitIRI" IS 'The IRI for th
 
 
 --
--- TOC entry 5675 (class 0 OID 0)
--- Dependencies: 244
 -- Name: COLUMN "event-assertion"."assertionUnitVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2701,8 +2151,6 @@ COMMENT ON COLUMN public."event-assertion"."assertionUnitVocabulary" IS 'The ref
 
 
 --
--- TOC entry 5676 (class 0 OID 0)
--- Dependencies: 244
 -- Name: COLUMN "event-assertion"."assertionBy"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2710,8 +2158,6 @@ COMMENT ON COLUMN public."event-assertion"."assertionBy" IS 'A list (concatenate
 
 
 --
--- TOC entry 5677 (class 0 OID 0)
--- Dependencies: 244
 -- Name: COLUMN "event-assertion"."assertionByID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2719,8 +2165,6 @@ COMMENT ON COLUMN public."event-assertion"."assertionByID" IS 'An identifier for
 
 
 --
--- TOC entry 5678 (class 0 OID 0)
--- Dependencies: 244
 -- Name: COLUMN "event-assertion"."assertionProtocol"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2728,8 +2172,6 @@ COMMENT ON COLUMN public."event-assertion"."assertionProtocol" IS 'The names of,
 
 
 --
--- TOC entry 5679 (class 0 OID 0)
--- Dependencies: 244
 -- Name: COLUMN "event-assertion"."assertionProtocolID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2737,8 +2179,6 @@ COMMENT ON COLUMN public."event-assertion"."assertionProtocolID" IS 'An identifi
 
 
 --
--- TOC entry 5680 (class 0 OID 0)
--- Dependencies: 244
 -- Name: COLUMN "event-assertion"."assertionCitation"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2746,8 +2186,6 @@ COMMENT ON COLUMN public."event-assertion"."assertionCitation" IS 'A list (conca
 
 
 --
--- TOC entry 5681 (class 0 OID 0)
--- Dependencies: 244
 -- Name: COLUMN "event-assertion"."assertionRemarks"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2755,7 +2193,6 @@ COMMENT ON COLUMN public."event-assertion"."assertionRemarks" IS 'Comments or no
 
 
 --
--- TOC entry 245 (class 1259 OID 176866)
 -- Name: event-citation; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -2780,8 +2217,6 @@ CREATE TABLE public."event-citation" (
 ALTER TABLE public."event-citation" OWNER TO postgres;
 
 --
--- TOC entry 5682 (class 0 OID 0)
--- Dependencies: 245
 -- Name: TABLE "event-citation"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2789,8 +2224,6 @@ COMMENT ON TABLE public."event-citation" IS 'Comments or notes about a Citation.
 
 
 --
--- TOC entry 5683 (class 0 OID 0)
--- Dependencies: 245
 -- Name: COLUMN "event-citation"."citationID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2798,8 +2231,6 @@ COMMENT ON COLUMN public."event-citation"."citationID" IS 'An identifier for a C
 
 
 --
--- TOC entry 5684 (class 0 OID 0)
--- Dependencies: 245
 -- Name: COLUMN "event-citation"."eventID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2807,8 +2238,6 @@ COMMENT ON COLUMN public."event-citation"."eventID" IS 'An identifier for a dwc:
 
 
 --
--- TOC entry 5685 (class 0 OID 0)
--- Dependencies: 245
 -- Name: COLUMN "event-citation"."citationType"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2816,8 +2245,6 @@ COMMENT ON COLUMN public."event-citation"."citationType" IS 'The category that b
 
 
 --
--- TOC entry 5686 (class 0 OID 0)
--- Dependencies: 245
 -- Name: COLUMN "event-citation"."citationTypeIRI"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2825,8 +2252,6 @@ COMMENT ON COLUMN public."event-citation"."citationTypeIRI" IS 'The IRI of the c
 
 
 --
--- TOC entry 5687 (class 0 OID 0)
--- Dependencies: 245
 -- Name: COLUMN "event-citation"."citationTypeVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2834,8 +2259,6 @@ COMMENT ON COLUMN public."event-citation"."citationTypeVocabulary" IS 'The refer
 
 
 --
--- TOC entry 5688 (class 0 OID 0)
--- Dependencies: 245
 -- Name: COLUMN "event-citation"."bibliographicCitation"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2843,8 +2266,6 @@ COMMENT ON COLUMN public."event-citation"."bibliographicCitation" IS 'A bibliogr
 
 
 --
--- TOC entry 5689 (class 0 OID 0)
--- Dependencies: 245
 -- Name: COLUMN "event-citation"."pageNumber"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2852,8 +2273,6 @@ COMMENT ON COLUMN public."event-citation"."pageNumber" IS 'The number of the pag
 
 
 --
--- TOC entry 5690 (class 0 OID 0)
--- Dependencies: 245
 -- Name: COLUMN "event-citation"."referenceID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2861,8 +2280,6 @@ COMMENT ON COLUMN public."event-citation"."referenceID" IS 'An identifier for th
 
 
 --
--- TOC entry 5691 (class 0 OID 0)
--- Dependencies: 245
 -- Name: COLUMN "event-citation"."referenceType"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2870,8 +2287,6 @@ COMMENT ON COLUMN public."event-citation"."referenceType" IS 'The category that 
 
 
 --
--- TOC entry 5692 (class 0 OID 0)
--- Dependencies: 245
 -- Name: COLUMN "event-citation"."referenceTypeIRI"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2879,8 +2294,6 @@ COMMENT ON COLUMN public."event-citation"."referenceTypeIRI" IS 'The IRI of the 
 
 
 --
--- TOC entry 5693 (class 0 OID 0)
--- Dependencies: 245
 -- Name: COLUMN "event-citation"."referenceTypeVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2888,8 +2301,6 @@ COMMENT ON COLUMN public."event-citation"."referenceTypeVocabulary" IS 'The refe
 
 
 --
--- TOC entry 5694 (class 0 OID 0)
--- Dependencies: 245
 -- Name: COLUMN "event-citation"."referenceYear"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2897,8 +2308,6 @@ COMMENT ON COLUMN public."event-citation"."referenceYear" IS 'The year the refer
 
 
 --
--- TOC entry 5695 (class 0 OID 0)
--- Dependencies: 245
 -- Name: COLUMN "event-citation"."isPeerReviewed"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2906,8 +2315,6 @@ COMMENT ON COLUMN public."event-citation"."isPeerReviewed" IS 'An indication of 
 
 
 --
--- TOC entry 5696 (class 0 OID 0)
--- Dependencies: 245
 -- Name: COLUMN "event-citation"."citationRemarks"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2915,7 +2322,6 @@ COMMENT ON COLUMN public."event-citation"."citationRemarks" IS 'Comments or note
 
 
 --
--- TOC entry 246 (class 1259 OID 176878)
 -- Name: event-identifier; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -2932,8 +2338,6 @@ CREATE TABLE public."event-identifier" (
 ALTER TABLE public."event-identifier" OWNER TO postgres;
 
 --
--- TOC entry 5697 (class 0 OID 0)
--- Dependencies: 246
 -- Name: TABLE "event-identifier"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2941,8 +2345,6 @@ COMMENT ON TABLE public."event-identifier" IS 'A language in which an Identifier
 
 
 --
--- TOC entry 5698 (class 0 OID 0)
--- Dependencies: 246
 -- Name: COLUMN "event-identifier".identifier; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2950,8 +2352,6 @@ COMMENT ON COLUMN public."event-identifier".identifier IS 'An unambiguous refere
 
 
 --
--- TOC entry 5699 (class 0 OID 0)
--- Dependencies: 246
 -- Name: COLUMN "event-identifier"."eventID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2959,8 +2359,6 @@ COMMENT ON COLUMN public."event-identifier"."eventID" IS 'An identifier for a dw
 
 
 --
--- TOC entry 5700 (class 0 OID 0)
--- Dependencies: 246
 -- Name: COLUMN "event-identifier"."identifierType"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2968,8 +2366,6 @@ COMMENT ON COLUMN public."event-identifier"."identifierType" IS 'The category or
 
 
 --
--- TOC entry 5701 (class 0 OID 0)
--- Dependencies: 246
 -- Name: COLUMN "event-identifier"."identifierTypeIRI"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2977,8 +2373,6 @@ COMMENT ON COLUMN public."event-identifier"."identifierTypeIRI" IS 'The IRI of t
 
 
 --
--- TOC entry 5702 (class 0 OID 0)
--- Dependencies: 246
 -- Name: COLUMN "event-identifier"."identifierTypeVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2986,8 +2380,6 @@ COMMENT ON COLUMN public."event-identifier"."identifierTypeVocabulary" IS 'The r
 
 
 --
--- TOC entry 5703 (class 0 OID 0)
--- Dependencies: 246
 -- Name: COLUMN "event-identifier"."identifierLanguage"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -2995,7 +2387,6 @@ COMMENT ON COLUMN public."event-identifier"."identifierLanguage" IS 'A language 
 
 
 --
--- TOC entry 247 (class 1259 OID 176888)
 -- Name: event-media; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -3011,8 +2402,6 @@ CREATE TABLE public."event-media" (
 ALTER TABLE public."event-media" OWNER TO postgres;
 
 --
--- TOC entry 5704 (class 0 OID 0)
--- Dependencies: 247
 -- Name: TABLE "event-media"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -3020,8 +2409,6 @@ COMMENT ON TABLE public."event-media" IS 'Any vocabulary or formal classificatio
 
 
 --
--- TOC entry 5705 (class 0 OID 0)
--- Dependencies: 247
 -- Name: COLUMN "event-media"."mediaID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -3029,8 +2416,6 @@ COMMENT ON COLUMN public."event-media"."mediaID" IS 'An identifier for a Media i
 
 
 --
--- TOC entry 5706 (class 0 OID 0)
--- Dependencies: 247
 -- Name: COLUMN "event-media"."eventID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -3038,8 +2423,6 @@ COMMENT ON COLUMN public."event-media"."eventID" IS 'An identifier for a dwc:Eve
 
 
 --
--- TOC entry 5707 (class 0 OID 0)
--- Dependencies: 247
 -- Name: COLUMN "event-media"."mediaSubjectCategory"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -3047,8 +2430,6 @@ COMMENT ON COLUMN public."event-media"."mediaSubjectCategory" IS 'A term to desc
 
 
 --
--- TOC entry 5708 (class 0 OID 0)
--- Dependencies: 247
 -- Name: COLUMN "event-media"."mediaSubjectCategoryIRI"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -3056,8 +2437,6 @@ COMMENT ON COLUMN public."event-media"."mediaSubjectCategoryIRI" IS 'The IRI of 
 
 
 --
--- TOC entry 5709 (class 0 OID 0)
--- Dependencies: 247
 -- Name: COLUMN "event-media"."mediaSubjectCategoryVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -3065,7 +2444,6 @@ COMMENT ON COLUMN public."event-media"."mediaSubjectCategoryVocabulary" IS 'Any 
 
 
 --
--- TOC entry 248 (class 1259 OID 176903)
 -- Name: event-protocol; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -3078,8 +2456,6 @@ CREATE TABLE public."event-protocol" (
 ALTER TABLE public."event-protocol" OWNER TO postgres;
 
 --
--- TOC entry 5710 (class 0 OID 0)
--- Dependencies: 248
 -- Name: TABLE "event-protocol"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -3087,8 +2463,6 @@ COMMENT ON TABLE public."event-protocol" IS 'An identifier for a dwc:Event.';
 
 
 --
--- TOC entry 5711 (class 0 OID 0)
--- Dependencies: 248
 -- Name: COLUMN "event-protocol"."protocolID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -3096,8 +2470,6 @@ COMMENT ON COLUMN public."event-protocol"."protocolID" IS 'An identifier for a P
 
 
 --
--- TOC entry 5712 (class 0 OID 0)
--- Dependencies: 248
 -- Name: COLUMN "event-protocol"."eventID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -3105,17 +2477,1079 @@ COMMENT ON COLUMN public."event-protocol"."eventID" IS 'An identifier for a dwc:
 
 
 --
--- TOC entry 224 (class 1259 OID 176534)
+-- Name: genetic-analysis; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public."genetic-analysis" (
+    "geneticAnalysisID" text NOT NULL,
+    "eventID" text NOT NULL,
+    "geneticProtocolID" text NOT NULL,
+    "geneticSequenceID" text,
+    "materialEntityID" text,
+    "readCount" integer,
+    "totalReadCount" integer
+);
+
+
+ALTER TABLE public."genetic-analysis" OWNER TO postgres;
+
+--
+-- Name: TABLE "genetic-analysis"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON TABLE public."genetic-analysis" IS 'The total number of reads in the analysis.';
+
+
+--
+-- Name: COLUMN "genetic-analysis"."geneticAnalysisID"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-analysis"."geneticAnalysisID" IS 'An identifier for a GeneticAnalysis.';
+
+
+--
+-- Name: COLUMN "genetic-analysis"."eventID"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-analysis"."eventID" IS 'An identifier for an Event.';
+
+
+--
+-- Name: COLUMN "genetic-analysis"."geneticProtocolID"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-analysis"."geneticProtocolID" IS 'An identifier for a GeneticProtocol.';
+
+
+--
+-- Name: COLUMN "genetic-analysis"."geneticSequenceID"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-analysis"."geneticSequenceID" IS 'An identifier for a GeneticSequence.';
+
+
+--
+-- Name: COLUMN "genetic-analysis"."materialEntityID"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-analysis"."materialEntityID" IS 'An identifier for a MaterialEntity.';
+
+
+--
+-- Name: COLUMN "genetic-analysis"."readCount"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-analysis"."readCount" IS 'The number of reads for the sequence in the analysis.';
+
+
+--
+-- Name: COLUMN "genetic-analysis"."totalReadCount"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-analysis"."totalReadCount" IS 'The total number of reads in the analysis.';
+
+
+--
+-- Name: genetic-protocol; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public."genetic-protocol" (
+    "geneticProtocolID" text NOT NULL,
+    samp_name text,
+    project_name text,
+    experimental_factor text,
+    samp_taxon_id text,
+    neg_cont_type text,
+    pos_cont_type text,
+    env_broad_scale text,
+    env_local_scale text,
+    env_medium text,
+    subspecf_gen_lin text,
+    ploidy text,
+    num_replicons text,
+    extrachrom_elements text,
+    estimated_size text,
+    ref_biomaterial text,
+    source_mat_id text,
+    pathogenicity text,
+    biotic_relationship text,
+    specific_host text,
+    host_spec_range text,
+    host_disease_stat text,
+    trophic_level text,
+    propagation text,
+    encoded_traits text,
+    rel_to_oxygen text,
+    isol_growth_condt text,
+    samp_collec_device text,
+    samp_collec_method text,
+    samp_mat_process text,
+    size_frac text,
+    samp_size text,
+    samp_vol_we_dna_ext text,
+    source_uvig text,
+    virus_enrich_appr text,
+    nucl_acid_ext text,
+    nucl_acid_amp text,
+    lib_size text,
+    lib_reads_seqd text,
+    lib_layout text,
+    lib_vector text,
+    lib_screen text,
+    target_gene text,
+    target_subfragment text,
+    pcr_primers text,
+    mid text,
+    adapters text,
+    pcr_cond text,
+    seq_meth text,
+    seq_quality_check text,
+    chimera_check text,
+    tax_ident text,
+    assembly_qual text,
+    assembly_name text,
+    assembly_software text,
+    annot text,
+    number_contig text,
+    feat_pred text,
+    ref_db text,
+    sim_search_meth text,
+    tax_class text,
+    _16s_recover text,
+    _16s_recover_software text,
+    trnas text,
+    trna_ext_software text,
+    compl_score text,
+    compl_software text,
+    compl_appr text,
+    contam_score text,
+    contam_screen_input text,
+    contam_screen_param text,
+    decontam_software text,
+    sort_tech text,
+    single_cell_lysis_appr text,
+    single_cell_lysis_prot text,
+    wga_amp_appr text,
+    wga_amp_kit text,
+    bin_param text,
+    bin_software text,
+    reassembly_bin text,
+    mag_cov_software text,
+    vir_ident_software text,
+    pred_genome_type text,
+    pred_genome_struc text,
+    detec_type text,
+    otu_class_appr text,
+    otu_seq_comp_appr text,
+    otu_db text,
+    host_pred_appr text,
+    host_pred_est_acc text,
+    url text,
+    sop text,
+    pcr_primer_forward text,
+    pcr_primer_reverse text,
+    pcr_primer_name_forward text,
+    pcr_primer_name_reverse text,
+    pcr_primer_reference text,
+    "DNA_sequence" text,
+    concentration text,
+    "concentrationUnit" text,
+    "methodDeterminationConcentrationAndRatios" text,
+    "ratioOfAbsorbance260_230" text,
+    "ratioOfAbsorbance260_280" text,
+    "annealingTemp" text,
+    "annealingTempUnit" text,
+    "probeReporter" text,
+    "probeQuencher" text,
+    "ampliconSize" text,
+    "thresholdQuantificationCycle" text,
+    "baselineValue" text,
+    "quantificationCycle" text,
+    "automaticThresholdQuantificationCycle" text,
+    "automaticBaselineValue" text,
+    "contaminationAssessment" text,
+    "partitionVolume" text,
+    "partitionVolumeUnit" text,
+    "estimatedNumberOfCopies" text,
+    "amplificationReactionVolume" text,
+    "amplificationReactionVolumeUnit" text,
+    pcr_analysis_software text,
+    "experimentalVariance" text,
+    pcr_primer_lod text,
+    pcr_primer_loq text
+);
+
+
+ALTER TABLE public."genetic-protocol" OWNER TO postgres;
+
+--
+-- Name: TABLE "genetic-protocol"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON TABLE public."genetic-protocol" IS 'The assay’s ability to quantify copy number at low levels.';
+
+
+--
+-- Name: COLUMN "genetic-protocol"."geneticProtocolID"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol"."geneticProtocolID" IS 'An identifier for a GeneticProtocol.';
+
+
+--
+-- Name: COLUMN "genetic-protocol".samp_name; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".samp_name IS 'Sample Name is a name that you choose for the sample. It can have any format, but we suggest that you make it concise, unique and consistent within your lab, and as informative as possible. Every Sample Name from a single Submitter must be unique. ';
+
+
+--
+-- Name: COLUMN "genetic-protocol".project_name; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".project_name IS 'Name of the project within which the sequencing was organized';
+
+
+--
+-- Name: COLUMN "genetic-protocol".experimental_factor; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".experimental_factor IS 'Experimental factors are essentially the variable aspects of an experiment design which can be used to describe an experiment, or set of experiments, in an increasingly detailed manner. This field accepts ontology terms from Experimental Factor Ontology (EFO) and/or Ontology for Biomedical Investigations (OBI). For a browser of EFO (v 2.95) terms, please see http://purl.bioontology.org/ontology/EFO; for a browser of OBI (v 2018-02-12) terms please see http://purl.bioontology.org/ontology/OBI';
+
+
+--
+-- Name: COLUMN "genetic-protocol".samp_taxon_id; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".samp_taxon_id IS 'NCBI taxon id of the sample. Maybe be a single taxon or mixed taxa sample. Use "synthetic metagenome" for mock community/positive controls, or "blank sample" for negative controls';
+
+
+--
+-- Name: COLUMN "genetic-protocol".neg_cont_type; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".neg_cont_type IS 'The substance or equipment used as a negative control in an investigation';
+
+
+--
+-- Name: COLUMN "genetic-protocol".pos_cont_type; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".pos_cont_type IS 'The substance, mixture, product, or apparatus used to verify that a process which is part of an investigation delivers a true positive';
+
+
+--
+-- Name: COLUMN "genetic-protocol".env_broad_scale; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".env_broad_scale IS 'In this field, report which major environmental system your sample or specimen came from. The systems identified should have a coarse spatial grain, to provide the general environmental context of where the sampling was done (e.g. were you in the desert or a rainforest?). We recommend using subclasses of ENVO’s biome class: http://purl.obolibrary.org/obo/ENVO_00000428. Format (one term): termLabel [termID], Format (multiple terms): termLabel [termID]|termLabel [termID]|termLabel [termID]. Example: Annotating a water sample from the photic zone in middle of the Atlantic Ocean, consider: oceanic epipelagic zone biome [ENVO:01000033]. Example: Annotating a sample from the Amazon rainforest consider: tropical moist broadleaf forest biome [ENVO:01000228]. If needed, request new terms on the ENVO tracker, identified here: http://www.obofoundry.org/ontology/envo.html';
+
+
+--
+-- Name: COLUMN "genetic-protocol".env_local_scale; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".env_local_scale IS 'In this field, report the entity or entities which are in your sample or specimen’s local vicinity and which you believe have significant causal influences on your sample or specimen. Please use terms that are present in ENVO and which are of smaller spatial grain than your entry for env_broad_scale. Format (one term): termLabel [termID]; Format (multiple terms): termLabel [termID]|termLabel [termID]|termLabel [termID]. Example: Annotating a pooled sample taken from various vegetation layers in a forest consider: canopy [ENVO:00000047]|herb and fern layer [ENVO:01000337]|litter layer [ENVO:01000338]|understory [01000335]|shrub layer [ENVO:01000336]. If needed, request new terms on the ENVO tracker, identified here: http://www.obofoundry.org/ontology/envo.html';
+
+
+--
+-- Name: COLUMN "genetic-protocol".env_medium; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".env_medium IS 'In this field, report which environmental material or materials (pipe separated) immediately surrounded your sample or specimen prior to sampling, using one or more subclasses of ENVO’s environmental material class: http://purl.obolibrary.org/obo/ENVO_00010483. Format (one term): termLabel [termID]; Format (multiple terms): termLabel [termID]|termLabel [termID]|termLabel [termID]. Example: Annotating a fish swimming in the upper 100 m of the Atlantic Ocean, consider: ocean water [ENVO:00002151]. Example: Annotating a duck on a pond consider: pond water [ENVO:00002228]|air ENVO_00002005. If needed, request new terms on the ENVO tracker, identified here: http://www.obofoundry.org/ontology/envo.html';
+
+
+--
+-- Name: COLUMN "genetic-protocol".subspecf_gen_lin; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".subspecf_gen_lin IS 'This should provide further information about the genetic distinctness of the sequenced organism by recording additional information e.g. serovar, serotype, biotype, ecotype, or any relevant genetic typing schemes like Group I plasmid. It can also contain alternative taxonomic information. It should contain both the lineage name, and the lineage rank, i.e. biovar:abc123';
+
+
+--
+-- Name: COLUMN "genetic-protocol".ploidy; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".ploidy IS 'The ploidy level of the genome (e.g. allopolyploid, haploid, diploid, triploid, tetraploid). It has implications for the downstream study of duplicated gene and regions of the genomes (and perhaps for difficulties in assembly). For terms, please select terms listed under class ploidy (PATO:001374) of Phenotypic Quality Ontology (PATO), and for a browser of PATO (v 2018-03-27) please refer to http://purl.bioontology.org/ontology/PATO';
+
+
+--
+-- Name: COLUMN "genetic-protocol".num_replicons; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".num_replicons IS 'Reports the number of replicons in a nuclear genome of eukaryotes, in the genome of a bacterium or archaea or the number of segments in a segmented virus. Always applied to the haploid chromosome count of a eukaryote';
+
+
+--
+-- Name: COLUMN "genetic-protocol".extrachrom_elements; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".extrachrom_elements IS 'Do plasmids exist of significant phenotypic consequence (e.g. ones that determine virulence or antibiotic resistance). Megaplasmids? Other plasmids (borrelia has 15+ plasmids)';
+
+
+--
+-- Name: COLUMN "genetic-protocol".estimated_size; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".estimated_size IS 'The estimated size of the genome prior to sequencing. Of particular importance in the sequencing of (eukaryotic) genome which could remain in draft form for a long or unspecified period.';
+
+
+--
+-- Name: COLUMN "genetic-protocol".ref_biomaterial; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".ref_biomaterial IS 'Primary publication if isolated before genome publication; otherwise, primary genome report';
+
+
+--
+-- Name: COLUMN "genetic-protocol".source_mat_id; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".source_mat_id IS 'A unique identifier assigned to a material sample (as defined by http://rs.tdwg.org/dwc/terms/materialSampleID, and as opposed to a particular digital record of a material sample) used for extracting nucleic acids, and subsequent sequencing. The identifier can refer either to the original material collected or to any derived sub-samples. The INSDC qualifiers /specimen_voucher, /bio_material, or /culture_collection may or may not share the same value as the source_mat_id field. For instance, the /specimen_voucher qualifier and source_mat_id may both contain ´UAM:Herps:14´ , referring to both the specimen voucher and sampled tissue with the same identifier. However, the /culture_collection qualifier may refer to a value from an initial culture (e.g. ATCC:11775) while source_mat_id would refer to an identifier from some derived culture from which the nucleic acids were extracted (e.g. xatc123 or ark:/2154/R2).';
+
+
+--
+-- Name: COLUMN "genetic-protocol".pathogenicity; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".pathogenicity IS 'To what is the entity pathogenic';
+
+
+--
+-- Name: COLUMN "genetic-protocol".biotic_relationship; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".biotic_relationship IS 'Description of relationship(s) between the subject organism and other organism(s) it is associated with. E.g., parasite on species X; mutualist with species Y. The target organism is the subject of the relationship, and the other organism(s) is the object';
+
+
+--
+-- Name: COLUMN "genetic-protocol".specific_host; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".specific_host IS 'If there is a host involved, please provide its taxid (or environmental if not actually isolated from the dead or alive host - i.e. a pathogen could be isolated from a swipe of a bench etc) and report whether it is a laboratory or natural host)';
+
+
+--
+-- Name: COLUMN "genetic-protocol".host_spec_range; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".host_spec_range IS 'The NCBI taxonomy identifier of the specific host if it is known';
+
+
+--
+-- Name: COLUMN "genetic-protocol".host_disease_stat; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".host_disease_stat IS 'List of diseases with which the host has been diagnosed; can include multiple diagnoses. The value of the field depends on host; for humans the terms should be chosen from the DO (Human Disease Ontology) at https://www.disease-ontology.org, non-human host diseases are free text';
+
+
+--
+-- Name: COLUMN "genetic-protocol".trophic_level; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".trophic_level IS 'Trophic levels are the feeding position in a food chain. Microbes can be a range of producers (e.g. chemolithotroph)';
+
+
+--
+-- Name: COLUMN "genetic-protocol".propagation; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".propagation IS 'This field is specific to different taxa. For phages: lytic/lysogenic, for plasmids: incompatibility group, for eukaryotes: sexual/asexual (Note: there is the strong opinion to name phage propagation obligately lytic or temperate, therefore we also give this choice';
+
+
+--
+-- Name: COLUMN "genetic-protocol".encoded_traits; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".encoded_traits IS 'Should include key traits like antibiotic resistance or xenobiotic degradation phenotypes for plasmids, converting genes for phage';
+
+
+--
+-- Name: COLUMN "genetic-protocol".rel_to_oxygen; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".rel_to_oxygen IS 'Is this organism an aerobe, anaerobe? Please note that aerobic and anaerobic are valid descriptors for microbial environments';
+
+
+--
+-- Name: COLUMN "genetic-protocol".isol_growth_condt; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".isol_growth_condt IS 'Publication reference in the form of pubmed ID (pmid), digital object identifier (doi) or url for isolation and growth condition specifications of the organism/material';
+
+
+--
+-- Name: COLUMN "genetic-protocol".samp_collec_device; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".samp_collec_device IS 'The device used to collect an environmental sample. This field accepts terms listed under environmental sampling device (http://purl.obolibrary.org/obo/ENVO). This field also accepts terms listed under specimen collection device (http://purl.obolibrary.org/obo/GENEPIO_0002094).';
+
+
+--
+-- Name: COLUMN "genetic-protocol".samp_collec_method; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".samp_collec_method IS 'The method employed for collecting the sample';
+
+
+--
+-- Name: COLUMN "genetic-protocol".samp_mat_process; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".samp_mat_process IS 'Any processing applied to the sample during or after retrieving the sample from environment. This field accepts OBI, for a browser of OBI (v 2018-02-12) terms please see http://purl.bioontology.org/ontology/OBI';
+
+
+--
+-- Name: COLUMN "genetic-protocol".size_frac; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".size_frac IS 'Filtering pore size used in sample preparation';
+
+
+--
+-- Name: COLUMN "genetic-protocol".samp_size; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".samp_size IS 'Amount or size of sample (volume, mass or area) that was collected';
+
+
+--
+-- Name: COLUMN "genetic-protocol".samp_vol_we_dna_ext; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".samp_vol_we_dna_ext IS 'Volume (ml) or mass (g) of total collected sample processed for DNA extraction. Note: total sample collected should be entered under the term Sample Size (MIXS:0000001).';
+
+
+--
+-- Name: COLUMN "genetic-protocol".source_uvig; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".source_uvig IS 'Type of dataset from which the UViG was obtained';
+
+
+--
+-- Name: COLUMN "genetic-protocol".virus_enrich_appr; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".virus_enrich_appr IS 'List of approaches used to enrich the sample for viruses, if any';
+
+
+--
+-- Name: COLUMN "genetic-protocol".nucl_acid_ext; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".nucl_acid_ext IS 'A link to a literature reference, electronic resource or a standard operating procedure (SOP), that describes the material separation to recover the nucleic acid fraction from a sample';
+
+
+--
+-- Name: COLUMN "genetic-protocol".nucl_acid_amp; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".nucl_acid_amp IS 'A link to a literature reference, electronic resource or a standard operating procedure (SOP), that describes the enzymatic amplification (PCR, TMA, NASBA) of specific nucleic acids';
+
+
+--
+-- Name: COLUMN "genetic-protocol".lib_size; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".lib_size IS 'Total number of clones in the library prepared for the project';
+
+
+--
+-- Name: COLUMN "genetic-protocol".lib_reads_seqd; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".lib_reads_seqd IS 'Total number of clones sequenced from the library';
+
+
+--
+-- Name: COLUMN "genetic-protocol".lib_layout; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".lib_layout IS 'Specify whether to expect single, paired, or other configuration of reads';
+
+
+--
+-- Name: COLUMN "genetic-protocol".lib_vector; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".lib_vector IS 'Cloning vector type(s) used in construction of libraries';
+
+
+--
+-- Name: COLUMN "genetic-protocol".lib_screen; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".lib_screen IS 'Specific enrichment or screening methods applied before and/or after creating libraries';
+
+
+--
+-- Name: COLUMN "genetic-protocol".target_gene; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".target_gene IS 'Targeted gene or locus name for marker gene studies';
+
+
+--
+-- Name: COLUMN "genetic-protocol".target_subfragment; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".target_subfragment IS 'Name of subfragment of a gene or locus. Important to e.g. identify special regions on marker genes like V6 on 16S rRNA';
+
+
+--
+-- Name: COLUMN "genetic-protocol".pcr_primers; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".pcr_primers IS 'PCR primers that were used to amplify the sequence of the targeted gene, locus or subfragment. This field should contain all the primers used for a single PCR reaction if multiple forward or reverse primers are present in a single PCR reaction. The primer sequence should be reported in uppercase letters';
+
+
+--
+-- Name: COLUMN "genetic-protocol".mid; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".mid IS 'Molecular barcodes, called Multiplex Identifiers (MIDs), that are used to specifically tag unique samples in a sequencing run. Sequence should be reported in uppercase letters';
+
+
+--
+-- Name: COLUMN "genetic-protocol".adapters; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".adapters IS 'Adapters provide priming sequences for both amplification and sequencing of the sample-library fragments. Both adapters should be reported; in uppercase letters';
+
+
+--
+-- Name: COLUMN "genetic-protocol".pcr_cond; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".pcr_cond IS 'Description of reaction conditions and components of PCR in the form of ´initial denaturation:94degC_1.5min; annealing=...´';
+
+
+--
+-- Name: COLUMN "genetic-protocol".seq_meth; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".seq_meth IS 'Sequencing method used; e.g. Sanger, ABI-solid';
+
+
+--
+-- Name: COLUMN "genetic-protocol".seq_quality_check; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".seq_quality_check IS 'Indicate if the sequence has been called by automatic systems (none) or undergone a manual editing procedure (e.g. by inspecting the raw data or chromatograms). Applied only for sequences that are not submitted to SRA,ENA or DRA';
+
+
+--
+-- Name: COLUMN "genetic-protocol".chimera_check; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".chimera_check IS 'A chimeric sequence, or chimera for short, is a sequence comprised of two or more phylogenetically distinct parent sequences. Chimeras are usually PCR artifacts thought to occur when a prematurely terminated amplicon reanneals to a foreign DNA strand and is copied to completion in the following PCR cycles. The point at which the chimeric sequence changes from one parent to the next is called the breakpoint or conversion point';
+
+
+--
+-- Name: COLUMN "genetic-protocol".tax_ident; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".tax_ident IS 'The phylogenetic marker(s) used to assign an organism name to the SAG or MAG';
+
+
+--
+-- Name: COLUMN "genetic-protocol".assembly_qual; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".assembly_qual IS 'The assembly quality category is based on sets of criteria outlined for each assembly quality category. For MISAG/MIMAG; Finished: Single, validated, contiguous sequence per replicon without gaps or ambiguities with a consensus error rate equivalent to Q50 or better. High Quality Draft:Multiple fragments where gaps span repetitive regions. Presence of the 23S, 16S and 5S rRNA genes and at least 18 tRNAs. Medium Quality Draft:Many fragments with little to no review of assembly other than reporting of standard assembly statistics. Low Quality Draft:Many fragments with little to no review of assembly other than reporting of standard assembly statistics. Assembly statistics include, but are not limited to total assembly size, number of contigs, contig N50/L50, and maximum contig length. For MIUVIG; Finished: Single, validated, contiguous sequence per replicon without gaps or ambiguities, with extensive manual review and editing to annotate putative gene functions and transcriptional units. High-quality draft genome: One or multiple fragments, totaling ≥ 90% of the expected genome or replicon sequence or predicted complete. Genome fragment(s): One or multiple fragments, totalling < 90% of the expected genome or replicon sequence, or for which no genome size could be estimated';
+
+
+--
+-- Name: COLUMN "genetic-protocol".assembly_name; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".assembly_name IS 'Name/version of the assembly provided by the submitter that is used in the genome browsers and in the community';
+
+
+--
+-- Name: COLUMN "genetic-protocol".assembly_software; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".assembly_software IS 'Tool(s) used for assembly, including version number and parameters';
+
+
+--
+-- Name: COLUMN "genetic-protocol".annot; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".annot IS 'Tool used for annotation, or for cases where annotation was provided by a community jamboree or model organism database rather than by a specific submitter';
+
+
+--
+-- Name: COLUMN "genetic-protocol".number_contig; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".number_contig IS 'Total number of contigs in the cleaned/submitted assembly that makes up a given genome, SAG, MAG, or UViG';
+
+
+--
+-- Name: COLUMN "genetic-protocol".feat_pred; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".feat_pred IS 'Method used to predict UViGs features such as ORFs, integration site, etc.';
+
+
+--
+-- Name: COLUMN "genetic-protocol".ref_db; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".ref_db IS 'List of database(s) used for ORF annotation, along with version number and reference to website or publication';
+
+
+--
+-- Name: COLUMN "genetic-protocol".sim_search_meth; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".sim_search_meth IS 'Tool used to compare ORFs with database, along with version and cutoffs used';
+
+
+--
+-- Name: COLUMN "genetic-protocol".tax_class; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".tax_class IS 'Method used for taxonomic classification, along with reference database used, classification rank, and thresholds used to classify new genomes';
+
+
+--
+-- Name: COLUMN "genetic-protocol"._16s_recover; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol"._16s_recover IS 'Can a 16S gene be recovered from the submitted SAG or MAG?';
+
+
+--
+-- Name: COLUMN "genetic-protocol"._16s_recover_software; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol"._16s_recover_software IS 'Tools used for 16S rRNA gene extraction';
+
+
+--
+-- Name: COLUMN "genetic-protocol".trnas; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".trnas IS 'The total number of tRNAs identified from the SAG or MAG';
+
+
+--
+-- Name: COLUMN "genetic-protocol".trna_ext_software; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".trna_ext_software IS 'Tools used for tRNA identification';
+
+
+--
+-- Name: COLUMN "genetic-protocol".compl_score; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".compl_score IS 'Completeness score is typically based on either the fraction of markers found as compared to a database or the percent of a genome found as compared to a closely related reference genome. High Quality Draft: >90%, Medium Quality Draft: >50%, and Low Quality Draft: < 50% should have the indicated completeness scores';
+
+
+--
+-- Name: COLUMN "genetic-protocol".compl_software; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".compl_software IS 'Tools used for completion estimate, i.e. checkm, anvi´o, busco';
+
+
+--
+-- Name: COLUMN "genetic-protocol".compl_appr; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".compl_appr IS 'The approach used to determine the completeness of a given SAG or MAG, which would typically make use of a set of conserved marker genes or a closely related reference genome. For UViG completeness, include reference genome or group used, and contig feature suggesting a complete genome';
+
+
+--
+-- Name: COLUMN "genetic-protocol".contam_score; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".contam_score IS 'The contamination score is based on the fraction of single-copy genes that are observed more than once in a query genome. The following scores are acceptable for; High Quality Draft: < 5%, Medium Quality Draft: < 10%, Low Quality Draft: < 10%. Contamination must be below 5% for a SAG or MAG to be deposited into any of the public databases';
+
+
+--
+-- Name: COLUMN "genetic-protocol".contam_screen_input; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".contam_screen_input IS 'The type of sequence data used as input';
+
+
+--
+-- Name: COLUMN "genetic-protocol".contam_screen_param; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".contam_screen_param IS 'Specific parameters used in the decontamination sofware, such as reference database, coverage, and kmers. Combinations of these parameters may also be used, i.e. kmer and coverage, or reference database and kmer';
+
+
+--
+-- Name: COLUMN "genetic-protocol".decontam_software; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".decontam_software IS 'Tool(s) used in contamination screening';
+
+
+--
+-- Name: COLUMN "genetic-protocol".sort_tech; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".sort_tech IS 'Method used to sort/isolate cells or particles of interest';
+
+
+--
+-- Name: COLUMN "genetic-protocol".single_cell_lysis_appr; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".single_cell_lysis_appr IS 'Method used to free DNA from interior of the cell(s) or particle(s)';
+
+
+--
+-- Name: COLUMN "genetic-protocol".single_cell_lysis_prot; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".single_cell_lysis_prot IS 'Name of the kit or standard protocol used for cell(s) or particle(s) lysis';
+
+
+--
+-- Name: COLUMN "genetic-protocol".wga_amp_appr; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".wga_amp_appr IS 'Method used to amplify genomic DNA in preparation for sequencing';
+
+
+--
+-- Name: COLUMN "genetic-protocol".wga_amp_kit; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".wga_amp_kit IS 'Kit used to amplify genomic DNA in preparation for sequencing';
+
+
+--
+-- Name: COLUMN "genetic-protocol".bin_param; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".bin_param IS 'The parameters that have been applied during the extraction of genomes from metagenomic datasets';
+
+
+--
+-- Name: COLUMN "genetic-protocol".bin_software; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".bin_software IS 'Tool(s) used for the extraction of genomes from metagenomic datasets';
+
+
+--
+-- Name: COLUMN "genetic-protocol".reassembly_bin; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".reassembly_bin IS 'Has an assembly been performed on a genome bin extracted from a metagenomic assembly?';
+
+
+--
+-- Name: COLUMN "genetic-protocol".mag_cov_software; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".mag_cov_software IS 'Tool(s) used to determine the genome coverage if coverage is used as a binning parameter in the extraction of genomes from metagenomic datasets';
+
+
+--
+-- Name: COLUMN "genetic-protocol".vir_ident_software; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".vir_ident_software IS 'Tool(s) used for the identification of UViG as a viral genome, software or protocol name including version number, parameters, and cutoffs used';
+
+
+--
+-- Name: COLUMN "genetic-protocol".pred_genome_type; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".pred_genome_type IS 'Type of genome predicted for the UViG';
+
+
+--
+-- Name: COLUMN "genetic-protocol".pred_genome_struc; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".pred_genome_struc IS 'Expected structure of the viral genome';
+
+
+--
+-- Name: COLUMN "genetic-protocol".detec_type; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".detec_type IS 'Type of UViG detection';
+
+
+--
+-- Name: COLUMN "genetic-protocol".otu_class_appr; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".otu_class_appr IS 'Cutoffs and approach used when clustering new UViGs in "species-level" OTUs. Note that results from standard 95% ANI / 85% AF clustering should be provided alongside OTUS defined from another set of thresholds, even if the latter are the ones primarily used during the analysis';
+
+
+--
+-- Name: COLUMN "genetic-protocol".otu_seq_comp_appr; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".otu_seq_comp_appr IS 'Tool and thresholds used to compare sequences when computing "species-level" OTUs';
+
+
+--
+-- Name: COLUMN "genetic-protocol".otu_db; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".otu_db IS 'Reference database (i.e. sequences not generated as part of the current study) used to cluster new genomes in "species-level" OTUs, if any';
+
+
+--
+-- Name: COLUMN "genetic-protocol".host_pred_appr; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".host_pred_appr IS 'Tool or approach used for host prediction';
+
+
+--
+-- Name: COLUMN "genetic-protocol".host_pred_est_acc; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".host_pred_est_acc IS 'For each tool or approach used for host prediction, estimated false discovery rates should be included, either computed de novo or from the literature';
+
+
+--
+-- Name: COLUMN "genetic-protocol".sop; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".sop IS 'Standard operating procedures used in assembly and/or annotation of genomes, metagenomes or environmental sequences';
+
+
+--
+-- Name: COLUMN "genetic-protocol".pcr_primer_forward; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".pcr_primer_forward IS 'Forward PCR primer that were used to amplify the sequence of the targeted gene, locus or subfragment. If multiple multiple forward or reverse primers are present in a single PCR reaction, there should be a full row for each of these linked to the same DWC Occurrence. The primer sequence should be reported in uppercase letters';
+
+
+--
+-- Name: COLUMN "genetic-protocol".pcr_primer_reverse; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".pcr_primer_reverse IS 'Reverse PCR primer that were used to amplify the sequence of the targeted gene, locus or subfragment. If multiple multiple forward or reverse primers are present in a single PCR reaction, there should be a full row for each of these linked to the same DWC Occurrence. The primer sequence should be reported in uppercase letters';
+
+
+--
+-- Name: COLUMN "genetic-protocol".pcr_primer_name_forward; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".pcr_primer_name_forward IS 'Name of the forward PCR primer that were used to amplify the sequence of the targeted gene, locus or subfragment. If multiple multiple forward or reverse primers are present in a single PCR reaction, there should be a full row for each of these linked to the same DWC Occurrence.';
+
+
+--
+-- Name: COLUMN "genetic-protocol".pcr_primer_name_reverse; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".pcr_primer_name_reverse IS 'Name of the reverse PCR primer that were used to amplify the sequence of the targeted gene, locus or subfragment. If multiple multiple forward or reverse primers are present in a single PCR reaction, there should be a full row for each of these linked to the same DWC Occurrence.';
+
+
+--
+-- Name: COLUMN "genetic-protocol".pcr_primer_reference; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".pcr_primer_reference IS 'Reference for the PCR primers that were used to amplify the sequence of the targeted gene, locus or subfragment.';
+
+
+--
+-- Name: COLUMN "genetic-protocol"."DNA_sequence"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol"."DNA_sequence" IS 'The DNA sequence';
+
+
+--
+-- Name: COLUMN "genetic-protocol".concentration; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".concentration IS 'Concentration of DNA (weight ng/volume µl)';
+
+
+--
+-- Name: COLUMN "genetic-protocol"."concentrationUnit"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol"."concentrationUnit" IS 'Unit used for concentration measurement';
+
+
+--
+-- Name: COLUMN "genetic-protocol"."methodDeterminationConcentrationAndRatios"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol"."methodDeterminationConcentrationAndRatios" IS 'Description of method used for concentration measurement';
+
+
+--
+-- Name: COLUMN "genetic-protocol"."ratioOfAbsorbance260_230"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol"."ratioOfAbsorbance260_230" IS 'Ratio of absorbance at 260 nm and 230 nm assessing DNA purity (mostly secondary measure, indicates mainly EDTA, carbohydrates, phenol), (DNA samples only).';
+
+
+--
+-- Name: COLUMN "genetic-protocol"."ratioOfAbsorbance260_280"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol"."ratioOfAbsorbance260_280" IS 'Ratio of absorbance at 280 nm and 230 nm assessing DNA purity (mostly secondary measure, indicates mainly EDTA, carbohydrates, phenol), (DNA samples only).';
+
+
+--
+-- Name: COLUMN "genetic-protocol"."annealingTemp"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol"."annealingTemp" IS 'The reaction temperature during the annealing phase of PCR.';
+
+
+--
+-- Name: COLUMN "genetic-protocol"."annealingTempUnit"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol"."annealingTempUnit" IS 'Measurement unit of the reaction temperature during the annealing phase of PCR.';
+
+
+--
+-- Name: COLUMN "genetic-protocol"."probeReporter"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol"."probeReporter" IS 'Type of fluorophore (reporter) used. Probe anneals within amplified target DNA. Polymerase activity degrades the probe that has annealed to the template, and the probe releases the fluorophore from it and breaks the proximity to the quencher, thus allowing fluorescence of the fluorophore.';
+
+
+--
+-- Name: COLUMN "genetic-protocol"."probeQuencher"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol"."probeQuencher" IS 'Type of quencher used. The quencher molecule quenches the fluorescence emitted by the fluorophore when excited by the cycler’s light source As long as fluorophore and the quencher are in proximity, quenching inhibits any fluorescence signals.';
+
+
+--
+-- Name: COLUMN "genetic-protocol"."ampliconSize"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol"."ampliconSize" IS 'The length of the amplicon in basepairs.';
+
+
+--
+-- Name: COLUMN "genetic-protocol"."thresholdQuantificationCycle"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol"."thresholdQuantificationCycle" IS 'Threshold for change in fluorescence signal between cycles';
+
+
+--
+-- Name: COLUMN "genetic-protocol"."baselineValue"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol"."baselineValue" IS 'The number of cycles when fluorescence signal from the target amplification is below background fluorescence not originated from the real target amplification.';
+
+
+--
+-- Name: COLUMN "genetic-protocol"."quantificationCycle"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol"."quantificationCycle" IS 'The number of cycles required for the fluorescent signal to cross a given value threshold above the baseline. Quantification cycle (Cq), threshold cycle (Ct), crossing point (Cp), and take-off point (TOP) refer to the same value from the real-time instrument. Use of quantification cycle (Cq), is preferable according to the RDML (Real-Time PCR Data Markup Language) data standard (http://www.rdml.org).';
+
+
+--
+-- Name: COLUMN "genetic-protocol"."automaticThresholdQuantificationCycle"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol"."automaticThresholdQuantificationCycle" IS 'Whether the threshold was set by the instrument or manually.';
+
+
+--
+-- Name: COLUMN "genetic-protocol"."automaticBaselineValue"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol"."automaticBaselineValue" IS 'Whether the baseline value was set by the instrument or manually.';
+
+
+--
+-- Name: COLUMN "genetic-protocol"."contaminationAssessment"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol"."contaminationAssessment" IS 'Whether DNA or RNA contamination assessment was done or not.';
+
+
+--
+-- Name: COLUMN "genetic-protocol"."partitionVolume"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol"."partitionVolume" IS 'An accurate estimation of partition volume. The sum of the partitions multiplied by the partition volume will enable the total volume of the reaction to be calculated.';
+
+
+--
+-- Name: COLUMN "genetic-protocol"."partitionVolumeUnit"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol"."partitionVolumeUnit" IS 'Unit used for partition volume';
+
+
+--
+-- Name: COLUMN "genetic-protocol"."estimatedNumberOfCopies"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol"."estimatedNumberOfCopies" IS 'Number of target molecules per µl. Mean copies per partition (?) can be calculated using the number of partitions (n) and the estimated copy number in the total volume of all partitions (m) with a formula ?=m/n.';
+
+
+--
+-- Name: COLUMN "genetic-protocol"."amplificationReactionVolume"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol"."amplificationReactionVolume" IS 'PCR reaction volume';
+
+
+--
+-- Name: COLUMN "genetic-protocol"."amplificationReactionVolumeUnit"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol"."amplificationReactionVolumeUnit" IS 'Unit used for PCR reaction volume. Many of the instruments require preparation of a much larger initial sample volume than is actually analyzed.';
+
+
+--
+-- Name: COLUMN "genetic-protocol".pcr_analysis_software; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".pcr_analysis_software IS 'The program used to analyse the d(d)PCR runs.';
+
+
+--
+-- Name: COLUMN "genetic-protocol"."experimentalVariance"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol"."experimentalVariance" IS 'Multiple biological replicates are encouraged to assess total experimental variation. When single dPCR experiments are performed, a minimal estimate of variance due to counting error alone must be calculated from the binomial (or suitable equivalent) distribution.';
+
+
+--
+-- Name: COLUMN "genetic-protocol".pcr_primer_lod; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".pcr_primer_lod IS 'The assay’s ability to detect the target at low levels.';
+
+
+--
+-- Name: COLUMN "genetic-protocol".pcr_primer_loq; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."genetic-protocol".pcr_primer_loq IS 'The assay’s ability to quantify copy number at low levels.';
+
+
+--
 -- Name: genetic-sequence; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public."genetic-sequence" (
     "geneticSequenceID" text NOT NULL,
-    "eventID" text NOT NULL,
-    "derivedFromMaterialEntityID" text,
-    "geneticSequenceType" text,
     "geneticSequence" text,
-    "geneticSequenceCitation" text,
     "geneticSequenceRemarks" text
 );
 
@@ -3123,8 +3557,6 @@ CREATE TABLE public."genetic-sequence" (
 ALTER TABLE public."genetic-sequence" OWNER TO postgres;
 
 --
--- TOC entry 5713 (class 0 OID 0)
--- Dependencies: 224
 -- Name: TABLE "genetic-sequence"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -3132,8 +3564,6 @@ COMMENT ON TABLE public."genetic-sequence" IS 'Comments or notes about a Genetic
 
 
 --
--- TOC entry 5714 (class 0 OID 0)
--- Dependencies: 224
 -- Name: COLUMN "genetic-sequence"."geneticSequenceID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -3141,35 +3571,6 @@ COMMENT ON COLUMN public."genetic-sequence"."geneticSequenceID" IS 'An identifie
 
 
 --
--- TOC entry 5715 (class 0 OID 0)
--- Dependencies: 224
--- Name: COLUMN "genetic-sequence"."eventID"; Type: COMMENT; Schema: public; Owner: postgres
---
-
-COMMENT ON COLUMN public."genetic-sequence"."eventID" IS 'An identifier for a dwc:Event.';
-
-
---
--- TOC entry 5716 (class 0 OID 0)
--- Dependencies: 224
--- Name: COLUMN "genetic-sequence"."derivedFromMaterialEntityID"; Type: COMMENT; Schema: public; Owner: postgres
---
-
-COMMENT ON COLUMN public."genetic-sequence"."derivedFromMaterialEntityID" IS 'An identifier for a dwc:MaterialEntity from which this dwc:MaterialEntity was derived.';
-
-
---
--- TOC entry 5717 (class 0 OID 0)
--- Dependencies: 224
--- Name: COLUMN "genetic-sequence"."geneticSequenceType"; Type: COMMENT; Schema: public; Owner: postgres
---
-
-COMMENT ON COLUMN public."genetic-sequence"."geneticSequenceType" IS 'The category that best matches the nature of a GeneticSequence.';
-
-
---
--- TOC entry 5718 (class 0 OID 0)
--- Dependencies: 224
 -- Name: COLUMN "genetic-sequence"."geneticSequence"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -3177,17 +3578,6 @@ COMMENT ON COLUMN public."genetic-sequence"."geneticSequence" IS 'A string repre
 
 
 --
--- TOC entry 5719 (class 0 OID 0)
--- Dependencies: 224
--- Name: COLUMN "genetic-sequence"."geneticSequenceCitation"; Type: COMMENT; Schema: public; Owner: postgres
---
-
-COMMENT ON COLUMN public."genetic-sequence"."geneticSequenceCitation" IS 'A list (concatenated and separated) of identifiers (publication, bibliographic reference, global unique identifier, URI) of literature associated with a GeneticSequence.';
-
-
---
--- TOC entry 5720 (class 0 OID 0)
--- Dependencies: 224
 -- Name: COLUMN "genetic-sequence"."geneticSequenceRemarks"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -3195,7 +3585,6 @@ COMMENT ON COLUMN public."genetic-sequence"."geneticSequenceRemarks" IS 'Comment
 
 
 --
--- TOC entry 249 (class 1259 OID 176918)
 -- Name: genetic-sequence-agent-role; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -3214,8 +3603,6 @@ CREATE TABLE public."genetic-sequence-agent-role" (
 ALTER TABLE public."genetic-sequence-agent-role" OWNER TO postgres;
 
 --
--- TOC entry 5721 (class 0 OID 0)
--- Dependencies: 249
 -- Name: TABLE "genetic-sequence-agent-role"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -3223,8 +3610,6 @@ COMMENT ON TABLE public."genetic-sequence-agent-role" IS 'The interval during wh
 
 
 --
--- TOC entry 5722 (class 0 OID 0)
--- Dependencies: 249
 -- Name: COLUMN "genetic-sequence-agent-role"."agentID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -3232,8 +3617,6 @@ COMMENT ON COLUMN public."genetic-sequence-agent-role"."agentID" IS 'An identifi
 
 
 --
--- TOC entry 5723 (class 0 OID 0)
--- Dependencies: 249
 -- Name: COLUMN "genetic-sequence-agent-role"."geneticSequenceID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -3241,8 +3624,6 @@ COMMENT ON COLUMN public."genetic-sequence-agent-role"."geneticSequenceID" IS 'A
 
 
 --
--- TOC entry 5724 (class 0 OID 0)
--- Dependencies: 249
 -- Name: COLUMN "genetic-sequence-agent-role"."agentRole"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -3250,8 +3631,6 @@ COMMENT ON COLUMN public."genetic-sequence-agent-role"."agentRole" IS 'The categ
 
 
 --
--- TOC entry 5725 (class 0 OID 0)
--- Dependencies: 249
 -- Name: COLUMN "genetic-sequence-agent-role"."agentRoleIRI"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -3259,8 +3638,6 @@ COMMENT ON COLUMN public."genetic-sequence-agent-role"."agentRoleIRI" IS 'The IR
 
 
 --
--- TOC entry 5726 (class 0 OID 0)
--- Dependencies: 249
 -- Name: COLUMN "genetic-sequence-agent-role"."agentRoleVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -3268,8 +3645,6 @@ COMMENT ON COLUMN public."genetic-sequence-agent-role"."agentRoleVocabulary" IS 
 
 
 --
--- TOC entry 5727 (class 0 OID 0)
--- Dependencies: 249
 -- Name: COLUMN "genetic-sequence-agent-role"."agentRoleOrder"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -3277,8 +3652,6 @@ COMMENT ON COLUMN public."genetic-sequence-agent-role"."agentRoleOrder" IS 'The 
 
 
 --
--- TOC entry 5728 (class 0 OID 0)
--- Dependencies: 249
 -- Name: COLUMN "genetic-sequence-agent-role"."agentRoleDate"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -3286,7 +3659,6 @@ COMMENT ON COLUMN public."genetic-sequence-agent-role"."agentRoleDate" IS 'The i
 
 
 --
--- TOC entry 250 (class 1259 OID 176934)
 -- Name: genetic-sequence-assertion; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -3317,8 +3689,6 @@ CREATE TABLE public."genetic-sequence-assertion" (
 ALTER TABLE public."genetic-sequence-assertion" OWNER TO postgres;
 
 --
--- TOC entry 5729 (class 0 OID 0)
--- Dependencies: 250
 -- Name: TABLE "genetic-sequence-assertion"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -3326,8 +3696,6 @@ COMMENT ON TABLE public."genetic-sequence-assertion" IS 'Comments or notes about
 
 
 --
--- TOC entry 5730 (class 0 OID 0)
--- Dependencies: 250
 -- Name: COLUMN "genetic-sequence-assertion"."assertionID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -3335,8 +3703,6 @@ COMMENT ON COLUMN public."genetic-sequence-assertion"."assertionID" IS 'An ident
 
 
 --
--- TOC entry 5731 (class 0 OID 0)
--- Dependencies: 250
 -- Name: COLUMN "genetic-sequence-assertion"."geneticSequenceID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -3344,8 +3710,6 @@ COMMENT ON COLUMN public."genetic-sequence-assertion"."geneticSequenceID" IS 'An
 
 
 --
--- TOC entry 5732 (class 0 OID 0)
--- Dependencies: 250
 -- Name: COLUMN "genetic-sequence-assertion"."assertionType"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -3353,8 +3717,6 @@ COMMENT ON COLUMN public."genetic-sequence-assertion"."assertionType" IS 'The ca
 
 
 --
--- TOC entry 5733 (class 0 OID 0)
--- Dependencies: 250
 -- Name: COLUMN "genetic-sequence-assertion"."assertionTypeIRI"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -3362,8 +3724,6 @@ COMMENT ON COLUMN public."genetic-sequence-assertion"."assertionTypeIRI" IS 'The
 
 
 --
--- TOC entry 5734 (class 0 OID 0)
--- Dependencies: 250
 -- Name: COLUMN "genetic-sequence-assertion"."assertionTypeVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -3371,8 +3731,6 @@ COMMENT ON COLUMN public."genetic-sequence-assertion"."assertionTypeVocabulary" 
 
 
 --
--- TOC entry 5735 (class 0 OID 0)
--- Dependencies: 250
 -- Name: COLUMN "genetic-sequence-assertion"."assertionMadeDate"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -3380,8 +3738,6 @@ COMMENT ON COLUMN public."genetic-sequence-assertion"."assertionMadeDate" IS 'Th
 
 
 --
--- TOC entry 5736 (class 0 OID 0)
--- Dependencies: 250
 -- Name: COLUMN "genetic-sequence-assertion"."assertionEffectiveDate"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -3389,8 +3745,6 @@ COMMENT ON COLUMN public."genetic-sequence-assertion"."assertionEffectiveDate" I
 
 
 --
--- TOC entry 5737 (class 0 OID 0)
--- Dependencies: 250
 -- Name: COLUMN "genetic-sequence-assertion"."assertionValue"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -3398,8 +3752,6 @@ COMMENT ON COLUMN public."genetic-sequence-assertion"."assertionValue" IS 'An as
 
 
 --
--- TOC entry 5738 (class 0 OID 0)
--- Dependencies: 250
 -- Name: COLUMN "genetic-sequence-assertion"."assertionValueIRI"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -3407,8 +3759,6 @@ COMMENT ON COLUMN public."genetic-sequence-assertion"."assertionValueIRI" IS 'Th
 
 
 --
--- TOC entry 5739 (class 0 OID 0)
--- Dependencies: 250
 -- Name: COLUMN "genetic-sequence-assertion"."assertionValueVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -3416,8 +3766,6 @@ COMMENT ON COLUMN public."genetic-sequence-assertion"."assertionValueVocabulary"
 
 
 --
--- TOC entry 5740 (class 0 OID 0)
--- Dependencies: 250
 -- Name: COLUMN "genetic-sequence-assertion"."assertionValueNumeric"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -3425,8 +3773,6 @@ COMMENT ON COLUMN public."genetic-sequence-assertion"."assertionValueNumeric" IS
 
 
 --
--- TOC entry 5741 (class 0 OID 0)
--- Dependencies: 250
 -- Name: COLUMN "genetic-sequence-assertion"."assertionUnit"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -3434,8 +3780,6 @@ COMMENT ON COLUMN public."genetic-sequence-assertion"."assertionUnit" IS 'The un
 
 
 --
--- TOC entry 5742 (class 0 OID 0)
--- Dependencies: 250
 -- Name: COLUMN "genetic-sequence-assertion"."assertionUnitIRI"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -3443,8 +3787,6 @@ COMMENT ON COLUMN public."genetic-sequence-assertion"."assertionUnitIRI" IS 'The
 
 
 --
--- TOC entry 5743 (class 0 OID 0)
--- Dependencies: 250
 -- Name: COLUMN "genetic-sequence-assertion"."assertionUnitVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -3452,8 +3794,6 @@ COMMENT ON COLUMN public."genetic-sequence-assertion"."assertionUnitVocabulary" 
 
 
 --
--- TOC entry 5744 (class 0 OID 0)
--- Dependencies: 250
 -- Name: COLUMN "genetic-sequence-assertion"."assertionBy"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -3461,8 +3801,6 @@ COMMENT ON COLUMN public."genetic-sequence-assertion"."assertionBy" IS 'A list (
 
 
 --
--- TOC entry 5745 (class 0 OID 0)
--- Dependencies: 250
 -- Name: COLUMN "genetic-sequence-assertion"."assertionByID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -3470,8 +3808,6 @@ COMMENT ON COLUMN public."genetic-sequence-assertion"."assertionByID" IS 'An ide
 
 
 --
--- TOC entry 5746 (class 0 OID 0)
--- Dependencies: 250
 -- Name: COLUMN "genetic-sequence-assertion"."assertionProtocol"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -3479,8 +3815,6 @@ COMMENT ON COLUMN public."genetic-sequence-assertion"."assertionProtocol" IS 'Th
 
 
 --
--- TOC entry 5747 (class 0 OID 0)
--- Dependencies: 250
 -- Name: COLUMN "genetic-sequence-assertion"."assertionProtocolID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -3488,8 +3822,6 @@ COMMENT ON COLUMN public."genetic-sequence-assertion"."assertionProtocolID" IS '
 
 
 --
--- TOC entry 5748 (class 0 OID 0)
--- Dependencies: 250
 -- Name: COLUMN "genetic-sequence-assertion"."assertionCitation"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -3497,8 +3829,6 @@ COMMENT ON COLUMN public."genetic-sequence-assertion"."assertionCitation" IS 'A 
 
 
 --
--- TOC entry 5749 (class 0 OID 0)
--- Dependencies: 250
 -- Name: COLUMN "genetic-sequence-assertion"."assertionRemarks"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -3506,7 +3836,6 @@ COMMENT ON COLUMN public."genetic-sequence-assertion"."assertionRemarks" IS 'Com
 
 
 --
--- TOC entry 251 (class 1259 OID 176951)
 -- Name: genetic-sequence-citation; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -3531,8 +3860,6 @@ CREATE TABLE public."genetic-sequence-citation" (
 ALTER TABLE public."genetic-sequence-citation" OWNER TO postgres;
 
 --
--- TOC entry 5750 (class 0 OID 0)
--- Dependencies: 251
 -- Name: TABLE "genetic-sequence-citation"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -3540,8 +3867,6 @@ COMMENT ON TABLE public."genetic-sequence-citation" IS 'Comments or notes about 
 
 
 --
--- TOC entry 5751 (class 0 OID 0)
--- Dependencies: 251
 -- Name: COLUMN "genetic-sequence-citation"."citationID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -3549,8 +3874,6 @@ COMMENT ON COLUMN public."genetic-sequence-citation"."citationID" IS 'An identif
 
 
 --
--- TOC entry 5752 (class 0 OID 0)
--- Dependencies: 251
 -- Name: COLUMN "genetic-sequence-citation"."geneticSequenceID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -3558,8 +3881,6 @@ COMMENT ON COLUMN public."genetic-sequence-citation"."geneticSequenceID" IS 'An 
 
 
 --
--- TOC entry 5753 (class 0 OID 0)
--- Dependencies: 251
 -- Name: COLUMN "genetic-sequence-citation"."citationType"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -3567,8 +3888,6 @@ COMMENT ON COLUMN public."genetic-sequence-citation"."citationType" IS 'The cate
 
 
 --
--- TOC entry 5754 (class 0 OID 0)
--- Dependencies: 251
 -- Name: COLUMN "genetic-sequence-citation"."citationTypeIRI"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -3576,8 +3895,6 @@ COMMENT ON COLUMN public."genetic-sequence-citation"."citationTypeIRI" IS 'The I
 
 
 --
--- TOC entry 5755 (class 0 OID 0)
--- Dependencies: 251
 -- Name: COLUMN "genetic-sequence-citation"."citationTypeVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -3585,8 +3902,6 @@ COMMENT ON COLUMN public."genetic-sequence-citation"."citationTypeVocabulary" IS
 
 
 --
--- TOC entry 5756 (class 0 OID 0)
--- Dependencies: 251
 -- Name: COLUMN "genetic-sequence-citation"."bibliographicCitation"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -3594,8 +3909,6 @@ COMMENT ON COLUMN public."genetic-sequence-citation"."bibliographicCitation" IS 
 
 
 --
--- TOC entry 5757 (class 0 OID 0)
--- Dependencies: 251
 -- Name: COLUMN "genetic-sequence-citation"."pageNumber"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -3603,8 +3916,6 @@ COMMENT ON COLUMN public."genetic-sequence-citation"."pageNumber" IS 'The number
 
 
 --
--- TOC entry 5758 (class 0 OID 0)
--- Dependencies: 251
 -- Name: COLUMN "genetic-sequence-citation"."referenceID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -3612,8 +3923,6 @@ COMMENT ON COLUMN public."genetic-sequence-citation"."referenceID" IS 'An identi
 
 
 --
--- TOC entry 5759 (class 0 OID 0)
--- Dependencies: 251
 -- Name: COLUMN "genetic-sequence-citation"."referenceType"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -3621,8 +3930,6 @@ COMMENT ON COLUMN public."genetic-sequence-citation"."referenceType" IS 'The cat
 
 
 --
--- TOC entry 5760 (class 0 OID 0)
--- Dependencies: 251
 -- Name: COLUMN "genetic-sequence-citation"."referenceTypeIRI"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -3630,8 +3937,6 @@ COMMENT ON COLUMN public."genetic-sequence-citation"."referenceTypeIRI" IS 'The 
 
 
 --
--- TOC entry 5761 (class 0 OID 0)
--- Dependencies: 251
 -- Name: COLUMN "genetic-sequence-citation"."referenceTypeVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -3639,8 +3944,6 @@ COMMENT ON COLUMN public."genetic-sequence-citation"."referenceTypeVocabulary" I
 
 
 --
--- TOC entry 5762 (class 0 OID 0)
--- Dependencies: 251
 -- Name: COLUMN "genetic-sequence-citation"."referenceYear"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -3648,8 +3951,6 @@ COMMENT ON COLUMN public."genetic-sequence-citation"."referenceYear" IS 'The yea
 
 
 --
--- TOC entry 5763 (class 0 OID 0)
--- Dependencies: 251
 -- Name: COLUMN "genetic-sequence-citation"."isPeerReviewed"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -3657,8 +3958,6 @@ COMMENT ON COLUMN public."genetic-sequence-citation"."isPeerReviewed" IS 'An ind
 
 
 --
--- TOC entry 5764 (class 0 OID 0)
--- Dependencies: 251
 -- Name: COLUMN "genetic-sequence-citation"."citationRemarks"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -3666,7 +3965,6 @@ COMMENT ON COLUMN public."genetic-sequence-citation"."citationRemarks" IS 'Comme
 
 
 --
--- TOC entry 252 (class 1259 OID 176963)
 -- Name: genetic-sequence-media; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -3682,8 +3980,6 @@ CREATE TABLE public."genetic-sequence-media" (
 ALTER TABLE public."genetic-sequence-media" OWNER TO postgres;
 
 --
--- TOC entry 5765 (class 0 OID 0)
--- Dependencies: 252
 -- Name: TABLE "genetic-sequence-media"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -3691,8 +3987,6 @@ COMMENT ON TABLE public."genetic-sequence-media" IS 'Any vocabulary or formal cl
 
 
 --
--- TOC entry 5766 (class 0 OID 0)
--- Dependencies: 252
 -- Name: COLUMN "genetic-sequence-media"."mediaID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -3700,8 +3994,6 @@ COMMENT ON COLUMN public."genetic-sequence-media"."mediaID" IS 'An identifier fo
 
 
 --
--- TOC entry 5767 (class 0 OID 0)
--- Dependencies: 252
 -- Name: COLUMN "genetic-sequence-media"."geneticSequenceID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -3709,8 +4001,6 @@ COMMENT ON COLUMN public."genetic-sequence-media"."geneticSequenceID" IS 'An ide
 
 
 --
--- TOC entry 5768 (class 0 OID 0)
--- Dependencies: 252
 -- Name: COLUMN "genetic-sequence-media"."mediaSubjectCategory"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -3718,8 +4008,6 @@ COMMENT ON COLUMN public."genetic-sequence-media"."mediaSubjectCategory" IS 'A t
 
 
 --
--- TOC entry 5769 (class 0 OID 0)
--- Dependencies: 252
 -- Name: COLUMN "genetic-sequence-media"."mediaSubjectCategoryIRI"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -3727,8 +4015,6 @@ COMMENT ON COLUMN public."genetic-sequence-media"."mediaSubjectCategoryIRI" IS '
 
 
 --
--- TOC entry 5770 (class 0 OID 0)
--- Dependencies: 252
 -- Name: COLUMN "genetic-sequence-media"."mediaSubjectCategoryVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -3736,47 +4022,6 @@ COMMENT ON COLUMN public."genetic-sequence-media"."mediaSubjectCategoryVocabular
 
 
 --
--- TOC entry 253 (class 1259 OID 176978)
--- Name: genetic-sequence-protocol; Type: TABLE; Schema: public; Owner: postgres
---
-
-CREATE TABLE public."genetic-sequence-protocol" (
-    "protocolID" text NOT NULL,
-    "geneticSequenceID" text NOT NULL
-);
-
-
-ALTER TABLE public."genetic-sequence-protocol" OWNER TO postgres;
-
---
--- TOC entry 5771 (class 0 OID 0)
--- Dependencies: 253
--- Name: TABLE "genetic-sequence-protocol"; Type: COMMENT; Schema: public; Owner: postgres
---
-
-COMMENT ON TABLE public."genetic-sequence-protocol" IS 'An identifier for a GeneticSequence.';
-
-
---
--- TOC entry 5772 (class 0 OID 0)
--- Dependencies: 253
--- Name: COLUMN "genetic-sequence-protocol"."protocolID"; Type: COMMENT; Schema: public; Owner: postgres
---
-
-COMMENT ON COLUMN public."genetic-sequence-protocol"."protocolID" IS 'An identifier for a Protocol.';
-
-
---
--- TOC entry 5773 (class 0 OID 0)
--- Dependencies: 253
--- Name: COLUMN "genetic-sequence-protocol"."geneticSequenceID"; Type: COMMENT; Schema: public; Owner: postgres
---
-
-COMMENT ON COLUMN public."genetic-sequence-protocol"."geneticSequenceID" IS 'An identifier for a GeneticSequence.';
-
-
---
--- TOC entry 225 (class 1259 OID 176546)
 -- Name: geological-context; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -3806,8 +4051,6 @@ CREATE TABLE public."geological-context" (
 ALTER TABLE public."geological-context" OWNER TO postgres;
 
 --
--- TOC entry 5774 (class 0 OID 0)
--- Dependencies: 225
 -- Name: TABLE "geological-context"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -3815,8 +4058,6 @@ COMMENT ON TABLE public."geological-context" IS 'The full name of the lithostrat
 
 
 --
--- TOC entry 5775 (class 0 OID 0)
--- Dependencies: 225
 -- Name: COLUMN "geological-context"."geologicalContextID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -3824,8 +4065,6 @@ COMMENT ON COLUMN public."geological-context"."geologicalContextID" IS 'An ident
 
 
 --
--- TOC entry 5776 (class 0 OID 0)
--- Dependencies: 225
 -- Name: COLUMN "geological-context"."eventID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -3833,8 +4072,6 @@ COMMENT ON COLUMN public."geological-context"."eventID" IS 'An identifier for a 
 
 
 --
--- TOC entry 5777 (class 0 OID 0)
--- Dependencies: 225
 -- Name: COLUMN "geological-context"."earliestEonOrLowestEonothem"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -3842,8 +4079,6 @@ COMMENT ON COLUMN public."geological-context"."earliestEonOrLowestEonothem" IS '
 
 
 --
--- TOC entry 5778 (class 0 OID 0)
--- Dependencies: 225
 -- Name: COLUMN "geological-context"."latestEonOrHighestEonothem"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -3851,8 +4086,6 @@ COMMENT ON COLUMN public."geological-context"."latestEonOrHighestEonothem" IS 'T
 
 
 --
--- TOC entry 5779 (class 0 OID 0)
--- Dependencies: 225
 -- Name: COLUMN "geological-context"."earliestEraOrLowestErathem"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -3860,8 +4093,6 @@ COMMENT ON COLUMN public."geological-context"."earliestEraOrLowestErathem" IS 'T
 
 
 --
--- TOC entry 5780 (class 0 OID 0)
--- Dependencies: 225
 -- Name: COLUMN "geological-context"."latestEraOrHighestErathem"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -3869,8 +4100,6 @@ COMMENT ON COLUMN public."geological-context"."latestEraOrHighestErathem" IS 'Th
 
 
 --
--- TOC entry 5781 (class 0 OID 0)
--- Dependencies: 225
 -- Name: COLUMN "geological-context"."earliestPeriodOrLowestSystem"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -3878,8 +4107,6 @@ COMMENT ON COLUMN public."geological-context"."earliestPeriodOrLowestSystem" IS 
 
 
 --
--- TOC entry 5782 (class 0 OID 0)
--- Dependencies: 225
 -- Name: COLUMN "geological-context"."latestPeriodOrHighestSystem"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -3887,8 +4114,6 @@ COMMENT ON COLUMN public."geological-context"."latestPeriodOrHighestSystem" IS '
 
 
 --
--- TOC entry 5783 (class 0 OID 0)
--- Dependencies: 225
 -- Name: COLUMN "geological-context"."earliestEpochOrLowestSeries"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -3896,8 +4121,6 @@ COMMENT ON COLUMN public."geological-context"."earliestEpochOrLowestSeries" IS '
 
 
 --
--- TOC entry 5784 (class 0 OID 0)
--- Dependencies: 225
 -- Name: COLUMN "geological-context"."latestEpochOrHighestSeries"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -3905,8 +4128,6 @@ COMMENT ON COLUMN public."geological-context"."latestEpochOrHighestSeries" IS 'T
 
 
 --
--- TOC entry 5785 (class 0 OID 0)
--- Dependencies: 225
 -- Name: COLUMN "geological-context"."earliestAgeOrLowestStage"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -3914,8 +4135,6 @@ COMMENT ON COLUMN public."geological-context"."earliestAgeOrLowestStage" IS 'The
 
 
 --
--- TOC entry 5786 (class 0 OID 0)
--- Dependencies: 225
 -- Name: COLUMN "geological-context"."latestAgeOrHighestStage"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -3923,8 +4142,6 @@ COMMENT ON COLUMN public."geological-context"."latestAgeOrHighestStage" IS 'The 
 
 
 --
--- TOC entry 5787 (class 0 OID 0)
--- Dependencies: 225
 -- Name: COLUMN "geological-context"."lowestBiostratigraphicZone"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -3932,8 +4149,6 @@ COMMENT ON COLUMN public."geological-context"."lowestBiostratigraphicZone" IS 'T
 
 
 --
--- TOC entry 5788 (class 0 OID 0)
--- Dependencies: 225
 -- Name: COLUMN "geological-context"."highestBiostratigraphicZone"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -3941,8 +4156,6 @@ COMMENT ON COLUMN public."geological-context"."highestBiostratigraphicZone" IS '
 
 
 --
--- TOC entry 5789 (class 0 OID 0)
--- Dependencies: 225
 -- Name: COLUMN "geological-context"."lithostratigraphicTerms"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -3950,8 +4163,6 @@ COMMENT ON COLUMN public."geological-context"."lithostratigraphicTerms" IS 'The 
 
 
 --
--- TOC entry 5790 (class 0 OID 0)
--- Dependencies: 225
 -- Name: COLUMN "geological-context"."group"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -3959,8 +4170,6 @@ COMMENT ON COLUMN public."geological-context"."group" IS 'The full name of the l
 
 
 --
--- TOC entry 5791 (class 0 OID 0)
--- Dependencies: 225
 -- Name: COLUMN "geological-context".formation; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -3968,8 +4177,6 @@ COMMENT ON COLUMN public."geological-context".formation IS 'The full name of the
 
 
 --
--- TOC entry 5792 (class 0 OID 0)
--- Dependencies: 225
 -- Name: COLUMN "geological-context".member; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -3977,8 +4184,6 @@ COMMENT ON COLUMN public."geological-context".member IS 'The full name of the li
 
 
 --
--- TOC entry 5793 (class 0 OID 0)
--- Dependencies: 225
 -- Name: COLUMN "geological-context".bed; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -3986,7 +4191,6 @@ COMMENT ON COLUMN public."geological-context".bed IS 'The full name of the litho
 
 
 --
--- TOC entry 254 (class 1259 OID 176993)
 -- Name: geological-context-media; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -4002,8 +4206,6 @@ CREATE TABLE public."geological-context-media" (
 ALTER TABLE public."geological-context-media" OWNER TO postgres;
 
 --
--- TOC entry 5794 (class 0 OID 0)
--- Dependencies: 254
 -- Name: TABLE "geological-context-media"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -4011,8 +4213,6 @@ COMMENT ON TABLE public."geological-context-media" IS 'Any vocabulary or formal 
 
 
 --
--- TOC entry 5795 (class 0 OID 0)
--- Dependencies: 254
 -- Name: COLUMN "geological-context-media"."mediaID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -4020,8 +4220,6 @@ COMMENT ON COLUMN public."geological-context-media"."mediaID" IS 'An identifier 
 
 
 --
--- TOC entry 5796 (class 0 OID 0)
--- Dependencies: 254
 -- Name: COLUMN "geological-context-media"."geologicalContextID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -4029,8 +4227,6 @@ COMMENT ON COLUMN public."geological-context-media"."geologicalContextID" IS 'An
 
 
 --
--- TOC entry 5797 (class 0 OID 0)
--- Dependencies: 254
 -- Name: COLUMN "geological-context-media"."mediaSubjectCategory"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -4038,8 +4234,6 @@ COMMENT ON COLUMN public."geological-context-media"."mediaSubjectCategory" IS 'A
 
 
 --
--- TOC entry 5798 (class 0 OID 0)
--- Dependencies: 254
 -- Name: COLUMN "geological-context-media"."mediaSubjectCategoryIRI"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -4047,8 +4241,6 @@ COMMENT ON COLUMN public."geological-context-media"."mediaSubjectCategoryIRI" IS
 
 
 --
--- TOC entry 5799 (class 0 OID 0)
--- Dependencies: 254
 -- Name: COLUMN "geological-context-media"."mediaSubjectCategoryVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -4056,16 +4248,16 @@ COMMENT ON COLUMN public."geological-context-media"."mediaSubjectCategoryVocabul
 
 
 --
--- TOC entry 226 (class 1259 OID 176558)
 -- Name: identification; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.identification (
     "identificationID" text NOT NULL,
-    "identificationBasedOnOccurrenceID" text,
-    "identificationBasedOnMaterialEntityID" text,
-    "identificationBasedOnGeneticSequenceID" text,
-    "identificationBasedOnMediaID" text,
+    "basedOnOccurrenceID" text,
+    "basedOnMaterialEntityID" text,
+    "basedOnNucleotideSequenceID" text,
+    "basedOnNucleotideAnalysisID" text,
+    "basedOnMediaID" text,
     "identificationType" text,
     "verbatimIdentification" text,
     "isAcceptedIdentification" boolean,
@@ -4076,6 +4268,7 @@ CREATE TABLE public.identification (
     "identifiedByID" text,
     "dateIdentified" text,
     "identificationReferences" text,
+    "taxonAssignmentMethod" text,
     "identificationVerificationStatus" text,
     "identificationRemarks" text,
     "taxonID" text,
@@ -4089,8 +4282,6 @@ CREATE TABLE public.identification (
 ALTER TABLE public.identification OWNER TO postgres;
 
 --
--- TOC entry 5800 (class 0 OID 0)
--- Dependencies: 226
 -- Name: TABLE identification; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -4098,8 +4289,6 @@ COMMENT ON TABLE public.identification IS 'Comments or notes about a dwc:Taxon.'
 
 
 --
--- TOC entry 5801 (class 0 OID 0)
--- Dependencies: 226
 -- Name: COLUMN identification."identificationID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -4107,44 +4296,41 @@ COMMENT ON COLUMN public.identification."identificationID" IS 'An identifier for
 
 
 --
--- TOC entry 5802 (class 0 OID 0)
--- Dependencies: 226
--- Name: COLUMN identification."identificationBasedOnOccurrenceID"; Type: COMMENT; Schema: public; Owner: postgres
+-- Name: COLUMN identification."basedOnOccurrenceID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
-COMMENT ON COLUMN public.identification."identificationBasedOnOccurrenceID" IS 'An identifier for a dwc:Occurrence based on which a dwc:Identification was made.';
+COMMENT ON COLUMN public.identification."basedOnOccurrenceID" IS 'An identifier for a dwc:Occurrence based on which a dwc:Identification was made.';
 
 
 --
--- TOC entry 5803 (class 0 OID 0)
--- Dependencies: 226
--- Name: COLUMN identification."identificationBasedOnMaterialEntityID"; Type: COMMENT; Schema: public; Owner: postgres
+-- Name: COLUMN identification."basedOnMaterialEntityID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
-COMMENT ON COLUMN public.identification."identificationBasedOnMaterialEntityID" IS 'An identifier for a dwc:MaterialEntity based on which a dwc:Identification was made.';
+COMMENT ON COLUMN public.identification."basedOnMaterialEntityID" IS 'An identifier for a dwc:MaterialEntity based on which a dwc:Identification was made.';
 
 
 --
--- TOC entry 5804 (class 0 OID 0)
--- Dependencies: 226
--- Name: COLUMN identification."identificationBasedOnGeneticSequenceID"; Type: COMMENT; Schema: public; Owner: postgres
+-- Name: COLUMN identification."basedOnNucleotideSequenceID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
-COMMENT ON COLUMN public.identification."identificationBasedOnGeneticSequenceID" IS 'An identifier for a GeneticSequence based on which a dwc:Identification was made.';
+COMMENT ON COLUMN public.identification."basedOnNucleotideSequenceID" IS 'An identifier for a NucleotideSequence based on which a dwc:Identification was made.';
 
 
 --
--- TOC entry 5805 (class 0 OID 0)
--- Dependencies: 226
--- Name: COLUMN identification."identificationBasedOnMediaID"; Type: COMMENT; Schema: public; Owner: postgres
+-- Name: COLUMN identification."basedOnNucleotideAnalysisID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
-COMMENT ON COLUMN public.identification."identificationBasedOnMediaID" IS 'An identifier for a Media instance based on which a dwc:Identification was made.';
+COMMENT ON COLUMN public.identification."basedOnNucleotideAnalysisID" IS 'An identifier for a NucleotideAnalysis based on which a dwc:Identification was made.';
 
 
 --
--- TOC entry 5806 (class 0 OID 0)
--- Dependencies: 226
+-- Name: COLUMN identification."basedOnMediaID"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public.identification."basedOnMediaID" IS 'An identifier for a Media instance based on which a dwc:Identification was made.';
+
+
+--
 -- Name: COLUMN identification."identificationType"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -4152,8 +4338,6 @@ COMMENT ON COLUMN public.identification."identificationType" IS 'The category th
 
 
 --
--- TOC entry 5807 (class 0 OID 0)
--- Dependencies: 226
 -- Name: COLUMN identification."verbatimIdentification"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -4161,8 +4345,6 @@ COMMENT ON COLUMN public.identification."verbatimIdentification" IS 'A string re
 
 
 --
--- TOC entry 5808 (class 0 OID 0)
--- Dependencies: 226
 -- Name: COLUMN identification."isAcceptedIdentification"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -4170,8 +4352,6 @@ COMMENT ON COLUMN public.identification."isAcceptedIdentification" IS 'The dwc:I
 
 
 --
--- TOC entry 5809 (class 0 OID 0)
--- Dependencies: 226
 -- Name: COLUMN identification."taxonFormula"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -4179,8 +4359,6 @@ COMMENT ON COLUMN public.identification."taxonFormula" IS 'A string representing
 
 
 --
--- TOC entry 5810 (class 0 OID 0)
--- Dependencies: 226
 -- Name: COLUMN identification."typeStatus"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -4188,8 +4366,6 @@ COMMENT ON COLUMN public.identification."typeStatus" IS 'A list (concatenated an
 
 
 --
--- TOC entry 5811 (class 0 OID 0)
--- Dependencies: 226
 -- Name: COLUMN identification."typeDesignationType"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -4197,8 +4373,6 @@ COMMENT ON COLUMN public.identification."typeDesignationType" IS 'The category t
 
 
 --
--- TOC entry 5812 (class 0 OID 0)
--- Dependencies: 226
 -- Name: COLUMN identification."identifiedBy"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -4206,8 +4380,6 @@ COMMENT ON COLUMN public.identification."identifiedBy" IS 'A list (concatenated 
 
 
 --
--- TOC entry 5813 (class 0 OID 0)
--- Dependencies: 226
 -- Name: COLUMN identification."identifiedByID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -4215,8 +4387,6 @@ COMMENT ON COLUMN public.identification."identifiedByID" IS 'The identifier for 
 
 
 --
--- TOC entry 5814 (class 0 OID 0)
--- Dependencies: 226
 -- Name: COLUMN identification."dateIdentified"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -4224,17 +4394,20 @@ COMMENT ON COLUMN public.identification."dateIdentified" IS 'A list (concatenate
 
 
 --
--- TOC entry 5815 (class 0 OID 0)
--- Dependencies: 226
 -- Name: COLUMN identification."identificationReferences"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
-COMMENT ON COLUMN public.identification."identificationReferences" IS 'A list (concatenated and separated) of references (publication, global unique identifier, URI) used in a dwc:Identification.';
+COMMENT ON COLUMN public.identification."identificationReferences" IS 'A list (concatenated and separated) of references (publication, global unique identifier, URI, metabarcoding reference database) used in a dwc:Identification.';
 
 
 --
--- TOC entry 5816 (class 0 OID 0)
--- Dependencies: 226
+-- Name: COLUMN identification."taxonAssignmentMethod"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public.identification."taxonAssignmentMethod" IS 'Tool and thresholds used to compare sequences when computing ''species-level'' OTUs';
+
+
+--
 -- Name: COLUMN identification."identificationVerificationStatus"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -4242,8 +4415,6 @@ COMMENT ON COLUMN public.identification."identificationVerificationStatus" IS 'A
 
 
 --
--- TOC entry 5817 (class 0 OID 0)
--- Dependencies: 226
 -- Name: COLUMN identification."identificationRemarks"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -4251,8 +4422,6 @@ COMMENT ON COLUMN public.identification."identificationRemarks" IS 'Comments or 
 
 
 --
--- TOC entry 5818 (class 0 OID 0)
--- Dependencies: 226
 -- Name: COLUMN identification."taxonID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -4260,8 +4429,6 @@ COMMENT ON COLUMN public.identification."taxonID" IS 'An identifier for a dwc:Ta
 
 
 --
--- TOC entry 5819 (class 0 OID 0)
--- Dependencies: 226
 -- Name: COLUMN identification.kingdom; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -4269,8 +4436,6 @@ COMMENT ON COLUMN public.identification.kingdom IS 'The full scientific name of 
 
 
 --
--- TOC entry 5820 (class 0 OID 0)
--- Dependencies: 226
 -- Name: COLUMN identification."scientificName"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -4278,8 +4443,6 @@ COMMENT ON COLUMN public.identification."scientificName" IS 'The full scientific
 
 
 --
--- TOC entry 5821 (class 0 OID 0)
--- Dependencies: 226
 -- Name: COLUMN identification."taxonRank"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -4287,8 +4450,6 @@ COMMENT ON COLUMN public.identification."taxonRank" IS 'The taxonomic rank of th
 
 
 --
--- TOC entry 5822 (class 0 OID 0)
--- Dependencies: 226
 -- Name: COLUMN identification."taxonRemarks"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -4296,7 +4457,6 @@ COMMENT ON COLUMN public.identification."taxonRemarks" IS 'Comments or notes abo
 
 
 --
--- TOC entry 255 (class 1259 OID 177010)
 -- Name: identification-agent-role; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -4315,8 +4475,6 @@ CREATE TABLE public."identification-agent-role" (
 ALTER TABLE public."identification-agent-role" OWNER TO postgres;
 
 --
--- TOC entry 5823 (class 0 OID 0)
--- Dependencies: 255
 -- Name: TABLE "identification-agent-role"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -4324,8 +4482,6 @@ COMMENT ON TABLE public."identification-agent-role" IS 'The interval during whic
 
 
 --
--- TOC entry 5824 (class 0 OID 0)
--- Dependencies: 255
 -- Name: COLUMN "identification-agent-role"."agentID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -4333,8 +4489,6 @@ COMMENT ON COLUMN public."identification-agent-role"."agentID" IS 'An identifier
 
 
 --
--- TOC entry 5825 (class 0 OID 0)
--- Dependencies: 255
 -- Name: COLUMN "identification-agent-role"."identificationID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -4342,8 +4496,6 @@ COMMENT ON COLUMN public."identification-agent-role"."identificationID" IS 'An i
 
 
 --
--- TOC entry 5826 (class 0 OID 0)
--- Dependencies: 255
 -- Name: COLUMN "identification-agent-role"."agentRole"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -4351,8 +4503,6 @@ COMMENT ON COLUMN public."identification-agent-role"."agentRole" IS 'The categor
 
 
 --
--- TOC entry 5827 (class 0 OID 0)
--- Dependencies: 255
 -- Name: COLUMN "identification-agent-role"."agentRoleIRI"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -4360,8 +4510,6 @@ COMMENT ON COLUMN public."identification-agent-role"."agentRoleIRI" IS 'The IRI 
 
 
 --
--- TOC entry 5828 (class 0 OID 0)
--- Dependencies: 255
 -- Name: COLUMN "identification-agent-role"."agentRoleVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -4369,8 +4517,6 @@ COMMENT ON COLUMN public."identification-agent-role"."agentRoleVocabulary" IS 'T
 
 
 --
--- TOC entry 5829 (class 0 OID 0)
--- Dependencies: 255
 -- Name: COLUMN "identification-agent-role"."agentRoleOrder"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -4378,8 +4524,6 @@ COMMENT ON COLUMN public."identification-agent-role"."agentRoleOrder" IS 'The nu
 
 
 --
--- TOC entry 5830 (class 0 OID 0)
--- Dependencies: 255
 -- Name: COLUMN "identification-agent-role"."agentRoleDate"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -4387,7 +4531,6 @@ COMMENT ON COLUMN public."identification-agent-role"."agentRoleDate" IS 'The int
 
 
 --
--- TOC entry 256 (class 1259 OID 177026)
 -- Name: identification-taxon; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -4406,8 +4549,6 @@ CREATE TABLE public."identification-taxon" (
 ALTER TABLE public."identification-taxon" OWNER TO postgres;
 
 --
--- TOC entry 5831 (class 0 OID 0)
--- Dependencies: 256
 -- Name: TABLE "identification-taxon"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -4415,8 +4556,6 @@ COMMENT ON TABLE public."identification-taxon" IS 'Comments or notes about a dwc
 
 
 --
--- TOC entry 5832 (class 0 OID 0)
--- Dependencies: 256
 -- Name: COLUMN "identification-taxon"."identificationID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -4424,8 +4563,6 @@ COMMENT ON COLUMN public."identification-taxon"."identificationID" IS 'An identi
 
 
 --
--- TOC entry 5833 (class 0 OID 0)
--- Dependencies: 256
 -- Name: COLUMN "identification-taxon"."taxonID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -4433,8 +4570,6 @@ COMMENT ON COLUMN public."identification-taxon"."taxonID" IS 'An identifier for 
 
 
 --
--- TOC entry 5834 (class 0 OID 0)
--- Dependencies: 256
 -- Name: COLUMN "identification-taxon"."taxonOrder"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -4442,8 +4577,6 @@ COMMENT ON COLUMN public."identification-taxon"."taxonOrder" IS 'The position of
 
 
 --
--- TOC entry 5835 (class 0 OID 0)
--- Dependencies: 256
 -- Name: COLUMN "identification-taxon".kingdom; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -4451,8 +4584,6 @@ COMMENT ON COLUMN public."identification-taxon".kingdom IS 'The full scientific 
 
 
 --
--- TOC entry 5836 (class 0 OID 0)
--- Dependencies: 256
 -- Name: COLUMN "identification-taxon"."scientificName"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -4460,8 +4591,6 @@ COMMENT ON COLUMN public."identification-taxon"."scientificName" IS 'The full sc
 
 
 --
--- TOC entry 5837 (class 0 OID 0)
--- Dependencies: 256
 -- Name: COLUMN "identification-taxon"."taxonRank"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -4469,8 +4598,6 @@ COMMENT ON COLUMN public."identification-taxon"."taxonRank" IS 'The taxonomic ra
 
 
 --
--- TOC entry 5838 (class 0 OID 0)
--- Dependencies: 256
 -- Name: COLUMN "identification-taxon"."taxonRemarks"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -4478,7 +4605,6 @@ COMMENT ON COLUMN public."identification-taxon"."taxonRemarks" IS 'Comments or n
 
 
 --
--- TOC entry 222 (class 1259 OID 176490)
 -- Name: material; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -4531,8 +4657,6 @@ CREATE TABLE public.material (
 ALTER TABLE public.material OWNER TO postgres;
 
 --
--- TOC entry 5839 (class 0 OID 0)
--- Dependencies: 222
 -- Name: TABLE material; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -4540,8 +4664,6 @@ COMMENT ON TABLE public.material IS 'Comments or notes about a dwc:Taxon.';
 
 
 --
--- TOC entry 5840 (class 0 OID 0)
--- Dependencies: 222
 -- Name: COLUMN material."materialEntityID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -4549,8 +4671,6 @@ COMMENT ON COLUMN public.material."materialEntityID" IS 'An identifier for a dwc
 
 
 --
--- TOC entry 5841 (class 0 OID 0)
--- Dependencies: 222
 -- Name: COLUMN material."eventID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -4558,8 +4678,6 @@ COMMENT ON COLUMN public.material."eventID" IS 'An identifier for a dwc:Event.';
 
 
 --
--- TOC entry 5842 (class 0 OID 0)
--- Dependencies: 222
 -- Name: COLUMN material."materialCategory"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -4567,8 +4685,6 @@ COMMENT ON COLUMN public.material."materialCategory" IS 'The broad category that
 
 
 --
--- TOC entry 5843 (class 0 OID 0)
--- Dependencies: 222
 -- Name: COLUMN material."materialEntityType"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -4576,8 +4692,6 @@ COMMENT ON COLUMN public.material."materialEntityType" IS 'The narrow category t
 
 
 --
--- TOC entry 5844 (class 0 OID 0)
--- Dependencies: 222
 -- Name: COLUMN material."institutionCode"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -4585,8 +4699,6 @@ COMMENT ON COLUMN public.material."institutionCode" IS 'The name (or acronym) in
 
 
 --
--- TOC entry 5845 (class 0 OID 0)
--- Dependencies: 222
 -- Name: COLUMN material."institutionID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -4594,8 +4706,6 @@ COMMENT ON COLUMN public.material."institutionID" IS 'An identifier for an insti
 
 
 --
--- TOC entry 5846 (class 0 OID 0)
--- Dependencies: 222
 -- Name: COLUMN material."ownerInstitutionCode"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -4603,8 +4713,6 @@ COMMENT ON COLUMN public.material."ownerInstitutionCode" IS 'The name (or acrony
 
 
 --
--- TOC entry 5847 (class 0 OID 0)
--- Dependencies: 222
 -- Name: COLUMN material."ownerInstitutionID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -4612,8 +4720,6 @@ COMMENT ON COLUMN public.material."ownerInstitutionID" IS 'An identifier for an 
 
 
 --
--- TOC entry 5848 (class 0 OID 0)
--- Dependencies: 222
 -- Name: COLUMN material."collectionCode"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -4621,8 +4727,6 @@ COMMENT ON COLUMN public.material."collectionCode" IS 'The name, acronym, coden,
 
 
 --
--- TOC entry 5849 (class 0 OID 0)
--- Dependencies: 222
 -- Name: COLUMN material."collectionID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -4630,8 +4734,6 @@ COMMENT ON COLUMN public.material."collectionID" IS 'An identifier for a Collect
 
 
 --
--- TOC entry 5850 (class 0 OID 0)
--- Dependencies: 222
 -- Name: COLUMN material."catalogNumber"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -4639,8 +4741,6 @@ COMMENT ON COLUMN public.material."catalogNumber" IS 'An identifier (preferably 
 
 
 --
--- TOC entry 5851 (class 0 OID 0)
--- Dependencies: 222
 -- Name: COLUMN material."otherCatalogNumbers"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -4648,8 +4748,6 @@ COMMENT ON COLUMN public.material."otherCatalogNumbers" IS 'A list (concatenated
 
 
 --
--- TOC entry 5852 (class 0 OID 0)
--- Dependencies: 222
 -- Name: COLUMN material."collectedBy"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -4657,8 +4755,6 @@ COMMENT ON COLUMN public.material."collectedBy" IS 'A list (concatenated and sep
 
 
 --
--- TOC entry 5853 (class 0 OID 0)
--- Dependencies: 222
 -- Name: COLUMN material."collectedByID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -4666,8 +4762,6 @@ COMMENT ON COLUMN public.material."collectedByID" IS 'An identifier for the Agen
 
 
 --
--- TOC entry 5854 (class 0 OID 0)
--- Dependencies: 222
 -- Name: COLUMN material."objectCount"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -4675,8 +4769,6 @@ COMMENT ON COLUMN public.material."objectCount" IS 'The number of distinct objec
 
 
 --
--- TOC entry 5855 (class 0 OID 0)
--- Dependencies: 222
 -- Name: COLUMN material."recordNumber"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -4684,8 +4776,6 @@ COMMENT ON COLUMN public.material."recordNumber" IS 'An identifier given to a dw
 
 
 --
--- TOC entry 5856 (class 0 OID 0)
--- Dependencies: 222
 -- Name: COLUMN material.preparations; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -4693,8 +4783,6 @@ COMMENT ON COLUMN public.material.preparations IS 'A list (concatenated and sepa
 
 
 --
--- TOC entry 5857 (class 0 OID 0)
--- Dependencies: 222
 -- Name: COLUMN material.disposition; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -4702,8 +4790,6 @@ COMMENT ON COLUMN public.material.disposition IS 'The current state of a dwc:Mat
 
 
 --
--- TOC entry 5858 (class 0 OID 0)
--- Dependencies: 222
 -- Name: COLUMN material."verbatimLabel"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -4711,8 +4797,6 @@ COMMENT ON COLUMN public.material."verbatimLabel" IS 'The content of this term s
 
 
 --
--- TOC entry 5859 (class 0 OID 0)
--- Dependencies: 222
 -- Name: COLUMN material."associatedSequences"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -4720,8 +4804,6 @@ COMMENT ON COLUMN public.material."associatedSequences" IS 'A list (concatenated
 
 
 --
--- TOC entry 5860 (class 0 OID 0)
--- Dependencies: 222
 -- Name: COLUMN material."materialCitation"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -4729,8 +4811,6 @@ COMMENT ON COLUMN public.material."materialCitation" IS 'A list (concatenated an
 
 
 --
--- TOC entry 5861 (class 0 OID 0)
--- Dependencies: 222
 -- Name: COLUMN material."informationWithheld"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -4738,8 +4818,6 @@ COMMENT ON COLUMN public.material."informationWithheld" IS 'Additional informati
 
 
 --
--- TOC entry 5862 (class 0 OID 0)
--- Dependencies: 222
 -- Name: COLUMN material."dataGeneralizations"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -4747,8 +4825,6 @@ COMMENT ON COLUMN public.material."dataGeneralizations" IS 'Actions taken to mak
 
 
 --
--- TOC entry 5863 (class 0 OID 0)
--- Dependencies: 222
 -- Name: COLUMN material."materialEntityRemarks"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -4756,8 +4832,6 @@ COMMENT ON COLUMN public.material."materialEntityRemarks" IS 'Comments or notes 
 
 
 --
--- TOC entry 5864 (class 0 OID 0)
--- Dependencies: 222
 -- Name: COLUMN material."evidenceForOccurrenceID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -4765,8 +4839,6 @@ COMMENT ON COLUMN public.material."evidenceForOccurrenceID" IS 'An identifier fo
 
 
 --
--- TOC entry 5865 (class 0 OID 0)
--- Dependencies: 222
 -- Name: COLUMN material."derivedFromMaterialEntityID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -4774,8 +4846,6 @@ COMMENT ON COLUMN public.material."derivedFromMaterialEntityID" IS 'An identifie
 
 
 --
--- TOC entry 5866 (class 0 OID 0)
--- Dependencies: 222
 -- Name: COLUMN material."derivationEventID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -4783,8 +4853,6 @@ COMMENT ON COLUMN public.material."derivationEventID" IS 'An identifier for a dw
 
 
 --
--- TOC entry 5867 (class 0 OID 0)
--- Dependencies: 222
 -- Name: COLUMN material."derivationType"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -4792,8 +4860,6 @@ COMMENT ON COLUMN public.material."derivationType" IS 'The category that best ma
 
 
 --
--- TOC entry 5868 (class 0 OID 0)
--- Dependencies: 222
 -- Name: COLUMN material."partOfMaterialEntityID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -4801,8 +4867,6 @@ COMMENT ON COLUMN public.material."partOfMaterialEntityID" IS 'An identifier for
 
 
 --
--- TOC entry 5869 (class 0 OID 0)
--- Dependencies: 222
 -- Name: COLUMN material."verbatimIdentification"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -4810,8 +4874,6 @@ COMMENT ON COLUMN public.material."verbatimIdentification" IS 'A string represen
 
 
 --
--- TOC entry 5870 (class 0 OID 0)
--- Dependencies: 222
 -- Name: COLUMN material."taxonFormula"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -4819,8 +4881,6 @@ COMMENT ON COLUMN public.material."taxonFormula" IS 'A string representing the p
 
 
 --
--- TOC entry 5871 (class 0 OID 0)
--- Dependencies: 222
 -- Name: COLUMN material."identifiedBy"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -4828,8 +4888,6 @@ COMMENT ON COLUMN public.material."identifiedBy" IS 'A list (concatenated and se
 
 
 --
--- TOC entry 5872 (class 0 OID 0)
--- Dependencies: 222
 -- Name: COLUMN material."identifiedByID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -4837,8 +4895,6 @@ COMMENT ON COLUMN public.material."identifiedByID" IS 'The identifier for the Ag
 
 
 --
--- TOC entry 5873 (class 0 OID 0)
--- Dependencies: 222
 -- Name: COLUMN material."dateIdentified"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -4846,8 +4902,6 @@ COMMENT ON COLUMN public.material."dateIdentified" IS 'A list (concatenated and 
 
 
 --
--- TOC entry 5874 (class 0 OID 0)
--- Dependencies: 222
 -- Name: COLUMN material."identificationReferences"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -4855,8 +4909,6 @@ COMMENT ON COLUMN public.material."identificationReferences" IS 'A list (concate
 
 
 --
--- TOC entry 5875 (class 0 OID 0)
--- Dependencies: 222
 -- Name: COLUMN material."identificationVerificationStatus"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -4864,8 +4916,6 @@ COMMENT ON COLUMN public.material."identificationVerificationStatus" IS 'A categ
 
 
 --
--- TOC entry 5876 (class 0 OID 0)
--- Dependencies: 222
 -- Name: COLUMN material."identificationRemarks"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -4873,8 +4923,6 @@ COMMENT ON COLUMN public.material."identificationRemarks" IS 'Comments or notes 
 
 
 --
--- TOC entry 5877 (class 0 OID 0)
--- Dependencies: 222
 -- Name: COLUMN material."taxonID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -4882,8 +4930,6 @@ COMMENT ON COLUMN public.material."taxonID" IS 'An identifier for a dwc:Taxon.';
 
 
 --
--- TOC entry 5878 (class 0 OID 0)
--- Dependencies: 222
 -- Name: COLUMN material.kingdom; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -4891,8 +4937,6 @@ COMMENT ON COLUMN public.material.kingdom IS 'The full scientific name of the ki
 
 
 --
--- TOC entry 5879 (class 0 OID 0)
--- Dependencies: 222
 -- Name: COLUMN material."scientificName"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -4900,8 +4944,6 @@ COMMENT ON COLUMN public.material."scientificName" IS 'The full scientific name,
 
 
 --
--- TOC entry 5880 (class 0 OID 0)
--- Dependencies: 222
 -- Name: COLUMN material."taxonRank"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -4909,8 +4951,6 @@ COMMENT ON COLUMN public.material."taxonRank" IS 'The taxonomic rank of the most
 
 
 --
--- TOC entry 5881 (class 0 OID 0)
--- Dependencies: 222
 -- Name: COLUMN material."taxonRemarks"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -4918,7 +4958,6 @@ COMMENT ON COLUMN public.material."taxonRemarks" IS 'Comments or notes about a d
 
 
 --
--- TOC entry 257 (class 1259 OID 177037)
 -- Name: material-agent-role; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -4937,8 +4976,6 @@ CREATE TABLE public."material-agent-role" (
 ALTER TABLE public."material-agent-role" OWNER TO postgres;
 
 --
--- TOC entry 5882 (class 0 OID 0)
--- Dependencies: 257
 -- Name: TABLE "material-agent-role"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -4946,8 +4983,6 @@ COMMENT ON TABLE public."material-agent-role" IS 'The interval during which an A
 
 
 --
--- TOC entry 5883 (class 0 OID 0)
--- Dependencies: 257
 -- Name: COLUMN "material-agent-role"."agentID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -4955,8 +4990,6 @@ COMMENT ON COLUMN public."material-agent-role"."agentID" IS 'An identifier for a
 
 
 --
--- TOC entry 5884 (class 0 OID 0)
--- Dependencies: 257
 -- Name: COLUMN "material-agent-role"."materialEntityID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -4964,8 +4997,6 @@ COMMENT ON COLUMN public."material-agent-role"."materialEntityID" IS 'An identif
 
 
 --
--- TOC entry 5885 (class 0 OID 0)
--- Dependencies: 257
 -- Name: COLUMN "material-agent-role"."agentRole"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -4973,8 +5004,6 @@ COMMENT ON COLUMN public."material-agent-role"."agentRole" IS 'The category that
 
 
 --
--- TOC entry 5886 (class 0 OID 0)
--- Dependencies: 257
 -- Name: COLUMN "material-agent-role"."agentRoleIRI"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -4982,8 +5011,6 @@ COMMENT ON COLUMN public."material-agent-role"."agentRoleIRI" IS 'The IRI of the
 
 
 --
--- TOC entry 5887 (class 0 OID 0)
--- Dependencies: 257
 -- Name: COLUMN "material-agent-role"."agentRoleVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -4991,8 +5018,6 @@ COMMENT ON COLUMN public."material-agent-role"."agentRoleVocabulary" IS 'The ref
 
 
 --
--- TOC entry 5888 (class 0 OID 0)
--- Dependencies: 257
 -- Name: COLUMN "material-agent-role"."agentRoleOrder"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -5000,8 +5025,6 @@ COMMENT ON COLUMN public."material-agent-role"."agentRoleOrder" IS 'The numerica
 
 
 --
--- TOC entry 5889 (class 0 OID 0)
--- Dependencies: 257
 -- Name: COLUMN "material-agent-role"."agentRoleDate"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -5009,7 +5032,6 @@ COMMENT ON COLUMN public."material-agent-role"."agentRoleDate" IS 'The interval 
 
 
 --
--- TOC entry 258 (class 1259 OID 177053)
 -- Name: material-assertion; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -5040,8 +5062,6 @@ CREATE TABLE public."material-assertion" (
 ALTER TABLE public."material-assertion" OWNER TO postgres;
 
 --
--- TOC entry 5890 (class 0 OID 0)
--- Dependencies: 258
 -- Name: TABLE "material-assertion"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -5049,8 +5069,6 @@ COMMENT ON TABLE public."material-assertion" IS 'Comments or notes about an Asse
 
 
 --
--- TOC entry 5891 (class 0 OID 0)
--- Dependencies: 258
 -- Name: COLUMN "material-assertion"."assertionID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -5058,8 +5076,6 @@ COMMENT ON COLUMN public."material-assertion"."assertionID" IS 'An identifier fo
 
 
 --
--- TOC entry 5892 (class 0 OID 0)
--- Dependencies: 258
 -- Name: COLUMN "material-assertion"."materialEntityID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -5067,8 +5083,6 @@ COMMENT ON COLUMN public."material-assertion"."materialEntityID" IS 'An identifi
 
 
 --
--- TOC entry 5893 (class 0 OID 0)
--- Dependencies: 258
 -- Name: COLUMN "material-assertion"."assertionType"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -5076,8 +5090,6 @@ COMMENT ON COLUMN public."material-assertion"."assertionType" IS 'The category t
 
 
 --
--- TOC entry 5894 (class 0 OID 0)
--- Dependencies: 258
 -- Name: COLUMN "material-assertion"."assertionTypeIRI"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -5085,8 +5097,6 @@ COMMENT ON COLUMN public."material-assertion"."assertionTypeIRI" IS 'The IRI of 
 
 
 --
--- TOC entry 5895 (class 0 OID 0)
--- Dependencies: 258
 -- Name: COLUMN "material-assertion"."assertionTypeVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -5094,8 +5104,6 @@ COMMENT ON COLUMN public."material-assertion"."assertionTypeVocabulary" IS 'The 
 
 
 --
--- TOC entry 5896 (class 0 OID 0)
--- Dependencies: 258
 -- Name: COLUMN "material-assertion"."assertionMadeDate"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -5103,8 +5111,6 @@ COMMENT ON COLUMN public."material-assertion"."assertionMadeDate" IS 'The date o
 
 
 --
--- TOC entry 5897 (class 0 OID 0)
--- Dependencies: 258
 -- Name: COLUMN "material-assertion"."assertionEffectiveDate"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -5112,8 +5118,6 @@ COMMENT ON COLUMN public."material-assertion"."assertionEffectiveDate" IS 'The d
 
 
 --
--- TOC entry 5898 (class 0 OID 0)
--- Dependencies: 258
 -- Name: COLUMN "material-assertion"."assertionValue"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -5121,8 +5125,6 @@ COMMENT ON COLUMN public."material-assertion"."assertionValue" IS 'An asserted v
 
 
 --
--- TOC entry 5899 (class 0 OID 0)
--- Dependencies: 258
 -- Name: COLUMN "material-assertion"."assertionValueIRI"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -5130,8 +5132,6 @@ COMMENT ON COLUMN public."material-assertion"."assertionValueIRI" IS 'The IRI of
 
 
 --
--- TOC entry 5900 (class 0 OID 0)
--- Dependencies: 258
 -- Name: COLUMN "material-assertion"."assertionValueVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -5139,8 +5139,6 @@ COMMENT ON COLUMN public."material-assertion"."assertionValueVocabulary" IS 'The
 
 
 --
--- TOC entry 5901 (class 0 OID 0)
--- Dependencies: 258
 -- Name: COLUMN "material-assertion"."assertionValueNumeric"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -5148,8 +5146,6 @@ COMMENT ON COLUMN public."material-assertion"."assertionValueNumeric" IS 'An ass
 
 
 --
--- TOC entry 5902 (class 0 OID 0)
--- Dependencies: 258
 -- Name: COLUMN "material-assertion"."assertionUnit"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -5157,8 +5153,6 @@ COMMENT ON COLUMN public."material-assertion"."assertionUnit" IS 'The units asso
 
 
 --
--- TOC entry 5903 (class 0 OID 0)
--- Dependencies: 258
 -- Name: COLUMN "material-assertion"."assertionUnitIRI"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -5166,8 +5160,6 @@ COMMENT ON COLUMN public."material-assertion"."assertionUnitIRI" IS 'The IRI for
 
 
 --
--- TOC entry 5904 (class 0 OID 0)
--- Dependencies: 258
 -- Name: COLUMN "material-assertion"."assertionUnitVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -5175,8 +5167,6 @@ COMMENT ON COLUMN public."material-assertion"."assertionUnitVocabulary" IS 'The 
 
 
 --
--- TOC entry 5905 (class 0 OID 0)
--- Dependencies: 258
 -- Name: COLUMN "material-assertion"."assertionBy"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -5184,8 +5174,6 @@ COMMENT ON COLUMN public."material-assertion"."assertionBy" IS 'A list (concaten
 
 
 --
--- TOC entry 5906 (class 0 OID 0)
--- Dependencies: 258
 -- Name: COLUMN "material-assertion"."assertionByID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -5193,8 +5181,6 @@ COMMENT ON COLUMN public."material-assertion"."assertionByID" IS 'An identifier 
 
 
 --
--- TOC entry 5907 (class 0 OID 0)
--- Dependencies: 258
 -- Name: COLUMN "material-assertion"."assertionProtocol"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -5202,8 +5188,6 @@ COMMENT ON COLUMN public."material-assertion"."assertionProtocol" IS 'The names 
 
 
 --
--- TOC entry 5908 (class 0 OID 0)
--- Dependencies: 258
 -- Name: COLUMN "material-assertion"."assertionProtocolID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -5211,8 +5195,6 @@ COMMENT ON COLUMN public."material-assertion"."assertionProtocolID" IS 'An ident
 
 
 --
--- TOC entry 5909 (class 0 OID 0)
--- Dependencies: 258
 -- Name: COLUMN "material-assertion"."assertionCitation"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -5220,8 +5202,6 @@ COMMENT ON COLUMN public."material-assertion"."assertionCitation" IS 'A list (co
 
 
 --
--- TOC entry 5910 (class 0 OID 0)
--- Dependencies: 258
 -- Name: COLUMN "material-assertion"."assertionRemarks"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -5229,7 +5209,6 @@ COMMENT ON COLUMN public."material-assertion"."assertionRemarks" IS 'Comments or
 
 
 --
--- TOC entry 259 (class 1259 OID 177070)
 -- Name: material-citation; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -5254,8 +5233,6 @@ CREATE TABLE public."material-citation" (
 ALTER TABLE public."material-citation" OWNER TO postgres;
 
 --
--- TOC entry 5911 (class 0 OID 0)
--- Dependencies: 259
 -- Name: TABLE "material-citation"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -5263,8 +5240,6 @@ COMMENT ON TABLE public."material-citation" IS 'Comments or notes about a Citati
 
 
 --
--- TOC entry 5912 (class 0 OID 0)
--- Dependencies: 259
 -- Name: COLUMN "material-citation"."citationID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -5272,8 +5247,6 @@ COMMENT ON COLUMN public."material-citation"."citationID" IS 'An identifier for 
 
 
 --
--- TOC entry 5913 (class 0 OID 0)
--- Dependencies: 259
 -- Name: COLUMN "material-citation"."materialEntityID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -5281,8 +5254,6 @@ COMMENT ON COLUMN public."material-citation"."materialEntityID" IS 'An identifie
 
 
 --
--- TOC entry 5914 (class 0 OID 0)
--- Dependencies: 259
 -- Name: COLUMN "material-citation"."citationType"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -5290,8 +5261,6 @@ COMMENT ON COLUMN public."material-citation"."citationType" IS 'The category tha
 
 
 --
--- TOC entry 5915 (class 0 OID 0)
--- Dependencies: 259
 -- Name: COLUMN "material-citation"."citationTypeIRI"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -5299,8 +5268,6 @@ COMMENT ON COLUMN public."material-citation"."citationTypeIRI" IS 'The IRI of th
 
 
 --
--- TOC entry 5916 (class 0 OID 0)
--- Dependencies: 259
 -- Name: COLUMN "material-citation"."citationTypeVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -5308,8 +5275,6 @@ COMMENT ON COLUMN public."material-citation"."citationTypeVocabulary" IS 'The re
 
 
 --
--- TOC entry 5917 (class 0 OID 0)
--- Dependencies: 259
 -- Name: COLUMN "material-citation"."bibliographicCitation"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -5317,8 +5282,6 @@ COMMENT ON COLUMN public."material-citation"."bibliographicCitation" IS 'A bibli
 
 
 --
--- TOC entry 5918 (class 0 OID 0)
--- Dependencies: 259
 -- Name: COLUMN "material-citation"."pageNumber"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -5326,8 +5289,6 @@ COMMENT ON COLUMN public."material-citation"."pageNumber" IS 'The number of the 
 
 
 --
--- TOC entry 5919 (class 0 OID 0)
--- Dependencies: 259
 -- Name: COLUMN "material-citation"."referenceID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -5335,8 +5296,6 @@ COMMENT ON COLUMN public."material-citation"."referenceID" IS 'An identifier for
 
 
 --
--- TOC entry 5920 (class 0 OID 0)
--- Dependencies: 259
 -- Name: COLUMN "material-citation"."referenceType"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -5344,8 +5303,6 @@ COMMENT ON COLUMN public."material-citation"."referenceType" IS 'The category th
 
 
 --
--- TOC entry 5921 (class 0 OID 0)
--- Dependencies: 259
 -- Name: COLUMN "material-citation"."referenceTypeIRI"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -5353,8 +5310,6 @@ COMMENT ON COLUMN public."material-citation"."referenceTypeIRI" IS 'The IRI of t
 
 
 --
--- TOC entry 5922 (class 0 OID 0)
--- Dependencies: 259
 -- Name: COLUMN "material-citation"."referenceTypeVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -5362,8 +5317,6 @@ COMMENT ON COLUMN public."material-citation"."referenceTypeVocabulary" IS 'The r
 
 
 --
--- TOC entry 5923 (class 0 OID 0)
--- Dependencies: 259
 -- Name: COLUMN "material-citation"."referenceYear"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -5371,8 +5324,6 @@ COMMENT ON COLUMN public."material-citation"."referenceYear" IS 'The year the re
 
 
 --
--- TOC entry 5924 (class 0 OID 0)
--- Dependencies: 259
 -- Name: COLUMN "material-citation"."isPeerReviewed"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -5380,8 +5331,6 @@ COMMENT ON COLUMN public."material-citation"."isPeerReviewed" IS 'An indication 
 
 
 --
--- TOC entry 5925 (class 0 OID 0)
--- Dependencies: 259
 -- Name: COLUMN "material-citation"."citationRemarks"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -5389,7 +5338,6 @@ COMMENT ON COLUMN public."material-citation"."citationRemarks" IS 'Comments or n
 
 
 --
--- TOC entry 260 (class 1259 OID 177082)
 -- Name: material-identifier; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -5406,8 +5354,6 @@ CREATE TABLE public."material-identifier" (
 ALTER TABLE public."material-identifier" OWNER TO postgres;
 
 --
--- TOC entry 5926 (class 0 OID 0)
--- Dependencies: 260
 -- Name: TABLE "material-identifier"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -5415,8 +5361,6 @@ COMMENT ON TABLE public."material-identifier" IS 'A language in which an Identif
 
 
 --
--- TOC entry 5927 (class 0 OID 0)
--- Dependencies: 260
 -- Name: COLUMN "material-identifier".identifier; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -5424,8 +5368,6 @@ COMMENT ON COLUMN public."material-identifier".identifier IS 'An unambiguous ref
 
 
 --
--- TOC entry 5928 (class 0 OID 0)
--- Dependencies: 260
 -- Name: COLUMN "material-identifier"."materialEntityID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -5433,8 +5375,6 @@ COMMENT ON COLUMN public."material-identifier"."materialEntityID" IS 'An identif
 
 
 --
--- TOC entry 5929 (class 0 OID 0)
--- Dependencies: 260
 -- Name: COLUMN "material-identifier"."identifierType"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -5442,8 +5382,6 @@ COMMENT ON COLUMN public."material-identifier"."identifierType" IS 'The category
 
 
 --
--- TOC entry 5930 (class 0 OID 0)
--- Dependencies: 260
 -- Name: COLUMN "material-identifier"."identifierTypeIRI"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -5451,8 +5389,6 @@ COMMENT ON COLUMN public."material-identifier"."identifierTypeIRI" IS 'The IRI o
 
 
 --
--- TOC entry 5931 (class 0 OID 0)
--- Dependencies: 260
 -- Name: COLUMN "material-identifier"."identifierTypeVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -5460,8 +5396,6 @@ COMMENT ON COLUMN public."material-identifier"."identifierTypeVocabulary" IS 'Th
 
 
 --
--- TOC entry 5932 (class 0 OID 0)
--- Dependencies: 260
 -- Name: COLUMN "material-identifier"."identifierLanguage"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -5469,7 +5403,6 @@ COMMENT ON COLUMN public."material-identifier"."identifierLanguage" IS 'A langua
 
 
 --
--- TOC entry 261 (class 1259 OID 177092)
 -- Name: material-media; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -5485,8 +5418,6 @@ CREATE TABLE public."material-media" (
 ALTER TABLE public."material-media" OWNER TO postgres;
 
 --
--- TOC entry 5933 (class 0 OID 0)
--- Dependencies: 261
 -- Name: TABLE "material-media"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -5494,8 +5425,6 @@ COMMENT ON TABLE public."material-media" IS 'Any vocabulary or formal classifica
 
 
 --
--- TOC entry 5934 (class 0 OID 0)
--- Dependencies: 261
 -- Name: COLUMN "material-media"."mediaID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -5503,8 +5432,6 @@ COMMENT ON COLUMN public."material-media"."mediaID" IS 'An identifier for a Medi
 
 
 --
--- TOC entry 5935 (class 0 OID 0)
--- Dependencies: 261
 -- Name: COLUMN "material-media"."materialEntityID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -5512,8 +5439,6 @@ COMMENT ON COLUMN public."material-media"."materialEntityID" IS 'An identifier f
 
 
 --
--- TOC entry 5936 (class 0 OID 0)
--- Dependencies: 261
 -- Name: COLUMN "material-media"."mediaSubjectCategory"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -5521,8 +5446,6 @@ COMMENT ON COLUMN public."material-media"."mediaSubjectCategory" IS 'A term to d
 
 
 --
--- TOC entry 5937 (class 0 OID 0)
--- Dependencies: 261
 -- Name: COLUMN "material-media"."mediaSubjectCategoryIRI"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -5530,8 +5453,6 @@ COMMENT ON COLUMN public."material-media"."mediaSubjectCategoryIRI" IS 'The IRI 
 
 
 --
--- TOC entry 5938 (class 0 OID 0)
--- Dependencies: 261
 -- Name: COLUMN "material-media"."mediaSubjectCategoryVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -5539,7 +5460,6 @@ COMMENT ON COLUMN public."material-media"."mediaSubjectCategoryVocabulary" IS 'A
 
 
 --
--- TOC entry 262 (class 1259 OID 177107)
 -- Name: material-protocol; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -5552,8 +5472,6 @@ CREATE TABLE public."material-protocol" (
 ALTER TABLE public."material-protocol" OWNER TO postgres;
 
 --
--- TOC entry 5939 (class 0 OID 0)
--- Dependencies: 262
 -- Name: TABLE "material-protocol"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -5561,8 +5479,6 @@ COMMENT ON TABLE public."material-protocol" IS 'An identifier for a dwc:Material
 
 
 --
--- TOC entry 5940 (class 0 OID 0)
--- Dependencies: 262
 -- Name: COLUMN "material-protocol"."protocolID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -5570,8 +5486,6 @@ COMMENT ON COLUMN public."material-protocol"."protocolID" IS 'An identifier for 
 
 
 --
--- TOC entry 5941 (class 0 OID 0)
--- Dependencies: 262
 -- Name: COLUMN "material-protocol"."materialEntityID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -5579,7 +5493,6 @@ COMMENT ON COLUMN public."material-protocol"."materialEntityID" IS 'An identifie
 
 
 --
--- TOC entry 217 (class 1259 OID 176414)
 -- Name: media; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -5604,8 +5517,6 @@ CREATE TABLE public.media (
 ALTER TABLE public.media OWNER TO postgres;
 
 --
--- TOC entry 5942 (class 0 OID 0)
--- Dependencies: 217
 -- Name: TABLE media; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -5613,8 +5524,6 @@ COMMENT ON TABLE public.media IS 'An account of the Media subject matter.';
 
 
 --
--- TOC entry 5943 (class 0 OID 0)
--- Dependencies: 217
 -- Name: COLUMN media."mediaID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -5622,8 +5531,6 @@ COMMENT ON COLUMN public.media."mediaID" IS 'An identifier for a Media instance.
 
 
 --
--- TOC entry 5944 (class 0 OID 0)
--- Dependencies: 217
 -- Name: COLUMN media."mediaType"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -5631,8 +5538,6 @@ COMMENT ON COLUMN public.media."mediaType" IS 'The category that best matches th
 
 
 --
--- TOC entry 5945 (class 0 OID 0)
--- Dependencies: 217
 -- Name: COLUMN media."accessURI"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -5640,8 +5545,6 @@ COMMENT ON COLUMN public.media."accessURI" IS 'A URI that uniquely identifies a 
 
 
 --
--- TOC entry 5946 (class 0 OID 0)
--- Dependencies: 217
 -- Name: COLUMN media."WebStatement"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -5649,8 +5552,6 @@ COMMENT ON COLUMN public.media."WebStatement" IS 'A Web URL for a statement of t
 
 
 --
--- TOC entry 5947 (class 0 OID 0)
--- Dependencies: 217
 -- Name: COLUMN media.format; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -5658,8 +5559,6 @@ COMMENT ON COLUMN public.media.format IS 'The file format, physical medium, or d
 
 
 --
--- TOC entry 5948 (class 0 OID 0)
--- Dependencies: 217
 -- Name: COLUMN media.rights; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -5667,8 +5566,6 @@ COMMENT ON COLUMN public.media.rights IS 'Information about rights held in and o
 
 
 --
--- TOC entry 5949 (class 0 OID 0)
--- Dependencies: 217
 -- Name: COLUMN media."Owner"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -5676,8 +5573,6 @@ COMMENT ON COLUMN public.media."Owner" IS 'A list of legal owners of the resourc
 
 
 --
--- TOC entry 5950 (class 0 OID 0)
--- Dependencies: 217
 -- Name: COLUMN media.source; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -5685,8 +5580,6 @@ COMMENT ON COLUMN public.media.source IS 'A related resource from which the desc
 
 
 --
--- TOC entry 5951 (class 0 OID 0)
--- Dependencies: 217
 -- Name: COLUMN media.creator; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -5694,8 +5587,6 @@ COMMENT ON COLUMN public.media.creator IS 'An entity primarily responsible for m
 
 
 --
--- TOC entry 5952 (class 0 OID 0)
--- Dependencies: 217
 -- Name: COLUMN media."creatorID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -5703,8 +5594,6 @@ COMMENT ON COLUMN public.media."creatorID" IS 'An identifier for the entity prim
 
 
 --
--- TOC entry 5953 (class 0 OID 0)
--- Dependencies: 217
 -- Name: COLUMN media."CreateDate"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -5712,8 +5601,6 @@ COMMENT ON COLUMN public.media."CreateDate" IS 'The date and time the resource w
 
 
 --
--- TOC entry 5954 (class 0 OID 0)
--- Dependencies: 217
 -- Name: COLUMN media.modified; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -5721,8 +5608,6 @@ COMMENT ON COLUMN public.media.modified IS 'Date on which the resource was chang
 
 
 --
--- TOC entry 5955 (class 0 OID 0)
--- Dependencies: 217
 -- Name: COLUMN media."mediaLanguage"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -5730,8 +5615,6 @@ COMMENT ON COLUMN public.media."mediaLanguage" IS 'A language of the content of 
 
 
 --
--- TOC entry 5956 (class 0 OID 0)
--- Dependencies: 217
 -- Name: COLUMN media."mediaDescription"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -5739,7 +5622,6 @@ COMMENT ON COLUMN public.media."mediaDescription" IS 'An account of the Media su
 
 
 --
--- TOC entry 263 (class 1259 OID 177122)
 -- Name: media-agent-role; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -5758,8 +5640,6 @@ CREATE TABLE public."media-agent-role" (
 ALTER TABLE public."media-agent-role" OWNER TO postgres;
 
 --
--- TOC entry 5957 (class 0 OID 0)
--- Dependencies: 263
 -- Name: TABLE "media-agent-role"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -5767,8 +5647,6 @@ COMMENT ON TABLE public."media-agent-role" IS 'The interval during which an Agen
 
 
 --
--- TOC entry 5958 (class 0 OID 0)
--- Dependencies: 263
 -- Name: COLUMN "media-agent-role"."agentID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -5776,8 +5654,6 @@ COMMENT ON COLUMN public."media-agent-role"."agentID" IS 'An identifier for an A
 
 
 --
--- TOC entry 5959 (class 0 OID 0)
--- Dependencies: 263
 -- Name: COLUMN "media-agent-role"."mediaID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -5785,8 +5661,6 @@ COMMENT ON COLUMN public."media-agent-role"."mediaID" IS 'An identifier for a Me
 
 
 --
--- TOC entry 5960 (class 0 OID 0)
--- Dependencies: 263
 -- Name: COLUMN "media-agent-role"."agentRole"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -5794,8 +5668,6 @@ COMMENT ON COLUMN public."media-agent-role"."agentRole" IS 'The category that be
 
 
 --
--- TOC entry 5961 (class 0 OID 0)
--- Dependencies: 263
 -- Name: COLUMN "media-agent-role"."agentRoleIRI"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -5803,8 +5675,6 @@ COMMENT ON COLUMN public."media-agent-role"."agentRoleIRI" IS 'The IRI of the co
 
 
 --
--- TOC entry 5962 (class 0 OID 0)
--- Dependencies: 263
 -- Name: COLUMN "media-agent-role"."agentRoleVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -5812,8 +5682,6 @@ COMMENT ON COLUMN public."media-agent-role"."agentRoleVocabulary" IS 'The refere
 
 
 --
--- TOC entry 5963 (class 0 OID 0)
--- Dependencies: 263
 -- Name: COLUMN "media-agent-role"."agentRoleOrder"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -5821,8 +5689,6 @@ COMMENT ON COLUMN public."media-agent-role"."agentRoleOrder" IS 'The numerical p
 
 
 --
--- TOC entry 5964 (class 0 OID 0)
--- Dependencies: 263
 -- Name: COLUMN "media-agent-role"."agentRoleDate"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -5830,7 +5696,6 @@ COMMENT ON COLUMN public."media-agent-role"."agentRoleDate" IS 'The interval dur
 
 
 --
--- TOC entry 264 (class 1259 OID 177138)
 -- Name: media-assertion; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -5861,8 +5726,6 @@ CREATE TABLE public."media-assertion" (
 ALTER TABLE public."media-assertion" OWNER TO postgres;
 
 --
--- TOC entry 5965 (class 0 OID 0)
--- Dependencies: 264
 -- Name: TABLE "media-assertion"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -5870,8 +5733,6 @@ COMMENT ON TABLE public."media-assertion" IS 'Comments or notes about an Asserti
 
 
 --
--- TOC entry 5966 (class 0 OID 0)
--- Dependencies: 264
 -- Name: COLUMN "media-assertion"."assertionID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -5879,8 +5740,6 @@ COMMENT ON COLUMN public."media-assertion"."assertionID" IS 'An identifier for a
 
 
 --
--- TOC entry 5967 (class 0 OID 0)
--- Dependencies: 264
 -- Name: COLUMN "media-assertion"."mediaID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -5888,8 +5747,6 @@ COMMENT ON COLUMN public."media-assertion"."mediaID" IS 'An identifier for a Med
 
 
 --
--- TOC entry 5968 (class 0 OID 0)
--- Dependencies: 264
 -- Name: COLUMN "media-assertion"."assertionType"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -5897,8 +5754,6 @@ COMMENT ON COLUMN public."media-assertion"."assertionType" IS 'The category that
 
 
 --
--- TOC entry 5969 (class 0 OID 0)
--- Dependencies: 264
 -- Name: COLUMN "media-assertion"."assertionTypeIRI"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -5906,8 +5761,6 @@ COMMENT ON COLUMN public."media-assertion"."assertionTypeIRI" IS 'The IRI of the
 
 
 --
--- TOC entry 5970 (class 0 OID 0)
--- Dependencies: 264
 -- Name: COLUMN "media-assertion"."assertionTypeVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -5915,8 +5768,6 @@ COMMENT ON COLUMN public."media-assertion"."assertionTypeVocabulary" IS 'The ref
 
 
 --
--- TOC entry 5971 (class 0 OID 0)
--- Dependencies: 264
 -- Name: COLUMN "media-assertion"."assertionMadeDate"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -5924,8 +5775,6 @@ COMMENT ON COLUMN public."media-assertion"."assertionMadeDate" IS 'The date on w
 
 
 --
--- TOC entry 5972 (class 0 OID 0)
--- Dependencies: 264
 -- Name: COLUMN "media-assertion"."assertionEffectiveDate"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -5933,8 +5782,6 @@ COMMENT ON COLUMN public."media-assertion"."assertionEffectiveDate" IS 'The date
 
 
 --
--- TOC entry 5973 (class 0 OID 0)
--- Dependencies: 264
 -- Name: COLUMN "media-assertion"."assertionValue"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -5942,8 +5789,6 @@ COMMENT ON COLUMN public."media-assertion"."assertionValue" IS 'An asserted valu
 
 
 --
--- TOC entry 5974 (class 0 OID 0)
--- Dependencies: 264
 -- Name: COLUMN "media-assertion"."assertionValueIRI"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -5951,8 +5796,6 @@ COMMENT ON COLUMN public."media-assertion"."assertionValueIRI" IS 'The IRI of th
 
 
 --
--- TOC entry 5975 (class 0 OID 0)
--- Dependencies: 264
 -- Name: COLUMN "media-assertion"."assertionValueVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -5960,8 +5803,6 @@ COMMENT ON COLUMN public."media-assertion"."assertionValueVocabulary" IS 'The re
 
 
 --
--- TOC entry 5976 (class 0 OID 0)
--- Dependencies: 264
 -- Name: COLUMN "media-assertion"."assertionValueNumeric"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -5969,8 +5810,6 @@ COMMENT ON COLUMN public."media-assertion"."assertionValueNumeric" IS 'An assert
 
 
 --
--- TOC entry 5977 (class 0 OID 0)
--- Dependencies: 264
 -- Name: COLUMN "media-assertion"."assertionUnit"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -5978,8 +5817,6 @@ COMMENT ON COLUMN public."media-assertion"."assertionUnit" IS 'The units associa
 
 
 --
--- TOC entry 5978 (class 0 OID 0)
--- Dependencies: 264
 -- Name: COLUMN "media-assertion"."assertionUnitIRI"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -5987,8 +5824,6 @@ COMMENT ON COLUMN public."media-assertion"."assertionUnitIRI" IS 'The IRI for th
 
 
 --
--- TOC entry 5979 (class 0 OID 0)
--- Dependencies: 264
 -- Name: COLUMN "media-assertion"."assertionUnitVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -5996,8 +5831,6 @@ COMMENT ON COLUMN public."media-assertion"."assertionUnitVocabulary" IS 'The ref
 
 
 --
--- TOC entry 5980 (class 0 OID 0)
--- Dependencies: 264
 -- Name: COLUMN "media-assertion"."assertionBy"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -6005,8 +5838,6 @@ COMMENT ON COLUMN public."media-assertion"."assertionBy" IS 'A list (concatenate
 
 
 --
--- TOC entry 5981 (class 0 OID 0)
--- Dependencies: 264
 -- Name: COLUMN "media-assertion"."assertionByID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -6014,8 +5845,6 @@ COMMENT ON COLUMN public."media-assertion"."assertionByID" IS 'An identifier for
 
 
 --
--- TOC entry 5982 (class 0 OID 0)
--- Dependencies: 264
 -- Name: COLUMN "media-assertion"."assertionProtocol"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -6023,8 +5852,6 @@ COMMENT ON COLUMN public."media-assertion"."assertionProtocol" IS 'The names of,
 
 
 --
--- TOC entry 5983 (class 0 OID 0)
--- Dependencies: 264
 -- Name: COLUMN "media-assertion"."assertionProtocolID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -6032,8 +5859,6 @@ COMMENT ON COLUMN public."media-assertion"."assertionProtocolID" IS 'An identifi
 
 
 --
--- TOC entry 5984 (class 0 OID 0)
--- Dependencies: 264
 -- Name: COLUMN "media-assertion"."assertionCitation"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -6041,8 +5866,6 @@ COMMENT ON COLUMN public."media-assertion"."assertionCitation" IS 'A list (conca
 
 
 --
--- TOC entry 5985 (class 0 OID 0)
--- Dependencies: 264
 -- Name: COLUMN "media-assertion"."assertionRemarks"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -6050,7 +5873,6 @@ COMMENT ON COLUMN public."media-assertion"."assertionRemarks" IS 'Comments or no
 
 
 --
--- TOC entry 265 (class 1259 OID 177155)
 -- Name: media-identifier; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -6067,8 +5889,6 @@ CREATE TABLE public."media-identifier" (
 ALTER TABLE public."media-identifier" OWNER TO postgres;
 
 --
--- TOC entry 5986 (class 0 OID 0)
--- Dependencies: 265
 -- Name: TABLE "media-identifier"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -6076,8 +5896,6 @@ COMMENT ON TABLE public."media-identifier" IS 'A language in which an Identifier
 
 
 --
--- TOC entry 5987 (class 0 OID 0)
--- Dependencies: 265
 -- Name: COLUMN "media-identifier".identifier; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -6085,8 +5903,6 @@ COMMENT ON COLUMN public."media-identifier".identifier IS 'An unambiguous refere
 
 
 --
--- TOC entry 5988 (class 0 OID 0)
--- Dependencies: 265
 -- Name: COLUMN "media-identifier"."mediaID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -6094,8 +5910,6 @@ COMMENT ON COLUMN public."media-identifier"."mediaID" IS 'An identifier for a Me
 
 
 --
--- TOC entry 5989 (class 0 OID 0)
--- Dependencies: 265
 -- Name: COLUMN "media-identifier"."identifierType"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -6103,8 +5917,6 @@ COMMENT ON COLUMN public."media-identifier"."identifierType" IS 'The category or
 
 
 --
--- TOC entry 5990 (class 0 OID 0)
--- Dependencies: 265
 -- Name: COLUMN "media-identifier"."identifierTypeIRI"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -6112,8 +5924,6 @@ COMMENT ON COLUMN public."media-identifier"."identifierTypeIRI" IS 'The IRI of t
 
 
 --
--- TOC entry 5991 (class 0 OID 0)
--- Dependencies: 265
 -- Name: COLUMN "media-identifier"."identifierTypeVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -6121,8 +5931,6 @@ COMMENT ON COLUMN public."media-identifier"."identifierTypeVocabulary" IS 'The r
 
 
 --
--- TOC entry 5992 (class 0 OID 0)
--- Dependencies: 265
 -- Name: COLUMN "media-identifier"."identifierLanguage"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -6130,7 +5938,1679 @@ COMMENT ON COLUMN public."media-identifier"."identifierLanguage" IS 'A language 
 
 
 --
--- TOC entry 218 (class 1259 OID 176421)
+-- Name: molecular-protocol; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public."molecular-protocol" (
+    "molecularProtocolID" text NOT NULL,
+    "assayType" text,
+    samp_name text,
+    project_name text,
+    experimental_factor text,
+    samp_taxon_id text,
+    neg_cont_type text,
+    pos_cont_type text,
+    env_broad_scale text,
+    env_local_scale text,
+    env_medium text,
+    subspecf_gen_lin text,
+    ploidy text,
+    num_replicons text,
+    extrachrom_elements text,
+    estimated_size text,
+    ref_biomaterial text,
+    source_mat_id text,
+    pathogenicity text,
+    biotic_relationship text,
+    specific_host text,
+    host_spec_range text,
+    host_disease_stat text,
+    trophic_level text,
+    propagation text,
+    encoded_traits text,
+    rel_to_oxygen text,
+    isol_growth_condt text,
+    samp_collec_device text,
+    samp_collec_method text,
+    samp_mat_process text,
+    size_frac text,
+    samp_size text,
+    samp_vol_we_dna_ext text,
+    source_uvig text,
+    virus_enrich_appr text,
+    nucl_acid_ext text,
+    nucl_acid_amp text,
+    lib_size text,
+    lib_reads_seqd text,
+    lib_layout text,
+    lib_vector text,
+    lib_screen text,
+    target_gene text,
+    target_subfragment text,
+    pcr_primers text,
+    mid text,
+    adapters text,
+    pcr_cond text,
+    seq_meth text,
+    seq_quality_check text,
+    chimera_check text,
+    tax_ident text,
+    assembly_qual text,
+    assembly_name text,
+    assembly_software text,
+    annot text,
+    number_contig text,
+    feat_pred text,
+    ref_db text,
+    sim_search_meth text,
+    tax_class text,
+    _16s_recover text,
+    _16s_recover_software text,
+    trnas text,
+    trna_ext_software text,
+    compl_score text,
+    compl_software text,
+    compl_appr text,
+    contam_score text,
+    contam_screen_input text,
+    contam_screen_param text,
+    decontam_software text,
+    sort_tech text,
+    single_cell_lysis_appr text,
+    single_cell_lysis_prot text,
+    wga_amp_appr text,
+    wga_amp_kit text,
+    bin_param text,
+    bin_software text,
+    reassembly_bin text,
+    mag_cov_software text,
+    vir_ident_software text,
+    pred_genome_type text,
+    pred_genome_struc text,
+    detec_type text,
+    otu_class_appr text,
+    otu_seq_comp_appr text,
+    otu_db text,
+    host_pred_appr text,
+    host_pred_est_acc text,
+    url text,
+    sop text,
+    pcr_primer_forward text,
+    pcr_primer_reverse text,
+    pcr_primer_name_forward text,
+    pcr_primer_name_reverse text,
+    pcr_primer_reference text,
+    "DNA_sequence" text,
+    concentration text,
+    "concentrationUnit" text,
+    "methodDeterminationConcentrationAndRatios" text,
+    "ratioOfAbsorbance260_230" text,
+    "ratioOfAbsorbance260_280" text,
+    "annealingTemp" text,
+    "annealingTempUnit" text,
+    "probeReporter" text,
+    "probeQuencher" text,
+    "ampliconSize" text,
+    "thresholdQuantificationCycle" text,
+    "baselineValue" text,
+    "quantificationCycle" text,
+    "automaticThresholdQuantificationCycle" text,
+    "automaticBaselineValue" text,
+    "contaminationAssessment" text,
+    "partitionVolume" text,
+    "partitionVolumeUnit" text,
+    "estimatedNumberOfCopies" text,
+    "amplificationReactionVolume" text,
+    "amplificationReactionVolumeUnit" text,
+    pcr_analysis_software text,
+    "experimentalVariance" text,
+    pcr_primer_lod text,
+    pcr_primer_loq text
+);
+
+
+ALTER TABLE public."molecular-protocol" OWNER TO postgres;
+
+--
+-- Name: TABLE "molecular-protocol"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON TABLE public."molecular-protocol" IS 'The assay’s ability to quantify copy number at low levels.';
+
+
+--
+-- Name: COLUMN "molecular-protocol"."molecularProtocolID"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol"."molecularProtocolID" IS 'An identifier for a MolecularProtocol.';
+
+
+--
+-- Name: COLUMN "molecular-protocol"."assayType"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol"."assayType" IS 'The method used in the study to detect taxon/taxa of interest in the sample.';
+
+
+--
+-- Name: COLUMN "molecular-protocol".samp_name; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".samp_name IS 'Sample Name is a name that you choose for the sample. It can have any format, but we suggest that you make it concise, unique and consistent within your lab, and as informative as possible. Every Sample Name from a single Submitter must be unique. ';
+
+
+--
+-- Name: COLUMN "molecular-protocol".project_name; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".project_name IS 'Name of the project within which the sequencing was organized';
+
+
+--
+-- Name: COLUMN "molecular-protocol".experimental_factor; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".experimental_factor IS 'Experimental factors are essentially the variable aspects of an experiment design which can be used to describe an experiment, or set of experiments, in an increasingly detailed manner. This field accepts ontology terms from Experimental Factor Ontology (EFO) and/or Ontology for Biomedical Investigations (OBI). For a browser of EFO (v 2.95) terms, please see http://purl.bioontology.org/ontology/EFO; for a browser of OBI (v 2018-02-12) terms please see http://purl.bioontology.org/ontology/OBI';
+
+
+--
+-- Name: COLUMN "molecular-protocol".samp_taxon_id; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".samp_taxon_id IS 'NCBI taxon id of the sample. Maybe be a single taxon or mixed taxa sample. Use "synthetic metagenome" for mock community/positive controls, or "blank sample" for negative controls';
+
+
+--
+-- Name: COLUMN "molecular-protocol".neg_cont_type; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".neg_cont_type IS 'The substance or equipment used as a negative control in an investigation';
+
+
+--
+-- Name: COLUMN "molecular-protocol".pos_cont_type; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".pos_cont_type IS 'The substance, mixture, product, or apparatus used to verify that a process which is part of an investigation delivers a true positive';
+
+
+--
+-- Name: COLUMN "molecular-protocol".env_broad_scale; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".env_broad_scale IS 'In this field, report which major environmental system your sample or specimen came from. The systems identified should have a coarse spatial grain, to provide the general environmental context of where the sampling was done (e.g. were you in the desert or a rainforest?). We recommend using subclasses of ENVO’s biome class: http://purl.obolibrary.org/obo/ENVO_00000428. Format (one term): termLabel [termID], Format (multiple terms): termLabel [termID]|termLabel [termID]|termLabel [termID]. Example: Annotating a water sample from the photic zone in middle of the Atlantic Ocean, consider: oceanic epipelagic zone biome [ENVO:01000033]. Example: Annotating a sample from the Amazon rainforest consider: tropical moist broadleaf forest biome [ENVO:01000228]. If needed, request new terms on the ENVO tracker, identified here: http://www.obofoundry.org/ontology/envo.html';
+
+
+--
+-- Name: COLUMN "molecular-protocol".env_local_scale; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".env_local_scale IS 'In this field, report the entity or entities which are in your sample or specimen’s local vicinity and which you believe have significant causal influences on your sample or specimen. Please use terms that are present in ENVO and which are of smaller spatial grain than your entry for env_broad_scale. Format (one term): termLabel [termID]; Format (multiple terms): termLabel [termID]|termLabel [termID]|termLabel [termID]. Example: Annotating a pooled sample taken from various vegetation layers in a forest consider: canopy [ENVO:00000047]|herb and fern layer [ENVO:01000337]|litter layer [ENVO:01000338]|understory [01000335]|shrub layer [ENVO:01000336]. If needed, request new terms on the ENVO tracker, identified here: http://www.obofoundry.org/ontology/envo.html';
+
+
+--
+-- Name: COLUMN "molecular-protocol".env_medium; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".env_medium IS 'In this field, report which environmental material or materials (pipe separated) immediately surrounded your sample or specimen prior to sampling, using one or more subclasses of ENVO’s environmental material class: http://purl.obolibrary.org/obo/ENVO_00010483. Format (one term): termLabel [termID]; Format (multiple terms): termLabel [termID]|termLabel [termID]|termLabel [termID]. Example: Annotating a fish swimming in the upper 100 m of the Atlantic Ocean, consider: ocean water [ENVO:00002151]. Example: Annotating a duck on a pond consider: pond water [ENVO:00002228]|air ENVO_00002005. If needed, request new terms on the ENVO tracker, identified here: http://www.obofoundry.org/ontology/envo.html';
+
+
+--
+-- Name: COLUMN "molecular-protocol".subspecf_gen_lin; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".subspecf_gen_lin IS 'This should provide further information about the genetic distinctness of the sequenced organism by recording additional information e.g. serovar, serotype, biotype, ecotype, or any relevant genetic typing schemes like Group I plasmid. It can also contain alternative taxonomic information. It should contain both the lineage name, and the lineage rank, i.e. biovar:abc123';
+
+
+--
+-- Name: COLUMN "molecular-protocol".ploidy; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".ploidy IS 'The ploidy level of the genome (e.g. allopolyploid, haploid, diploid, triploid, tetraploid). It has implications for the downstream study of duplicated gene and regions of the genomes (and perhaps for difficulties in assembly). For terms, please select terms listed under class ploidy (PATO:001374) of Phenotypic Quality Ontology (PATO), and for a browser of PATO (v 2018-03-27) please refer to http://purl.bioontology.org/ontology/PATO';
+
+
+--
+-- Name: COLUMN "molecular-protocol".num_replicons; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".num_replicons IS 'Reports the number of replicons in a nuclear genome of eukaryotes, in the genome of a bacterium or archaea or the number of segments in a segmented virus. Always applied to the haploid chromosome count of a eukaryote';
+
+
+--
+-- Name: COLUMN "molecular-protocol".extrachrom_elements; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".extrachrom_elements IS 'Do plasmids exist of significant phenotypic consequence (e.g. ones that determine virulence or antibiotic resistance). Megaplasmids? Other plasmids (borrelia has 15+ plasmids)';
+
+
+--
+-- Name: COLUMN "molecular-protocol".estimated_size; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".estimated_size IS 'The estimated size of the genome prior to sequencing. Of particular importance in the sequencing of (eukaryotic) genome which could remain in draft form for a long or unspecified period.';
+
+
+--
+-- Name: COLUMN "molecular-protocol".ref_biomaterial; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".ref_biomaterial IS 'Primary publication if isolated before genome publication; otherwise, primary genome report';
+
+
+--
+-- Name: COLUMN "molecular-protocol".source_mat_id; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".source_mat_id IS 'A unique identifier assigned to a material sample (as defined by http://rs.tdwg.org/dwc/terms/materialSampleID, and as opposed to a particular digital record of a material sample) used for extracting nucleic acids, and subsequent sequencing. The identifier can refer either to the original material collected or to any derived sub-samples. The INSDC qualifiers /specimen_voucher, /bio_material, or /culture_collection may or may not share the same value as the source_mat_id field. For instance, the /specimen_voucher qualifier and source_mat_id may both contain ´UAM:Herps:14´ , referring to both the specimen voucher and sampled tissue with the same identifier. However, the /culture_collection qualifier may refer to a value from an initial culture (e.g. ATCC:11775) while source_mat_id would refer to an identifier from some derived culture from which the nucleic acids were extracted (e.g. xatc123 or ark:/2154/R2).';
+
+
+--
+-- Name: COLUMN "molecular-protocol".pathogenicity; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".pathogenicity IS 'To what is the entity pathogenic';
+
+
+--
+-- Name: COLUMN "molecular-protocol".biotic_relationship; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".biotic_relationship IS 'Description of relationship(s) between the subject organism and other organism(s) it is associated with. E.g., parasite on species X; mutualist with species Y. The target organism is the subject of the relationship, and the other organism(s) is the object';
+
+
+--
+-- Name: COLUMN "molecular-protocol".specific_host; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".specific_host IS 'If there is a host involved, please provide its taxid (or environmental if not actually isolated from the dead or alive host - i.e. a pathogen could be isolated from a swipe of a bench etc) and report whether it is a laboratory or natural host)';
+
+
+--
+-- Name: COLUMN "molecular-protocol".host_spec_range; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".host_spec_range IS 'The NCBI taxonomy identifier of the specific host if it is known';
+
+
+--
+-- Name: COLUMN "molecular-protocol".host_disease_stat; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".host_disease_stat IS 'List of diseases with which the host has been diagnosed; can include multiple diagnoses. The value of the field depends on host; for humans the terms should be chosen from the DO (Human Disease Ontology) at https://www.disease-ontology.org, non-human host diseases are free text';
+
+
+--
+-- Name: COLUMN "molecular-protocol".trophic_level; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".trophic_level IS 'Trophic levels are the feeding position in a food chain. Microbes can be a range of producers (e.g. chemolithotroph)';
+
+
+--
+-- Name: COLUMN "molecular-protocol".propagation; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".propagation IS 'This field is specific to different taxa. For phages: lytic/lysogenic, for plasmids: incompatibility group, for eukaryotes: sexual/asexual (Note: there is the strong opinion to name phage propagation obligately lytic or temperate, therefore we also give this choice';
+
+
+--
+-- Name: COLUMN "molecular-protocol".encoded_traits; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".encoded_traits IS 'Should include key traits like antibiotic resistance or xenobiotic degradation phenotypes for plasmids, converting genes for phage';
+
+
+--
+-- Name: COLUMN "molecular-protocol".rel_to_oxygen; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".rel_to_oxygen IS 'Is this organism an aerobe, anaerobe? Please note that aerobic and anaerobic are valid descriptors for microbial environments';
+
+
+--
+-- Name: COLUMN "molecular-protocol".isol_growth_condt; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".isol_growth_condt IS 'Publication reference in the form of pubmed ID (pmid), digital object identifier (doi) or url for isolation and growth condition specifications of the organism/material';
+
+
+--
+-- Name: COLUMN "molecular-protocol".samp_collec_device; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".samp_collec_device IS 'The device used to collect an environmental sample. This field accepts terms listed under environmental sampling device (http://purl.obolibrary.org/obo/ENVO). This field also accepts terms listed under specimen collection device (http://purl.obolibrary.org/obo/GENEPIO_0002094).';
+
+
+--
+-- Name: COLUMN "molecular-protocol".samp_collec_method; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".samp_collec_method IS 'The method employed for collecting the sample';
+
+
+--
+-- Name: COLUMN "molecular-protocol".samp_mat_process; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".samp_mat_process IS 'Any processing applied to the sample during or after retrieving the sample from environment. This field accepts OBI, for a browser of OBI (v 2018-02-12) terms please see http://purl.bioontology.org/ontology/OBI';
+
+
+--
+-- Name: COLUMN "molecular-protocol".size_frac; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".size_frac IS 'Filtering pore size used in sample preparation';
+
+
+--
+-- Name: COLUMN "molecular-protocol".samp_size; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".samp_size IS 'Amount or size of sample (volume, mass or area) that was collected';
+
+
+--
+-- Name: COLUMN "molecular-protocol".samp_vol_we_dna_ext; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".samp_vol_we_dna_ext IS 'Volume (ml) or mass (g) of total collected sample processed for DNA extraction. Note: total sample collected should be entered under the term Sample Size (MIXS:0000001).';
+
+
+--
+-- Name: COLUMN "molecular-protocol".source_uvig; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".source_uvig IS 'Type of dataset from which the UViG was obtained';
+
+
+--
+-- Name: COLUMN "molecular-protocol".virus_enrich_appr; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".virus_enrich_appr IS 'List of approaches used to enrich the sample for viruses, if any';
+
+
+--
+-- Name: COLUMN "molecular-protocol".nucl_acid_ext; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".nucl_acid_ext IS 'A link to a literature reference, electronic resource or a standard operating procedure (SOP), that describes the material separation to recover the nucleic acid fraction from a sample';
+
+
+--
+-- Name: COLUMN "molecular-protocol".nucl_acid_amp; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".nucl_acid_amp IS 'A link to a literature reference, electronic resource or a standard operating procedure (SOP), that describes the enzymatic amplification (PCR, TMA, NASBA) of specific nucleic acids';
+
+
+--
+-- Name: COLUMN "molecular-protocol".lib_size; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".lib_size IS 'Total number of clones in the library prepared for the project';
+
+
+--
+-- Name: COLUMN "molecular-protocol".lib_reads_seqd; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".lib_reads_seqd IS 'Total number of clones sequenced from the library';
+
+
+--
+-- Name: COLUMN "molecular-protocol".lib_layout; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".lib_layout IS 'Specify whether to expect single, paired, or other configuration of reads';
+
+
+--
+-- Name: COLUMN "molecular-protocol".lib_vector; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".lib_vector IS 'Cloning vector type(s) used in construction of libraries';
+
+
+--
+-- Name: COLUMN "molecular-protocol".lib_screen; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".lib_screen IS 'Specific enrichment or screening methods applied before and/or after creating libraries';
+
+
+--
+-- Name: COLUMN "molecular-protocol".target_gene; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".target_gene IS 'Targeted gene or locus name for marker gene studies';
+
+
+--
+-- Name: COLUMN "molecular-protocol".target_subfragment; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".target_subfragment IS 'Name of subfragment of a gene or locus. Important to e.g. identify special regions on marker genes like V6 on 16S rRNA';
+
+
+--
+-- Name: COLUMN "molecular-protocol".pcr_primers; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".pcr_primers IS 'PCR primers that were used to amplify the sequence of the targeted gene, locus or subfragment. This field should contain all the primers used for a single PCR reaction if multiple forward or reverse primers are present in a single PCR reaction. The primer sequence should be reported in uppercase letters';
+
+
+--
+-- Name: COLUMN "molecular-protocol".mid; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".mid IS 'Molecular barcodes, called Multiplex Identifiers (MIDs), that are used to specifically tag unique samples in a sequencing run. Sequence should be reported in uppercase letters';
+
+
+--
+-- Name: COLUMN "molecular-protocol".adapters; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".adapters IS 'Adapters provide priming sequences for both amplification and sequencing of the sample-library fragments. Both adapters should be reported; in uppercase letters';
+
+
+--
+-- Name: COLUMN "molecular-protocol".pcr_cond; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".pcr_cond IS 'Description of reaction conditions and components of PCR in the form of ´initial denaturation:94degC_1.5min; annealing=...´';
+
+
+--
+-- Name: COLUMN "molecular-protocol".seq_meth; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".seq_meth IS 'Sequencing method used; e.g. Sanger, ABI-solid';
+
+
+--
+-- Name: COLUMN "molecular-protocol".seq_quality_check; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".seq_quality_check IS 'Indicate if the sequence has been called by automatic systems (none) or undergone a manual editing procedure (e.g. by inspecting the raw data or chromatograms). Applied only for sequences that are not submitted to SRA,ENA or DRA';
+
+
+--
+-- Name: COLUMN "molecular-protocol".chimera_check; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".chimera_check IS 'A chimeric sequence, or chimera for short, is a sequence comprised of two or more phylogenetically distinct parent sequences. Chimeras are usually PCR artifacts thought to occur when a prematurely terminated amplicon reanneals to a foreign DNA strand and is copied to completion in the following PCR cycles. The point at which the chimeric sequence changes from one parent to the next is called the breakpoint or conversion point';
+
+
+--
+-- Name: COLUMN "molecular-protocol".tax_ident; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".tax_ident IS 'The phylogenetic marker(s) used to assign an organism name to the SAG or MAG';
+
+
+--
+-- Name: COLUMN "molecular-protocol".assembly_qual; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".assembly_qual IS 'The assembly quality category is based on sets of criteria outlined for each assembly quality category. For MISAG/MIMAG; Finished: Single, validated, contiguous sequence per replicon without gaps or ambiguities with a consensus error rate equivalent to Q50 or better. High Quality Draft:Multiple fragments where gaps span repetitive regions. Presence of the 23S, 16S and 5S rRNA genes and at least 18 tRNAs. Medium Quality Draft:Many fragments with little to no review of assembly other than reporting of standard assembly statistics. Low Quality Draft:Many fragments with little to no review of assembly other than reporting of standard assembly statistics. Assembly statistics include, but are not limited to total assembly size, number of contigs, contig N50/L50, and maximum contig length. For MIUVIG; Finished: Single, validated, contiguous sequence per replicon without gaps or ambiguities, with extensive manual review and editing to annotate putative gene functions and transcriptional units. High-quality draft genome: One or multiple fragments, totaling ≥ 90% of the expected genome or replicon sequence or predicted complete. Genome fragment(s): One or multiple fragments, totalling < 90% of the expected genome or replicon sequence, or for which no genome size could be estimated';
+
+
+--
+-- Name: COLUMN "molecular-protocol".assembly_name; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".assembly_name IS 'Name/version of the assembly provided by the submitter that is used in the genome browsers and in the community';
+
+
+--
+-- Name: COLUMN "molecular-protocol".assembly_software; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".assembly_software IS 'Tool(s) used for assembly, including version number and parameters';
+
+
+--
+-- Name: COLUMN "molecular-protocol".annot; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".annot IS 'Tool used for annotation, or for cases where annotation was provided by a community jamboree or model organism database rather than by a specific submitter';
+
+
+--
+-- Name: COLUMN "molecular-protocol".number_contig; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".number_contig IS 'Total number of contigs in the cleaned/submitted assembly that makes up a given genome, SAG, MAG, or UViG';
+
+
+--
+-- Name: COLUMN "molecular-protocol".feat_pred; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".feat_pred IS 'Method used to predict UViGs features such as ORFs, integration site, etc.';
+
+
+--
+-- Name: COLUMN "molecular-protocol".ref_db; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".ref_db IS 'List of database(s) used for ORF annotation, along with version number and reference to website or publication';
+
+
+--
+-- Name: COLUMN "molecular-protocol".sim_search_meth; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".sim_search_meth IS 'Tool used to compare ORFs with database, along with version and cutoffs used';
+
+
+--
+-- Name: COLUMN "molecular-protocol".tax_class; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".tax_class IS 'Method used for taxonomic classification, along with reference database used, classification rank, and thresholds used to classify new genomes';
+
+
+--
+-- Name: COLUMN "molecular-protocol"._16s_recover; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol"._16s_recover IS 'Can a 16S gene be recovered from the submitted SAG or MAG?';
+
+
+--
+-- Name: COLUMN "molecular-protocol"._16s_recover_software; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol"._16s_recover_software IS 'Tools used for 16S rRNA gene extraction';
+
+
+--
+-- Name: COLUMN "molecular-protocol".trnas; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".trnas IS 'The total number of tRNAs identified from the SAG or MAG';
+
+
+--
+-- Name: COLUMN "molecular-protocol".trna_ext_software; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".trna_ext_software IS 'Tools used for tRNA identification';
+
+
+--
+-- Name: COLUMN "molecular-protocol".compl_score; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".compl_score IS 'Completeness score is typically based on either the fraction of markers found as compared to a database or the percent of a genome found as compared to a closely related reference genome. High Quality Draft: >90%, Medium Quality Draft: >50%, and Low Quality Draft: < 50% should have the indicated completeness scores';
+
+
+--
+-- Name: COLUMN "molecular-protocol".compl_software; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".compl_software IS 'Tools used for completion estimate, i.e. checkm, anvi´o, busco';
+
+
+--
+-- Name: COLUMN "molecular-protocol".compl_appr; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".compl_appr IS 'The approach used to determine the completeness of a given SAG or MAG, which would typically make use of a set of conserved marker genes or a closely related reference genome. For UViG completeness, include reference genome or group used, and contig feature suggesting a complete genome';
+
+
+--
+-- Name: COLUMN "molecular-protocol".contam_score; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".contam_score IS 'The contamination score is based on the fraction of single-copy genes that are observed more than once in a query genome. The following scores are acceptable for; High Quality Draft: < 5%, Medium Quality Draft: < 10%, Low Quality Draft: < 10%. Contamination must be below 5% for a SAG or MAG to be deposited into any of the public databases';
+
+
+--
+-- Name: COLUMN "molecular-protocol".contam_screen_input; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".contam_screen_input IS 'The type of sequence data used as input';
+
+
+--
+-- Name: COLUMN "molecular-protocol".contam_screen_param; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".contam_screen_param IS 'Specific parameters used in the decontamination sofware, such as reference database, coverage, and kmers. Combinations of these parameters may also be used, i.e. kmer and coverage, or reference database and kmer';
+
+
+--
+-- Name: COLUMN "molecular-protocol".decontam_software; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".decontam_software IS 'Tool(s) used in contamination screening';
+
+
+--
+-- Name: COLUMN "molecular-protocol".sort_tech; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".sort_tech IS 'Method used to sort/isolate cells or particles of interest';
+
+
+--
+-- Name: COLUMN "molecular-protocol".single_cell_lysis_appr; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".single_cell_lysis_appr IS 'Method used to free DNA from interior of the cell(s) or particle(s)';
+
+
+--
+-- Name: COLUMN "molecular-protocol".single_cell_lysis_prot; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".single_cell_lysis_prot IS 'Name of the kit or standard protocol used for cell(s) or particle(s) lysis';
+
+
+--
+-- Name: COLUMN "molecular-protocol".wga_amp_appr; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".wga_amp_appr IS 'Method used to amplify genomic DNA in preparation for sequencing';
+
+
+--
+-- Name: COLUMN "molecular-protocol".wga_amp_kit; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".wga_amp_kit IS 'Kit used to amplify genomic DNA in preparation for sequencing';
+
+
+--
+-- Name: COLUMN "molecular-protocol".bin_param; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".bin_param IS 'The parameters that have been applied during the extraction of genomes from metagenomic datasets';
+
+
+--
+-- Name: COLUMN "molecular-protocol".bin_software; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".bin_software IS 'Tool(s) used for the extraction of genomes from metagenomic datasets';
+
+
+--
+-- Name: COLUMN "molecular-protocol".reassembly_bin; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".reassembly_bin IS 'Has an assembly been performed on a genome bin extracted from a metagenomic assembly?';
+
+
+--
+-- Name: COLUMN "molecular-protocol".mag_cov_software; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".mag_cov_software IS 'Tool(s) used to determine the genome coverage if coverage is used as a binning parameter in the extraction of genomes from metagenomic datasets';
+
+
+--
+-- Name: COLUMN "molecular-protocol".vir_ident_software; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".vir_ident_software IS 'Tool(s) used for the identification of UViG as a viral genome, software or protocol name including version number, parameters, and cutoffs used';
+
+
+--
+-- Name: COLUMN "molecular-protocol".pred_genome_type; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".pred_genome_type IS 'Type of genome predicted for the UViG';
+
+
+--
+-- Name: COLUMN "molecular-protocol".pred_genome_struc; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".pred_genome_struc IS 'Expected structure of the viral genome';
+
+
+--
+-- Name: COLUMN "molecular-protocol".detec_type; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".detec_type IS 'Type of UViG detection';
+
+
+--
+-- Name: COLUMN "molecular-protocol".otu_class_appr; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".otu_class_appr IS 'Cutoffs and approach used when clustering new UViGs in "species-level" OTUs. Note that results from standard 95% ANI / 85% AF clustering should be provided alongside OTUS defined from another set of thresholds, even if the latter are the ones primarily used during the analysis';
+
+
+--
+-- Name: COLUMN "molecular-protocol".otu_seq_comp_appr; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".otu_seq_comp_appr IS 'Tool and thresholds used to compare sequences when computing "species-level" OTUs';
+
+
+--
+-- Name: COLUMN "molecular-protocol".otu_db; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".otu_db IS 'Reference database (i.e. sequences not generated as part of the current study) used to cluster new genomes in "species-level" OTUs, if any';
+
+
+--
+-- Name: COLUMN "molecular-protocol".host_pred_appr; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".host_pred_appr IS 'Tool or approach used for host prediction';
+
+
+--
+-- Name: COLUMN "molecular-protocol".host_pred_est_acc; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".host_pred_est_acc IS 'For each tool or approach used for host prediction, estimated false discovery rates should be included, either computed de novo or from the literature';
+
+
+--
+-- Name: COLUMN "molecular-protocol".sop; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".sop IS 'Standard operating procedures used in assembly and/or annotation of genomes, metagenomes or environmental sequences';
+
+
+--
+-- Name: COLUMN "molecular-protocol".pcr_primer_forward; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".pcr_primer_forward IS 'Forward PCR primer that were used to amplify the sequence of the targeted gene, locus or subfragment. If multiple multiple forward or reverse primers are present in a single PCR reaction, there should be a full row for each of these linked to the same DWC Occurrence. The primer sequence should be reported in uppercase letters';
+
+
+--
+-- Name: COLUMN "molecular-protocol".pcr_primer_reverse; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".pcr_primer_reverse IS 'Reverse PCR primer that were used to amplify the sequence of the targeted gene, locus or subfragment. If multiple multiple forward or reverse primers are present in a single PCR reaction, there should be a full row for each of these linked to the same DWC Occurrence. The primer sequence should be reported in uppercase letters';
+
+
+--
+-- Name: COLUMN "molecular-protocol".pcr_primer_name_forward; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".pcr_primer_name_forward IS 'Name of the forward PCR primer that were used to amplify the sequence of the targeted gene, locus or subfragment. If multiple multiple forward or reverse primers are present in a single PCR reaction, there should be a full row for each of these linked to the same DWC Occurrence.';
+
+
+--
+-- Name: COLUMN "molecular-protocol".pcr_primer_name_reverse; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".pcr_primer_name_reverse IS 'Name of the reverse PCR primer that were used to amplify the sequence of the targeted gene, locus or subfragment. If multiple multiple forward or reverse primers are present in a single PCR reaction, there should be a full row for each of these linked to the same DWC Occurrence.';
+
+
+--
+-- Name: COLUMN "molecular-protocol".pcr_primer_reference; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".pcr_primer_reference IS 'Reference for the PCR primers that were used to amplify the sequence of the targeted gene, locus or subfragment.';
+
+
+--
+-- Name: COLUMN "molecular-protocol"."DNA_sequence"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol"."DNA_sequence" IS 'The DNA sequence';
+
+
+--
+-- Name: COLUMN "molecular-protocol".concentration; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".concentration IS 'Concentration of DNA (weight ng/volume µl)';
+
+
+--
+-- Name: COLUMN "molecular-protocol"."concentrationUnit"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol"."concentrationUnit" IS 'Unit used for concentration measurement';
+
+
+--
+-- Name: COLUMN "molecular-protocol"."methodDeterminationConcentrationAndRatios"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol"."methodDeterminationConcentrationAndRatios" IS 'Description of method used for concentration measurement';
+
+
+--
+-- Name: COLUMN "molecular-protocol"."ratioOfAbsorbance260_230"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol"."ratioOfAbsorbance260_230" IS 'Ratio of absorbance at 260 nm and 230 nm assessing DNA purity (mostly secondary measure, indicates mainly EDTA, carbohydrates, phenol), (DNA samples only).';
+
+
+--
+-- Name: COLUMN "molecular-protocol"."ratioOfAbsorbance260_280"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol"."ratioOfAbsorbance260_280" IS 'Ratio of absorbance at 280 nm and 230 nm assessing DNA purity (mostly secondary measure, indicates mainly EDTA, carbohydrates, phenol), (DNA samples only).';
+
+
+--
+-- Name: COLUMN "molecular-protocol"."annealingTemp"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol"."annealingTemp" IS 'The reaction temperature during the annealing phase of PCR.';
+
+
+--
+-- Name: COLUMN "molecular-protocol"."annealingTempUnit"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol"."annealingTempUnit" IS 'Measurement unit of the reaction temperature during the annealing phase of PCR.';
+
+
+--
+-- Name: COLUMN "molecular-protocol"."probeReporter"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol"."probeReporter" IS 'Type of fluorophore (reporter) used. Probe anneals within amplified target DNA. Polymerase activity degrades the probe that has annealed to the template, and the probe releases the fluorophore from it and breaks the proximity to the quencher, thus allowing fluorescence of the fluorophore.';
+
+
+--
+-- Name: COLUMN "molecular-protocol"."probeQuencher"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol"."probeQuencher" IS 'Type of quencher used. The quencher molecule quenches the fluorescence emitted by the fluorophore when excited by the cycler’s light source As long as fluorophore and the quencher are in proximity, quenching inhibits any fluorescence signals.';
+
+
+--
+-- Name: COLUMN "molecular-protocol"."ampliconSize"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol"."ampliconSize" IS 'The length of the amplicon in basepairs.';
+
+
+--
+-- Name: COLUMN "molecular-protocol"."thresholdQuantificationCycle"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol"."thresholdQuantificationCycle" IS 'Threshold for change in fluorescence signal between cycles';
+
+
+--
+-- Name: COLUMN "molecular-protocol"."baselineValue"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol"."baselineValue" IS 'The number of cycles when fluorescence signal from the target amplification is below background fluorescence not originated from the real target amplification.';
+
+
+--
+-- Name: COLUMN "molecular-protocol"."quantificationCycle"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol"."quantificationCycle" IS 'The number of cycles required for the fluorescent signal to cross a given value threshold above the baseline. Quantification cycle (Cq), threshold cycle (Ct), crossing point (Cp), and take-off point (TOP) refer to the same value from the real-time instrument. Use of quantification cycle (Cq), is preferable according to the RDML (Real-Time PCR Data Markup Language) data standard (http://www.rdml.org).';
+
+
+--
+-- Name: COLUMN "molecular-protocol"."automaticThresholdQuantificationCycle"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol"."automaticThresholdQuantificationCycle" IS 'Whether the threshold was set by the instrument or manually.';
+
+
+--
+-- Name: COLUMN "molecular-protocol"."automaticBaselineValue"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol"."automaticBaselineValue" IS 'Whether the baseline value was set by the instrument or manually.';
+
+
+--
+-- Name: COLUMN "molecular-protocol"."contaminationAssessment"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol"."contaminationAssessment" IS 'Whether DNA or RNA contamination assessment was done or not.';
+
+
+--
+-- Name: COLUMN "molecular-protocol"."partitionVolume"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol"."partitionVolume" IS 'An accurate estimation of partition volume. The sum of the partitions multiplied by the partition volume will enable the total volume of the reaction to be calculated.';
+
+
+--
+-- Name: COLUMN "molecular-protocol"."partitionVolumeUnit"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol"."partitionVolumeUnit" IS 'Unit used for partition volume';
+
+
+--
+-- Name: COLUMN "molecular-protocol"."estimatedNumberOfCopies"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol"."estimatedNumberOfCopies" IS 'Number of target molecules per µl. Mean copies per partition (?) can be calculated using the number of partitions (n) and the estimated copy number in the total volume of all partitions (m) with a formula ?=m/n.';
+
+
+--
+-- Name: COLUMN "molecular-protocol"."amplificationReactionVolume"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol"."amplificationReactionVolume" IS 'PCR reaction volume';
+
+
+--
+-- Name: COLUMN "molecular-protocol"."amplificationReactionVolumeUnit"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol"."amplificationReactionVolumeUnit" IS 'Unit used for PCR reaction volume. Many of the instruments require preparation of a much larger initial sample volume than is actually analyzed.';
+
+
+--
+-- Name: COLUMN "molecular-protocol".pcr_analysis_software; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".pcr_analysis_software IS 'The program used to analyse the d(d)PCR runs.';
+
+
+--
+-- Name: COLUMN "molecular-protocol"."experimentalVariance"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol"."experimentalVariance" IS 'Multiple biological replicates are encouraged to assess total experimental variation. When single dPCR experiments are performed, a minimal estimate of variance due to counting error alone must be calculated from the binomial (or suitable equivalent) distribution.';
+
+
+--
+-- Name: COLUMN "molecular-protocol".pcr_primer_lod; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".pcr_primer_lod IS 'The assay’s ability to detect the target at low levels.';
+
+
+--
+-- Name: COLUMN "molecular-protocol".pcr_primer_loq; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol".pcr_primer_loq IS 'The assay’s ability to quantify copy number at low levels.';
+
+
+--
+-- Name: molecular-protocol-agent-role; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public."molecular-protocol-agent-role" (
+    "agentID" text NOT NULL,
+    "molecularProtocolID" text NOT NULL,
+    "agentRole" text,
+    "agentRoleIRI" text,
+    "agentRoleVocabulary" text,
+    "agentRoleOrder" integer,
+    "agentRoleDate" text,
+    CONSTRAINT "molecular-protocol-agent-role_agentRoleOrder_check" CHECK (("agentRoleOrder" >= 1))
+);
+
+
+ALTER TABLE public."molecular-protocol-agent-role" OWNER TO postgres;
+
+--
+-- Name: TABLE "molecular-protocol-agent-role"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON TABLE public."molecular-protocol-agent-role" IS 'The interval during which an AgentRole was in effect.';
+
+
+--
+-- Name: COLUMN "molecular-protocol-agent-role"."agentID"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol-agent-role"."agentID" IS 'An identifier for an Agent.';
+
+
+--
+-- Name: COLUMN "molecular-protocol-agent-role"."molecularProtocolID"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol-agent-role"."molecularProtocolID" IS 'An identifier for a MolecularProtocol.';
+
+
+--
+-- Name: COLUMN "molecular-protocol-agent-role"."agentRole"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol-agent-role"."agentRole" IS 'The category that best matches the nature of a role of an Agent.';
+
+
+--
+-- Name: COLUMN "molecular-protocol-agent-role"."agentRoleIRI"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol-agent-role"."agentRoleIRI" IS 'The IRI of the controlled vocabulary value for the role of an Agent.';
+
+
+--
+-- Name: COLUMN "molecular-protocol-agent-role"."agentRoleVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol-agent-role"."agentRoleVocabulary" IS 'The reference to the controlled vocabulary in which the definition of the value in agentRole is given.';
+
+
+--
+-- Name: COLUMN "molecular-protocol-agent-role"."agentRoleOrder"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol-agent-role"."agentRoleOrder" IS 'The numerical position of an AgentRole in a set of AgentRoles that have the same combination of agentRole, agentRoleIRI, agentRoleVocabulary and related target.';
+
+
+--
+-- Name: COLUMN "molecular-protocol-agent-role"."agentRoleDate"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol-agent-role"."agentRoleDate" IS 'The interval during which an AgentRole was in effect.';
+
+
+--
+-- Name: molecular-protocol-assertion; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public."molecular-protocol-assertion" (
+    "assertionID" text NOT NULL,
+    "molecularProtocolID" text NOT NULL,
+    "assertionType" text,
+    "assertionTypeIRI" text,
+    "assertionTypeVocabulary" text,
+    "assertionMadeDate" text,
+    "assertionEffectiveDate" text,
+    "assertionValue" text,
+    "assertionValueIRI" text,
+    "assertionValueVocabulary" text,
+    "assertionValueNumeric" numeric,
+    "assertionUnit" text,
+    "assertionUnitIRI" text,
+    "assertionUnitVocabulary" text,
+    "assertionBy" text,
+    "assertionByID" text,
+    "assertionProtocol" text,
+    "assertionProtocolID" text,
+    "assertionCitation" text,
+    "assertionRemarks" text
+);
+
+
+ALTER TABLE public."molecular-protocol-assertion" OWNER TO postgres;
+
+--
+-- Name: TABLE "molecular-protocol-assertion"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON TABLE public."molecular-protocol-assertion" IS 'Comments or notes about an Assertion.';
+
+
+--
+-- Name: COLUMN "molecular-protocol-assertion"."assertionID"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol-assertion"."assertionID" IS 'An identifier for an Assertion.';
+
+
+--
+-- Name: COLUMN "molecular-protocol-assertion"."molecularProtocolID"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol-assertion"."molecularProtocolID" IS 'An identifier for a MolecularProtocol.';
+
+
+--
+-- Name: COLUMN "molecular-protocol-assertion"."assertionType"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol-assertion"."assertionType" IS 'The category that best matches the nature of an Assertion.';
+
+
+--
+-- Name: COLUMN "molecular-protocol-assertion"."assertionTypeIRI"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol-assertion"."assertionTypeIRI" IS 'The IRI of the controlled vocabulary value for the type of Assertion.';
+
+
+--
+-- Name: COLUMN "molecular-protocol-assertion"."assertionTypeVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol-assertion"."assertionTypeVocabulary" IS 'The reference to the controlled vocabulary in which the definition of the value in assertionType is given.';
+
+
+--
+-- Name: COLUMN "molecular-protocol-assertion"."assertionMadeDate"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol-assertion"."assertionMadeDate" IS 'The date on which an Assertion was created.';
+
+
+--
+-- Name: COLUMN "molecular-protocol-assertion"."assertionEffectiveDate"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol-assertion"."assertionEffectiveDate" IS 'The date on which the state or measurement of an Assertion was deemed to first be in effect.';
+
+
+--
+-- Name: COLUMN "molecular-protocol-assertion"."assertionValue"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol-assertion"."assertionValue" IS 'An asserted value, if it is not numeric.';
+
+
+--
+-- Name: COLUMN "molecular-protocol-assertion"."assertionValueIRI"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol-assertion"."assertionValueIRI" IS 'The IRI of the controlled vocabulary value for the value of an Assertion.';
+
+
+--
+-- Name: COLUMN "molecular-protocol-assertion"."assertionValueVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol-assertion"."assertionValueVocabulary" IS 'The reference to the controlled vocabulary in which the definition of the value in assertionValue is given.';
+
+
+--
+-- Name: COLUMN "molecular-protocol-assertion"."assertionValueNumeric"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol-assertion"."assertionValueNumeric" IS 'An asserted value, if it is numeric.';
+
+
+--
+-- Name: COLUMN "molecular-protocol-assertion"."assertionUnit"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol-assertion"."assertionUnit" IS 'The units associated with the value in assertionValueNumeric.';
+
+
+--
+-- Name: COLUMN "molecular-protocol-assertion"."assertionUnitIRI"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol-assertion"."assertionUnitIRI" IS 'The IRI for the units of an assertionValueNumeric.';
+
+
+--
+-- Name: COLUMN "molecular-protocol-assertion"."assertionUnitVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol-assertion"."assertionUnitVocabulary" IS 'The reference to the controlled vocabulary in which the definition of the value in assertionUnit is given.';
+
+
+--
+-- Name: COLUMN "molecular-protocol-assertion"."assertionBy"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol-assertion"."assertionBy" IS 'A list (concatenated and separated) of names of people, groups, or organizations who made an Assertion.';
+
+
+--
+-- Name: COLUMN "molecular-protocol-assertion"."assertionByID"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol-assertion"."assertionByID" IS 'An identifier for an Agent who made an Assertion.';
+
+
+--
+-- Name: COLUMN "molecular-protocol-assertion"."assertionProtocol"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol-assertion"."assertionProtocol" IS 'The names of, references to, or descriptions of the methods or protocols used in making an Assertion.';
+
+
+--
+-- Name: COLUMN "molecular-protocol-assertion"."assertionProtocolID"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol-assertion"."assertionProtocolID" IS 'An identifier for a Protocol used to make an Assertion.';
+
+
+--
+-- Name: COLUMN "molecular-protocol-assertion"."assertionCitation"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol-assertion"."assertionCitation" IS 'A list (concatenated and separated) of identifiers (publication, bibliographic reference, global unique identifier, URI) of literature associated with an Assertion.';
+
+
+--
+-- Name: COLUMN "molecular-protocol-assertion"."assertionRemarks"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol-assertion"."assertionRemarks" IS 'Comments or notes about an Assertion.';
+
+
+--
+-- Name: molecular-protocol-citation; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public."molecular-protocol-citation" (
+    "citationID" text NOT NULL,
+    "molecularProtocolID" text NOT NULL,
+    "citationType" text,
+    "citationTypeIRI" text,
+    "citationTypeVocabulary" text,
+    "bibliographicCitation" text,
+    "pageNumber" text,
+    "referenceID" text,
+    "referenceType" text,
+    "referenceTypeIRI" text,
+    "referenceTypeVocabulary" text,
+    "referenceYear" integer,
+    "isPeerReviewed" boolean,
+    "citationRemarks" text
+);
+
+
+ALTER TABLE public."molecular-protocol-citation" OWNER TO postgres;
+
+--
+-- Name: TABLE "molecular-protocol-citation"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON TABLE public."molecular-protocol-citation" IS 'Comments or notes about a Citation.';
+
+
+--
+-- Name: COLUMN "molecular-protocol-citation"."citationID"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol-citation"."citationID" IS 'An identifier for a Citation.';
+
+
+--
+-- Name: COLUMN "molecular-protocol-citation"."molecularProtocolID"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol-citation"."molecularProtocolID" IS 'An identifier for a MolecularProtocol.';
+
+
+--
+-- Name: COLUMN "molecular-protocol-citation"."citationType"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol-citation"."citationType" IS 'The category that best matches the nature of a Citation.';
+
+
+--
+-- Name: COLUMN "molecular-protocol-citation"."citationTypeIRI"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol-citation"."citationTypeIRI" IS 'The IRI of the controlled vocabulary value for the type of Citation.';
+
+
+--
+-- Name: COLUMN "molecular-protocol-citation"."citationTypeVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol-citation"."citationTypeVocabulary" IS 'The reference to the controlled vocabulary in which the definition of the value in citationType is given.';
+
+
+--
+-- Name: COLUMN "molecular-protocol-citation"."bibliographicCitation"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol-citation"."bibliographicCitation" IS 'A bibliographic reference for the resource.';
+
+
+--
+-- Name: COLUMN "molecular-protocol-citation"."pageNumber"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol-citation"."pageNumber" IS 'The number of the page on which the citation occurs in the cited reference.';
+
+
+--
+-- Name: COLUMN "molecular-protocol-citation"."referenceID"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol-citation"."referenceID" IS 'An identifier for the reference in which a Citation occurs.';
+
+
+--
+-- Name: COLUMN "molecular-protocol-citation"."referenceType"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol-citation"."referenceType" IS 'The category that best matches the nature of a reference.';
+
+
+--
+-- Name: COLUMN "molecular-protocol-citation"."referenceTypeIRI"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol-citation"."referenceTypeIRI" IS 'The IRI of the controlled vocabulary value for the type of reference.';
+
+
+--
+-- Name: COLUMN "molecular-protocol-citation"."referenceTypeVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol-citation"."referenceTypeVocabulary" IS 'The reference to the controlled vocabulary in which the definition of the value in referenceType is given.';
+
+
+--
+-- Name: COLUMN "molecular-protocol-citation"."referenceYear"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol-citation"."referenceYear" IS 'The year the reference in a Citation was published.';
+
+
+--
+-- Name: COLUMN "molecular-protocol-citation"."isPeerReviewed"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol-citation"."isPeerReviewed" IS 'An indication of whether the reference for a Citation was peer reviewed.';
+
+
+--
+-- Name: COLUMN "molecular-protocol-citation"."citationRemarks"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."molecular-protocol-citation"."citationRemarks" IS 'Comments or notes about a Citation.';
+
+
+--
+-- Name: nucleotide-analysis; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public."nucleotide-analysis" (
+    "nucleotideAnalysisID" text NOT NULL,
+    "eventID" text NOT NULL,
+    "molecularProtocolID" text NOT NULL,
+    "nucleotideSequenceID" text,
+    "materialEntityID" text,
+    "readCount" integer,
+    "totalReadCount" integer
+);
+
+
+ALTER TABLE public."nucleotide-analysis" OWNER TO postgres;
+
+--
+-- Name: TABLE "nucleotide-analysis"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON TABLE public."nucleotide-analysis" IS 'The total number of reads in the analysis.';
+
+
+--
+-- Name: COLUMN "nucleotide-analysis"."nucleotideAnalysisID"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."nucleotide-analysis"."nucleotideAnalysisID" IS 'An identifier for a NucleotideAnalysis.';
+
+
+--
+-- Name: COLUMN "nucleotide-analysis"."eventID"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."nucleotide-analysis"."eventID" IS 'An identifier for an Event.';
+
+
+--
+-- Name: COLUMN "nucleotide-analysis"."molecularProtocolID"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."nucleotide-analysis"."molecularProtocolID" IS 'An identifier for a MolecularProtocol.';
+
+
+--
+-- Name: COLUMN "nucleotide-analysis"."nucleotideSequenceID"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."nucleotide-analysis"."nucleotideSequenceID" IS 'An identifier for a NucleotideSequence.';
+
+
+--
+-- Name: COLUMN "nucleotide-analysis"."materialEntityID"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."nucleotide-analysis"."materialEntityID" IS 'An identifier for a MaterialEntity.';
+
+
+--
+-- Name: COLUMN "nucleotide-analysis"."readCount"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."nucleotide-analysis"."readCount" IS 'The number of reads for the sequence in the analysis.';
+
+
+--
+-- Name: COLUMN "nucleotide-analysis"."totalReadCount"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."nucleotide-analysis"."totalReadCount" IS 'The total number of reads in the analysis.';
+
+
+--
+-- Name: nucleotide-analysis-assertion; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public."nucleotide-analysis-assertion" (
+    "assertionID" text NOT NULL,
+    "nucleotideAnalysisID" text NOT NULL,
+    "assertionType" text,
+    "assertionTypeIRI" text,
+    "assertionTypeVocabulary" text,
+    "assertionMadeDate" text,
+    "assertionEffectiveDate" text,
+    "assertionValue" text,
+    "assertionValueIRI" text,
+    "assertionValueVocabulary" text,
+    "assertionValueNumeric" numeric,
+    "assertionUnit" text,
+    "assertionUnitIRI" text,
+    "assertionUnitVocabulary" text,
+    "assertionBy" text,
+    "assertionByID" text,
+    "assertionProtocol" text,
+    "assertionProtocolID" text,
+    "assertionCitation" text,
+    "assertionRemarks" text
+);
+
+
+ALTER TABLE public."nucleotide-analysis-assertion" OWNER TO postgres;
+
+--
+-- Name: TABLE "nucleotide-analysis-assertion"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON TABLE public."nucleotide-analysis-assertion" IS 'Comments or notes about an Assertion.';
+
+
+--
+-- Name: COLUMN "nucleotide-analysis-assertion"."assertionID"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."nucleotide-analysis-assertion"."assertionID" IS 'An identifier for an Assertion.';
+
+
+--
+-- Name: COLUMN "nucleotide-analysis-assertion"."nucleotideAnalysisID"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."nucleotide-analysis-assertion"."nucleotideAnalysisID" IS 'An identifier for a NucleotideAnalysis.';
+
+
+--
+-- Name: COLUMN "nucleotide-analysis-assertion"."assertionType"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."nucleotide-analysis-assertion"."assertionType" IS 'The category that best matches the nature of an Assertion.';
+
+
+--
+-- Name: COLUMN "nucleotide-analysis-assertion"."assertionTypeIRI"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."nucleotide-analysis-assertion"."assertionTypeIRI" IS 'The IRI of the controlled vocabulary value for the type of Assertion.';
+
+
+--
+-- Name: COLUMN "nucleotide-analysis-assertion"."assertionTypeVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."nucleotide-analysis-assertion"."assertionTypeVocabulary" IS 'The reference to the controlled vocabulary in which the definition of the value in assertionType is given.';
+
+
+--
+-- Name: COLUMN "nucleotide-analysis-assertion"."assertionMadeDate"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."nucleotide-analysis-assertion"."assertionMadeDate" IS 'The date on which an Assertion was created.';
+
+
+--
+-- Name: COLUMN "nucleotide-analysis-assertion"."assertionEffectiveDate"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."nucleotide-analysis-assertion"."assertionEffectiveDate" IS 'The date on which the state or measurement of an Assertion was deemed to first be in effect.';
+
+
+--
+-- Name: COLUMN "nucleotide-analysis-assertion"."assertionValue"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."nucleotide-analysis-assertion"."assertionValue" IS 'An asserted value, if it is not numeric.';
+
+
+--
+-- Name: COLUMN "nucleotide-analysis-assertion"."assertionValueIRI"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."nucleotide-analysis-assertion"."assertionValueIRI" IS 'The IRI of the controlled vocabulary value for the value of an Assertion.';
+
+
+--
+-- Name: COLUMN "nucleotide-analysis-assertion"."assertionValueVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."nucleotide-analysis-assertion"."assertionValueVocabulary" IS 'The reference to the controlled vocabulary in which the definition of the value in assertionValue is given.';
+
+
+--
+-- Name: COLUMN "nucleotide-analysis-assertion"."assertionValueNumeric"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."nucleotide-analysis-assertion"."assertionValueNumeric" IS 'An asserted value, if it is numeric.';
+
+
+--
+-- Name: COLUMN "nucleotide-analysis-assertion"."assertionUnit"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."nucleotide-analysis-assertion"."assertionUnit" IS 'The units associated with the value in assertionValueNumeric.';
+
+
+--
+-- Name: COLUMN "nucleotide-analysis-assertion"."assertionUnitIRI"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."nucleotide-analysis-assertion"."assertionUnitIRI" IS 'The IRI for the units of an assertionValueNumeric.';
+
+
+--
+-- Name: COLUMN "nucleotide-analysis-assertion"."assertionUnitVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."nucleotide-analysis-assertion"."assertionUnitVocabulary" IS 'The reference to the controlled vocabulary in which the definition of the value in assertionUnit is given.';
+
+
+--
+-- Name: COLUMN "nucleotide-analysis-assertion"."assertionBy"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."nucleotide-analysis-assertion"."assertionBy" IS 'A list (concatenated and separated) of names of people, groups, or organizations who made an Assertion.';
+
+
+--
+-- Name: COLUMN "nucleotide-analysis-assertion"."assertionByID"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."nucleotide-analysis-assertion"."assertionByID" IS 'An identifier for an Agent who made an Assertion.';
+
+
+--
+-- Name: COLUMN "nucleotide-analysis-assertion"."assertionProtocol"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."nucleotide-analysis-assertion"."assertionProtocol" IS 'The names of, references to, or descriptions of the methods or protocols used in making an Assertion.';
+
+
+--
+-- Name: COLUMN "nucleotide-analysis-assertion"."assertionProtocolID"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."nucleotide-analysis-assertion"."assertionProtocolID" IS 'An identifier for a Protocol used to make an Assertion.';
+
+
+--
+-- Name: COLUMN "nucleotide-analysis-assertion"."assertionCitation"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."nucleotide-analysis-assertion"."assertionCitation" IS 'A list (concatenated and separated) of identifiers (publication, bibliographic reference, global unique identifier, URI) of literature associated with an Assertion.';
+
+
+--
+-- Name: COLUMN "nucleotide-analysis-assertion"."assertionRemarks"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."nucleotide-analysis-assertion"."assertionRemarks" IS 'Comments or notes about an Assertion.';
+
+
+--
+-- Name: nucleotide-sequence; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public."nucleotide-sequence" (
+    "nucleotideSequenceID" text NOT NULL,
+    "nucleotideSequence" text,
+    "nucleotideSequenceRemarks" text
+);
+
+
+ALTER TABLE public."nucleotide-sequence" OWNER TO postgres;
+
+--
+-- Name: TABLE "nucleotide-sequence"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON TABLE public."nucleotide-sequence" IS 'Comments or notes about a NucleotideSequence.';
+
+
+--
+-- Name: COLUMN "nucleotide-sequence"."nucleotideSequenceID"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."nucleotide-sequence"."nucleotideSequenceID" IS 'An identifier for a NucleotideSequence.';
+
+
+--
+-- Name: COLUMN "nucleotide-sequence"."nucleotideSequence"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."nucleotide-sequence"."nucleotideSequence" IS 'A string representing nucleotide base pairs.';
+
+
+--
+-- Name: COLUMN "nucleotide-sequence"."nucleotideSequenceRemarks"; Type: COMMENT; Schema: public; Owner: postgres
+--
+
+COMMENT ON COLUMN public."nucleotide-sequence"."nucleotideSequenceRemarks" IS 'Comments or notes about a NucleotideSequence.';
+
+
+--
 -- Name: occurrence; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -6179,8 +7659,6 @@ CREATE TABLE public.occurrence (
 ALTER TABLE public.occurrence OWNER TO postgres;
 
 --
--- TOC entry 5993 (class 0 OID 0)
--- Dependencies: 218
 -- Name: TABLE occurrence; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -6188,8 +7666,6 @@ COMMENT ON TABLE public.occurrence IS 'Comments or notes about a dwc:Taxon.';
 
 
 --
--- TOC entry 5994 (class 0 OID 0)
--- Dependencies: 218
 -- Name: COLUMN occurrence."occurrenceID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -6197,8 +7673,6 @@ COMMENT ON COLUMN public.occurrence."occurrenceID" IS 'An identifier for a dwc:O
 
 
 --
--- TOC entry 5995 (class 0 OID 0)
--- Dependencies: 218
 -- Name: COLUMN occurrence."eventID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -6206,8 +7680,6 @@ COMMENT ON COLUMN public.occurrence."eventID" IS 'An identifier for a dwc:Event.
 
 
 --
--- TOC entry 5996 (class 0 OID 0)
--- Dependencies: 218
 -- Name: COLUMN occurrence."surveyTargetID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -6215,8 +7687,6 @@ COMMENT ON COLUMN public.occurrence."surveyTargetID" IS 'An identifier for a Sur
 
 
 --
--- TOC entry 5997 (class 0 OID 0)
--- Dependencies: 218
 -- Name: COLUMN occurrence."recordedBy"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -6224,8 +7694,6 @@ COMMENT ON COLUMN public.occurrence."recordedBy" IS 'A list (concatenated and se
 
 
 --
--- TOC entry 5998 (class 0 OID 0)
--- Dependencies: 218
 -- Name: COLUMN occurrence."recordedByID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -6233,8 +7701,6 @@ COMMENT ON COLUMN public.occurrence."recordedByID" IS 'An identifier for the Age
 
 
 --
--- TOC entry 5999 (class 0 OID 0)
--- Dependencies: 218
 -- Name: COLUMN occurrence."organismQuantity"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -6242,8 +7708,6 @@ COMMENT ON COLUMN public.occurrence."organismQuantity" IS 'A number or enumerati
 
 
 --
--- TOC entry 6000 (class 0 OID 0)
--- Dependencies: 218
 -- Name: COLUMN occurrence."organismQuantityType"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -6251,8 +7715,6 @@ COMMENT ON COLUMN public.occurrence."organismQuantityType" IS 'A type of quantif
 
 
 --
--- TOC entry 6001 (class 0 OID 0)
--- Dependencies: 218
 -- Name: COLUMN occurrence.sex; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -6260,8 +7722,6 @@ COMMENT ON COLUMN public.occurrence.sex IS 'The sex of a dwc:Organism.';
 
 
 --
--- TOC entry 6002 (class 0 OID 0)
--- Dependencies: 218
 -- Name: COLUMN occurrence."lifeStage"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -6269,8 +7729,6 @@ COMMENT ON COLUMN public.occurrence."lifeStage" IS 'The age class or life stage 
 
 
 --
--- TOC entry 6003 (class 0 OID 0)
--- Dependencies: 218
 -- Name: COLUMN occurrence."reproductiveCondition"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -6278,8 +7736,6 @@ COMMENT ON COLUMN public.occurrence."reproductiveCondition" IS 'The reproductive
 
 
 --
--- TOC entry 6004 (class 0 OID 0)
--- Dependencies: 218
 -- Name: COLUMN occurrence.caste; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -6287,8 +7743,6 @@ COMMENT ON COLUMN public.occurrence.caste IS 'The social caste of a dwc:Organism
 
 
 --
--- TOC entry 6005 (class 0 OID 0)
--- Dependencies: 218
 -- Name: COLUMN occurrence.behavior; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -6296,8 +7750,6 @@ COMMENT ON COLUMN public.occurrence.behavior IS 'The behavior shown by a dwc:Org
 
 
 --
--- TOC entry 6006 (class 0 OID 0)
--- Dependencies: 218
 -- Name: COLUMN occurrence.vitality; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -6305,8 +7757,6 @@ COMMENT ON COLUMN public.occurrence.vitality IS 'An indication of whether a dwc:
 
 
 --
--- TOC entry 6007 (class 0 OID 0)
--- Dependencies: 218
 -- Name: COLUMN occurrence."establishmentMeans"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -6314,8 +7764,6 @@ COMMENT ON COLUMN public.occurrence."establishmentMeans" IS 'Statement about whe
 
 
 --
--- TOC entry 6008 (class 0 OID 0)
--- Dependencies: 218
 -- Name: COLUMN occurrence."degreeOfEstablishment"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -6323,8 +7771,6 @@ COMMENT ON COLUMN public.occurrence."degreeOfEstablishment" IS 'The degree to wh
 
 
 --
--- TOC entry 6009 (class 0 OID 0)
--- Dependencies: 218
 -- Name: COLUMN occurrence.pathway; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -6332,8 +7778,6 @@ COMMENT ON COLUMN public.occurrence.pathway IS 'The process by which a dwc:Organ
 
 
 --
--- TOC entry 6010 (class 0 OID 0)
--- Dependencies: 218
 -- Name: COLUMN occurrence."occurrenceStatus"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -6341,8 +7785,6 @@ COMMENT ON COLUMN public.occurrence."occurrenceStatus" IS 'A statement about the
 
 
 --
--- TOC entry 6011 (class 0 OID 0)
--- Dependencies: 218
 -- Name: COLUMN occurrence."occurrenceCitation"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -6350,8 +7792,6 @@ COMMENT ON COLUMN public.occurrence."occurrenceCitation" IS 'A list (concatenate
 
 
 --
--- TOC entry 6012 (class 0 OID 0)
--- Dependencies: 218
 -- Name: COLUMN occurrence."informationWithheld"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -6359,8 +7799,6 @@ COMMENT ON COLUMN public.occurrence."informationWithheld" IS 'Additional informa
 
 
 --
--- TOC entry 6013 (class 0 OID 0)
--- Dependencies: 218
 -- Name: COLUMN occurrence."dataGeneralizations"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -6368,8 +7806,6 @@ COMMENT ON COLUMN public.occurrence."dataGeneralizations" IS 'Actions taken to m
 
 
 --
--- TOC entry 6014 (class 0 OID 0)
--- Dependencies: 218
 -- Name: COLUMN occurrence."occurrenceRemarks"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -6377,8 +7813,6 @@ COMMENT ON COLUMN public.occurrence."occurrenceRemarks" IS 'Comments or notes ab
 
 
 --
--- TOC entry 6015 (class 0 OID 0)
--- Dependencies: 218
 -- Name: COLUMN occurrence."organismID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -6386,8 +7820,6 @@ COMMENT ON COLUMN public.occurrence."organismID" IS 'An identifier for a dwc:Org
 
 
 --
--- TOC entry 6016 (class 0 OID 0)
--- Dependencies: 218
 -- Name: COLUMN occurrence."organismScope"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -6395,8 +7827,6 @@ COMMENT ON COLUMN public.occurrence."organismScope" IS 'A description of the typ
 
 
 --
--- TOC entry 6017 (class 0 OID 0)
--- Dependencies: 218
 -- Name: COLUMN occurrence."organismName"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -6404,8 +7834,6 @@ COMMENT ON COLUMN public.occurrence."organismName" IS 'A name or label assigned 
 
 
 --
--- TOC entry 6018 (class 0 OID 0)
--- Dependencies: 218
 -- Name: COLUMN occurrence."organismRemarks"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -6413,8 +7841,6 @@ COMMENT ON COLUMN public.occurrence."organismRemarks" IS 'Comments or notes abou
 
 
 --
--- TOC entry 6019 (class 0 OID 0)
--- Dependencies: 218
 -- Name: COLUMN occurrence."verbatimIdentification"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -6422,8 +7848,6 @@ COMMENT ON COLUMN public.occurrence."verbatimIdentification" IS 'A string repres
 
 
 --
--- TOC entry 6020 (class 0 OID 0)
--- Dependencies: 218
 -- Name: COLUMN occurrence."taxonFormula"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -6431,8 +7855,6 @@ COMMENT ON COLUMN public.occurrence."taxonFormula" IS 'A string representing the
 
 
 --
--- TOC entry 6021 (class 0 OID 0)
--- Dependencies: 218
 -- Name: COLUMN occurrence."identifiedBy"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -6440,8 +7862,6 @@ COMMENT ON COLUMN public.occurrence."identifiedBy" IS 'A list (concatenated and 
 
 
 --
--- TOC entry 6022 (class 0 OID 0)
--- Dependencies: 218
 -- Name: COLUMN occurrence."identifiedByID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -6449,8 +7869,6 @@ COMMENT ON COLUMN public.occurrence."identifiedByID" IS 'The identifier for the 
 
 
 --
--- TOC entry 6023 (class 0 OID 0)
--- Dependencies: 218
 -- Name: COLUMN occurrence."dateIdentified"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -6458,8 +7876,6 @@ COMMENT ON COLUMN public.occurrence."dateIdentified" IS 'A list (concatenated an
 
 
 --
--- TOC entry 6024 (class 0 OID 0)
--- Dependencies: 218
 -- Name: COLUMN occurrence."identificationReferences"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -6467,8 +7883,6 @@ COMMENT ON COLUMN public.occurrence."identificationReferences" IS 'A list (conca
 
 
 --
--- TOC entry 6025 (class 0 OID 0)
--- Dependencies: 218
 -- Name: COLUMN occurrence."identificationVerificationStatus"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -6476,8 +7890,6 @@ COMMENT ON COLUMN public.occurrence."identificationVerificationStatus" IS 'A cat
 
 
 --
--- TOC entry 6026 (class 0 OID 0)
--- Dependencies: 218
 -- Name: COLUMN occurrence."identificationRemarks"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -6485,8 +7897,6 @@ COMMENT ON COLUMN public.occurrence."identificationRemarks" IS 'Comments or note
 
 
 --
--- TOC entry 6027 (class 0 OID 0)
--- Dependencies: 218
 -- Name: COLUMN occurrence."taxonID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -6494,8 +7904,6 @@ COMMENT ON COLUMN public.occurrence."taxonID" IS 'An identifier for a dwc:Taxon.
 
 
 --
--- TOC entry 6028 (class 0 OID 0)
--- Dependencies: 218
 -- Name: COLUMN occurrence.kingdom; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -6503,8 +7911,6 @@ COMMENT ON COLUMN public.occurrence.kingdom IS 'The full scientific name of the 
 
 
 --
--- TOC entry 6029 (class 0 OID 0)
--- Dependencies: 218
 -- Name: COLUMN occurrence."scientificName"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -6512,8 +7918,6 @@ COMMENT ON COLUMN public.occurrence."scientificName" IS 'The full scientific nam
 
 
 --
--- TOC entry 6030 (class 0 OID 0)
--- Dependencies: 218
 -- Name: COLUMN occurrence."taxonRank"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -6521,8 +7925,6 @@ COMMENT ON COLUMN public.occurrence."taxonRank" IS 'The taxonomic rank of the mo
 
 
 --
--- TOC entry 6031 (class 0 OID 0)
--- Dependencies: 218
 -- Name: COLUMN occurrence."taxonRemarks"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -6530,7 +7932,6 @@ COMMENT ON COLUMN public.occurrence."taxonRemarks" IS 'Comments or notes about a
 
 
 --
--- TOC entry 266 (class 1259 OID 177165)
 -- Name: occurrence-agent-role; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -6549,8 +7950,6 @@ CREATE TABLE public."occurrence-agent-role" (
 ALTER TABLE public."occurrence-agent-role" OWNER TO postgres;
 
 --
--- TOC entry 6032 (class 0 OID 0)
--- Dependencies: 266
 -- Name: TABLE "occurrence-agent-role"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -6558,8 +7957,6 @@ COMMENT ON TABLE public."occurrence-agent-role" IS 'The interval during which an
 
 
 --
--- TOC entry 6033 (class 0 OID 0)
--- Dependencies: 266
 -- Name: COLUMN "occurrence-agent-role"."agentID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -6567,8 +7964,6 @@ COMMENT ON COLUMN public."occurrence-agent-role"."agentID" IS 'An identifier for
 
 
 --
--- TOC entry 6034 (class 0 OID 0)
--- Dependencies: 266
 -- Name: COLUMN "occurrence-agent-role"."occurrenceID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -6576,8 +7971,6 @@ COMMENT ON COLUMN public."occurrence-agent-role"."occurrenceID" IS 'An identifie
 
 
 --
--- TOC entry 6035 (class 0 OID 0)
--- Dependencies: 266
 -- Name: COLUMN "occurrence-agent-role"."agentRole"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -6585,8 +7978,6 @@ COMMENT ON COLUMN public."occurrence-agent-role"."agentRole" IS 'The category th
 
 
 --
--- TOC entry 6036 (class 0 OID 0)
--- Dependencies: 266
 -- Name: COLUMN "occurrence-agent-role"."agentRoleIRI"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -6594,8 +7985,6 @@ COMMENT ON COLUMN public."occurrence-agent-role"."agentRoleIRI" IS 'The IRI of t
 
 
 --
--- TOC entry 6037 (class 0 OID 0)
--- Dependencies: 266
 -- Name: COLUMN "occurrence-agent-role"."agentRoleVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -6603,8 +7992,6 @@ COMMENT ON COLUMN public."occurrence-agent-role"."agentRoleVocabulary" IS 'The r
 
 
 --
--- TOC entry 6038 (class 0 OID 0)
--- Dependencies: 266
 -- Name: COLUMN "occurrence-agent-role"."agentRoleOrder"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -6612,8 +7999,6 @@ COMMENT ON COLUMN public."occurrence-agent-role"."agentRoleOrder" IS 'The numeri
 
 
 --
--- TOC entry 6039 (class 0 OID 0)
--- Dependencies: 266
 -- Name: COLUMN "occurrence-agent-role"."agentRoleDate"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -6621,7 +8006,6 @@ COMMENT ON COLUMN public."occurrence-agent-role"."agentRoleDate" IS 'The interva
 
 
 --
--- TOC entry 267 (class 1259 OID 177181)
 -- Name: occurrence-assertion; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -6652,8 +8036,6 @@ CREATE TABLE public."occurrence-assertion" (
 ALTER TABLE public."occurrence-assertion" OWNER TO postgres;
 
 --
--- TOC entry 6040 (class 0 OID 0)
--- Dependencies: 267
 -- Name: TABLE "occurrence-assertion"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -6661,8 +8043,6 @@ COMMENT ON TABLE public."occurrence-assertion" IS 'Comments or notes about an As
 
 
 --
--- TOC entry 6041 (class 0 OID 0)
--- Dependencies: 267
 -- Name: COLUMN "occurrence-assertion"."assertionID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -6670,8 +8050,6 @@ COMMENT ON COLUMN public."occurrence-assertion"."assertionID" IS 'An identifier 
 
 
 --
--- TOC entry 6042 (class 0 OID 0)
--- Dependencies: 267
 -- Name: COLUMN "occurrence-assertion"."occurrenceID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -6679,8 +8057,6 @@ COMMENT ON COLUMN public."occurrence-assertion"."occurrenceID" IS 'An identifier
 
 
 --
--- TOC entry 6043 (class 0 OID 0)
--- Dependencies: 267
 -- Name: COLUMN "occurrence-assertion"."assertionType"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -6688,8 +8064,6 @@ COMMENT ON COLUMN public."occurrence-assertion"."assertionType" IS 'The category
 
 
 --
--- TOC entry 6044 (class 0 OID 0)
--- Dependencies: 267
 -- Name: COLUMN "occurrence-assertion"."assertionTypeIRI"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -6697,8 +8071,6 @@ COMMENT ON COLUMN public."occurrence-assertion"."assertionTypeIRI" IS 'The IRI o
 
 
 --
--- TOC entry 6045 (class 0 OID 0)
--- Dependencies: 267
 -- Name: COLUMN "occurrence-assertion"."assertionTypeVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -6706,8 +8078,6 @@ COMMENT ON COLUMN public."occurrence-assertion"."assertionTypeVocabulary" IS 'Th
 
 
 --
--- TOC entry 6046 (class 0 OID 0)
--- Dependencies: 267
 -- Name: COLUMN "occurrence-assertion"."assertionMadeDate"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -6715,8 +8085,6 @@ COMMENT ON COLUMN public."occurrence-assertion"."assertionMadeDate" IS 'The date
 
 
 --
--- TOC entry 6047 (class 0 OID 0)
--- Dependencies: 267
 -- Name: COLUMN "occurrence-assertion"."assertionEffectiveDate"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -6724,8 +8092,6 @@ COMMENT ON COLUMN public."occurrence-assertion"."assertionEffectiveDate" IS 'The
 
 
 --
--- TOC entry 6048 (class 0 OID 0)
--- Dependencies: 267
 -- Name: COLUMN "occurrence-assertion"."assertionValue"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -6733,8 +8099,6 @@ COMMENT ON COLUMN public."occurrence-assertion"."assertionValue" IS 'An asserted
 
 
 --
--- TOC entry 6049 (class 0 OID 0)
--- Dependencies: 267
 -- Name: COLUMN "occurrence-assertion"."assertionValueIRI"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -6742,8 +8106,6 @@ COMMENT ON COLUMN public."occurrence-assertion"."assertionValueIRI" IS 'The IRI 
 
 
 --
--- TOC entry 6050 (class 0 OID 0)
--- Dependencies: 267
 -- Name: COLUMN "occurrence-assertion"."assertionValueVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -6751,8 +8113,6 @@ COMMENT ON COLUMN public."occurrence-assertion"."assertionValueVocabulary" IS 'T
 
 
 --
--- TOC entry 6051 (class 0 OID 0)
--- Dependencies: 267
 -- Name: COLUMN "occurrence-assertion"."assertionValueNumeric"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -6760,8 +8120,6 @@ COMMENT ON COLUMN public."occurrence-assertion"."assertionValueNumeric" IS 'An a
 
 
 --
--- TOC entry 6052 (class 0 OID 0)
--- Dependencies: 267
 -- Name: COLUMN "occurrence-assertion"."assertionUnit"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -6769,8 +8127,6 @@ COMMENT ON COLUMN public."occurrence-assertion"."assertionUnit" IS 'The units as
 
 
 --
--- TOC entry 6053 (class 0 OID 0)
--- Dependencies: 267
 -- Name: COLUMN "occurrence-assertion"."assertionUnitIRI"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -6778,8 +8134,6 @@ COMMENT ON COLUMN public."occurrence-assertion"."assertionUnitIRI" IS 'The IRI f
 
 
 --
--- TOC entry 6054 (class 0 OID 0)
--- Dependencies: 267
 -- Name: COLUMN "occurrence-assertion"."assertionUnitVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -6787,8 +8141,6 @@ COMMENT ON COLUMN public."occurrence-assertion"."assertionUnitVocabulary" IS 'Th
 
 
 --
--- TOC entry 6055 (class 0 OID 0)
--- Dependencies: 267
 -- Name: COLUMN "occurrence-assertion"."assertionBy"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -6796,8 +8148,6 @@ COMMENT ON COLUMN public."occurrence-assertion"."assertionBy" IS 'A list (concat
 
 
 --
--- TOC entry 6056 (class 0 OID 0)
--- Dependencies: 267
 -- Name: COLUMN "occurrence-assertion"."assertionByID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -6805,8 +8155,6 @@ COMMENT ON COLUMN public."occurrence-assertion"."assertionByID" IS 'An identifie
 
 
 --
--- TOC entry 6057 (class 0 OID 0)
--- Dependencies: 267
 -- Name: COLUMN "occurrence-assertion"."assertionProtocol"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -6814,8 +8162,6 @@ COMMENT ON COLUMN public."occurrence-assertion"."assertionProtocol" IS 'The name
 
 
 --
--- TOC entry 6058 (class 0 OID 0)
--- Dependencies: 267
 -- Name: COLUMN "occurrence-assertion"."assertionProtocolID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -6823,8 +8169,6 @@ COMMENT ON COLUMN public."occurrence-assertion"."assertionProtocolID" IS 'An ide
 
 
 --
--- TOC entry 6059 (class 0 OID 0)
--- Dependencies: 267
 -- Name: COLUMN "occurrence-assertion"."assertionCitation"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -6832,8 +8176,6 @@ COMMENT ON COLUMN public."occurrence-assertion"."assertionCitation" IS 'A list (
 
 
 --
--- TOC entry 6060 (class 0 OID 0)
--- Dependencies: 267
 -- Name: COLUMN "occurrence-assertion"."assertionRemarks"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -6841,7 +8183,6 @@ COMMENT ON COLUMN public."occurrence-assertion"."assertionRemarks" IS 'Comments 
 
 
 --
--- TOC entry 268 (class 1259 OID 177198)
 -- Name: occurrence-citation; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -6866,8 +8207,6 @@ CREATE TABLE public."occurrence-citation" (
 ALTER TABLE public."occurrence-citation" OWNER TO postgres;
 
 --
--- TOC entry 6061 (class 0 OID 0)
--- Dependencies: 268
 -- Name: TABLE "occurrence-citation"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -6875,8 +8214,6 @@ COMMENT ON TABLE public."occurrence-citation" IS 'Comments or notes about a Cita
 
 
 --
--- TOC entry 6062 (class 0 OID 0)
--- Dependencies: 268
 -- Name: COLUMN "occurrence-citation"."citationID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -6884,8 +8221,6 @@ COMMENT ON COLUMN public."occurrence-citation"."citationID" IS 'An identifier fo
 
 
 --
--- TOC entry 6063 (class 0 OID 0)
--- Dependencies: 268
 -- Name: COLUMN "occurrence-citation"."occurrenceID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -6893,8 +8228,6 @@ COMMENT ON COLUMN public."occurrence-citation"."occurrenceID" IS 'An identifier 
 
 
 --
--- TOC entry 6064 (class 0 OID 0)
--- Dependencies: 268
 -- Name: COLUMN "occurrence-citation"."citationType"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -6902,8 +8235,6 @@ COMMENT ON COLUMN public."occurrence-citation"."citationType" IS 'The category t
 
 
 --
--- TOC entry 6065 (class 0 OID 0)
--- Dependencies: 268
 -- Name: COLUMN "occurrence-citation"."citationTypeIRI"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -6911,8 +8242,6 @@ COMMENT ON COLUMN public."occurrence-citation"."citationTypeIRI" IS 'The IRI of 
 
 
 --
--- TOC entry 6066 (class 0 OID 0)
--- Dependencies: 268
 -- Name: COLUMN "occurrence-citation"."citationTypeVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -6920,8 +8249,6 @@ COMMENT ON COLUMN public."occurrence-citation"."citationTypeVocabulary" IS 'The 
 
 
 --
--- TOC entry 6067 (class 0 OID 0)
--- Dependencies: 268
 -- Name: COLUMN "occurrence-citation"."bibliographicCitation"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -6929,8 +8256,6 @@ COMMENT ON COLUMN public."occurrence-citation"."bibliographicCitation" IS 'A bib
 
 
 --
--- TOC entry 6068 (class 0 OID 0)
--- Dependencies: 268
 -- Name: COLUMN "occurrence-citation"."pageNumber"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -6938,8 +8263,6 @@ COMMENT ON COLUMN public."occurrence-citation"."pageNumber" IS 'The number of th
 
 
 --
--- TOC entry 6069 (class 0 OID 0)
--- Dependencies: 268
 -- Name: COLUMN "occurrence-citation"."referenceID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -6947,8 +8270,6 @@ COMMENT ON COLUMN public."occurrence-citation"."referenceID" IS 'An identifier f
 
 
 --
--- TOC entry 6070 (class 0 OID 0)
--- Dependencies: 268
 -- Name: COLUMN "occurrence-citation"."referenceType"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -6956,8 +8277,6 @@ COMMENT ON COLUMN public."occurrence-citation"."referenceType" IS 'The category 
 
 
 --
--- TOC entry 6071 (class 0 OID 0)
--- Dependencies: 268
 -- Name: COLUMN "occurrence-citation"."referenceTypeIRI"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -6965,8 +8284,6 @@ COMMENT ON COLUMN public."occurrence-citation"."referenceTypeIRI" IS 'The IRI of
 
 
 --
--- TOC entry 6072 (class 0 OID 0)
--- Dependencies: 268
 -- Name: COLUMN "occurrence-citation"."referenceTypeVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -6974,8 +8291,6 @@ COMMENT ON COLUMN public."occurrence-citation"."referenceTypeVocabulary" IS 'The
 
 
 --
--- TOC entry 6073 (class 0 OID 0)
--- Dependencies: 268
 -- Name: COLUMN "occurrence-citation"."referenceYear"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -6983,8 +8298,6 @@ COMMENT ON COLUMN public."occurrence-citation"."referenceYear" IS 'The year the 
 
 
 --
--- TOC entry 6074 (class 0 OID 0)
--- Dependencies: 268
 -- Name: COLUMN "occurrence-citation"."isPeerReviewed"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -6992,8 +8305,6 @@ COMMENT ON COLUMN public."occurrence-citation"."isPeerReviewed" IS 'An indicatio
 
 
 --
--- TOC entry 6075 (class 0 OID 0)
--- Dependencies: 268
 -- Name: COLUMN "occurrence-citation"."citationRemarks"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -7001,7 +8312,6 @@ COMMENT ON COLUMN public."occurrence-citation"."citationRemarks" IS 'Comments or
 
 
 --
--- TOC entry 269 (class 1259 OID 177210)
 -- Name: occurrence-identifier; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -7018,8 +8328,6 @@ CREATE TABLE public."occurrence-identifier" (
 ALTER TABLE public."occurrence-identifier" OWNER TO postgres;
 
 --
--- TOC entry 6076 (class 0 OID 0)
--- Dependencies: 269
 -- Name: TABLE "occurrence-identifier"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -7027,8 +8335,6 @@ COMMENT ON TABLE public."occurrence-identifier" IS 'A language in which an Ident
 
 
 --
--- TOC entry 6077 (class 0 OID 0)
--- Dependencies: 269
 -- Name: COLUMN "occurrence-identifier".identifier; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -7036,8 +8342,6 @@ COMMENT ON COLUMN public."occurrence-identifier".identifier IS 'An unambiguous r
 
 
 --
--- TOC entry 6078 (class 0 OID 0)
--- Dependencies: 269
 -- Name: COLUMN "occurrence-identifier"."occurrenceID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -7045,8 +8349,6 @@ COMMENT ON COLUMN public."occurrence-identifier"."occurrenceID" IS 'An identifie
 
 
 --
--- TOC entry 6079 (class 0 OID 0)
--- Dependencies: 269
 -- Name: COLUMN "occurrence-identifier"."identifierType"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -7054,8 +8356,6 @@ COMMENT ON COLUMN public."occurrence-identifier"."identifierType" IS 'The catego
 
 
 --
--- TOC entry 6080 (class 0 OID 0)
--- Dependencies: 269
 -- Name: COLUMN "occurrence-identifier"."identifierTypeIRI"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -7063,8 +8363,6 @@ COMMENT ON COLUMN public."occurrence-identifier"."identifierTypeIRI" IS 'The IRI
 
 
 --
--- TOC entry 6081 (class 0 OID 0)
--- Dependencies: 269
 -- Name: COLUMN "occurrence-identifier"."identifierTypeVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -7072,8 +8370,6 @@ COMMENT ON COLUMN public."occurrence-identifier"."identifierTypeVocabulary" IS '
 
 
 --
--- TOC entry 6082 (class 0 OID 0)
--- Dependencies: 269
 -- Name: COLUMN "occurrence-identifier"."identifierLanguage"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -7081,7 +8377,6 @@ COMMENT ON COLUMN public."occurrence-identifier"."identifierLanguage" IS 'A lang
 
 
 --
--- TOC entry 270 (class 1259 OID 177220)
 -- Name: occurrence-media; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -7097,8 +8392,6 @@ CREATE TABLE public."occurrence-media" (
 ALTER TABLE public."occurrence-media" OWNER TO postgres;
 
 --
--- TOC entry 6083 (class 0 OID 0)
--- Dependencies: 270
 -- Name: TABLE "occurrence-media"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -7106,8 +8399,6 @@ COMMENT ON TABLE public."occurrence-media" IS 'Any vocabulary or formal classifi
 
 
 --
--- TOC entry 6084 (class 0 OID 0)
--- Dependencies: 270
 -- Name: COLUMN "occurrence-media"."mediaID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -7115,8 +8406,6 @@ COMMENT ON COLUMN public."occurrence-media"."mediaID" IS 'An identifier for a Me
 
 
 --
--- TOC entry 6085 (class 0 OID 0)
--- Dependencies: 270
 -- Name: COLUMN "occurrence-media"."occurrenceID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -7124,8 +8413,6 @@ COMMENT ON COLUMN public."occurrence-media"."occurrenceID" IS 'An identifier for
 
 
 --
--- TOC entry 6086 (class 0 OID 0)
--- Dependencies: 270
 -- Name: COLUMN "occurrence-media"."mediaSubjectCategory"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -7133,8 +8420,6 @@ COMMENT ON COLUMN public."occurrence-media"."mediaSubjectCategory" IS 'A term to
 
 
 --
--- TOC entry 6087 (class 0 OID 0)
--- Dependencies: 270
 -- Name: COLUMN "occurrence-media"."mediaSubjectCategoryIRI"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -7142,8 +8427,6 @@ COMMENT ON COLUMN public."occurrence-media"."mediaSubjectCategoryIRI" IS 'The IR
 
 
 --
--- TOC entry 6088 (class 0 OID 0)
--- Dependencies: 270
 -- Name: COLUMN "occurrence-media"."mediaSubjectCategoryVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -7151,7 +8434,6 @@ COMMENT ON COLUMN public."occurrence-media"."mediaSubjectCategoryVocabulary" IS 
 
 
 --
--- TOC entry 271 (class 1259 OID 177235)
 -- Name: occurrence-protocol; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -7164,8 +8446,6 @@ CREATE TABLE public."occurrence-protocol" (
 ALTER TABLE public."occurrence-protocol" OWNER TO postgres;
 
 --
--- TOC entry 6089 (class 0 OID 0)
--- Dependencies: 271
 -- Name: TABLE "occurrence-protocol"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -7173,8 +8453,6 @@ COMMENT ON TABLE public."occurrence-protocol" IS 'An identifier for a dwc:Occurr
 
 
 --
--- TOC entry 6090 (class 0 OID 0)
--- Dependencies: 271
 -- Name: COLUMN "occurrence-protocol"."protocolID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -7182,8 +8460,6 @@ COMMENT ON COLUMN public."occurrence-protocol"."protocolID" IS 'An identifier fo
 
 
 --
--- TOC entry 6091 (class 0 OID 0)
--- Dependencies: 271
 -- Name: COLUMN "occurrence-protocol"."occurrenceID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -7191,7 +8467,6 @@ COMMENT ON COLUMN public."occurrence-protocol"."occurrenceID" IS 'An identifier 
 
 
 --
--- TOC entry 227 (class 1259 OID 176596)
 -- Name: organism-interaction; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -7210,8 +8485,6 @@ CREATE TABLE public."organism-interaction" (
 ALTER TABLE public."organism-interaction" OWNER TO postgres;
 
 --
--- TOC entry 6092 (class 0 OID 0)
--- Dependencies: 227
 -- Name: TABLE "organism-interaction"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -7219,8 +8492,6 @@ COMMENT ON TABLE public."organism-interaction" IS 'A part of a object dwc:Organi
 
 
 --
--- TOC entry 6093 (class 0 OID 0)
--- Dependencies: 227
 -- Name: COLUMN "organism-interaction"."organismInteractionID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -7228,8 +8499,6 @@ COMMENT ON COLUMN public."organism-interaction"."organismInteractionID" IS 'An i
 
 
 --
--- TOC entry 6094 (class 0 OID 0)
--- Dependencies: 227
 -- Name: COLUMN "organism-interaction"."eventID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -7237,8 +8506,6 @@ COMMENT ON COLUMN public."organism-interaction"."eventID" IS 'An identifier for 
 
 
 --
--- TOC entry 6095 (class 0 OID 0)
--- Dependencies: 227
 -- Name: COLUMN "organism-interaction"."organismInteractionDescription"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -7246,8 +8513,6 @@ COMMENT ON COLUMN public."organism-interaction"."organismInteractionDescription"
 
 
 --
--- TOC entry 6096 (class 0 OID 0)
--- Dependencies: 227
 -- Name: COLUMN "organism-interaction"."subjectOccurrenceID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -7255,8 +8520,6 @@ COMMENT ON COLUMN public."organism-interaction"."subjectOccurrenceID" IS 'A uniq
 
 
 --
--- TOC entry 6097 (class 0 OID 0)
--- Dependencies: 227
 -- Name: COLUMN "organism-interaction"."subjectOrganismPart"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -7264,8 +8527,6 @@ COMMENT ON COLUMN public."organism-interaction"."subjectOrganismPart" IS 'A part
 
 
 --
--- TOC entry 6098 (class 0 OID 0)
--- Dependencies: 227
 -- Name: COLUMN "organism-interaction"."organismInteractionType"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -7273,8 +8534,6 @@ COMMENT ON COLUMN public."organism-interaction"."organismInteractionType" IS 'Th
 
 
 --
--- TOC entry 6099 (class 0 OID 0)
--- Dependencies: 227
 -- Name: COLUMN "organism-interaction"."relatedOccurrenceID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -7282,8 +8541,6 @@ COMMENT ON COLUMN public."organism-interaction"."relatedOccurrenceID" IS 'A uniq
 
 
 --
--- TOC entry 6100 (class 0 OID 0)
--- Dependencies: 227
 -- Name: COLUMN "organism-interaction"."relatedOrganismPart"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -7291,7 +8548,6 @@ COMMENT ON COLUMN public."organism-interaction"."relatedOrganismPart" IS 'A part
 
 
 --
--- TOC entry 272 (class 1259 OID 177250)
 -- Name: organism-interaction-agent-role; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -7310,8 +8566,6 @@ CREATE TABLE public."organism-interaction-agent-role" (
 ALTER TABLE public."organism-interaction-agent-role" OWNER TO postgres;
 
 --
--- TOC entry 6101 (class 0 OID 0)
--- Dependencies: 272
 -- Name: TABLE "organism-interaction-agent-role"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -7319,8 +8573,6 @@ COMMENT ON TABLE public."organism-interaction-agent-role" IS 'The interval durin
 
 
 --
--- TOC entry 6102 (class 0 OID 0)
--- Dependencies: 272
 -- Name: COLUMN "organism-interaction-agent-role"."agentID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -7328,8 +8580,6 @@ COMMENT ON COLUMN public."organism-interaction-agent-role"."agentID" IS 'An iden
 
 
 --
--- TOC entry 6103 (class 0 OID 0)
--- Dependencies: 272
 -- Name: COLUMN "organism-interaction-agent-role"."organismInteractionID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -7337,8 +8587,6 @@ COMMENT ON COLUMN public."organism-interaction-agent-role"."organismInteractionI
 
 
 --
--- TOC entry 6104 (class 0 OID 0)
--- Dependencies: 272
 -- Name: COLUMN "organism-interaction-agent-role"."agentRole"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -7346,8 +8594,6 @@ COMMENT ON COLUMN public."organism-interaction-agent-role"."agentRole" IS 'The c
 
 
 --
--- TOC entry 6105 (class 0 OID 0)
--- Dependencies: 272
 -- Name: COLUMN "organism-interaction-agent-role"."agentRoleIRI"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -7355,8 +8601,6 @@ COMMENT ON COLUMN public."organism-interaction-agent-role"."agentRoleIRI" IS 'Th
 
 
 --
--- TOC entry 6106 (class 0 OID 0)
--- Dependencies: 272
 -- Name: COLUMN "organism-interaction-agent-role"."agentRoleVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -7364,8 +8608,6 @@ COMMENT ON COLUMN public."organism-interaction-agent-role"."agentRoleVocabulary"
 
 
 --
--- TOC entry 6107 (class 0 OID 0)
--- Dependencies: 272
 -- Name: COLUMN "organism-interaction-agent-role"."agentRoleOrder"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -7373,8 +8615,6 @@ COMMENT ON COLUMN public."organism-interaction-agent-role"."agentRoleOrder" IS '
 
 
 --
--- TOC entry 6108 (class 0 OID 0)
--- Dependencies: 272
 -- Name: COLUMN "organism-interaction-agent-role"."agentRoleDate"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -7382,7 +8622,6 @@ COMMENT ON COLUMN public."organism-interaction-agent-role"."agentRoleDate" IS 'T
 
 
 --
--- TOC entry 273 (class 1259 OID 177266)
 -- Name: organism-interaction-assertion; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -7413,8 +8652,6 @@ CREATE TABLE public."organism-interaction-assertion" (
 ALTER TABLE public."organism-interaction-assertion" OWNER TO postgres;
 
 --
--- TOC entry 6109 (class 0 OID 0)
--- Dependencies: 273
 -- Name: TABLE "organism-interaction-assertion"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -7422,8 +8659,6 @@ COMMENT ON TABLE public."organism-interaction-assertion" IS 'Comments or notes a
 
 
 --
--- TOC entry 6110 (class 0 OID 0)
--- Dependencies: 273
 -- Name: COLUMN "organism-interaction-assertion"."assertionID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -7431,8 +8666,6 @@ COMMENT ON COLUMN public."organism-interaction-assertion"."assertionID" IS 'An i
 
 
 --
--- TOC entry 6111 (class 0 OID 0)
--- Dependencies: 273
 -- Name: COLUMN "organism-interaction-assertion"."organismInteractionID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -7440,8 +8673,6 @@ COMMENT ON COLUMN public."organism-interaction-assertion"."organismInteractionID
 
 
 --
--- TOC entry 6112 (class 0 OID 0)
--- Dependencies: 273
 -- Name: COLUMN "organism-interaction-assertion"."assertionType"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -7449,8 +8680,6 @@ COMMENT ON COLUMN public."organism-interaction-assertion"."assertionType" IS 'Th
 
 
 --
--- TOC entry 6113 (class 0 OID 0)
--- Dependencies: 273
 -- Name: COLUMN "organism-interaction-assertion"."assertionTypeIRI"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -7458,8 +8687,6 @@ COMMENT ON COLUMN public."organism-interaction-assertion"."assertionTypeIRI" IS 
 
 
 --
--- TOC entry 6114 (class 0 OID 0)
--- Dependencies: 273
 -- Name: COLUMN "organism-interaction-assertion"."assertionTypeVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -7467,8 +8694,6 @@ COMMENT ON COLUMN public."organism-interaction-assertion"."assertionTypeVocabula
 
 
 --
--- TOC entry 6115 (class 0 OID 0)
--- Dependencies: 273
 -- Name: COLUMN "organism-interaction-assertion"."assertionMadeDate"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -7476,8 +8701,6 @@ COMMENT ON COLUMN public."organism-interaction-assertion"."assertionMadeDate" IS
 
 
 --
--- TOC entry 6116 (class 0 OID 0)
--- Dependencies: 273
 -- Name: COLUMN "organism-interaction-assertion"."assertionEffectiveDate"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -7485,8 +8708,6 @@ COMMENT ON COLUMN public."organism-interaction-assertion"."assertionEffectiveDat
 
 
 --
--- TOC entry 6117 (class 0 OID 0)
--- Dependencies: 273
 -- Name: COLUMN "organism-interaction-assertion"."assertionValue"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -7494,8 +8715,6 @@ COMMENT ON COLUMN public."organism-interaction-assertion"."assertionValue" IS 'A
 
 
 --
--- TOC entry 6118 (class 0 OID 0)
--- Dependencies: 273
 -- Name: COLUMN "organism-interaction-assertion"."assertionValueIRI"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -7503,8 +8722,6 @@ COMMENT ON COLUMN public."organism-interaction-assertion"."assertionValueIRI" IS
 
 
 --
--- TOC entry 6119 (class 0 OID 0)
--- Dependencies: 273
 -- Name: COLUMN "organism-interaction-assertion"."assertionValueVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -7512,8 +8729,6 @@ COMMENT ON COLUMN public."organism-interaction-assertion"."assertionValueVocabul
 
 
 --
--- TOC entry 6120 (class 0 OID 0)
--- Dependencies: 273
 -- Name: COLUMN "organism-interaction-assertion"."assertionValueNumeric"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -7521,8 +8736,6 @@ COMMENT ON COLUMN public."organism-interaction-assertion"."assertionValueNumeric
 
 
 --
--- TOC entry 6121 (class 0 OID 0)
--- Dependencies: 273
 -- Name: COLUMN "organism-interaction-assertion"."assertionUnit"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -7530,8 +8743,6 @@ COMMENT ON COLUMN public."organism-interaction-assertion"."assertionUnit" IS 'Th
 
 
 --
--- TOC entry 6122 (class 0 OID 0)
--- Dependencies: 273
 -- Name: COLUMN "organism-interaction-assertion"."assertionUnitIRI"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -7539,8 +8750,6 @@ COMMENT ON COLUMN public."organism-interaction-assertion"."assertionUnitIRI" IS 
 
 
 --
--- TOC entry 6123 (class 0 OID 0)
--- Dependencies: 273
 -- Name: COLUMN "organism-interaction-assertion"."assertionUnitVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -7548,8 +8757,6 @@ COMMENT ON COLUMN public."organism-interaction-assertion"."assertionUnitVocabula
 
 
 --
--- TOC entry 6124 (class 0 OID 0)
--- Dependencies: 273
 -- Name: COLUMN "organism-interaction-assertion"."assertionBy"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -7557,8 +8764,6 @@ COMMENT ON COLUMN public."organism-interaction-assertion"."assertionBy" IS 'A li
 
 
 --
--- TOC entry 6125 (class 0 OID 0)
--- Dependencies: 273
 -- Name: COLUMN "organism-interaction-assertion"."assertionByID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -7566,8 +8771,6 @@ COMMENT ON COLUMN public."organism-interaction-assertion"."assertionByID" IS 'An
 
 
 --
--- TOC entry 6126 (class 0 OID 0)
--- Dependencies: 273
 -- Name: COLUMN "organism-interaction-assertion"."assertionProtocol"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -7575,8 +8778,6 @@ COMMENT ON COLUMN public."organism-interaction-assertion"."assertionProtocol" IS
 
 
 --
--- TOC entry 6127 (class 0 OID 0)
--- Dependencies: 273
 -- Name: COLUMN "organism-interaction-assertion"."assertionProtocolID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -7584,8 +8785,6 @@ COMMENT ON COLUMN public."organism-interaction-assertion"."assertionProtocolID" 
 
 
 --
--- TOC entry 6128 (class 0 OID 0)
--- Dependencies: 273
 -- Name: COLUMN "organism-interaction-assertion"."assertionCitation"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -7593,8 +8792,6 @@ COMMENT ON COLUMN public."organism-interaction-assertion"."assertionCitation" IS
 
 
 --
--- TOC entry 6129 (class 0 OID 0)
--- Dependencies: 273
 -- Name: COLUMN "organism-interaction-assertion"."assertionRemarks"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -7602,7 +8799,6 @@ COMMENT ON COLUMN public."organism-interaction-assertion"."assertionRemarks" IS 
 
 
 --
--- TOC entry 274 (class 1259 OID 177283)
 -- Name: organism-interaction-citation; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -7627,8 +8823,6 @@ CREATE TABLE public."organism-interaction-citation" (
 ALTER TABLE public."organism-interaction-citation" OWNER TO postgres;
 
 --
--- TOC entry 6130 (class 0 OID 0)
--- Dependencies: 274
 -- Name: TABLE "organism-interaction-citation"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -7636,8 +8830,6 @@ COMMENT ON TABLE public."organism-interaction-citation" IS 'Comments or notes ab
 
 
 --
--- TOC entry 6131 (class 0 OID 0)
--- Dependencies: 274
 -- Name: COLUMN "organism-interaction-citation"."citationID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -7645,8 +8837,6 @@ COMMENT ON COLUMN public."organism-interaction-citation"."citationID" IS 'An ide
 
 
 --
--- TOC entry 6132 (class 0 OID 0)
--- Dependencies: 274
 -- Name: COLUMN "organism-interaction-citation"."organismInteractionID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -7654,8 +8844,6 @@ COMMENT ON COLUMN public."organism-interaction-citation"."organismInteractionID"
 
 
 --
--- TOC entry 6133 (class 0 OID 0)
--- Dependencies: 274
 -- Name: COLUMN "organism-interaction-citation"."citationType"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -7663,8 +8851,6 @@ COMMENT ON COLUMN public."organism-interaction-citation"."citationType" IS 'The 
 
 
 --
--- TOC entry 6134 (class 0 OID 0)
--- Dependencies: 274
 -- Name: COLUMN "organism-interaction-citation"."citationTypeIRI"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -7672,8 +8858,6 @@ COMMENT ON COLUMN public."organism-interaction-citation"."citationTypeIRI" IS 'T
 
 
 --
--- TOC entry 6135 (class 0 OID 0)
--- Dependencies: 274
 -- Name: COLUMN "organism-interaction-citation"."citationTypeVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -7681,8 +8865,6 @@ COMMENT ON COLUMN public."organism-interaction-citation"."citationTypeVocabulary
 
 
 --
--- TOC entry 6136 (class 0 OID 0)
--- Dependencies: 274
 -- Name: COLUMN "organism-interaction-citation"."bibliographicCitation"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -7690,8 +8872,6 @@ COMMENT ON COLUMN public."organism-interaction-citation"."bibliographicCitation"
 
 
 --
--- TOC entry 6137 (class 0 OID 0)
--- Dependencies: 274
 -- Name: COLUMN "organism-interaction-citation"."pageNumber"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -7699,8 +8879,6 @@ COMMENT ON COLUMN public."organism-interaction-citation"."pageNumber" IS 'The nu
 
 
 --
--- TOC entry 6138 (class 0 OID 0)
--- Dependencies: 274
 -- Name: COLUMN "organism-interaction-citation"."referenceID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -7708,8 +8886,6 @@ COMMENT ON COLUMN public."organism-interaction-citation"."referenceID" IS 'An id
 
 
 --
--- TOC entry 6139 (class 0 OID 0)
--- Dependencies: 274
 -- Name: COLUMN "organism-interaction-citation"."referenceType"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -7717,8 +8893,6 @@ COMMENT ON COLUMN public."organism-interaction-citation"."referenceType" IS 'The
 
 
 --
--- TOC entry 6140 (class 0 OID 0)
--- Dependencies: 274
 -- Name: COLUMN "organism-interaction-citation"."referenceTypeIRI"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -7726,8 +8900,6 @@ COMMENT ON COLUMN public."organism-interaction-citation"."referenceTypeIRI" IS '
 
 
 --
--- TOC entry 6141 (class 0 OID 0)
--- Dependencies: 274
 -- Name: COLUMN "organism-interaction-citation"."referenceTypeVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -7735,8 +8907,6 @@ COMMENT ON COLUMN public."organism-interaction-citation"."referenceTypeVocabular
 
 
 --
--- TOC entry 6142 (class 0 OID 0)
--- Dependencies: 274
 -- Name: COLUMN "organism-interaction-citation"."referenceYear"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -7744,8 +8914,6 @@ COMMENT ON COLUMN public."organism-interaction-citation"."referenceYear" IS 'The
 
 
 --
--- TOC entry 6143 (class 0 OID 0)
--- Dependencies: 274
 -- Name: COLUMN "organism-interaction-citation"."isPeerReviewed"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -7753,8 +8921,6 @@ COMMENT ON COLUMN public."organism-interaction-citation"."isPeerReviewed" IS 'An
 
 
 --
--- TOC entry 6144 (class 0 OID 0)
--- Dependencies: 274
 -- Name: COLUMN "organism-interaction-citation"."citationRemarks"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -7762,7 +8928,6 @@ COMMENT ON COLUMN public."organism-interaction-citation"."citationRemarks" IS 'C
 
 
 --
--- TOC entry 275 (class 1259 OID 177295)
 -- Name: organism-interaction-media; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -7778,8 +8943,6 @@ CREATE TABLE public."organism-interaction-media" (
 ALTER TABLE public."organism-interaction-media" OWNER TO postgres;
 
 --
--- TOC entry 6145 (class 0 OID 0)
--- Dependencies: 275
 -- Name: TABLE "organism-interaction-media"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -7787,8 +8950,6 @@ COMMENT ON TABLE public."organism-interaction-media" IS 'Any vocabulary or forma
 
 
 --
--- TOC entry 6146 (class 0 OID 0)
--- Dependencies: 275
 -- Name: COLUMN "organism-interaction-media"."mediaID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -7796,8 +8957,6 @@ COMMENT ON COLUMN public."organism-interaction-media"."mediaID" IS 'An identifie
 
 
 --
--- TOC entry 6147 (class 0 OID 0)
--- Dependencies: 275
 -- Name: COLUMN "organism-interaction-media"."organismInteractionID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -7805,8 +8964,6 @@ COMMENT ON COLUMN public."organism-interaction-media"."organismInteractionID" IS
 
 
 --
--- TOC entry 6148 (class 0 OID 0)
--- Dependencies: 275
 -- Name: COLUMN "organism-interaction-media"."mediaSubjectCategory"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -7814,8 +8971,6 @@ COMMENT ON COLUMN public."organism-interaction-media"."mediaSubjectCategory" IS 
 
 
 --
--- TOC entry 6149 (class 0 OID 0)
--- Dependencies: 275
 -- Name: COLUMN "organism-interaction-media"."mediaSubjectCategoryIRI"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -7823,8 +8978,6 @@ COMMENT ON COLUMN public."organism-interaction-media"."mediaSubjectCategoryIRI" 
 
 
 --
--- TOC entry 6150 (class 0 OID 0)
--- Dependencies: 275
 -- Name: COLUMN "organism-interaction-media"."mediaSubjectCategoryVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -7832,7 +8985,6 @@ COMMENT ON COLUMN public."organism-interaction-media"."mediaSubjectCategoryVocab
 
 
 --
--- TOC entry 228 (class 1259 OID 176618)
 -- Name: phylogenetic-tree; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -7847,8 +8999,6 @@ CREATE TABLE public."phylogenetic-tree" (
 ALTER TABLE public."phylogenetic-tree" OWNER TO postgres;
 
 --
--- TOC entry 6151 (class 0 OID 0)
--- Dependencies: 228
 -- Name: TABLE "phylogenetic-tree"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -7856,8 +9006,6 @@ COMMENT ON TABLE public."phylogenetic-tree" IS 'A list (concatenated and separat
 
 
 --
--- TOC entry 6152 (class 0 OID 0)
--- Dependencies: 228
 -- Name: COLUMN "phylogenetic-tree"."phylogeneticTreeID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -7865,8 +9013,6 @@ COMMENT ON COLUMN public."phylogenetic-tree"."phylogeneticTreeID" IS 'An identif
 
 
 --
--- TOC entry 6153 (class 0 OID 0)
--- Dependencies: 228
 -- Name: COLUMN "phylogenetic-tree"."phylogeneticTreeProtocol"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -7874,8 +9020,6 @@ COMMENT ON COLUMN public."phylogenetic-tree"."phylogeneticTreeProtocol" IS 'The 
 
 
 --
--- TOC entry 6154 (class 0 OID 0)
--- Dependencies: 228
 -- Name: COLUMN "phylogenetic-tree"."phylogeneticTreeProtocolID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -7883,8 +9027,6 @@ COMMENT ON COLUMN public."phylogenetic-tree"."phylogeneticTreeProtocolID" IS 'An
 
 
 --
--- TOC entry 6155 (class 0 OID 0)
--- Dependencies: 228
 -- Name: COLUMN "phylogenetic-tree"."phylogeneticTreeCitation"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -7892,7 +9034,6 @@ COMMENT ON COLUMN public."phylogenetic-tree"."phylogeneticTreeCitation" IS 'A li
 
 
 --
--- TOC entry 276 (class 1259 OID 177310)
 -- Name: phylogenetic-tree-assertion; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -7923,8 +9064,6 @@ CREATE TABLE public."phylogenetic-tree-assertion" (
 ALTER TABLE public."phylogenetic-tree-assertion" OWNER TO postgres;
 
 --
--- TOC entry 6156 (class 0 OID 0)
--- Dependencies: 276
 -- Name: TABLE "phylogenetic-tree-assertion"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -7932,8 +9071,6 @@ COMMENT ON TABLE public."phylogenetic-tree-assertion" IS 'Comments or notes abou
 
 
 --
--- TOC entry 6157 (class 0 OID 0)
--- Dependencies: 276
 -- Name: COLUMN "phylogenetic-tree-assertion"."assertionID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -7941,8 +9078,6 @@ COMMENT ON COLUMN public."phylogenetic-tree-assertion"."assertionID" IS 'An iden
 
 
 --
--- TOC entry 6158 (class 0 OID 0)
--- Dependencies: 276
 -- Name: COLUMN "phylogenetic-tree-assertion"."phylogeneticTreeID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -7950,8 +9085,6 @@ COMMENT ON COLUMN public."phylogenetic-tree-assertion"."phylogeneticTreeID" IS '
 
 
 --
--- TOC entry 6159 (class 0 OID 0)
--- Dependencies: 276
 -- Name: COLUMN "phylogenetic-tree-assertion"."assertionType"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -7959,8 +9092,6 @@ COMMENT ON COLUMN public."phylogenetic-tree-assertion"."assertionType" IS 'The c
 
 
 --
--- TOC entry 6160 (class 0 OID 0)
--- Dependencies: 276
 -- Name: COLUMN "phylogenetic-tree-assertion"."assertionTypeIRI"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -7968,8 +9099,6 @@ COMMENT ON COLUMN public."phylogenetic-tree-assertion"."assertionTypeIRI" IS 'Th
 
 
 --
--- TOC entry 6161 (class 0 OID 0)
--- Dependencies: 276
 -- Name: COLUMN "phylogenetic-tree-assertion"."assertionTypeVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -7977,8 +9106,6 @@ COMMENT ON COLUMN public."phylogenetic-tree-assertion"."assertionTypeVocabulary"
 
 
 --
--- TOC entry 6162 (class 0 OID 0)
--- Dependencies: 276
 -- Name: COLUMN "phylogenetic-tree-assertion"."assertionMadeDate"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -7986,8 +9113,6 @@ COMMENT ON COLUMN public."phylogenetic-tree-assertion"."assertionMadeDate" IS 'T
 
 
 --
--- TOC entry 6163 (class 0 OID 0)
--- Dependencies: 276
 -- Name: COLUMN "phylogenetic-tree-assertion"."assertionEffectiveDate"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -7995,8 +9120,6 @@ COMMENT ON COLUMN public."phylogenetic-tree-assertion"."assertionEffectiveDate" 
 
 
 --
--- TOC entry 6164 (class 0 OID 0)
--- Dependencies: 276
 -- Name: COLUMN "phylogenetic-tree-assertion"."assertionValue"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -8004,8 +9127,6 @@ COMMENT ON COLUMN public."phylogenetic-tree-assertion"."assertionValue" IS 'An a
 
 
 --
--- TOC entry 6165 (class 0 OID 0)
--- Dependencies: 276
 -- Name: COLUMN "phylogenetic-tree-assertion"."assertionValueIRI"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -8013,8 +9134,6 @@ COMMENT ON COLUMN public."phylogenetic-tree-assertion"."assertionValueIRI" IS 'T
 
 
 --
--- TOC entry 6166 (class 0 OID 0)
--- Dependencies: 276
 -- Name: COLUMN "phylogenetic-tree-assertion"."assertionValueVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -8022,8 +9141,6 @@ COMMENT ON COLUMN public."phylogenetic-tree-assertion"."assertionValueVocabulary
 
 
 --
--- TOC entry 6167 (class 0 OID 0)
--- Dependencies: 276
 -- Name: COLUMN "phylogenetic-tree-assertion"."assertionValueNumeric"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -8031,8 +9148,6 @@ COMMENT ON COLUMN public."phylogenetic-tree-assertion"."assertionValueNumeric" I
 
 
 --
--- TOC entry 6168 (class 0 OID 0)
--- Dependencies: 276
 -- Name: COLUMN "phylogenetic-tree-assertion"."assertionUnit"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -8040,8 +9155,6 @@ COMMENT ON COLUMN public."phylogenetic-tree-assertion"."assertionUnit" IS 'The u
 
 
 --
--- TOC entry 6169 (class 0 OID 0)
--- Dependencies: 276
 -- Name: COLUMN "phylogenetic-tree-assertion"."assertionUnitIRI"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -8049,8 +9162,6 @@ COMMENT ON COLUMN public."phylogenetic-tree-assertion"."assertionUnitIRI" IS 'Th
 
 
 --
--- TOC entry 6170 (class 0 OID 0)
--- Dependencies: 276
 -- Name: COLUMN "phylogenetic-tree-assertion"."assertionUnitVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -8058,8 +9169,6 @@ COMMENT ON COLUMN public."phylogenetic-tree-assertion"."assertionUnitVocabulary"
 
 
 --
--- TOC entry 6171 (class 0 OID 0)
--- Dependencies: 276
 -- Name: COLUMN "phylogenetic-tree-assertion"."assertionBy"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -8067,8 +9176,6 @@ COMMENT ON COLUMN public."phylogenetic-tree-assertion"."assertionBy" IS 'A list 
 
 
 --
--- TOC entry 6172 (class 0 OID 0)
--- Dependencies: 276
 -- Name: COLUMN "phylogenetic-tree-assertion"."assertionByID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -8076,8 +9183,6 @@ COMMENT ON COLUMN public."phylogenetic-tree-assertion"."assertionByID" IS 'An id
 
 
 --
--- TOC entry 6173 (class 0 OID 0)
--- Dependencies: 276
 -- Name: COLUMN "phylogenetic-tree-assertion"."assertionProtocol"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -8085,8 +9190,6 @@ COMMENT ON COLUMN public."phylogenetic-tree-assertion"."assertionProtocol" IS 'T
 
 
 --
--- TOC entry 6174 (class 0 OID 0)
--- Dependencies: 276
 -- Name: COLUMN "phylogenetic-tree-assertion"."assertionProtocolID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -8094,8 +9197,6 @@ COMMENT ON COLUMN public."phylogenetic-tree-assertion"."assertionProtocolID" IS 
 
 
 --
--- TOC entry 6175 (class 0 OID 0)
--- Dependencies: 276
 -- Name: COLUMN "phylogenetic-tree-assertion"."assertionCitation"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -8103,8 +9204,6 @@ COMMENT ON COLUMN public."phylogenetic-tree-assertion"."assertionCitation" IS 'A
 
 
 --
--- TOC entry 6176 (class 0 OID 0)
--- Dependencies: 276
 -- Name: COLUMN "phylogenetic-tree-assertion"."assertionRemarks"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -8112,7 +9211,6 @@ COMMENT ON COLUMN public."phylogenetic-tree-assertion"."assertionRemarks" IS 'Co
 
 
 --
--- TOC entry 277 (class 1259 OID 177327)
 -- Name: phylogenetic-tree-citation; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -8137,8 +9235,6 @@ CREATE TABLE public."phylogenetic-tree-citation" (
 ALTER TABLE public."phylogenetic-tree-citation" OWNER TO postgres;
 
 --
--- TOC entry 6177 (class 0 OID 0)
--- Dependencies: 277
 -- Name: TABLE "phylogenetic-tree-citation"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -8146,8 +9242,6 @@ COMMENT ON TABLE public."phylogenetic-tree-citation" IS 'Comments or notes about
 
 
 --
--- TOC entry 6178 (class 0 OID 0)
--- Dependencies: 277
 -- Name: COLUMN "phylogenetic-tree-citation"."citationID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -8155,8 +9249,6 @@ COMMENT ON COLUMN public."phylogenetic-tree-citation"."citationID" IS 'An identi
 
 
 --
--- TOC entry 6179 (class 0 OID 0)
--- Dependencies: 277
 -- Name: COLUMN "phylogenetic-tree-citation"."phylogeneticTreeID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -8164,8 +9256,6 @@ COMMENT ON COLUMN public."phylogenetic-tree-citation"."phylogeneticTreeID" IS 'A
 
 
 --
--- TOC entry 6180 (class 0 OID 0)
--- Dependencies: 277
 -- Name: COLUMN "phylogenetic-tree-citation"."citationType"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -8173,8 +9263,6 @@ COMMENT ON COLUMN public."phylogenetic-tree-citation"."citationType" IS 'The cat
 
 
 --
--- TOC entry 6181 (class 0 OID 0)
--- Dependencies: 277
 -- Name: COLUMN "phylogenetic-tree-citation"."citationTypeIRI"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -8182,8 +9270,6 @@ COMMENT ON COLUMN public."phylogenetic-tree-citation"."citationTypeIRI" IS 'The 
 
 
 --
--- TOC entry 6182 (class 0 OID 0)
--- Dependencies: 277
 -- Name: COLUMN "phylogenetic-tree-citation"."citationTypeVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -8191,8 +9277,6 @@ COMMENT ON COLUMN public."phylogenetic-tree-citation"."citationTypeVocabulary" I
 
 
 --
--- TOC entry 6183 (class 0 OID 0)
--- Dependencies: 277
 -- Name: COLUMN "phylogenetic-tree-citation"."bibliographicCitation"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -8200,8 +9284,6 @@ COMMENT ON COLUMN public."phylogenetic-tree-citation"."bibliographicCitation" IS
 
 
 --
--- TOC entry 6184 (class 0 OID 0)
--- Dependencies: 277
 -- Name: COLUMN "phylogenetic-tree-citation"."pageNumber"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -8209,8 +9291,6 @@ COMMENT ON COLUMN public."phylogenetic-tree-citation"."pageNumber" IS 'The numbe
 
 
 --
--- TOC entry 6185 (class 0 OID 0)
--- Dependencies: 277
 -- Name: COLUMN "phylogenetic-tree-citation"."referenceID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -8218,8 +9298,6 @@ COMMENT ON COLUMN public."phylogenetic-tree-citation"."referenceID" IS 'An ident
 
 
 --
--- TOC entry 6186 (class 0 OID 0)
--- Dependencies: 277
 -- Name: COLUMN "phylogenetic-tree-citation"."referenceType"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -8227,8 +9305,6 @@ COMMENT ON COLUMN public."phylogenetic-tree-citation"."referenceType" IS 'The ca
 
 
 --
--- TOC entry 6187 (class 0 OID 0)
--- Dependencies: 277
 -- Name: COLUMN "phylogenetic-tree-citation"."referenceTypeIRI"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -8236,8 +9312,6 @@ COMMENT ON COLUMN public."phylogenetic-tree-citation"."referenceTypeIRI" IS 'The
 
 
 --
--- TOC entry 6188 (class 0 OID 0)
--- Dependencies: 277
 -- Name: COLUMN "phylogenetic-tree-citation"."referenceTypeVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -8245,8 +9319,6 @@ COMMENT ON COLUMN public."phylogenetic-tree-citation"."referenceTypeVocabulary" 
 
 
 --
--- TOC entry 6189 (class 0 OID 0)
--- Dependencies: 277
 -- Name: COLUMN "phylogenetic-tree-citation"."referenceYear"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -8254,8 +9326,6 @@ COMMENT ON COLUMN public."phylogenetic-tree-citation"."referenceYear" IS 'The ye
 
 
 --
--- TOC entry 6190 (class 0 OID 0)
--- Dependencies: 277
 -- Name: COLUMN "phylogenetic-tree-citation"."isPeerReviewed"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -8263,8 +9333,6 @@ COMMENT ON COLUMN public."phylogenetic-tree-citation"."isPeerReviewed" IS 'An in
 
 
 --
--- TOC entry 6191 (class 0 OID 0)
--- Dependencies: 277
 -- Name: COLUMN "phylogenetic-tree-citation"."citationRemarks"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -8272,7 +9340,6 @@ COMMENT ON COLUMN public."phylogenetic-tree-citation"."citationRemarks" IS 'Comm
 
 
 --
--- TOC entry 278 (class 1259 OID 177339)
 -- Name: phylogenetic-tree-identifier; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -8289,8 +9356,6 @@ CREATE TABLE public."phylogenetic-tree-identifier" (
 ALTER TABLE public."phylogenetic-tree-identifier" OWNER TO postgres;
 
 --
--- TOC entry 6192 (class 0 OID 0)
--- Dependencies: 278
 -- Name: TABLE "phylogenetic-tree-identifier"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -8298,8 +9363,6 @@ COMMENT ON TABLE public."phylogenetic-tree-identifier" IS 'A language in which a
 
 
 --
--- TOC entry 6193 (class 0 OID 0)
--- Dependencies: 278
 -- Name: COLUMN "phylogenetic-tree-identifier".identifier; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -8307,8 +9370,6 @@ COMMENT ON COLUMN public."phylogenetic-tree-identifier".identifier IS 'An unambi
 
 
 --
--- TOC entry 6194 (class 0 OID 0)
--- Dependencies: 278
 -- Name: COLUMN "phylogenetic-tree-identifier"."phylogeneticTreeID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -8316,8 +9377,6 @@ COMMENT ON COLUMN public."phylogenetic-tree-identifier"."phylogeneticTreeID" IS 
 
 
 --
--- TOC entry 6195 (class 0 OID 0)
--- Dependencies: 278
 -- Name: COLUMN "phylogenetic-tree-identifier"."identifierType"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -8325,8 +9384,6 @@ COMMENT ON COLUMN public."phylogenetic-tree-identifier"."identifierType" IS 'The
 
 
 --
--- TOC entry 6196 (class 0 OID 0)
--- Dependencies: 278
 -- Name: COLUMN "phylogenetic-tree-identifier"."identifierTypeIRI"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -8334,8 +9391,6 @@ COMMENT ON COLUMN public."phylogenetic-tree-identifier"."identifierTypeIRI" IS '
 
 
 --
--- TOC entry 6197 (class 0 OID 0)
--- Dependencies: 278
 -- Name: COLUMN "phylogenetic-tree-identifier"."identifierTypeVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -8343,8 +9398,6 @@ COMMENT ON COLUMN public."phylogenetic-tree-identifier"."identifierTypeVocabular
 
 
 --
--- TOC entry 6198 (class 0 OID 0)
--- Dependencies: 278
 -- Name: COLUMN "phylogenetic-tree-identifier"."identifierLanguage"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -8352,7 +9405,6 @@ COMMENT ON COLUMN public."phylogenetic-tree-identifier"."identifierLanguage" IS 
 
 
 --
--- TOC entry 279 (class 1259 OID 177349)
 -- Name: phylogenetic-tree-media; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -8368,8 +9420,6 @@ CREATE TABLE public."phylogenetic-tree-media" (
 ALTER TABLE public."phylogenetic-tree-media" OWNER TO postgres;
 
 --
--- TOC entry 6199 (class 0 OID 0)
--- Dependencies: 279
 -- Name: TABLE "phylogenetic-tree-media"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -8377,8 +9427,6 @@ COMMENT ON TABLE public."phylogenetic-tree-media" IS 'Any vocabulary or formal c
 
 
 --
--- TOC entry 6200 (class 0 OID 0)
--- Dependencies: 279
 -- Name: COLUMN "phylogenetic-tree-media"."mediaID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -8386,8 +9434,6 @@ COMMENT ON COLUMN public."phylogenetic-tree-media"."mediaID" IS 'An identifier f
 
 
 --
--- TOC entry 6201 (class 0 OID 0)
--- Dependencies: 279
 -- Name: COLUMN "phylogenetic-tree-media"."phylogeneticTreeID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -8395,8 +9441,6 @@ COMMENT ON COLUMN public."phylogenetic-tree-media"."phylogeneticTreeID" IS 'An i
 
 
 --
--- TOC entry 6202 (class 0 OID 0)
--- Dependencies: 279
 -- Name: COLUMN "phylogenetic-tree-media"."mediaSubjectCategory"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -8404,8 +9448,6 @@ COMMENT ON COLUMN public."phylogenetic-tree-media"."mediaSubjectCategory" IS 'A 
 
 
 --
--- TOC entry 6203 (class 0 OID 0)
--- Dependencies: 279
 -- Name: COLUMN "phylogenetic-tree-media"."mediaSubjectCategoryIRI"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -8413,8 +9455,6 @@ COMMENT ON COLUMN public."phylogenetic-tree-media"."mediaSubjectCategoryIRI" IS 
 
 
 --
--- TOC entry 6204 (class 0 OID 0)
--- Dependencies: 279
 -- Name: COLUMN "phylogenetic-tree-media"."mediaSubjectCategoryVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -8422,7 +9462,6 @@ COMMENT ON COLUMN public."phylogenetic-tree-media"."mediaSubjectCategoryVocabula
 
 
 --
--- TOC entry 280 (class 1259 OID 177364)
 -- Name: phylogenetic-tree-protocol; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -8435,8 +9474,6 @@ CREATE TABLE public."phylogenetic-tree-protocol" (
 ALTER TABLE public."phylogenetic-tree-protocol" OWNER TO postgres;
 
 --
--- TOC entry 6205 (class 0 OID 0)
--- Dependencies: 280
 -- Name: TABLE "phylogenetic-tree-protocol"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -8444,8 +9481,6 @@ COMMENT ON TABLE public."phylogenetic-tree-protocol" IS 'An identifier for a Phy
 
 
 --
--- TOC entry 6206 (class 0 OID 0)
--- Dependencies: 280
 -- Name: COLUMN "phylogenetic-tree-protocol"."protocolID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -8453,8 +9488,6 @@ COMMENT ON COLUMN public."phylogenetic-tree-protocol"."protocolID" IS 'An identi
 
 
 --
--- TOC entry 6207 (class 0 OID 0)
--- Dependencies: 280
 -- Name: COLUMN "phylogenetic-tree-protocol"."phylogeneticTreeID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -8462,7 +9495,6 @@ COMMENT ON COLUMN public."phylogenetic-tree-protocol"."phylogeneticTreeID" IS 'A
 
 
 --
--- TOC entry 229 (class 1259 OID 176625)
 -- Name: phylogenetic-tree-tip; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -8480,8 +9512,6 @@ CREATE TABLE public."phylogenetic-tree-tip" (
 ALTER TABLE public."phylogenetic-tree-tip" OWNER TO postgres;
 
 --
--- TOC entry 6208 (class 0 OID 0)
--- Dependencies: 229
 -- Name: TABLE "phylogenetic-tree-tip"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -8489,8 +9519,6 @@ COMMENT ON TABLE public."phylogenetic-tree-tip" IS 'An identifier for a GeneticS
 
 
 --
--- TOC entry 6209 (class 0 OID 0)
--- Dependencies: 229
 -- Name: COLUMN "phylogenetic-tree-tip"."phylogeneticTreeTipID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -8498,8 +9526,6 @@ COMMENT ON COLUMN public."phylogenetic-tree-tip"."phylogeneticTreeTipID" IS 'An 
 
 
 --
--- TOC entry 6210 (class 0 OID 0)
--- Dependencies: 229
 -- Name: COLUMN "phylogenetic-tree-tip"."phylogeneticTreeID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -8507,8 +9533,6 @@ COMMENT ON COLUMN public."phylogenetic-tree-tip"."phylogeneticTreeID" IS 'An ide
 
 
 --
--- TOC entry 6211 (class 0 OID 0)
--- Dependencies: 229
 -- Name: COLUMN "phylogenetic-tree-tip"."phylogeneticTreeTipLabel"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -8516,8 +9540,6 @@ COMMENT ON COLUMN public."phylogenetic-tree-tip"."phylogeneticTreeTipLabel" IS '
 
 
 --
--- TOC entry 6212 (class 0 OID 0)
--- Dependencies: 229
 -- Name: COLUMN "phylogenetic-tree-tip"."taxonID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -8525,8 +9547,6 @@ COMMENT ON COLUMN public."phylogenetic-tree-tip"."taxonID" IS 'An identifier for
 
 
 --
--- TOC entry 6213 (class 0 OID 0)
--- Dependencies: 229
 -- Name: COLUMN "phylogenetic-tree-tip"."scientificName"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -8534,8 +9554,6 @@ COMMENT ON COLUMN public."phylogenetic-tree-tip"."scientificName" IS 'The full s
 
 
 --
--- TOC entry 6214 (class 0 OID 0)
--- Dependencies: 229
 -- Name: COLUMN "phylogenetic-tree-tip"."materialEntityID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -8543,8 +9561,6 @@ COMMENT ON COLUMN public."phylogenetic-tree-tip"."materialEntityID" IS 'An ident
 
 
 --
--- TOC entry 6215 (class 0 OID 0)
--- Dependencies: 229
 -- Name: COLUMN "phylogenetic-tree-tip"."geneticSequenceID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -8552,7 +9568,6 @@ COMMENT ON COLUMN public."phylogenetic-tree-tip"."geneticSequenceID" IS 'An iden
 
 
 --
--- TOC entry 281 (class 1259 OID 177379)
 -- Name: phylogenetic-tree-tip-assertion; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -8583,8 +9598,6 @@ CREATE TABLE public."phylogenetic-tree-tip-assertion" (
 ALTER TABLE public."phylogenetic-tree-tip-assertion" OWNER TO postgres;
 
 --
--- TOC entry 6216 (class 0 OID 0)
--- Dependencies: 281
 -- Name: TABLE "phylogenetic-tree-tip-assertion"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -8592,8 +9605,6 @@ COMMENT ON TABLE public."phylogenetic-tree-tip-assertion" IS 'Comments or notes 
 
 
 --
--- TOC entry 6217 (class 0 OID 0)
--- Dependencies: 281
 -- Name: COLUMN "phylogenetic-tree-tip-assertion"."assertionID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -8601,8 +9612,6 @@ COMMENT ON COLUMN public."phylogenetic-tree-tip-assertion"."assertionID" IS 'An 
 
 
 --
--- TOC entry 6218 (class 0 OID 0)
--- Dependencies: 281
 -- Name: COLUMN "phylogenetic-tree-tip-assertion"."phylogeneticTreeTipID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -8610,8 +9619,6 @@ COMMENT ON COLUMN public."phylogenetic-tree-tip-assertion"."phylogeneticTreeTipI
 
 
 --
--- TOC entry 6219 (class 0 OID 0)
--- Dependencies: 281
 -- Name: COLUMN "phylogenetic-tree-tip-assertion"."assertionType"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -8619,8 +9626,6 @@ COMMENT ON COLUMN public."phylogenetic-tree-tip-assertion"."assertionType" IS 'T
 
 
 --
--- TOC entry 6220 (class 0 OID 0)
--- Dependencies: 281
 -- Name: COLUMN "phylogenetic-tree-tip-assertion"."assertionTypeIRI"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -8628,8 +9633,6 @@ COMMENT ON COLUMN public."phylogenetic-tree-tip-assertion"."assertionTypeIRI" IS
 
 
 --
--- TOC entry 6221 (class 0 OID 0)
--- Dependencies: 281
 -- Name: COLUMN "phylogenetic-tree-tip-assertion"."assertionTypeVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -8637,8 +9640,6 @@ COMMENT ON COLUMN public."phylogenetic-tree-tip-assertion"."assertionTypeVocabul
 
 
 --
--- TOC entry 6222 (class 0 OID 0)
--- Dependencies: 281
 -- Name: COLUMN "phylogenetic-tree-tip-assertion"."assertionMadeDate"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -8646,8 +9647,6 @@ COMMENT ON COLUMN public."phylogenetic-tree-tip-assertion"."assertionMadeDate" I
 
 
 --
--- TOC entry 6223 (class 0 OID 0)
--- Dependencies: 281
 -- Name: COLUMN "phylogenetic-tree-tip-assertion"."assertionEffectiveDate"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -8655,8 +9654,6 @@ COMMENT ON COLUMN public."phylogenetic-tree-tip-assertion"."assertionEffectiveDa
 
 
 --
--- TOC entry 6224 (class 0 OID 0)
--- Dependencies: 281
 -- Name: COLUMN "phylogenetic-tree-tip-assertion"."assertionValue"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -8664,8 +9661,6 @@ COMMENT ON COLUMN public."phylogenetic-tree-tip-assertion"."assertionValue" IS '
 
 
 --
--- TOC entry 6225 (class 0 OID 0)
--- Dependencies: 281
 -- Name: COLUMN "phylogenetic-tree-tip-assertion"."assertionValueIRI"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -8673,8 +9668,6 @@ COMMENT ON COLUMN public."phylogenetic-tree-tip-assertion"."assertionValueIRI" I
 
 
 --
--- TOC entry 6226 (class 0 OID 0)
--- Dependencies: 281
 -- Name: COLUMN "phylogenetic-tree-tip-assertion"."assertionValueVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -8682,8 +9675,6 @@ COMMENT ON COLUMN public."phylogenetic-tree-tip-assertion"."assertionValueVocabu
 
 
 --
--- TOC entry 6227 (class 0 OID 0)
--- Dependencies: 281
 -- Name: COLUMN "phylogenetic-tree-tip-assertion"."assertionValueNumeric"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -8691,8 +9682,6 @@ COMMENT ON COLUMN public."phylogenetic-tree-tip-assertion"."assertionValueNumeri
 
 
 --
--- TOC entry 6228 (class 0 OID 0)
--- Dependencies: 281
 -- Name: COLUMN "phylogenetic-tree-tip-assertion"."assertionUnit"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -8700,8 +9689,6 @@ COMMENT ON COLUMN public."phylogenetic-tree-tip-assertion"."assertionUnit" IS 'T
 
 
 --
--- TOC entry 6229 (class 0 OID 0)
--- Dependencies: 281
 -- Name: COLUMN "phylogenetic-tree-tip-assertion"."assertionUnitIRI"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -8709,8 +9696,6 @@ COMMENT ON COLUMN public."phylogenetic-tree-tip-assertion"."assertionUnitIRI" IS
 
 
 --
--- TOC entry 6230 (class 0 OID 0)
--- Dependencies: 281
 -- Name: COLUMN "phylogenetic-tree-tip-assertion"."assertionUnitVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -8718,8 +9703,6 @@ COMMENT ON COLUMN public."phylogenetic-tree-tip-assertion"."assertionUnitVocabul
 
 
 --
--- TOC entry 6231 (class 0 OID 0)
--- Dependencies: 281
 -- Name: COLUMN "phylogenetic-tree-tip-assertion"."assertionBy"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -8727,8 +9710,6 @@ COMMENT ON COLUMN public."phylogenetic-tree-tip-assertion"."assertionBy" IS 'A l
 
 
 --
--- TOC entry 6232 (class 0 OID 0)
--- Dependencies: 281
 -- Name: COLUMN "phylogenetic-tree-tip-assertion"."assertionByID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -8736,8 +9717,6 @@ COMMENT ON COLUMN public."phylogenetic-tree-tip-assertion"."assertionByID" IS 'A
 
 
 --
--- TOC entry 6233 (class 0 OID 0)
--- Dependencies: 281
 -- Name: COLUMN "phylogenetic-tree-tip-assertion"."assertionProtocol"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -8745,8 +9724,6 @@ COMMENT ON COLUMN public."phylogenetic-tree-tip-assertion"."assertionProtocol" I
 
 
 --
--- TOC entry 6234 (class 0 OID 0)
--- Dependencies: 281
 -- Name: COLUMN "phylogenetic-tree-tip-assertion"."assertionProtocolID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -8754,8 +9731,6 @@ COMMENT ON COLUMN public."phylogenetic-tree-tip-assertion"."assertionProtocolID"
 
 
 --
--- TOC entry 6235 (class 0 OID 0)
--- Dependencies: 281
 -- Name: COLUMN "phylogenetic-tree-tip-assertion"."assertionCitation"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -8763,8 +9738,6 @@ COMMENT ON COLUMN public."phylogenetic-tree-tip-assertion"."assertionCitation" I
 
 
 --
--- TOC entry 6236 (class 0 OID 0)
--- Dependencies: 281
 -- Name: COLUMN "phylogenetic-tree-tip-assertion"."assertionRemarks"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -8772,7 +9745,6 @@ COMMENT ON COLUMN public."phylogenetic-tree-tip-assertion"."assertionRemarks" IS
 
 
 --
--- TOC entry 219 (class 1259 OID 176435)
 -- Name: protocol; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -8791,8 +9763,6 @@ CREATE TABLE public.protocol (
 ALTER TABLE public.protocol OWNER TO postgres;
 
 --
--- TOC entry 6237 (class 0 OID 0)
--- Dependencies: 219
 -- Name: TABLE protocol; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -8800,8 +9770,6 @@ COMMENT ON TABLE public.protocol IS 'Comments or notes about a Protocol.';
 
 
 --
--- TOC entry 6238 (class 0 OID 0)
--- Dependencies: 219
 -- Name: COLUMN protocol."protocolID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -8809,8 +9777,6 @@ COMMENT ON COLUMN public.protocol."protocolID" IS 'An identifier for a Protocol.
 
 
 --
--- TOC entry 6239 (class 0 OID 0)
--- Dependencies: 219
 -- Name: COLUMN protocol."protocolType"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -8818,8 +9784,6 @@ COMMENT ON COLUMN public.protocol."protocolType" IS 'The category that best matc
 
 
 --
--- TOC entry 6240 (class 0 OID 0)
--- Dependencies: 219
 -- Name: COLUMN protocol."protocolTypeIRI"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -8827,8 +9791,6 @@ COMMENT ON COLUMN public.protocol."protocolTypeIRI" IS 'The IRI of the controlle
 
 
 --
--- TOC entry 6241 (class 0 OID 0)
--- Dependencies: 219
 -- Name: COLUMN protocol."protocolTypeVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -8836,8 +9798,6 @@ COMMENT ON COLUMN public.protocol."protocolTypeVocabulary" IS 'The reference to 
 
 
 --
--- TOC entry 6242 (class 0 OID 0)
--- Dependencies: 219
 -- Name: COLUMN protocol."protocolName"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -8845,8 +9805,6 @@ COMMENT ON COLUMN public.protocol."protocolName" IS 'The name of a Protocol.';
 
 
 --
--- TOC entry 6243 (class 0 OID 0)
--- Dependencies: 219
 -- Name: COLUMN protocol."protocolDescription"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -8854,8 +9812,6 @@ COMMENT ON COLUMN public.protocol."protocolDescription" IS 'A description of a P
 
 
 --
--- TOC entry 6244 (class 0 OID 0)
--- Dependencies: 219
 -- Name: COLUMN protocol."protocolCitation"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -8863,8 +9819,6 @@ COMMENT ON COLUMN public.protocol."protocolCitation" IS 'A bibliographic citatio
 
 
 --
--- TOC entry 6245 (class 0 OID 0)
--- Dependencies: 219
 -- Name: COLUMN protocol."protocolRemarks"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -8872,7 +9826,6 @@ COMMENT ON COLUMN public.protocol."protocolRemarks" IS 'Comments or notes about 
 
 
 --
--- TOC entry 282 (class 1259 OID 177396)
 -- Name: protocol-citation; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -8897,8 +9850,6 @@ CREATE TABLE public."protocol-citation" (
 ALTER TABLE public."protocol-citation" OWNER TO postgres;
 
 --
--- TOC entry 6246 (class 0 OID 0)
--- Dependencies: 282
 -- Name: TABLE "protocol-citation"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -8906,8 +9857,6 @@ COMMENT ON TABLE public."protocol-citation" IS 'Comments or notes about a Citati
 
 
 --
--- TOC entry 6247 (class 0 OID 0)
--- Dependencies: 282
 -- Name: COLUMN "protocol-citation"."citationID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -8915,8 +9864,6 @@ COMMENT ON COLUMN public."protocol-citation"."citationID" IS 'An identifier for 
 
 
 --
--- TOC entry 6248 (class 0 OID 0)
--- Dependencies: 282
 -- Name: COLUMN "protocol-citation"."protocolID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -8924,8 +9871,6 @@ COMMENT ON COLUMN public."protocol-citation"."protocolID" IS 'An identifier for 
 
 
 --
--- TOC entry 6249 (class 0 OID 0)
--- Dependencies: 282
 -- Name: COLUMN "protocol-citation"."citationType"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -8933,8 +9878,6 @@ COMMENT ON COLUMN public."protocol-citation"."citationType" IS 'The category tha
 
 
 --
--- TOC entry 6250 (class 0 OID 0)
--- Dependencies: 282
 -- Name: COLUMN "protocol-citation"."citationTypeIRI"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -8942,8 +9885,6 @@ COMMENT ON COLUMN public."protocol-citation"."citationTypeIRI" IS 'The IRI of th
 
 
 --
--- TOC entry 6251 (class 0 OID 0)
--- Dependencies: 282
 -- Name: COLUMN "protocol-citation"."citationTypeVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -8951,8 +9892,6 @@ COMMENT ON COLUMN public."protocol-citation"."citationTypeVocabulary" IS 'The re
 
 
 --
--- TOC entry 6252 (class 0 OID 0)
--- Dependencies: 282
 -- Name: COLUMN "protocol-citation"."bibliographicCitation"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -8960,8 +9899,6 @@ COMMENT ON COLUMN public."protocol-citation"."bibliographicCitation" IS 'A bibli
 
 
 --
--- TOC entry 6253 (class 0 OID 0)
--- Dependencies: 282
 -- Name: COLUMN "protocol-citation"."pageNumber"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -8969,8 +9906,6 @@ COMMENT ON COLUMN public."protocol-citation"."pageNumber" IS 'The number of the 
 
 
 --
--- TOC entry 6254 (class 0 OID 0)
--- Dependencies: 282
 -- Name: COLUMN "protocol-citation"."referenceID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -8978,8 +9913,6 @@ COMMENT ON COLUMN public."protocol-citation"."referenceID" IS 'An identifier for
 
 
 --
--- TOC entry 6255 (class 0 OID 0)
--- Dependencies: 282
 -- Name: COLUMN "protocol-citation"."referenceType"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -8987,8 +9920,6 @@ COMMENT ON COLUMN public."protocol-citation"."referenceType" IS 'The category th
 
 
 --
--- TOC entry 6256 (class 0 OID 0)
--- Dependencies: 282
 -- Name: COLUMN "protocol-citation"."referenceTypeIRI"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -8996,8 +9927,6 @@ COMMENT ON COLUMN public."protocol-citation"."referenceTypeIRI" IS 'The IRI of t
 
 
 --
--- TOC entry 6257 (class 0 OID 0)
--- Dependencies: 282
 -- Name: COLUMN "protocol-citation"."referenceTypeVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -9005,8 +9934,6 @@ COMMENT ON COLUMN public."protocol-citation"."referenceTypeVocabulary" IS 'The r
 
 
 --
--- TOC entry 6258 (class 0 OID 0)
--- Dependencies: 282
 -- Name: COLUMN "protocol-citation"."referenceYear"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -9014,8 +9941,6 @@ COMMENT ON COLUMN public."protocol-citation"."referenceYear" IS 'The year the re
 
 
 --
--- TOC entry 6259 (class 0 OID 0)
--- Dependencies: 282
 -- Name: COLUMN "protocol-citation"."isPeerReviewed"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -9023,8 +9948,6 @@ COMMENT ON COLUMN public."protocol-citation"."isPeerReviewed" IS 'An indication 
 
 
 --
--- TOC entry 6260 (class 0 OID 0)
--- Dependencies: 282
 -- Name: COLUMN "protocol-citation"."citationRemarks"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -9032,7 +9955,6 @@ COMMENT ON COLUMN public."protocol-citation"."citationRemarks" IS 'Comments or n
 
 
 --
--- TOC entry 220 (class 1259 OID 176442)
 -- Name: relationship; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -9061,8 +9983,6 @@ CREATE TABLE public.relationship (
 ALTER TABLE public.relationship OWNER TO postgres;
 
 --
--- TOC entry 6261 (class 0 OID 0)
--- Dependencies: 220
 -- Name: TABLE relationship; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -9070,8 +9990,6 @@ COMMENT ON TABLE public.relationship IS 'Comments or notes about a Relationship.
 
 
 --
--- TOC entry 6262 (class 0 OID 0)
--- Dependencies: 220
 -- Name: COLUMN relationship."relationshipID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -9079,8 +9997,6 @@ COMMENT ON COLUMN public.relationship."relationshipID" IS 'An identifier for a R
 
 
 --
--- TOC entry 6263 (class 0 OID 0)
--- Dependencies: 220
 -- Name: COLUMN relationship."subjectResourceID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -9088,8 +10004,6 @@ COMMENT ON COLUMN public.relationship."subjectResourceID" IS 'An identifier for 
 
 
 --
--- TOC entry 6264 (class 0 OID 0)
--- Dependencies: 220
 -- Name: COLUMN relationship."subjectResourceType"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -9097,8 +10011,6 @@ COMMENT ON COLUMN public.relationship."subjectResourceType" IS 'The category tha
 
 
 --
--- TOC entry 6265 (class 0 OID 0)
--- Dependencies: 220
 -- Name: COLUMN relationship."subjectResourceTypeIRI"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -9106,8 +10018,6 @@ COMMENT ON COLUMN public.relationship."subjectResourceTypeIRI" IS 'The IRI of th
 
 
 --
--- TOC entry 6266 (class 0 OID 0)
--- Dependencies: 220
 -- Name: COLUMN relationship."subjectResourceTypeVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -9115,8 +10025,6 @@ COMMENT ON COLUMN public.relationship."subjectResourceTypeVocabulary" IS 'The re
 
 
 --
--- TOC entry 6267 (class 0 OID 0)
--- Dependencies: 220
 -- Name: COLUMN relationship."relationshipType"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -9124,8 +10032,6 @@ COMMENT ON COLUMN public.relationship."relationshipType" IS 'The relationship of
 
 
 --
--- TOC entry 6268 (class 0 OID 0)
--- Dependencies: 220
 -- Name: COLUMN relationship."relationshipTypeIRI"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -9133,8 +10039,6 @@ COMMENT ON COLUMN public.relationship."relationshipTypeIRI" IS 'The IRI of the c
 
 
 --
--- TOC entry 6269 (class 0 OID 0)
--- Dependencies: 220
 -- Name: COLUMN relationship."relationshipTypeVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -9142,8 +10046,6 @@ COMMENT ON COLUMN public.relationship."relationshipTypeVocabulary" IS 'The refer
 
 
 --
--- TOC entry 6270 (class 0 OID 0)
--- Dependencies: 220
 -- Name: COLUMN relationship."relatedResourceID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -9151,8 +10053,6 @@ COMMENT ON COLUMN public.relationship."relatedResourceID" IS 'An identifier for 
 
 
 --
--- TOC entry 6271 (class 0 OID 0)
--- Dependencies: 220
 -- Name: COLUMN relationship."relatedResourceType"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -9160,8 +10060,6 @@ COMMENT ON COLUMN public.relationship."relatedResourceType" IS 'The category tha
 
 
 --
--- TOC entry 6272 (class 0 OID 0)
--- Dependencies: 220
 -- Name: COLUMN relationship."relatedResourceTypeIRI"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -9169,8 +10067,6 @@ COMMENT ON COLUMN public.relationship."relatedResourceTypeIRI" IS 'The IRI of th
 
 
 --
--- TOC entry 6273 (class 0 OID 0)
--- Dependencies: 220
 -- Name: COLUMN relationship."relatedResourceTypeVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -9178,8 +10074,6 @@ COMMENT ON COLUMN public.relationship."relatedResourceTypeVocabulary" IS 'The re
 
 
 --
--- TOC entry 6274 (class 0 OID 0)
--- Dependencies: 220
 -- Name: COLUMN relationship."relationshipOrder"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -9187,8 +10081,6 @@ COMMENT ON COLUMN public.relationship."relationshipOrder" IS 'The numerical posi
 
 
 --
--- TOC entry 6275 (class 0 OID 0)
--- Dependencies: 220
 -- Name: COLUMN relationship."relationshipAccordingTo"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -9196,8 +10088,6 @@ COMMENT ON COLUMN public.relationship."relationshipAccordingTo" IS 'The name of 
 
 
 --
--- TOC entry 6276 (class 0 OID 0)
--- Dependencies: 220
 -- Name: COLUMN relationship."relationshipAccordingToID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -9205,8 +10095,6 @@ COMMENT ON COLUMN public.relationship."relationshipAccordingToID" IS 'An identif
 
 
 --
--- TOC entry 6277 (class 0 OID 0)
--- Dependencies: 220
 -- Name: COLUMN relationship."relationshipEffectiveDate"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -9214,8 +10102,6 @@ COMMENT ON COLUMN public.relationship."relationshipEffectiveDate" IS 'The date o
 
 
 --
--- TOC entry 6278 (class 0 OID 0)
--- Dependencies: 220
 -- Name: COLUMN relationship."relationshipRemarks"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -9223,7 +10109,6 @@ COMMENT ON COLUMN public.relationship."relationshipRemarks" IS 'Comments or note
 
 
 --
--- TOC entry 230 (class 1259 OID 176639)
 -- Name: survey; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -9290,8 +10175,6 @@ CREATE TABLE public.survey (
 ALTER TABLE public.survey OWNER TO postgres;
 
 --
--- TOC entry 6279 (class 0 OID 0)
--- Dependencies: 230
 -- Name: TABLE survey; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -9299,8 +10182,6 @@ COMMENT ON TABLE public.survey IS 'Actions taken to make the shared data less sp
 
 
 --
--- TOC entry 6280 (class 0 OID 0)
--- Dependencies: 230
 -- Name: COLUMN survey."surveyID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -9308,8 +10189,6 @@ COMMENT ON COLUMN public.survey."surveyID" IS 'An identifier for a Survey.';
 
 
 --
--- TOC entry 6281 (class 0 OID 0)
--- Dependencies: 230
 -- Name: COLUMN survey."eventID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -9317,8 +10196,6 @@ COMMENT ON COLUMN public.survey."eventID" IS 'An identifier for a dwc:Event.';
 
 
 --
--- TOC entry 6282 (class 0 OID 0)
--- Dependencies: 230
 -- Name: COLUMN survey."siteCount"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -9326,8 +10203,6 @@ COMMENT ON COLUMN public.survey."siteCount" IS 'Total number of individual sites
 
 
 --
--- TOC entry 6283 (class 0 OID 0)
--- Dependencies: 230
 -- Name: COLUMN survey."siteNestingDescription"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -9335,8 +10210,6 @@ COMMENT ON COLUMN public.survey."siteNestingDescription" IS 'Textual description
 
 
 --
--- TOC entry 6284 (class 0 OID 0)
--- Dependencies: 230
 -- Name: COLUMN survey."verbatimSiteDescriptions"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -9344,8 +10217,6 @@ COMMENT ON COLUMN public.survey."verbatimSiteDescriptions" IS 'Original textual 
 
 
 --
--- TOC entry 6285 (class 0 OID 0)
--- Dependencies: 230
 -- Name: COLUMN survey."verbatimSiteNames"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -9353,8 +10224,6 @@ COMMENT ON COLUMN public.survey."verbatimSiteNames" IS 'A list (concatenated and
 
 
 --
--- TOC entry 6286 (class 0 OID 0)
--- Dependencies: 230
 -- Name: COLUMN survey."geospatialScopeAreaValue"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -9362,8 +10231,6 @@ COMMENT ON COLUMN public.survey."geospatialScopeAreaValue" IS 'The numeric value
 
 
 --
--- TOC entry 6287 (class 0 OID 0)
--- Dependencies: 230
 -- Name: COLUMN survey."geospatialScopeAreaUnit"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -9371,8 +10238,6 @@ COMMENT ON COLUMN public.survey."geospatialScopeAreaUnit" IS 'The units associat
 
 
 --
--- TOC entry 6288 (class 0 OID 0)
--- Dependencies: 230
 -- Name: COLUMN survey."totalAreaSampledValue"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -9380,8 +10245,6 @@ COMMENT ON COLUMN public.survey."totalAreaSampledValue" IS 'The numeric value fo
 
 
 --
--- TOC entry 6289 (class 0 OID 0)
--- Dependencies: 230
 -- Name: COLUMN survey."totalAreaSampledUnit"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -9389,8 +10252,6 @@ COMMENT ON COLUMN public.survey."totalAreaSampledUnit" IS 'The units associated 
 
 
 --
--- TOC entry 6290 (class 0 OID 0)
--- Dependencies: 230
 -- Name: COLUMN survey."reportedWeather"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -9398,8 +10259,6 @@ COMMENT ON COLUMN public.survey."reportedWeather" IS 'A list of weather or clima
 
 
 --
--- TOC entry 6291 (class 0 OID 0)
--- Dependencies: 230
 -- Name: COLUMN survey."reportedExtremeConditions"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -9407,8 +10266,6 @@ COMMENT ON COLUMN public.survey."reportedExtremeConditions" IS 'A description of
 
 
 --
--- TOC entry 6292 (class 0 OID 0)
--- Dependencies: 230
 -- Name: COLUMN survey."eventDurationValue"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -9416,8 +10273,6 @@ COMMENT ON COLUMN public.survey."eventDurationValue" IS 'The numeric value for t
 
 
 --
--- TOC entry 6293 (class 0 OID 0)
--- Dependencies: 230
 -- Name: COLUMN survey."eventDurationUnit"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -9425,8 +10280,6 @@ COMMENT ON COLUMN public.survey."eventDurationUnit" IS 'The units associated wit
 
 
 --
--- TOC entry 6294 (class 0 OID 0)
--- Dependencies: 230
 -- Name: COLUMN survey."taxonCompletenessReported"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -9434,8 +10287,6 @@ COMMENT ON COLUMN public.survey."taxonCompletenessReported" IS 'Statement about 
 
 
 --
--- TOC entry 6295 (class 0 OID 0)
--- Dependencies: 230
 -- Name: COLUMN survey."taxonCompletenessProtocols"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -9443,8 +10294,6 @@ COMMENT ON COLUMN public.survey."taxonCompletenessProtocols" IS 'A description o
 
 
 --
--- TOC entry 6296 (class 0 OID 0)
--- Dependencies: 230
 -- Name: COLUMN survey."isAbsenceReported"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -9452,8 +10301,6 @@ COMMENT ON COLUMN public.survey."isAbsenceReported" IS 'Taxonomic absences were 
 
 
 --
--- TOC entry 6297 (class 0 OID 0)
--- Dependencies: 230
 -- Name: COLUMN survey."absentTaxa"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -9461,8 +10308,6 @@ COMMENT ON COLUMN public.survey."absentTaxa" IS 'A list (concatenated and separa
 
 
 --
--- TOC entry 6298 (class 0 OID 0)
--- Dependencies: 230
 -- Name: COLUMN survey."hasNonTargetTaxa"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -9470,8 +10315,6 @@ COMMENT ON COLUMN public.survey."hasNonTargetTaxa" IS 'One or more dwc:Organisms
 
 
 --
--- TOC entry 6299 (class 0 OID 0)
--- Dependencies: 230
 -- Name: COLUMN survey."nonTargetTaxa"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -9479,8 +10322,6 @@ COMMENT ON COLUMN public.survey."nonTargetTaxa" IS 'A list (concatenated and sep
 
 
 --
--- TOC entry 6300 (class 0 OID 0)
--- Dependencies: 230
 -- Name: COLUMN survey."areNonTargetTaxaFullyReported"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -9488,8 +10329,6 @@ COMMENT ON COLUMN public.survey."areNonTargetTaxaFullyReported" IS 'Every dwc:Or
 
 
 --
--- TOC entry 6301 (class 0 OID 0)
--- Dependencies: 230
 -- Name: COLUMN survey."hasNonTargetOrganisms"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -9497,8 +10336,6 @@ COMMENT ON COLUMN public.survey."hasNonTargetOrganisms" IS 'One or more dwc:Orga
 
 
 --
--- TOC entry 6302 (class 0 OID 0)
--- Dependencies: 230
 -- Name: COLUMN survey."verbatimTargetScope"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -9506,8 +10343,6 @@ COMMENT ON COLUMN public.survey."verbatimTargetScope" IS 'The verbatim original 
 
 
 --
--- TOC entry 6303 (class 0 OID 0)
--- Dependencies: 230
 -- Name: COLUMN survey."identifiedBy"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -9515,8 +10350,6 @@ COMMENT ON COLUMN public.survey."identifiedBy" IS 'A list (concatenated and sepa
 
 
 --
--- TOC entry 6304 (class 0 OID 0)
--- Dependencies: 230
 -- Name: COLUMN survey."identifiedByID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -9524,8 +10357,6 @@ COMMENT ON COLUMN public.survey."identifiedByID" IS 'The identifier for the Agen
 
 
 --
--- TOC entry 6305 (class 0 OID 0)
--- Dependencies: 230
 -- Name: COLUMN survey."identificationReferences"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -9533,8 +10364,6 @@ COMMENT ON COLUMN public.survey."identificationReferences" IS 'A list (concatena
 
 
 --
--- TOC entry 6306 (class 0 OID 0)
--- Dependencies: 230
 -- Name: COLUMN survey."compilationTypes"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -9542,8 +10371,6 @@ COMMENT ON COLUMN public.survey."compilationTypes" IS 'A statement specifying wh
 
 
 --
--- TOC entry 6307 (class 0 OID 0)
--- Dependencies: 230
 -- Name: COLUMN survey."compilationSourceTypes"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -9551,8 +10378,6 @@ COMMENT ON COLUMN public.survey."compilationSourceTypes" IS 'The types of data s
 
 
 --
--- TOC entry 6308 (class 0 OID 0)
--- Dependencies: 230
 -- Name: COLUMN survey."inventoryTypes"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -9560,8 +10385,6 @@ COMMENT ON COLUMN public.survey."inventoryTypes" IS 'The types of search process
 
 
 --
--- TOC entry 6309 (class 0 OID 0)
--- Dependencies: 230
 -- Name: COLUMN survey."protocolNames"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -9569,8 +10392,6 @@ COMMENT ON COLUMN public.survey."protocolNames" IS 'Categorical descriptive name
 
 
 --
--- TOC entry 6310 (class 0 OID 0)
--- Dependencies: 230
 -- Name: COLUMN survey."protocolDescriptions"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -9578,8 +10399,6 @@ COMMENT ON COLUMN public.survey."protocolDescriptions" IS 'A detailed descriptio
 
 
 --
--- TOC entry 6311 (class 0 OID 0)
--- Dependencies: 230
 -- Name: COLUMN survey."protocolReferences"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -9587,8 +10406,6 @@ COMMENT ON COLUMN public.survey."protocolReferences" IS 'The references to the m
 
 
 --
--- TOC entry 6312 (class 0 OID 0)
--- Dependencies: 230
 -- Name: COLUMN survey."isAbundanceReported"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -9596,8 +10413,6 @@ COMMENT ON COLUMN public.survey."isAbundanceReported" IS 'The number of dwc:Orga
 
 
 --
--- TOC entry 6313 (class 0 OID 0)
--- Dependencies: 230
 -- Name: COLUMN survey."isAbundanceCapReported"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -9605,8 +10420,6 @@ COMMENT ON COLUMN public.survey."isAbundanceCapReported" IS 'A maximum number of
 
 
 --
--- TOC entry 6314 (class 0 OID 0)
--- Dependencies: 230
 -- Name: COLUMN survey."abundanceCap"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -9614,8 +10427,6 @@ COMMENT ON COLUMN public.survey."abundanceCap" IS 'The reported maximum number o
 
 
 --
--- TOC entry 6315 (class 0 OID 0)
--- Dependencies: 230
 -- Name: COLUMN survey."isVegetationCoverReported"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -9623,8 +10434,6 @@ COMMENT ON COLUMN public.survey."isVegetationCoverReported" IS 'A vegetation cov
 
 
 --
--- TOC entry 6316 (class 0 OID 0)
--- Dependencies: 230
 -- Name: COLUMN survey."isLeastSpecificTargetCategoryQuantityInclusive"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -9632,8 +10441,6 @@ COMMENT ON COLUMN public.survey."isLeastSpecificTargetCategoryQuantityInclusive"
 
 
 --
--- TOC entry 6317 (class 0 OID 0)
--- Dependencies: 230
 -- Name: COLUMN survey."hasVouchers"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -9641,8 +10448,6 @@ COMMENT ON COLUMN public.survey."hasVouchers" IS 'Specimen vouchers were collect
 
 
 --
--- TOC entry 6318 (class 0 OID 0)
--- Dependencies: 230
 -- Name: COLUMN survey."voucherInstitutions"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -9650,8 +10455,6 @@ COMMENT ON COLUMN public.survey."voucherInstitutions" IS 'A list (concatenated a
 
 
 --
--- TOC entry 6319 (class 0 OID 0)
--- Dependencies: 230
 -- Name: COLUMN survey."hasMaterialSamples"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -9659,8 +10462,6 @@ COMMENT ON COLUMN public.survey."hasMaterialSamples" IS 'Material samples were c
 
 
 --
--- TOC entry 6320 (class 0 OID 0)
--- Dependencies: 230
 -- Name: COLUMN survey."materialSampleTypes"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -9668,8 +10469,6 @@ COMMENT ON COLUMN public.survey."materialSampleTypes" IS 'A list (concatenated a
 
 
 --
--- TOC entry 6321 (class 0 OID 0)
--- Dependencies: 230
 -- Name: COLUMN survey."samplingPerformedBy"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -9677,8 +10476,6 @@ COMMENT ON COLUMN public.survey."samplingPerformedBy" IS 'A person, group, or or
 
 
 --
--- TOC entry 6322 (class 0 OID 0)
--- Dependencies: 230
 -- Name: COLUMN survey."samplingPerformedByID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -9686,8 +10483,6 @@ COMMENT ON COLUMN public.survey."samplingPerformedByID" IS 'The identifier for t
 
 
 --
--- TOC entry 6323 (class 0 OID 0)
--- Dependencies: 230
 -- Name: COLUMN survey."isSamplingEffortReported"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -9695,8 +10490,6 @@ COMMENT ON COLUMN public.survey."isSamplingEffortReported" IS 'The sampling effo
 
 
 --
--- TOC entry 6324 (class 0 OID 0)
--- Dependencies: 230
 -- Name: COLUMN survey."samplingEffortProtocol"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -9704,8 +10497,6 @@ COMMENT ON COLUMN public.survey."samplingEffortProtocol" IS 'A description of or
 
 
 --
--- TOC entry 6325 (class 0 OID 0)
--- Dependencies: 230
 -- Name: COLUMN survey."samplingEffortProtocolID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -9713,8 +10504,6 @@ COMMENT ON COLUMN public.survey."samplingEffortProtocolID" IS 'An identifier for
 
 
 --
--- TOC entry 6326 (class 0 OID 0)
--- Dependencies: 230
 -- Name: COLUMN survey."samplingEffortValue"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -9722,8 +10511,6 @@ COMMENT ON COLUMN public.survey."samplingEffortValue" IS 'The numeric value for 
 
 
 --
--- TOC entry 6327 (class 0 OID 0)
--- Dependencies: 230
 -- Name: COLUMN survey."samplingEffortUnit"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -9731,8 +10518,6 @@ COMMENT ON COLUMN public.survey."samplingEffortUnit" IS 'The units associated wi
 
 
 --
--- TOC entry 6328 (class 0 OID 0)
--- Dependencies: 230
 -- Name: COLUMN survey."informationWithheld"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -9740,8 +10525,6 @@ COMMENT ON COLUMN public.survey."informationWithheld" IS 'Additional information
 
 
 --
--- TOC entry 6329 (class 0 OID 0)
--- Dependencies: 230
 -- Name: COLUMN survey."dataGeneralizations"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -9749,7 +10532,6 @@ COMMENT ON COLUMN public.survey."dataGeneralizations" IS 'Actions taken to make 
 
 
 --
--- TOC entry 283 (class 1259 OID 177408)
 -- Name: survey-agent-role; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -9768,8 +10550,6 @@ CREATE TABLE public."survey-agent-role" (
 ALTER TABLE public."survey-agent-role" OWNER TO postgres;
 
 --
--- TOC entry 6330 (class 0 OID 0)
--- Dependencies: 283
 -- Name: TABLE "survey-agent-role"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -9777,8 +10557,6 @@ COMMENT ON TABLE public."survey-agent-role" IS 'The interval during which an Age
 
 
 --
--- TOC entry 6331 (class 0 OID 0)
--- Dependencies: 283
 -- Name: COLUMN "survey-agent-role"."agentID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -9786,8 +10564,6 @@ COMMENT ON COLUMN public."survey-agent-role"."agentID" IS 'An identifier for an 
 
 
 --
--- TOC entry 6332 (class 0 OID 0)
--- Dependencies: 283
 -- Name: COLUMN "survey-agent-role"."surveyID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -9795,8 +10571,6 @@ COMMENT ON COLUMN public."survey-agent-role"."surveyID" IS 'An identifier for a 
 
 
 --
--- TOC entry 6333 (class 0 OID 0)
--- Dependencies: 283
 -- Name: COLUMN "survey-agent-role"."agentRole"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -9804,8 +10578,6 @@ COMMENT ON COLUMN public."survey-agent-role"."agentRole" IS 'The category that b
 
 
 --
--- TOC entry 6334 (class 0 OID 0)
--- Dependencies: 283
 -- Name: COLUMN "survey-agent-role"."agentRoleIRI"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -9813,8 +10585,6 @@ COMMENT ON COLUMN public."survey-agent-role"."agentRoleIRI" IS 'The IRI of the c
 
 
 --
--- TOC entry 6335 (class 0 OID 0)
--- Dependencies: 283
 -- Name: COLUMN "survey-agent-role"."agentRoleVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -9822,8 +10592,6 @@ COMMENT ON COLUMN public."survey-agent-role"."agentRoleVocabulary" IS 'The refer
 
 
 --
--- TOC entry 6336 (class 0 OID 0)
--- Dependencies: 283
 -- Name: COLUMN "survey-agent-role"."agentRoleOrder"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -9831,8 +10599,6 @@ COMMENT ON COLUMN public."survey-agent-role"."agentRoleOrder" IS 'The numerical 
 
 
 --
--- TOC entry 6337 (class 0 OID 0)
--- Dependencies: 283
 -- Name: COLUMN "survey-agent-role"."agentRoleDate"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -9840,7 +10606,6 @@ COMMENT ON COLUMN public."survey-agent-role"."agentRoleDate" IS 'The interval du
 
 
 --
--- TOC entry 284 (class 1259 OID 177424)
 -- Name: survey-assertion; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -9871,8 +10636,6 @@ CREATE TABLE public."survey-assertion" (
 ALTER TABLE public."survey-assertion" OWNER TO postgres;
 
 --
--- TOC entry 6338 (class 0 OID 0)
--- Dependencies: 284
 -- Name: TABLE "survey-assertion"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -9880,8 +10643,6 @@ COMMENT ON TABLE public."survey-assertion" IS 'Comments or notes about an Assert
 
 
 --
--- TOC entry 6339 (class 0 OID 0)
--- Dependencies: 284
 -- Name: COLUMN "survey-assertion"."assertionID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -9889,8 +10650,6 @@ COMMENT ON COLUMN public."survey-assertion"."assertionID" IS 'An identifier for 
 
 
 --
--- TOC entry 6340 (class 0 OID 0)
--- Dependencies: 284
 -- Name: COLUMN "survey-assertion"."surveyID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -9898,8 +10657,6 @@ COMMENT ON COLUMN public."survey-assertion"."surveyID" IS 'An identifier for a S
 
 
 --
--- TOC entry 6341 (class 0 OID 0)
--- Dependencies: 284
 -- Name: COLUMN "survey-assertion"."assertionType"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -9907,8 +10664,6 @@ COMMENT ON COLUMN public."survey-assertion"."assertionType" IS 'The category tha
 
 
 --
--- TOC entry 6342 (class 0 OID 0)
--- Dependencies: 284
 -- Name: COLUMN "survey-assertion"."assertionTypeIRI"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -9916,8 +10671,6 @@ COMMENT ON COLUMN public."survey-assertion"."assertionTypeIRI" IS 'The IRI of th
 
 
 --
--- TOC entry 6343 (class 0 OID 0)
--- Dependencies: 284
 -- Name: COLUMN "survey-assertion"."assertionTypeVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -9925,8 +10678,6 @@ COMMENT ON COLUMN public."survey-assertion"."assertionTypeVocabulary" IS 'The re
 
 
 --
--- TOC entry 6344 (class 0 OID 0)
--- Dependencies: 284
 -- Name: COLUMN "survey-assertion"."assertionMadeDate"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -9934,8 +10685,6 @@ COMMENT ON COLUMN public."survey-assertion"."assertionMadeDate" IS 'The date on 
 
 
 --
--- TOC entry 6345 (class 0 OID 0)
--- Dependencies: 284
 -- Name: COLUMN "survey-assertion"."assertionEffectiveDate"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -9943,8 +10692,6 @@ COMMENT ON COLUMN public."survey-assertion"."assertionEffectiveDate" IS 'The dat
 
 
 --
--- TOC entry 6346 (class 0 OID 0)
--- Dependencies: 284
 -- Name: COLUMN "survey-assertion"."assertionValue"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -9952,8 +10699,6 @@ COMMENT ON COLUMN public."survey-assertion"."assertionValue" IS 'An asserted val
 
 
 --
--- TOC entry 6347 (class 0 OID 0)
--- Dependencies: 284
 -- Name: COLUMN "survey-assertion"."assertionValueIRI"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -9961,8 +10706,6 @@ COMMENT ON COLUMN public."survey-assertion"."assertionValueIRI" IS 'The IRI of t
 
 
 --
--- TOC entry 6348 (class 0 OID 0)
--- Dependencies: 284
 -- Name: COLUMN "survey-assertion"."assertionValueVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -9970,8 +10713,6 @@ COMMENT ON COLUMN public."survey-assertion"."assertionValueVocabulary" IS 'The r
 
 
 --
--- TOC entry 6349 (class 0 OID 0)
--- Dependencies: 284
 -- Name: COLUMN "survey-assertion"."assertionValueNumeric"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -9979,8 +10720,6 @@ COMMENT ON COLUMN public."survey-assertion"."assertionValueNumeric" IS 'An asser
 
 
 --
--- TOC entry 6350 (class 0 OID 0)
--- Dependencies: 284
 -- Name: COLUMN "survey-assertion"."assertionUnit"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -9988,8 +10727,6 @@ COMMENT ON COLUMN public."survey-assertion"."assertionUnit" IS 'The units associ
 
 
 --
--- TOC entry 6351 (class 0 OID 0)
--- Dependencies: 284
 -- Name: COLUMN "survey-assertion"."assertionUnitIRI"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -9997,8 +10734,6 @@ COMMENT ON COLUMN public."survey-assertion"."assertionUnitIRI" IS 'The IRI for t
 
 
 --
--- TOC entry 6352 (class 0 OID 0)
--- Dependencies: 284
 -- Name: COLUMN "survey-assertion"."assertionUnitVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -10006,8 +10741,6 @@ COMMENT ON COLUMN public."survey-assertion"."assertionUnitVocabulary" IS 'The re
 
 
 --
--- TOC entry 6353 (class 0 OID 0)
--- Dependencies: 284
 -- Name: COLUMN "survey-assertion"."assertionBy"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -10015,8 +10748,6 @@ COMMENT ON COLUMN public."survey-assertion"."assertionBy" IS 'A list (concatenat
 
 
 --
--- TOC entry 6354 (class 0 OID 0)
--- Dependencies: 284
 -- Name: COLUMN "survey-assertion"."assertionByID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -10024,8 +10755,6 @@ COMMENT ON COLUMN public."survey-assertion"."assertionByID" IS 'An identifier fo
 
 
 --
--- TOC entry 6355 (class 0 OID 0)
--- Dependencies: 284
 -- Name: COLUMN "survey-assertion"."assertionProtocol"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -10033,8 +10762,6 @@ COMMENT ON COLUMN public."survey-assertion"."assertionProtocol" IS 'The names of
 
 
 --
--- TOC entry 6356 (class 0 OID 0)
--- Dependencies: 284
 -- Name: COLUMN "survey-assertion"."assertionProtocolID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -10042,8 +10769,6 @@ COMMENT ON COLUMN public."survey-assertion"."assertionProtocolID" IS 'An identif
 
 
 --
--- TOC entry 6357 (class 0 OID 0)
--- Dependencies: 284
 -- Name: COLUMN "survey-assertion"."assertionCitation"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -10051,8 +10776,6 @@ COMMENT ON COLUMN public."survey-assertion"."assertionCitation" IS 'A list (conc
 
 
 --
--- TOC entry 6358 (class 0 OID 0)
--- Dependencies: 284
 -- Name: COLUMN "survey-assertion"."assertionRemarks"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -10060,7 +10783,6 @@ COMMENT ON COLUMN public."survey-assertion"."assertionRemarks" IS 'Comments or n
 
 
 --
--- TOC entry 285 (class 1259 OID 177441)
 -- Name: survey-citation; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -10085,8 +10807,6 @@ CREATE TABLE public."survey-citation" (
 ALTER TABLE public."survey-citation" OWNER TO postgres;
 
 --
--- TOC entry 6359 (class 0 OID 0)
--- Dependencies: 285
 -- Name: TABLE "survey-citation"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -10094,8 +10814,6 @@ COMMENT ON TABLE public."survey-citation" IS 'Comments or notes about a Citation
 
 
 --
--- TOC entry 6360 (class 0 OID 0)
--- Dependencies: 285
 -- Name: COLUMN "survey-citation"."citationID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -10103,8 +10821,6 @@ COMMENT ON COLUMN public."survey-citation"."citationID" IS 'An identifier for a 
 
 
 --
--- TOC entry 6361 (class 0 OID 0)
--- Dependencies: 285
 -- Name: COLUMN "survey-citation"."surveyID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -10112,8 +10828,6 @@ COMMENT ON COLUMN public."survey-citation"."surveyID" IS 'An identifier for a Su
 
 
 --
--- TOC entry 6362 (class 0 OID 0)
--- Dependencies: 285
 -- Name: COLUMN "survey-citation"."citationType"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -10121,8 +10835,6 @@ COMMENT ON COLUMN public."survey-citation"."citationType" IS 'The category that 
 
 
 --
--- TOC entry 6363 (class 0 OID 0)
--- Dependencies: 285
 -- Name: COLUMN "survey-citation"."citationTypeIRI"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -10130,8 +10842,6 @@ COMMENT ON COLUMN public."survey-citation"."citationTypeIRI" IS 'The IRI of the 
 
 
 --
--- TOC entry 6364 (class 0 OID 0)
--- Dependencies: 285
 -- Name: COLUMN "survey-citation"."citationTypeVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -10139,8 +10849,6 @@ COMMENT ON COLUMN public."survey-citation"."citationTypeVocabulary" IS 'The refe
 
 
 --
--- TOC entry 6365 (class 0 OID 0)
--- Dependencies: 285
 -- Name: COLUMN "survey-citation"."bibliographicCitation"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -10148,8 +10856,6 @@ COMMENT ON COLUMN public."survey-citation"."bibliographicCitation" IS 'A bibliog
 
 
 --
--- TOC entry 6366 (class 0 OID 0)
--- Dependencies: 285
 -- Name: COLUMN "survey-citation"."pageNumber"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -10157,8 +10863,6 @@ COMMENT ON COLUMN public."survey-citation"."pageNumber" IS 'The number of the pa
 
 
 --
--- TOC entry 6367 (class 0 OID 0)
--- Dependencies: 285
 -- Name: COLUMN "survey-citation"."referenceID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -10166,8 +10870,6 @@ COMMENT ON COLUMN public."survey-citation"."referenceID" IS 'An identifier for t
 
 
 --
--- TOC entry 6368 (class 0 OID 0)
--- Dependencies: 285
 -- Name: COLUMN "survey-citation"."referenceType"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -10175,8 +10877,6 @@ COMMENT ON COLUMN public."survey-citation"."referenceType" IS 'The category that
 
 
 --
--- TOC entry 6369 (class 0 OID 0)
--- Dependencies: 285
 -- Name: COLUMN "survey-citation"."referenceTypeIRI"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -10184,8 +10884,6 @@ COMMENT ON COLUMN public."survey-citation"."referenceTypeIRI" IS 'The IRI of the
 
 
 --
--- TOC entry 6370 (class 0 OID 0)
--- Dependencies: 285
 -- Name: COLUMN "survey-citation"."referenceTypeVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -10193,8 +10891,6 @@ COMMENT ON COLUMN public."survey-citation"."referenceTypeVocabulary" IS 'The ref
 
 
 --
--- TOC entry 6371 (class 0 OID 0)
--- Dependencies: 285
 -- Name: COLUMN "survey-citation"."referenceYear"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -10202,8 +10898,6 @@ COMMENT ON COLUMN public."survey-citation"."referenceYear" IS 'The year the refe
 
 
 --
--- TOC entry 6372 (class 0 OID 0)
--- Dependencies: 285
 -- Name: COLUMN "survey-citation"."isPeerReviewed"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -10211,8 +10905,6 @@ COMMENT ON COLUMN public."survey-citation"."isPeerReviewed" IS 'An indication of
 
 
 --
--- TOC entry 6373 (class 0 OID 0)
--- Dependencies: 285
 -- Name: COLUMN "survey-citation"."citationRemarks"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -10220,7 +10912,6 @@ COMMENT ON COLUMN public."survey-citation"."citationRemarks" IS 'Comments or not
 
 
 --
--- TOC entry 286 (class 1259 OID 177453)
 -- Name: survey-identifier; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -10237,8 +10928,6 @@ CREATE TABLE public."survey-identifier" (
 ALTER TABLE public."survey-identifier" OWNER TO postgres;
 
 --
--- TOC entry 6374 (class 0 OID 0)
--- Dependencies: 286
 -- Name: TABLE "survey-identifier"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -10246,8 +10935,6 @@ COMMENT ON TABLE public."survey-identifier" IS 'A language in which an Identifie
 
 
 --
--- TOC entry 6375 (class 0 OID 0)
--- Dependencies: 286
 -- Name: COLUMN "survey-identifier".identifier; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -10255,8 +10942,6 @@ COMMENT ON COLUMN public."survey-identifier".identifier IS 'An unambiguous refer
 
 
 --
--- TOC entry 6376 (class 0 OID 0)
--- Dependencies: 286
 -- Name: COLUMN "survey-identifier"."surveyID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -10264,8 +10949,6 @@ COMMENT ON COLUMN public."survey-identifier"."surveyID" IS 'An identifier for a 
 
 
 --
--- TOC entry 6377 (class 0 OID 0)
--- Dependencies: 286
 -- Name: COLUMN "survey-identifier"."identifierType"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -10273,8 +10956,6 @@ COMMENT ON COLUMN public."survey-identifier"."identifierType" IS 'The category o
 
 
 --
--- TOC entry 6378 (class 0 OID 0)
--- Dependencies: 286
 -- Name: COLUMN "survey-identifier"."identifierTypeIRI"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -10282,8 +10963,6 @@ COMMENT ON COLUMN public."survey-identifier"."identifierTypeIRI" IS 'The IRI of 
 
 
 --
--- TOC entry 6379 (class 0 OID 0)
--- Dependencies: 286
 -- Name: COLUMN "survey-identifier"."identifierTypeVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -10291,8 +10970,6 @@ COMMENT ON COLUMN public."survey-identifier"."identifierTypeVocabulary" IS 'The 
 
 
 --
--- TOC entry 6380 (class 0 OID 0)
--- Dependencies: 286
 -- Name: COLUMN "survey-identifier"."identifierLanguage"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -10300,7 +10977,6 @@ COMMENT ON COLUMN public."survey-identifier"."identifierLanguage" IS 'A language
 
 
 --
--- TOC entry 287 (class 1259 OID 177463)
 -- Name: survey-protocol; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -10313,8 +10989,6 @@ CREATE TABLE public."survey-protocol" (
 ALTER TABLE public."survey-protocol" OWNER TO postgres;
 
 --
--- TOC entry 6381 (class 0 OID 0)
--- Dependencies: 287
 -- Name: TABLE "survey-protocol"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -10322,8 +10996,6 @@ COMMENT ON TABLE public."survey-protocol" IS 'An identifier for a Survey.';
 
 
 --
--- TOC entry 6382 (class 0 OID 0)
--- Dependencies: 287
 -- Name: COLUMN "survey-protocol"."protocolID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -10331,8 +11003,6 @@ COMMENT ON COLUMN public."survey-protocol"."protocolID" IS 'An identifier for a 
 
 
 --
--- TOC entry 6383 (class 0 OID 0)
--- Dependencies: 287
 -- Name: COLUMN "survey-protocol"."surveyID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -10340,7 +11010,6 @@ COMMENT ON COLUMN public."survey-protocol"."surveyID" IS 'An identifier for a Su
 
 
 --
--- TOC entry 231 (class 1259 OID 176657)
 -- Name: survey-target; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -10364,8 +11033,6 @@ CREATE TABLE public."survey-target" (
 ALTER TABLE public."survey-target" OWNER TO postgres;
 
 --
--- TOC entry 6384 (class 0 OID 0)
--- Dependencies: 231
 -- Name: TABLE "survey-target"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -10373,8 +11040,6 @@ COMMENT ON TABLE public."survey-target" IS 'A declaration of whether the counts 
 
 
 --
--- TOC entry 6385 (class 0 OID 0)
--- Dependencies: 231
 -- Name: COLUMN "survey-target"."surveyTargetID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -10382,8 +11047,6 @@ COMMENT ON COLUMN public."survey-target"."surveyTargetID" IS 'An identifier for 
 
 
 --
--- TOC entry 6386 (class 0 OID 0)
--- Dependencies: 231
 -- Name: COLUMN "survey-target"."surveyID"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -10391,8 +11054,6 @@ COMMENT ON COLUMN public."survey-target"."surveyID" IS 'An identifier for a dwc:
 
 
 --
--- TOC entry 6387 (class 0 OID 0)
--- Dependencies: 231
 -- Name: COLUMN "survey-target"."surveyTargetType"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -10400,8 +11061,6 @@ COMMENT ON COLUMN public."survey-target"."surveyTargetType" IS 'The type of scop
 
 
 --
--- TOC entry 6388 (class 0 OID 0)
--- Dependencies: 231
 -- Name: COLUMN "survey-target"."surveyTargetTypeIRI"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -10409,8 +11068,6 @@ COMMENT ON COLUMN public."survey-target"."surveyTargetTypeIRI" IS 'The IRI of th
 
 
 --
--- TOC entry 6389 (class 0 OID 0)
--- Dependencies: 231
 -- Name: COLUMN "survey-target"."surveyTargetTypeVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -10418,8 +11075,6 @@ COMMENT ON COLUMN public."survey-target"."surveyTargetTypeVocabulary" IS 'The re
 
 
 --
--- TOC entry 6390 (class 0 OID 0)
--- Dependencies: 231
 -- Name: COLUMN "survey-target"."surveyTargetValue"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -10427,8 +11082,6 @@ COMMENT ON COLUMN public."survey-target"."surveyTargetValue" IS 'The value of a 
 
 
 --
--- TOC entry 6391 (class 0 OID 0)
--- Dependencies: 231
 -- Name: COLUMN "survey-target"."surveyTargetValueIRI"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -10436,8 +11089,6 @@ COMMENT ON COLUMN public."survey-target"."surveyTargetValueIRI" IS 'The IRI of t
 
 
 --
--- TOC entry 6392 (class 0 OID 0)
--- Dependencies: 231
 -- Name: COLUMN "survey-target"."surveyTargetValueVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -10445,8 +11096,6 @@ COMMENT ON COLUMN public."survey-target"."surveyTargetValueVocabulary" IS 'The r
 
 
 --
--- TOC entry 6393 (class 0 OID 0)
--- Dependencies: 231
 -- Name: COLUMN "survey-target"."surveyTargetUnit"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -10454,8 +11103,6 @@ COMMENT ON COLUMN public."survey-target"."surveyTargetUnit" IS 'The units associ
 
 
 --
--- TOC entry 6394 (class 0 OID 0)
--- Dependencies: 231
 -- Name: COLUMN "survey-target"."surveyTargetUnitIRI"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -10463,8 +11110,6 @@ COMMENT ON COLUMN public."survey-target"."surveyTargetUnitIRI" IS 'The IRI of th
 
 
 --
--- TOC entry 6395 (class 0 OID 0)
--- Dependencies: 231
 -- Name: COLUMN "survey-target"."surveyTargetUnitVocabulary"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -10472,8 +11117,6 @@ COMMENT ON COLUMN public."survey-target"."surveyTargetUnitVocabulary" IS 'The re
 
 
 --
--- TOC entry 6396 (class 0 OID 0)
--- Dependencies: 231
 -- Name: COLUMN "survey-target"."includeOrExclude"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -10481,8 +11124,6 @@ COMMENT ON COLUMN public."survey-target"."includeOrExclude" IS 'A term to declar
 
 
 --
--- TOC entry 6397 (class 0 OID 0)
--- Dependencies: 231
 -- Name: COLUMN "survey-target"."isSurveyTargetFullyReported"; Type: COMMENT; Schema: public; Owner: postgres
 --
 
@@ -10490,591 +11131,654 @@ COMMENT ON COLUMN public."survey-target"."isSurveyTargetFullyReported" IS 'A dec
 
 
 --
--- TOC entry 5353 (class 0 OID 176400)
--- Dependencies: 215
 -- Data for Name: agent; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
+COPY public.agent ("agentID", "agentType", "agentTypeIRI", "agentTypeVocabulary", "preferredAgentName") FROM stdin;
+\.
 
 
 --
--- TOC entry 5370 (class 0 OID 176669)
--- Dependencies: 232
 -- Data for Name: agent-agent-role; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
+COPY public."agent-agent-role" ("agentID", "relatedAgentID", "agentRole", "agentRoleIRI", "agentRoleVocabulary", "agentRoleOrder", "agentRoleDate") FROM stdin;
+\.
 
 
 --
--- TOC entry 5371 (class 0 OID 176685)
--- Dependencies: 233
 -- Data for Name: agent-identifier; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
+COPY public."agent-identifier" (identifier, "agentID", "identifierType", "identifierTypeIRI", "identifierTypeVocabulary", "identifierLanguage") FROM stdin;
+\.
 
 
 --
--- TOC entry 5372 (class 0 OID 176695)
--- Dependencies: 234
 -- Data for Name: agent-media; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
+COPY public."agent-media" ("mediaID", "agentID", "mediaSubjectCategory", "mediaSubjectCategoryIRI", "mediaSubjectCategoryVocabulary") FROM stdin;
+\.
 
 
 --
--- TOC entry 5361 (class 0 OID 176507)
--- Dependencies: 223
 -- Data for Name: chronometric-age; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
+COPY public."chronometric-age" ("chronometricAgeID", "eventID", "verbatimChronometricAge", "chronometricAgeProtocol", "chronometricAgeProtocolID", "uncalibratedChronometricAge", "chronometricAgeConversionProtocol", "chronometricAgeConversionProtocolID", "earliestChronometricAge", "earliestChronometricAgeReferenceSystem", "latestChronometricAge", "latestChronometricAgeReferenceSystem", "chronometricAgeUncertaintyInYears", "chronometricAgeUncertaintyMethod", "materialDated", "materialDatedID", "materialDatedRelationship", "chronometricAgeDeterminedBy", "chronometricAgeDeterminedByID", "chronometricAgeDeterminedDate", "chronometricAgeReferences", "chronometricAgeRemarks") FROM stdin;
+\.
 
 
 --
--- TOC entry 5373 (class 0 OID 176710)
--- Dependencies: 235
 -- Data for Name: chronometric-age-agent-role; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
+COPY public."chronometric-age-agent-role" ("agentID", "chronometricAgeID", "agentRole", "agentRoleIRI", "agentRoleVocabulary", "agentRoleOrder", "agentRoleDate") FROM stdin;
+\.
 
 
 --
--- TOC entry 5374 (class 0 OID 176726)
--- Dependencies: 236
 -- Data for Name: chronometric-age-assertion; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
+COPY public."chronometric-age-assertion" ("assertionID", "chronometricAgeID", "assertionType", "assertionTypeIRI", "assertionTypeVocabulary", "assertionMadeDate", "assertionEffectiveDate", "assertionValue", "assertionValueIRI", "assertionValueVocabulary", "assertionValueNumeric", "assertionUnit", "assertionUnitIRI", "assertionUnitVocabulary", "assertionBy", "assertionByID", "assertionProtocol", "assertionProtocolID", "assertionCitation", "assertionRemarks") FROM stdin;
+\.
 
 
 --
--- TOC entry 5375 (class 0 OID 176743)
--- Dependencies: 237
 -- Data for Name: chronometric-age-citation; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
+COPY public."chronometric-age-citation" ("citationID", "chronometricAgeID", "citationType", "citationTypeIRI", "citationTypeVocabulary", "bibliographicCitation", "pageNumber", "referenceID", "referenceType", "referenceTypeIRI", "referenceTypeVocabulary", "referenceYear", "isPeerReviewed", "citationRemarks") FROM stdin;
+\.
 
 
 --
--- TOC entry 5376 (class 0 OID 176755)
--- Dependencies: 238
 -- Data for Name: chronometric-age-media; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
+COPY public."chronometric-age-media" ("mediaID", "chronometricAgeID", "mediaSubjectCategory", "mediaSubjectCategoryIRI", "mediaSubjectCategoryVocabulary") FROM stdin;
+\.
 
 
 --
--- TOC entry 5377 (class 0 OID 176770)
--- Dependencies: 239
 -- Data for Name: chronometric-age-protocol; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
+COPY public."chronometric-age-protocol" ("protocolID", "chronometricAgeID") FROM stdin;
+\.
 
 
 --
--- TOC entry 5354 (class 0 OID 176407)
--- Dependencies: 216
 -- Data for Name: collection; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
+COPY public.collection ("collectionID", "collectionType", "collectionName", "collectionCode", "institutionID", "institutionName", "institutionCode") FROM stdin;
+\.
 
 
 --
--- TOC entry 5378 (class 0 OID 176785)
--- Dependencies: 240
 -- Data for Name: collection-agent-role; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
+COPY public."collection-agent-role" ("agentID", "collectionID", "agentRole", "agentRoleIRI", "agentRoleVocabulary", "agentRoleOrder", "agentRoleDate") FROM stdin;
+\.
 
 
 --
--- TOC entry 5379 (class 0 OID 176801)
--- Dependencies: 241
 -- Data for Name: collection-assertion; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
+COPY public."collection-assertion" ("assertionID", "collectionID", "assertionType", "assertionTypeIRI", "assertionTypeVocabulary", "assertionMadeDate", "assertionEffectiveDate", "assertionValue", "assertionValueIRI", "assertionValueVocabulary", "assertionValueNumeric", "assertionUnit", "assertionUnitIRI", "assertionUnitVocabulary", "assertionBy", "assertionByID", "assertionProtocol", "assertionProtocolID", "assertionCitation", "assertionRemarks") FROM stdin;
+\.
 
 
 --
--- TOC entry 5380 (class 0 OID 176818)
--- Dependencies: 242
 -- Data for Name: collection-media; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
+COPY public."collection-media" ("mediaID", "collectionID", "mediaSubjectCategory", "mediaSubjectCategoryIRI", "mediaSubjectCategoryVocabulary") FROM stdin;
+\.
 
 
 --
--- TOC entry 5359 (class 0 OID 176450)
--- Dependencies: 221
 -- Data for Name: event; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
+COPY public.event ("eventID", "parentEventID", "preferredEventName", "eventType", "datasetName", "datasetID", "fieldNumber", "eventConductedBy", "eventConductedByID", "eventDate", "eventTime", "startDayOfYear", "endDayOfYear", year, month, day, "verbatimEventDate", "verbatimLocality", "verbatimElevation", "verbatimDepth", "verbatimCoordinates", "verbatimLatitude", "verbatimLongitude", "verbatimCoordinateSystem", "verbatimSRS", "georeferenceVerificationStatus", habitat, "sampleSizeValue", "sampleSizeUnit", "eventEffort", "fieldNotes", "eventCitation", "eventRemarks", "locationID", "higherGeographyID", "higherGeography", continent, "waterBody", "islandGroup", island, country, "countryCode", "stateProvince", county, municipality, locality, "minimumElevationInMeters", "maximumElevationInMeters", "verticalDatum", "minimumDepthInMeters", "maximumDepthInMeters", "minimumDistanceAboveSurfaceInMeters", "maximumDistanceAboveSurfaceInMeters", "locationRemarks", "decimalLatitude", "decimalLongitude", "geodeticDatum", "coordinateUncertaintyInMeters", "coordinatePrecision", "pointRadiusSpatialFit", "footprintWKT", "footprintSRS", "footprintSpatialFit", "georeferencedBy", "georeferencedByID", "georeferencedDate", "georeferenceProtocol", "georeferenceProtocolID", "georeferenceSources", "georeferenceRemarks", "informationWithheld", "dataGeneralizations", "preferredSpatialRepresentation") FROM stdin;
+\.
 
 
 --
--- TOC entry 5381 (class 0 OID 176833)
--- Dependencies: 243
 -- Data for Name: event-agent-role; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
+COPY public."event-agent-role" ("agentID", "eventID", "agentRole", "agentRoleIRI", "agentRoleVocabulary", "agentRoleOrder", "agentRoleDate") FROM stdin;
+\.
 
 
 --
--- TOC entry 5382 (class 0 OID 176849)
--- Dependencies: 244
 -- Data for Name: event-assertion; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
+COPY public."event-assertion" ("assertionID", "eventID", "assertionType", "assertionTypeIRI", "assertionTypeVocabulary", "assertionMadeDate", "assertionEffectiveDate", "assertionValue", "assertionValueIRI", "assertionValueVocabulary", "assertionValueNumeric", "assertionUnit", "assertionUnitIRI", "assertionUnitVocabulary", "assertionBy", "assertionByID", "assertionProtocol", "assertionProtocolID", "assertionCitation", "assertionRemarks") FROM stdin;
+\.
 
 
 --
--- TOC entry 5383 (class 0 OID 176866)
--- Dependencies: 245
 -- Data for Name: event-citation; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
+COPY public."event-citation" ("citationID", "eventID", "citationType", "citationTypeIRI", "citationTypeVocabulary", "bibliographicCitation", "pageNumber", "referenceID", "referenceType", "referenceTypeIRI", "referenceTypeVocabulary", "referenceYear", "isPeerReviewed", "citationRemarks") FROM stdin;
+\.
 
 
 --
--- TOC entry 5384 (class 0 OID 176878)
--- Dependencies: 246
 -- Data for Name: event-identifier; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
+COPY public."event-identifier" (identifier, "eventID", "identifierType", "identifierTypeIRI", "identifierTypeVocabulary", "identifierLanguage") FROM stdin;
+\.
 
 
 --
--- TOC entry 5385 (class 0 OID 176888)
--- Dependencies: 247
 -- Data for Name: event-media; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
+COPY public."event-media" ("mediaID", "eventID", "mediaSubjectCategory", "mediaSubjectCategoryIRI", "mediaSubjectCategoryVocabulary") FROM stdin;
+\.
 
 
 --
--- TOC entry 5386 (class 0 OID 176903)
--- Dependencies: 248
 -- Data for Name: event-protocol; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
+COPY public."event-protocol" ("protocolID", "eventID") FROM stdin;
+\.
 
 
 --
--- TOC entry 5362 (class 0 OID 176534)
--- Dependencies: 224
+-- Data for Name: genetic-analysis; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public."genetic-analysis" ("geneticAnalysisID", "eventID", "geneticProtocolID", "geneticSequenceID", "materialEntityID", "readCount", "totalReadCount") FROM stdin;
+\.
+
+
+--
+-- Data for Name: genetic-protocol; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public."genetic-protocol" ("geneticProtocolID", samp_name, project_name, experimental_factor, samp_taxon_id, neg_cont_type, pos_cont_type, env_broad_scale, env_local_scale, env_medium, subspecf_gen_lin, ploidy, num_replicons, extrachrom_elements, estimated_size, ref_biomaterial, source_mat_id, pathogenicity, biotic_relationship, specific_host, host_spec_range, host_disease_stat, trophic_level, propagation, encoded_traits, rel_to_oxygen, isol_growth_condt, samp_collec_device, samp_collec_method, samp_mat_process, size_frac, samp_size, samp_vol_we_dna_ext, source_uvig, virus_enrich_appr, nucl_acid_ext, nucl_acid_amp, lib_size, lib_reads_seqd, lib_layout, lib_vector, lib_screen, target_gene, target_subfragment, pcr_primers, mid, adapters, pcr_cond, seq_meth, seq_quality_check, chimera_check, tax_ident, assembly_qual, assembly_name, assembly_software, annot, number_contig, feat_pred, ref_db, sim_search_meth, tax_class, _16s_recover, _16s_recover_software, trnas, trna_ext_software, compl_score, compl_software, compl_appr, contam_score, contam_screen_input, contam_screen_param, decontam_software, sort_tech, single_cell_lysis_appr, single_cell_lysis_prot, wga_amp_appr, wga_amp_kit, bin_param, bin_software, reassembly_bin, mag_cov_software, vir_ident_software, pred_genome_type, pred_genome_struc, detec_type, otu_class_appr, otu_seq_comp_appr, otu_db, host_pred_appr, host_pred_est_acc, url, sop, pcr_primer_forward, pcr_primer_reverse, pcr_primer_name_forward, pcr_primer_name_reverse, pcr_primer_reference, "DNA_sequence", concentration, "concentrationUnit", "methodDeterminationConcentrationAndRatios", "ratioOfAbsorbance260_230", "ratioOfAbsorbance260_280", "annealingTemp", "annealingTempUnit", "probeReporter", "probeQuencher", "ampliconSize", "thresholdQuantificationCycle", "baselineValue", "quantificationCycle", "automaticThresholdQuantificationCycle", "automaticBaselineValue", "contaminationAssessment", "partitionVolume", "partitionVolumeUnit", "estimatedNumberOfCopies", "amplificationReactionVolume", "amplificationReactionVolumeUnit", pcr_analysis_software, "experimentalVariance", pcr_primer_lod, pcr_primer_loq) FROM stdin;
+\.
+
+
+--
 -- Data for Name: genetic-sequence; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
+COPY public."genetic-sequence" ("geneticSequenceID", "geneticSequence", "geneticSequenceRemarks") FROM stdin;
+\.
 
 
 --
--- TOC entry 5387 (class 0 OID 176918)
--- Dependencies: 249
 -- Data for Name: genetic-sequence-agent-role; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
+COPY public."genetic-sequence-agent-role" ("agentID", "geneticSequenceID", "agentRole", "agentRoleIRI", "agentRoleVocabulary", "agentRoleOrder", "agentRoleDate") FROM stdin;
+\.
 
 
 --
--- TOC entry 5388 (class 0 OID 176934)
--- Dependencies: 250
 -- Data for Name: genetic-sequence-assertion; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
+COPY public."genetic-sequence-assertion" ("assertionID", "geneticSequenceID", "assertionType", "assertionTypeIRI", "assertionTypeVocabulary", "assertionMadeDate", "assertionEffectiveDate", "assertionValue", "assertionValueIRI", "assertionValueVocabulary", "assertionValueNumeric", "assertionUnit", "assertionUnitIRI", "assertionUnitVocabulary", "assertionBy", "assertionByID", "assertionProtocol", "assertionProtocolID", "assertionCitation", "assertionRemarks") FROM stdin;
+\.
 
 
 --
--- TOC entry 5389 (class 0 OID 176951)
--- Dependencies: 251
 -- Data for Name: genetic-sequence-citation; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
+COPY public."genetic-sequence-citation" ("citationID", "geneticSequenceID", "citationType", "citationTypeIRI", "citationTypeVocabulary", "bibliographicCitation", "pageNumber", "referenceID", "referenceType", "referenceTypeIRI", "referenceTypeVocabulary", "referenceYear", "isPeerReviewed", "citationRemarks") FROM stdin;
+\.
 
 
 --
--- TOC entry 5390 (class 0 OID 176963)
--- Dependencies: 252
 -- Data for Name: genetic-sequence-media; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
+COPY public."genetic-sequence-media" ("mediaID", "geneticSequenceID", "mediaSubjectCategory", "mediaSubjectCategoryIRI", "mediaSubjectCategoryVocabulary") FROM stdin;
+\.
 
 
 --
--- TOC entry 5391 (class 0 OID 176978)
--- Dependencies: 253
--- Data for Name: genetic-sequence-protocol; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-
-
---
--- TOC entry 5363 (class 0 OID 176546)
--- Dependencies: 225
 -- Data for Name: geological-context; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
+COPY public."geological-context" ("geologicalContextID", "eventID", "earliestEonOrLowestEonothem", "latestEonOrHighestEonothem", "earliestEraOrLowestErathem", "latestEraOrHighestErathem", "earliestPeriodOrLowestSystem", "latestPeriodOrHighestSystem", "earliestEpochOrLowestSeries", "latestEpochOrHighestSeries", "earliestAgeOrLowestStage", "latestAgeOrHighestStage", "lowestBiostratigraphicZone", "highestBiostratigraphicZone", "lithostratigraphicTerms", "group", formation, member, bed) FROM stdin;
+\.
 
 
 --
--- TOC entry 5392 (class 0 OID 176993)
--- Dependencies: 254
 -- Data for Name: geological-context-media; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
+COPY public."geological-context-media" ("mediaID", "geologicalContextID", "mediaSubjectCategory", "mediaSubjectCategoryIRI", "mediaSubjectCategoryVocabulary") FROM stdin;
+\.
 
 
 --
--- TOC entry 5364 (class 0 OID 176558)
--- Dependencies: 226
 -- Data for Name: identification; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
+COPY public.identification ("identificationID", "basedOnOccurrenceID", "basedOnMaterialEntityID", "basedOnNucleotideSequenceID", "basedOnNucleotideAnalysisID", "basedOnMediaID", "identificationType", "verbatimIdentification", "isAcceptedIdentification", "taxonFormula", "typeStatus", "typeDesignationType", "identifiedBy", "identifiedByID", "dateIdentified", "identificationReferences", "taxonAssignmentMethod", "identificationVerificationStatus", "identificationRemarks", "taxonID", kingdom, "scientificName", "taxonRank", "taxonRemarks") FROM stdin;
+\.
 
 
 --
--- TOC entry 5393 (class 0 OID 177010)
--- Dependencies: 255
 -- Data for Name: identification-agent-role; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
+COPY public."identification-agent-role" ("agentID", "identificationID", "agentRole", "agentRoleIRI", "agentRoleVocabulary", "agentRoleOrder", "agentRoleDate") FROM stdin;
+\.
 
 
 --
--- TOC entry 5394 (class 0 OID 177026)
--- Dependencies: 256
 -- Data for Name: identification-taxon; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
+COPY public."identification-taxon" ("identificationID", "taxonID", "taxonOrder", kingdom, "scientificName", "taxonRank", "taxonRemarks") FROM stdin;
+\.
 
 
 --
--- TOC entry 5360 (class 0 OID 176490)
--- Dependencies: 222
 -- Data for Name: material; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
+COPY public.material ("materialEntityID", "eventID", "materialCategory", "materialEntityType", "institutionCode", "institutionID", "ownerInstitutionCode", "ownerInstitutionID", "collectionCode", "collectionID", "catalogNumber", "otherCatalogNumbers", "collectedBy", "collectedByID", "objectCount", "recordNumber", preparations, disposition, "verbatimLabel", "associatedSequences", "materialCitation", "informationWithheld", "dataGeneralizations", "materialEntityRemarks", "evidenceForOccurrenceID", "derivedFromMaterialEntityID", "derivationEventID", "derivationType", "partOfMaterialEntityID", "verbatimIdentification", "taxonFormula", "identifiedBy", "identifiedByID", "dateIdentified", "identificationReferences", "identificationVerificationStatus", "identificationRemarks", "taxonID", kingdom, "scientificName", "taxonRank", "taxonRemarks") FROM stdin;
+\.
 
 
 --
--- TOC entry 5395 (class 0 OID 177037)
--- Dependencies: 257
 -- Data for Name: material-agent-role; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
+COPY public."material-agent-role" ("agentID", "materialEntityID", "agentRole", "agentRoleIRI", "agentRoleVocabulary", "agentRoleOrder", "agentRoleDate") FROM stdin;
+\.
 
 
 --
--- TOC entry 5396 (class 0 OID 177053)
--- Dependencies: 258
 -- Data for Name: material-assertion; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
+COPY public."material-assertion" ("assertionID", "materialEntityID", "assertionType", "assertionTypeIRI", "assertionTypeVocabulary", "assertionMadeDate", "assertionEffectiveDate", "assertionValue", "assertionValueIRI", "assertionValueVocabulary", "assertionValueNumeric", "assertionUnit", "assertionUnitIRI", "assertionUnitVocabulary", "assertionBy", "assertionByID", "assertionProtocol", "assertionProtocolID", "assertionCitation", "assertionRemarks") FROM stdin;
+\.
 
 
 --
--- TOC entry 5397 (class 0 OID 177070)
--- Dependencies: 259
 -- Data for Name: material-citation; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
+COPY public."material-citation" ("citationID", "materialEntityID", "citationType", "citationTypeIRI", "citationTypeVocabulary", "bibliographicCitation", "pageNumber", "referenceID", "referenceType", "referenceTypeIRI", "referenceTypeVocabulary", "referenceYear", "isPeerReviewed", "citationRemarks") FROM stdin;
+\.
 
 
 --
--- TOC entry 5398 (class 0 OID 177082)
--- Dependencies: 260
 -- Data for Name: material-identifier; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
+COPY public."material-identifier" (identifier, "materialEntityID", "identifierType", "identifierTypeIRI", "identifierTypeVocabulary", "identifierLanguage") FROM stdin;
+\.
 
 
 --
--- TOC entry 5399 (class 0 OID 177092)
--- Dependencies: 261
 -- Data for Name: material-media; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
+COPY public."material-media" ("mediaID", "materialEntityID", "mediaSubjectCategory", "mediaSubjectCategoryIRI", "mediaSubjectCategoryVocabulary") FROM stdin;
+\.
 
 
 --
--- TOC entry 5400 (class 0 OID 177107)
--- Dependencies: 262
 -- Data for Name: material-protocol; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
+COPY public."material-protocol" ("protocolID", "materialEntityID") FROM stdin;
+\.
 
 
 --
--- TOC entry 5355 (class 0 OID 176414)
--- Dependencies: 217
 -- Data for Name: media; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
+COPY public.media ("mediaID", "mediaType", "accessURI", "WebStatement", format, rights, "Owner", source, creator, "creatorID", "CreateDate", modified, "mediaLanguage", "mediaDescription") FROM stdin;
+\.
 
 
 --
--- TOC entry 5401 (class 0 OID 177122)
--- Dependencies: 263
 -- Data for Name: media-agent-role; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
+COPY public."media-agent-role" ("agentID", "mediaID", "agentRole", "agentRoleIRI", "agentRoleVocabulary", "agentRoleOrder", "agentRoleDate") FROM stdin;
+\.
 
 
 --
--- TOC entry 5402 (class 0 OID 177138)
--- Dependencies: 264
 -- Data for Name: media-assertion; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
+COPY public."media-assertion" ("assertionID", "mediaID", "assertionType", "assertionTypeIRI", "assertionTypeVocabulary", "assertionMadeDate", "assertionEffectiveDate", "assertionValue", "assertionValueIRI", "assertionValueVocabulary", "assertionValueNumeric", "assertionUnit", "assertionUnitIRI", "assertionUnitVocabulary", "assertionBy", "assertionByID", "assertionProtocol", "assertionProtocolID", "assertionCitation", "assertionRemarks") FROM stdin;
+\.
 
 
 --
--- TOC entry 5403 (class 0 OID 177155)
--- Dependencies: 265
 -- Data for Name: media-identifier; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
+COPY public."media-identifier" (identifier, "mediaID", "identifierType", "identifierTypeIRI", "identifierTypeVocabulary", "identifierLanguage") FROM stdin;
+\.
 
 
 --
--- TOC entry 5356 (class 0 OID 176421)
--- Dependencies: 218
+-- Data for Name: molecular-protocol; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public."molecular-protocol" ("molecularProtocolID", "assayType", samp_name, project_name, experimental_factor, samp_taxon_id, neg_cont_type, pos_cont_type, env_broad_scale, env_local_scale, env_medium, subspecf_gen_lin, ploidy, num_replicons, extrachrom_elements, estimated_size, ref_biomaterial, source_mat_id, pathogenicity, biotic_relationship, specific_host, host_spec_range, host_disease_stat, trophic_level, propagation, encoded_traits, rel_to_oxygen, isol_growth_condt, samp_collec_device, samp_collec_method, samp_mat_process, size_frac, samp_size, samp_vol_we_dna_ext, source_uvig, virus_enrich_appr, nucl_acid_ext, nucl_acid_amp, lib_size, lib_reads_seqd, lib_layout, lib_vector, lib_screen, target_gene, target_subfragment, pcr_primers, mid, adapters, pcr_cond, seq_meth, seq_quality_check, chimera_check, tax_ident, assembly_qual, assembly_name, assembly_software, annot, number_contig, feat_pred, ref_db, sim_search_meth, tax_class, _16s_recover, _16s_recover_software, trnas, trna_ext_software, compl_score, compl_software, compl_appr, contam_score, contam_screen_input, contam_screen_param, decontam_software, sort_tech, single_cell_lysis_appr, single_cell_lysis_prot, wga_amp_appr, wga_amp_kit, bin_param, bin_software, reassembly_bin, mag_cov_software, vir_ident_software, pred_genome_type, pred_genome_struc, detec_type, otu_class_appr, otu_seq_comp_appr, otu_db, host_pred_appr, host_pred_est_acc, url, sop, pcr_primer_forward, pcr_primer_reverse, pcr_primer_name_forward, pcr_primer_name_reverse, pcr_primer_reference, "DNA_sequence", concentration, "concentrationUnit", "methodDeterminationConcentrationAndRatios", "ratioOfAbsorbance260_230", "ratioOfAbsorbance260_280", "annealingTemp", "annealingTempUnit", "probeReporter", "probeQuencher", "ampliconSize", "thresholdQuantificationCycle", "baselineValue", "quantificationCycle", "automaticThresholdQuantificationCycle", "automaticBaselineValue", "contaminationAssessment", "partitionVolume", "partitionVolumeUnit", "estimatedNumberOfCopies", "amplificationReactionVolume", "amplificationReactionVolumeUnit", pcr_analysis_software, "experimentalVariance", pcr_primer_lod, pcr_primer_loq) FROM stdin;
+\.
+
+
+--
+-- Data for Name: molecular-protocol-agent-role; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public."molecular-protocol-agent-role" ("agentID", "molecularProtocolID", "agentRole", "agentRoleIRI", "agentRoleVocabulary", "agentRoleOrder", "agentRoleDate") FROM stdin;
+\.
+
+
+--
+-- Data for Name: molecular-protocol-assertion; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public."molecular-protocol-assertion" ("assertionID", "molecularProtocolID", "assertionType", "assertionTypeIRI", "assertionTypeVocabulary", "assertionMadeDate", "assertionEffectiveDate", "assertionValue", "assertionValueIRI", "assertionValueVocabulary", "assertionValueNumeric", "assertionUnit", "assertionUnitIRI", "assertionUnitVocabulary", "assertionBy", "assertionByID", "assertionProtocol", "assertionProtocolID", "assertionCitation", "assertionRemarks") FROM stdin;
+\.
+
+
+--
+-- Data for Name: molecular-protocol-citation; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public."molecular-protocol-citation" ("citationID", "molecularProtocolID", "citationType", "citationTypeIRI", "citationTypeVocabulary", "bibliographicCitation", "pageNumber", "referenceID", "referenceType", "referenceTypeIRI", "referenceTypeVocabulary", "referenceYear", "isPeerReviewed", "citationRemarks") FROM stdin;
+\.
+
+
+--
+-- Data for Name: nucleotide-analysis; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public."nucleotide-analysis" ("nucleotideAnalysisID", "eventID", "molecularProtocolID", "nucleotideSequenceID", "materialEntityID", "readCount", "totalReadCount") FROM stdin;
+\.
+
+
+--
+-- Data for Name: nucleotide-analysis-assertion; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public."nucleotide-analysis-assertion" ("assertionID", "nucleotideAnalysisID", "assertionType", "assertionTypeIRI", "assertionTypeVocabulary", "assertionMadeDate", "assertionEffectiveDate", "assertionValue", "assertionValueIRI", "assertionValueVocabulary", "assertionValueNumeric", "assertionUnit", "assertionUnitIRI", "assertionUnitVocabulary", "assertionBy", "assertionByID", "assertionProtocol", "assertionProtocolID", "assertionCitation", "assertionRemarks") FROM stdin;
+\.
+
+
+--
+-- Data for Name: nucleotide-sequence; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public."nucleotide-sequence" ("nucleotideSequenceID", "nucleotideSequence", "nucleotideSequenceRemarks") FROM stdin;
+\.
+
+
+--
 -- Data for Name: occurrence; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
+COPY public.occurrence ("occurrenceID", "eventID", "surveyTargetID", "recordedBy", "recordedByID", "organismQuantity", "organismQuantityType", sex, "lifeStage", "reproductiveCondition", caste, behavior, vitality, "establishmentMeans", "degreeOfEstablishment", pathway, "occurrenceStatus", "occurrenceCitation", "informationWithheld", "dataGeneralizations", "occurrenceRemarks", "organismID", "organismScope", "organismName", "organismRemarks", "verbatimIdentification", "taxonFormula", "identifiedBy", "identifiedByID", "dateIdentified", "identificationReferences", "identificationVerificationStatus", "identificationRemarks", "taxonID", kingdom, "scientificName", "taxonRank", "taxonRemarks") FROM stdin;
+\.
 
 
 --
--- TOC entry 5404 (class 0 OID 177165)
--- Dependencies: 266
 -- Data for Name: occurrence-agent-role; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
+COPY public."occurrence-agent-role" ("agentID", "occurrenceID", "agentRole", "agentRoleIRI", "agentRoleVocabulary", "agentRoleOrder", "agentRoleDate") FROM stdin;
+\.
 
 
 --
--- TOC entry 5405 (class 0 OID 177181)
--- Dependencies: 267
 -- Data for Name: occurrence-assertion; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
+COPY public."occurrence-assertion" ("assertionID", "occurrenceID", "assertionType", "assertionTypeIRI", "assertionTypeVocabulary", "assertionMadeDate", "assertionEffectiveDate", "assertionValue", "assertionValueIRI", "assertionValueVocabulary", "assertionValueNumeric", "assertionUnit", "assertionUnitIRI", "assertionUnitVocabulary", "assertionBy", "assertionByID", "assertionProtocol", "assertionProtocolID", "assertionCitation", "assertionRemarks") FROM stdin;
+\.
 
 
 --
--- TOC entry 5406 (class 0 OID 177198)
--- Dependencies: 268
 -- Data for Name: occurrence-citation; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
+COPY public."occurrence-citation" ("citationID", "occurrenceID", "citationType", "citationTypeIRI", "citationTypeVocabulary", "bibliographicCitation", "pageNumber", "referenceID", "referenceType", "referenceTypeIRI", "referenceTypeVocabulary", "referenceYear", "isPeerReviewed", "citationRemarks") FROM stdin;
+\.
 
 
 --
--- TOC entry 5407 (class 0 OID 177210)
--- Dependencies: 269
 -- Data for Name: occurrence-identifier; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
+COPY public."occurrence-identifier" (identifier, "occurrenceID", "identifierType", "identifierTypeIRI", "identifierTypeVocabulary", "identifierLanguage") FROM stdin;
+\.
 
 
 --
--- TOC entry 5408 (class 0 OID 177220)
--- Dependencies: 270
 -- Data for Name: occurrence-media; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
+COPY public."occurrence-media" ("mediaID", "occurrenceID", "mediaSubjectCategory", "mediaSubjectCategoryIRI", "mediaSubjectCategoryVocabulary") FROM stdin;
+\.
 
 
 --
--- TOC entry 5409 (class 0 OID 177235)
--- Dependencies: 271
 -- Data for Name: occurrence-protocol; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
+COPY public."occurrence-protocol" ("protocolID", "occurrenceID") FROM stdin;
+\.
 
 
 --
--- TOC entry 5365 (class 0 OID 176596)
--- Dependencies: 227
 -- Data for Name: organism-interaction; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
+COPY public."organism-interaction" ("organismInteractionID", "eventID", "organismInteractionDescription", "subjectOccurrenceID", "subjectOrganismPart", "organismInteractionType", "relatedOccurrenceID", "relatedOrganismPart") FROM stdin;
+\.
 
 
 --
--- TOC entry 5410 (class 0 OID 177250)
--- Dependencies: 272
 -- Data for Name: organism-interaction-agent-role; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
+COPY public."organism-interaction-agent-role" ("agentID", "organismInteractionID", "agentRole", "agentRoleIRI", "agentRoleVocabulary", "agentRoleOrder", "agentRoleDate") FROM stdin;
+\.
 
 
 --
--- TOC entry 5411 (class 0 OID 177266)
--- Dependencies: 273
 -- Data for Name: organism-interaction-assertion; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
+COPY public."organism-interaction-assertion" ("assertionID", "organismInteractionID", "assertionType", "assertionTypeIRI", "assertionTypeVocabulary", "assertionMadeDate", "assertionEffectiveDate", "assertionValue", "assertionValueIRI", "assertionValueVocabulary", "assertionValueNumeric", "assertionUnit", "assertionUnitIRI", "assertionUnitVocabulary", "assertionBy", "assertionByID", "assertionProtocol", "assertionProtocolID", "assertionCitation", "assertionRemarks") FROM stdin;
+\.
 
 
 --
--- TOC entry 5412 (class 0 OID 177283)
--- Dependencies: 274
 -- Data for Name: organism-interaction-citation; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
+COPY public."organism-interaction-citation" ("citationID", "organismInteractionID", "citationType", "citationTypeIRI", "citationTypeVocabulary", "bibliographicCitation", "pageNumber", "referenceID", "referenceType", "referenceTypeIRI", "referenceTypeVocabulary", "referenceYear", "isPeerReviewed", "citationRemarks") FROM stdin;
+\.
 
 
 --
--- TOC entry 5413 (class 0 OID 177295)
--- Dependencies: 275
 -- Data for Name: organism-interaction-media; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
+COPY public."organism-interaction-media" ("mediaID", "organismInteractionID", "mediaSubjectCategory", "mediaSubjectCategoryIRI", "mediaSubjectCategoryVocabulary") FROM stdin;
+\.
 
 
 --
--- TOC entry 5366 (class 0 OID 176618)
--- Dependencies: 228
 -- Data for Name: phylogenetic-tree; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
+COPY public."phylogenetic-tree" ("phylogeneticTreeID", "phylogeneticTreeProtocol", "phylogeneticTreeProtocolID", "phylogeneticTreeCitation") FROM stdin;
+\.
 
 
 --
--- TOC entry 5414 (class 0 OID 177310)
--- Dependencies: 276
 -- Data for Name: phylogenetic-tree-assertion; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
+COPY public."phylogenetic-tree-assertion" ("assertionID", "phylogeneticTreeID", "assertionType", "assertionTypeIRI", "assertionTypeVocabulary", "assertionMadeDate", "assertionEffectiveDate", "assertionValue", "assertionValueIRI", "assertionValueVocabulary", "assertionValueNumeric", "assertionUnit", "assertionUnitIRI", "assertionUnitVocabulary", "assertionBy", "assertionByID", "assertionProtocol", "assertionProtocolID", "assertionCitation", "assertionRemarks") FROM stdin;
+\.
 
 
 --
--- TOC entry 5415 (class 0 OID 177327)
--- Dependencies: 277
 -- Data for Name: phylogenetic-tree-citation; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
+COPY public."phylogenetic-tree-citation" ("citationID", "phylogeneticTreeID", "citationType", "citationTypeIRI", "citationTypeVocabulary", "bibliographicCitation", "pageNumber", "referenceID", "referenceType", "referenceTypeIRI", "referenceTypeVocabulary", "referenceYear", "isPeerReviewed", "citationRemarks") FROM stdin;
+\.
 
 
 --
--- TOC entry 5416 (class 0 OID 177339)
--- Dependencies: 278
 -- Data for Name: phylogenetic-tree-identifier; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
+COPY public."phylogenetic-tree-identifier" (identifier, "phylogeneticTreeID", "identifierType", "identifierTypeIRI", "identifierTypeVocabulary", "identifierLanguage") FROM stdin;
+\.
 
 
 --
--- TOC entry 5417 (class 0 OID 177349)
--- Dependencies: 279
 -- Data for Name: phylogenetic-tree-media; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
+COPY public."phylogenetic-tree-media" ("mediaID", "phylogeneticTreeID", "mediaSubjectCategory", "mediaSubjectCategoryIRI", "mediaSubjectCategoryVocabulary") FROM stdin;
+\.
 
 
 --
--- TOC entry 5418 (class 0 OID 177364)
--- Dependencies: 280
 -- Data for Name: phylogenetic-tree-protocol; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
+COPY public."phylogenetic-tree-protocol" ("protocolID", "phylogeneticTreeID") FROM stdin;
+\.
 
 
 --
--- TOC entry 5367 (class 0 OID 176625)
--- Dependencies: 229
 -- Data for Name: phylogenetic-tree-tip; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
+COPY public."phylogenetic-tree-tip" ("phylogeneticTreeTipID", "phylogeneticTreeID", "phylogeneticTreeTipLabel", "taxonID", "scientificName", "materialEntityID", "geneticSequenceID") FROM stdin;
+\.
 
 
 --
--- TOC entry 5419 (class 0 OID 177379)
--- Dependencies: 281
 -- Data for Name: phylogenetic-tree-tip-assertion; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
+COPY public."phylogenetic-tree-tip-assertion" ("assertionID", "phylogeneticTreeTipID", "assertionType", "assertionTypeIRI", "assertionTypeVocabulary", "assertionMadeDate", "assertionEffectiveDate", "assertionValue", "assertionValueIRI", "assertionValueVocabulary", "assertionValueNumeric", "assertionUnit", "assertionUnitIRI", "assertionUnitVocabulary", "assertionBy", "assertionByID", "assertionProtocol", "assertionProtocolID", "assertionCitation", "assertionRemarks") FROM stdin;
+\.
 
 
 --
--- TOC entry 5357 (class 0 OID 176435)
--- Dependencies: 219
 -- Data for Name: protocol; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
+COPY public.protocol ("protocolID", "protocolType", "protocolTypeIRI", "protocolTypeVocabulary", "protocolName", "protocolDescription", "protocolCitation", "protocolRemarks") FROM stdin;
+\.
 
 
 --
--- TOC entry 5420 (class 0 OID 177396)
--- Dependencies: 282
 -- Data for Name: protocol-citation; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
+COPY public."protocol-citation" ("citationID", "protocolID", "citationType", "citationTypeIRI", "citationTypeVocabulary", "bibliographicCitation", "pageNumber", "referenceID", "referenceType", "referenceTypeIRI", "referenceTypeVocabulary", "referenceYear", "isPeerReviewed", "citationRemarks") FROM stdin;
+\.
 
 
 --
--- TOC entry 5358 (class 0 OID 176442)
--- Dependencies: 220
 -- Data for Name: relationship; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
+COPY public.relationship ("relationshipID", "subjectResourceID", "subjectResourceType", "subjectResourceTypeIRI", "subjectResourceTypeVocabulary", "relationshipType", "relationshipTypeIRI", "relationshipTypeVocabulary", "relatedResourceID", "relatedResourceType", "relatedResourceTypeIRI", "relatedResourceTypeVocabulary", "relationshipOrder", "relationshipAccordingTo", "relationshipAccordingToID", "relationshipEffectiveDate", "relationshipRemarks") FROM stdin;
+\.
 
 
 --
--- TOC entry 5368 (class 0 OID 176639)
--- Dependencies: 230
 -- Data for Name: survey; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
+COPY public.survey ("surveyID", "eventID", "siteCount", "siteNestingDescription", "verbatimSiteDescriptions", "verbatimSiteNames", "geospatialScopeAreaValue", "geospatialScopeAreaUnit", "totalAreaSampledValue", "totalAreaSampledUnit", "reportedWeather", "reportedExtremeConditions", "eventDurationValue", "eventDurationUnit", "taxonCompletenessReported", "taxonCompletenessProtocols", "isAbsenceReported", "absentTaxa", "hasNonTargetTaxa", "nonTargetTaxa", "areNonTargetTaxaFullyReported", "hasNonTargetOrganisms", "verbatimTargetScope", "identifiedBy", "identifiedByID", "identificationReferences", "compilationTypes", "compilationSourceTypes", "inventoryTypes", "protocolNames", "protocolDescriptions", "protocolReferences", "isAbundanceReported", "isAbundanceCapReported", "abundanceCap", "isVegetationCoverReported", "isLeastSpecificTargetCategoryQuantityInclusive", "hasVouchers", "voucherInstitutions", "hasMaterialSamples", "materialSampleTypes", "samplingPerformedBy", "samplingPerformedByID", "isSamplingEffortReported", "samplingEffortProtocol", "samplingEffortProtocolID", "samplingEffortValue", "samplingEffortUnit", "informationWithheld", "dataGeneralizations") FROM stdin;
+\.
 
 
 --
--- TOC entry 5421 (class 0 OID 177408)
--- Dependencies: 283
 -- Data for Name: survey-agent-role; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
+COPY public."survey-agent-role" ("agentID", "surveyID", "agentRole", "agentRoleIRI", "agentRoleVocabulary", "agentRoleOrder", "agentRoleDate") FROM stdin;
+\.
 
 
 --
--- TOC entry 5422 (class 0 OID 177424)
--- Dependencies: 284
 -- Data for Name: survey-assertion; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
+COPY public."survey-assertion" ("assertionID", "surveyID", "assertionType", "assertionTypeIRI", "assertionTypeVocabulary", "assertionMadeDate", "assertionEffectiveDate", "assertionValue", "assertionValueIRI", "assertionValueVocabulary", "assertionValueNumeric", "assertionUnit", "assertionUnitIRI", "assertionUnitVocabulary", "assertionBy", "assertionByID", "assertionProtocol", "assertionProtocolID", "assertionCitation", "assertionRemarks") FROM stdin;
+\.
 
 
 --
--- TOC entry 5423 (class 0 OID 177441)
--- Dependencies: 285
 -- Data for Name: survey-citation; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
+COPY public."survey-citation" ("citationID", "surveyID", "citationType", "citationTypeIRI", "citationTypeVocabulary", "bibliographicCitation", "pageNumber", "referenceID", "referenceType", "referenceTypeIRI", "referenceTypeVocabulary", "referenceYear", "isPeerReviewed", "citationRemarks") FROM stdin;
+\.
 
 
 --
--- TOC entry 5424 (class 0 OID 177453)
--- Dependencies: 286
 -- Data for Name: survey-identifier; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
+COPY public."survey-identifier" (identifier, "surveyID", "identifierType", "identifierTypeIRI", "identifierTypeVocabulary", "identifierLanguage") FROM stdin;
+\.
 
 
 --
--- TOC entry 5425 (class 0 OID 177463)
--- Dependencies: 287
 -- Data for Name: survey-protocol; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
+COPY public."survey-protocol" ("protocolID", "surveyID") FROM stdin;
+\.
 
 
 --
--- TOC entry 5369 (class 0 OID 176657)
--- Dependencies: 231
 -- Data for Name: survey-target; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
+COPY public."survey-target" ("surveyTargetID", "surveyID", "surveyTargetType", "surveyTargetTypeIRI", "surveyTargetTypeVocabulary", "surveyTargetValue", "surveyTargetValueIRI", "surveyTargetValueVocabulary", "surveyTargetUnit", "surveyTargetUnitIRI", "surveyTargetUnitVocabulary", "includeOrExclude", "isSurveyTargetFullyReported") FROM stdin;
+\.
 
 
 --
--- TOC entry 5018 (class 2606 OID 176406)
 -- Name: agent agent_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -11083,7 +11787,6 @@ ALTER TABLE ONLY public.agent
 
 
 --
--- TOC entry 5054 (class 2606 OID 176732)
 -- Name: chronometric-age-assertion chronometric-age-assertion_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -11092,7 +11795,6 @@ ALTER TABLE ONLY public."chronometric-age-assertion"
 
 
 --
--- TOC entry 5056 (class 2606 OID 176749)
 -- Name: chronometric-age-citation chronometric-age-citation_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -11101,7 +11803,6 @@ ALTER TABLE ONLY public."chronometric-age-citation"
 
 
 --
--- TOC entry 5034 (class 2606 OID 176513)
 -- Name: chronometric-age chronometric-age_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -11110,7 +11811,6 @@ ALTER TABLE ONLY public."chronometric-age"
 
 
 --
--- TOC entry 5058 (class 2606 OID 176807)
 -- Name: collection-assertion collection-assertion_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -11119,7 +11819,6 @@ ALTER TABLE ONLY public."collection-assertion"
 
 
 --
--- TOC entry 5020 (class 2606 OID 176413)
 -- Name: collection collection_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -11128,7 +11827,6 @@ ALTER TABLE ONLY public.collection
 
 
 --
--- TOC entry 5060 (class 2606 OID 176855)
 -- Name: event-assertion event-assertion_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -11137,7 +11835,6 @@ ALTER TABLE ONLY public."event-assertion"
 
 
 --
--- TOC entry 5062 (class 2606 OID 176872)
 -- Name: event-citation event-citation_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -11146,7 +11843,6 @@ ALTER TABLE ONLY public."event-citation"
 
 
 --
--- TOC entry 5030 (class 2606 OID 176479)
 -- Name: event event_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -11155,7 +11851,22 @@ ALTER TABLE ONLY public.event
 
 
 --
--- TOC entry 5064 (class 2606 OID 176940)
+-- Name: genetic-analysis genetic-analysis_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public."genetic-analysis"
+    ADD CONSTRAINT "genetic-analysis_pkey" PRIMARY KEY ("geneticAnalysisID");
+
+
+--
+-- Name: genetic-protocol genetic-protocol_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public."genetic-protocol"
+    ADD CONSTRAINT "genetic-protocol_pkey" PRIMARY KEY ("geneticProtocolID");
+
+
+--
 -- Name: genetic-sequence-assertion genetic-sequence-assertion_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -11164,7 +11875,6 @@ ALTER TABLE ONLY public."genetic-sequence-assertion"
 
 
 --
--- TOC entry 5066 (class 2606 OID 176957)
 -- Name: genetic-sequence-citation genetic-sequence-citation_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -11173,7 +11883,6 @@ ALTER TABLE ONLY public."genetic-sequence-citation"
 
 
 --
--- TOC entry 5036 (class 2606 OID 176540)
 -- Name: genetic-sequence genetic-sequence_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -11182,7 +11891,6 @@ ALTER TABLE ONLY public."genetic-sequence"
 
 
 --
--- TOC entry 5068 (class 2606 OID 176999)
 -- Name: geological-context-media geological-context-media_geologicalContextID_key; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -11191,7 +11899,6 @@ ALTER TABLE ONLY public."geological-context-media"
 
 
 --
--- TOC entry 5038 (class 2606 OID 176552)
 -- Name: geological-context geological-context_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -11200,7 +11907,6 @@ ALTER TABLE ONLY public."geological-context"
 
 
 --
--- TOC entry 5040 (class 2606 OID 176564)
 -- Name: identification identification_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -11209,7 +11915,6 @@ ALTER TABLE ONLY public.identification
 
 
 --
--- TOC entry 5070 (class 2606 OID 177059)
 -- Name: material-assertion material-assertion_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -11218,7 +11923,6 @@ ALTER TABLE ONLY public."material-assertion"
 
 
 --
--- TOC entry 5072 (class 2606 OID 177076)
 -- Name: material-citation material-citation_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -11227,7 +11931,6 @@ ALTER TABLE ONLY public."material-citation"
 
 
 --
--- TOC entry 5032 (class 2606 OID 176496)
 -- Name: material material_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -11236,7 +11939,6 @@ ALTER TABLE ONLY public.material
 
 
 --
--- TOC entry 5074 (class 2606 OID 177144)
 -- Name: media-assertion media-assertion_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -11245,7 +11947,6 @@ ALTER TABLE ONLY public."media-assertion"
 
 
 --
--- TOC entry 5022 (class 2606 OID 176420)
 -- Name: media media_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -11254,7 +11955,54 @@ ALTER TABLE ONLY public.media
 
 
 --
--- TOC entry 5076 (class 2606 OID 177187)
+-- Name: molecular-protocol-assertion molecular-protocol-assertion_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public."molecular-protocol-assertion"
+    ADD CONSTRAINT "molecular-protocol-assertion_pkey" PRIMARY KEY ("assertionID");
+
+
+--
+-- Name: molecular-protocol-citation molecular-protocol-citation_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public."molecular-protocol-citation"
+    ADD CONSTRAINT "molecular-protocol-citation_pkey" PRIMARY KEY ("citationID");
+
+
+--
+-- Name: molecular-protocol molecular-protocol_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public."molecular-protocol"
+    ADD CONSTRAINT "molecular-protocol_pkey" PRIMARY KEY ("molecularProtocolID");
+
+
+--
+-- Name: nucleotide-analysis-assertion nucleotide-analysis-assertion_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public."nucleotide-analysis-assertion"
+    ADD CONSTRAINT "nucleotide-analysis-assertion_pkey" PRIMARY KEY ("assertionID");
+
+
+--
+-- Name: nucleotide-analysis nucleotide-analysis_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public."nucleotide-analysis"
+    ADD CONSTRAINT "nucleotide-analysis_pkey" PRIMARY KEY ("nucleotideAnalysisID");
+
+
+--
+-- Name: nucleotide-sequence nucleotide-sequence_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public."nucleotide-sequence"
+    ADD CONSTRAINT "nucleotide-sequence_pkey" PRIMARY KEY ("nucleotideSequenceID");
+
+
+--
 -- Name: occurrence-assertion occurrence-assertion_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -11263,7 +12011,6 @@ ALTER TABLE ONLY public."occurrence-assertion"
 
 
 --
--- TOC entry 5078 (class 2606 OID 177204)
 -- Name: occurrence-citation occurrence-citation_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -11272,7 +12019,6 @@ ALTER TABLE ONLY public."occurrence-citation"
 
 
 --
--- TOC entry 5024 (class 2606 OID 176427)
 -- Name: occurrence occurrence_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -11281,7 +12027,6 @@ ALTER TABLE ONLY public.occurrence
 
 
 --
--- TOC entry 5080 (class 2606 OID 177272)
 -- Name: organism-interaction-assertion organism-interaction-assertion_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -11290,7 +12035,6 @@ ALTER TABLE ONLY public."organism-interaction-assertion"
 
 
 --
--- TOC entry 5082 (class 2606 OID 177289)
 -- Name: organism-interaction-citation organism-interaction-citation_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -11299,7 +12043,6 @@ ALTER TABLE ONLY public."organism-interaction-citation"
 
 
 --
--- TOC entry 5042 (class 2606 OID 176602)
 -- Name: organism-interaction organism-interaction_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -11308,7 +12051,6 @@ ALTER TABLE ONLY public."organism-interaction"
 
 
 --
--- TOC entry 5084 (class 2606 OID 177316)
 -- Name: phylogenetic-tree-assertion phylogenetic-tree-assertion_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -11317,7 +12059,6 @@ ALTER TABLE ONLY public."phylogenetic-tree-assertion"
 
 
 --
--- TOC entry 5086 (class 2606 OID 177333)
 -- Name: phylogenetic-tree-citation phylogenetic-tree-citation_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -11326,7 +12067,6 @@ ALTER TABLE ONLY public."phylogenetic-tree-citation"
 
 
 --
--- TOC entry 5088 (class 2606 OID 177385)
 -- Name: phylogenetic-tree-tip-assertion phylogenetic-tree-tip-assertion_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -11335,7 +12075,6 @@ ALTER TABLE ONLY public."phylogenetic-tree-tip-assertion"
 
 
 --
--- TOC entry 5046 (class 2606 OID 176633)
 -- Name: phylogenetic-tree-tip phylogenetic-tree-tip_geneticSequenceID_key; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -11344,7 +12083,6 @@ ALTER TABLE ONLY public."phylogenetic-tree-tip"
 
 
 --
--- TOC entry 5048 (class 2606 OID 176631)
 -- Name: phylogenetic-tree-tip phylogenetic-tree-tip_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -11353,7 +12091,6 @@ ALTER TABLE ONLY public."phylogenetic-tree-tip"
 
 
 --
--- TOC entry 5044 (class 2606 OID 176624)
 -- Name: phylogenetic-tree phylogenetic-tree_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -11362,7 +12099,6 @@ ALTER TABLE ONLY public."phylogenetic-tree"
 
 
 --
--- TOC entry 5090 (class 2606 OID 177402)
 -- Name: protocol-citation protocol-citation_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -11371,7 +12107,6 @@ ALTER TABLE ONLY public."protocol-citation"
 
 
 --
--- TOC entry 5026 (class 2606 OID 176441)
 -- Name: protocol protocol_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -11380,7 +12115,6 @@ ALTER TABLE ONLY public.protocol
 
 
 --
--- TOC entry 5028 (class 2606 OID 176449)
 -- Name: relationship relationship_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -11389,7 +12123,6 @@ ALTER TABLE ONLY public.relationship
 
 
 --
--- TOC entry 5092 (class 2606 OID 177430)
 -- Name: survey-assertion survey-assertion_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -11398,7 +12131,6 @@ ALTER TABLE ONLY public."survey-assertion"
 
 
 --
--- TOC entry 5094 (class 2606 OID 177447)
 -- Name: survey-citation survey-citation_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -11407,7 +12139,6 @@ ALTER TABLE ONLY public."survey-citation"
 
 
 --
--- TOC entry 5052 (class 2606 OID 176663)
 -- Name: survey-target survey-target_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -11416,7 +12147,6 @@ ALTER TABLE ONLY public."survey-target"
 
 
 --
--- TOC entry 5050 (class 2606 OID 176651)
 -- Name: survey survey_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -11425,7 +12155,6 @@ ALTER TABLE ONLY public.survey
 
 
 --
--- TOC entry 5115 (class 2606 OID 176675)
 -- Name: agent-agent-role agent-agent-role_agentID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -11434,7 +12163,6 @@ ALTER TABLE ONLY public."agent-agent-role"
 
 
 --
--- TOC entry 5116 (class 2606 OID 176680)
 -- Name: agent-agent-role agent-agent-role_relatedAgentID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -11443,7 +12171,6 @@ ALTER TABLE ONLY public."agent-agent-role"
 
 
 --
--- TOC entry 5117 (class 2606 OID 176690)
 -- Name: agent-identifier agent-identifier_agentID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -11452,7 +12179,6 @@ ALTER TABLE ONLY public."agent-identifier"
 
 
 --
--- TOC entry 5118 (class 2606 OID 176705)
 -- Name: agent-media agent-media_agentID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -11461,7 +12187,6 @@ ALTER TABLE ONLY public."agent-media"
 
 
 --
--- TOC entry 5119 (class 2606 OID 176700)
 -- Name: agent-media agent-media_mediaID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -11470,7 +12195,6 @@ ALTER TABLE ONLY public."agent-media"
 
 
 --
--- TOC entry 5120 (class 2606 OID 176716)
 -- Name: chronometric-age-agent-role chronometric-age-agent-role_agentID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -11479,7 +12203,6 @@ ALTER TABLE ONLY public."chronometric-age-agent-role"
 
 
 --
--- TOC entry 5121 (class 2606 OID 176721)
 -- Name: chronometric-age-agent-role chronometric-age-agent-role_chronometricAgeID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -11488,7 +12211,6 @@ ALTER TABLE ONLY public."chronometric-age-agent-role"
 
 
 --
--- TOC entry 5122 (class 2606 OID 176738)
 -- Name: chronometric-age-assertion chronometric-age-assertion_assertionProtocolID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -11497,7 +12219,6 @@ ALTER TABLE ONLY public."chronometric-age-assertion"
 
 
 --
--- TOC entry 5123 (class 2606 OID 176733)
 -- Name: chronometric-age-assertion chronometric-age-assertion_chronometricAgeID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -11506,7 +12227,6 @@ ALTER TABLE ONLY public."chronometric-age-assertion"
 
 
 --
--- TOC entry 5124 (class 2606 OID 176750)
 -- Name: chronometric-age-citation chronometric-age-citation_chronometricAgeID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -11515,7 +12235,6 @@ ALTER TABLE ONLY public."chronometric-age-citation"
 
 
 --
--- TOC entry 5125 (class 2606 OID 176765)
 -- Name: chronometric-age-media chronometric-age-media_chronometricAgeID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -11524,7 +12243,6 @@ ALTER TABLE ONLY public."chronometric-age-media"
 
 
 --
--- TOC entry 5126 (class 2606 OID 176760)
 -- Name: chronometric-age-media chronometric-age-media_mediaID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -11533,7 +12251,6 @@ ALTER TABLE ONLY public."chronometric-age-media"
 
 
 --
--- TOC entry 5127 (class 2606 OID 176780)
 -- Name: chronometric-age-protocol chronometric-age-protocol_chronometricAgeID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -11542,7 +12259,6 @@ ALTER TABLE ONLY public."chronometric-age-protocol"
 
 
 --
--- TOC entry 5128 (class 2606 OID 176775)
 -- Name: chronometric-age-protocol chronometric-age-protocol_protocolID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -11551,7 +12267,6 @@ ALTER TABLE ONLY public."chronometric-age-protocol"
 
 
 --
--- TOC entry 5099 (class 2606 OID 176529)
 -- Name: chronometric-age chronometric-age_chronometricAgeConversionProtocolID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -11560,7 +12275,6 @@ ALTER TABLE ONLY public."chronometric-age"
 
 
 --
--- TOC entry 5100 (class 2606 OID 176524)
 -- Name: chronometric-age chronometric-age_chronometricAgeProtocolID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -11569,7 +12283,6 @@ ALTER TABLE ONLY public."chronometric-age"
 
 
 --
--- TOC entry 5101 (class 2606 OID 176514)
 -- Name: chronometric-age chronometric-age_eventID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -11578,7 +12291,6 @@ ALTER TABLE ONLY public."chronometric-age"
 
 
 --
--- TOC entry 5102 (class 2606 OID 176519)
 -- Name: chronometric-age chronometric-age_materialDatedID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -11587,7 +12299,6 @@ ALTER TABLE ONLY public."chronometric-age"
 
 
 --
--- TOC entry 5129 (class 2606 OID 176791)
 -- Name: collection-agent-role collection-agent-role_agentID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -11596,7 +12307,6 @@ ALTER TABLE ONLY public."collection-agent-role"
 
 
 --
--- TOC entry 5130 (class 2606 OID 176796)
 -- Name: collection-agent-role collection-agent-role_collectionID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -11605,7 +12315,6 @@ ALTER TABLE ONLY public."collection-agent-role"
 
 
 --
--- TOC entry 5131 (class 2606 OID 176813)
 -- Name: collection-assertion collection-assertion_assertionProtocolID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -11614,7 +12323,6 @@ ALTER TABLE ONLY public."collection-assertion"
 
 
 --
--- TOC entry 5132 (class 2606 OID 176808)
 -- Name: collection-assertion collection-assertion_collectionID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -11623,7 +12331,6 @@ ALTER TABLE ONLY public."collection-assertion"
 
 
 --
--- TOC entry 5133 (class 2606 OID 176828)
 -- Name: collection-media collection-media_collectionID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -11632,7 +12339,6 @@ ALTER TABLE ONLY public."collection-media"
 
 
 --
--- TOC entry 5134 (class 2606 OID 176823)
 -- Name: collection-media collection-media_mediaID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -11641,7 +12347,6 @@ ALTER TABLE ONLY public."collection-media"
 
 
 --
--- TOC entry 5135 (class 2606 OID 176839)
 -- Name: event-agent-role event-agent-role_agentID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -11650,7 +12355,6 @@ ALTER TABLE ONLY public."event-agent-role"
 
 
 --
--- TOC entry 5136 (class 2606 OID 176844)
 -- Name: event-agent-role event-agent-role_eventID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -11659,7 +12363,6 @@ ALTER TABLE ONLY public."event-agent-role"
 
 
 --
--- TOC entry 5137 (class 2606 OID 176861)
 -- Name: event-assertion event-assertion_assertionProtocolID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -11668,7 +12371,6 @@ ALTER TABLE ONLY public."event-assertion"
 
 
 --
--- TOC entry 5138 (class 2606 OID 176856)
 -- Name: event-assertion event-assertion_eventID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -11677,7 +12379,6 @@ ALTER TABLE ONLY public."event-assertion"
 
 
 --
--- TOC entry 5139 (class 2606 OID 176873)
 -- Name: event-citation event-citation_eventID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -11686,7 +12387,6 @@ ALTER TABLE ONLY public."event-citation"
 
 
 --
--- TOC entry 5140 (class 2606 OID 176883)
 -- Name: event-identifier event-identifier_eventID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -11695,7 +12395,6 @@ ALTER TABLE ONLY public."event-identifier"
 
 
 --
--- TOC entry 5141 (class 2606 OID 176898)
 -- Name: event-media event-media_eventID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -11704,7 +12403,6 @@ ALTER TABLE ONLY public."event-media"
 
 
 --
--- TOC entry 5142 (class 2606 OID 176893)
 -- Name: event-media event-media_mediaID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -11713,7 +12411,6 @@ ALTER TABLE ONLY public."event-media"
 
 
 --
--- TOC entry 5143 (class 2606 OID 176913)
 -- Name: event-protocol event-protocol_eventID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -11722,7 +12419,6 @@ ALTER TABLE ONLY public."event-protocol"
 
 
 --
--- TOC entry 5144 (class 2606 OID 176908)
 -- Name: event-protocol event-protocol_protocolID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -11731,7 +12427,6 @@ ALTER TABLE ONLY public."event-protocol"
 
 
 --
--- TOC entry 5095 (class 2606 OID 176485)
 -- Name: event event_georeferenceProtocolID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -11740,7 +12435,6 @@ ALTER TABLE ONLY public.event
 
 
 --
--- TOC entry 5096 (class 2606 OID 176480)
 -- Name: event event_parentEventID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -11749,7 +12443,38 @@ ALTER TABLE ONLY public.event
 
 
 --
--- TOC entry 5145 (class 2606 OID 176924)
+-- Name: genetic-analysis genetic-analysis_eventID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public."genetic-analysis"
+    ADD CONSTRAINT "genetic-analysis_eventID_fkey" FOREIGN KEY ("eventID") REFERENCES public.event("eventID");
+
+
+--
+-- Name: genetic-analysis genetic-analysis_geneticProtocolID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public."genetic-analysis"
+    ADD CONSTRAINT "genetic-analysis_geneticProtocolID_fkey" FOREIGN KEY ("geneticProtocolID") REFERENCES public."genetic-protocol"("geneticProtocolID");
+
+
+--
+-- Name: genetic-analysis genetic-analysis_geneticSequenceID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public."genetic-analysis"
+    ADD CONSTRAINT "genetic-analysis_geneticSequenceID_fkey" FOREIGN KEY ("geneticSequenceID") REFERENCES public."genetic-sequence"("geneticSequenceID");
+
+
+--
+-- Name: genetic-analysis genetic-analysis_materialEntityID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public."genetic-analysis"
+    ADD CONSTRAINT "genetic-analysis_materialEntityID_fkey" FOREIGN KEY ("materialEntityID") REFERENCES public.material("materialEntityID");
+
+
+--
 -- Name: genetic-sequence-agent-role genetic-sequence-agent-role_agentID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -11758,7 +12483,6 @@ ALTER TABLE ONLY public."genetic-sequence-agent-role"
 
 
 --
--- TOC entry 5146 (class 2606 OID 176929)
 -- Name: genetic-sequence-agent-role genetic-sequence-agent-role_geneticSequenceID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -11767,7 +12491,6 @@ ALTER TABLE ONLY public."genetic-sequence-agent-role"
 
 
 --
--- TOC entry 5147 (class 2606 OID 176946)
 -- Name: genetic-sequence-assertion genetic-sequence-assertion_assertionProtocolID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -11776,7 +12499,6 @@ ALTER TABLE ONLY public."genetic-sequence-assertion"
 
 
 --
--- TOC entry 5148 (class 2606 OID 176941)
 -- Name: genetic-sequence-assertion genetic-sequence-assertion_geneticSequenceID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -11785,7 +12507,6 @@ ALTER TABLE ONLY public."genetic-sequence-assertion"
 
 
 --
--- TOC entry 5149 (class 2606 OID 176958)
 -- Name: genetic-sequence-citation genetic-sequence-citation_geneticSequenceID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -11794,7 +12515,6 @@ ALTER TABLE ONLY public."genetic-sequence-citation"
 
 
 --
--- TOC entry 5150 (class 2606 OID 176973)
 -- Name: genetic-sequence-media genetic-sequence-media_geneticSequenceID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -11803,7 +12523,6 @@ ALTER TABLE ONLY public."genetic-sequence-media"
 
 
 --
--- TOC entry 5151 (class 2606 OID 176968)
 -- Name: genetic-sequence-media genetic-sequence-media_mediaID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -11812,34 +12531,6 @@ ALTER TABLE ONLY public."genetic-sequence-media"
 
 
 --
--- TOC entry 5152 (class 2606 OID 176988)
--- Name: genetic-sequence-protocol genetic-sequence-protocol_geneticSequenceID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY public."genetic-sequence-protocol"
-    ADD CONSTRAINT "genetic-sequence-protocol_geneticSequenceID_fkey" FOREIGN KEY ("geneticSequenceID") REFERENCES public."genetic-sequence"("geneticSequenceID");
-
-
---
--- TOC entry 5153 (class 2606 OID 176983)
--- Name: genetic-sequence-protocol genetic-sequence-protocol_protocolID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY public."genetic-sequence-protocol"
-    ADD CONSTRAINT "genetic-sequence-protocol_protocolID_fkey" FOREIGN KEY ("protocolID") REFERENCES public.protocol("protocolID");
-
-
---
--- TOC entry 5103 (class 2606 OID 176541)
--- Name: genetic-sequence genetic-sequence_eventID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY public."genetic-sequence"
-    ADD CONSTRAINT "genetic-sequence_eventID_fkey" FOREIGN KEY ("eventID") REFERENCES public.event("eventID");
-
-
---
--- TOC entry 5154 (class 2606 OID 177005)
 -- Name: geological-context-media geological-context-media_geologicalContextID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -11848,7 +12539,6 @@ ALTER TABLE ONLY public."geological-context-media"
 
 
 --
--- TOC entry 5155 (class 2606 OID 177000)
 -- Name: geological-context-media geological-context-media_mediaID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -11857,7 +12547,6 @@ ALTER TABLE ONLY public."geological-context-media"
 
 
 --
--- TOC entry 5104 (class 2606 OID 176553)
 -- Name: geological-context geological-context_eventID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -11866,7 +12555,6 @@ ALTER TABLE ONLY public."geological-context"
 
 
 --
--- TOC entry 5156 (class 2606 OID 177016)
 -- Name: identification-agent-role identification-agent-role_agentID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -11875,7 +12563,6 @@ ALTER TABLE ONLY public."identification-agent-role"
 
 
 --
--- TOC entry 5157 (class 2606 OID 177021)
 -- Name: identification-agent-role identification-agent-role_identificationID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -11884,7 +12571,6 @@ ALTER TABLE ONLY public."identification-agent-role"
 
 
 --
--- TOC entry 5158 (class 2606 OID 177032)
 -- Name: identification-taxon identification-taxon_identificationID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -11893,43 +12579,46 @@ ALTER TABLE ONLY public."identification-taxon"
 
 
 --
--- TOC entry 5105 (class 2606 OID 176575)
--- Name: identification identification_identificationBasedOnGeneticSequenceID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+-- Name: identification identification_basedOnMaterialEntityID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.identification
-    ADD CONSTRAINT "identification_identificationBasedOnGeneticSequenceID_fkey" FOREIGN KEY ("identificationBasedOnGeneticSequenceID") REFERENCES public."genetic-sequence"("geneticSequenceID");
+    ADD CONSTRAINT "identification_basedOnMaterialEntityID_fkey" FOREIGN KEY ("basedOnMaterialEntityID") REFERENCES public.material("materialEntityID");
 
 
 --
--- TOC entry 5106 (class 2606 OID 176570)
--- Name: identification identification_identificationBasedOnMaterialEntityID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY public.identification
-    ADD CONSTRAINT "identification_identificationBasedOnMaterialEntityID_fkey" FOREIGN KEY ("identificationBasedOnMaterialEntityID") REFERENCES public.material("materialEntityID");
-
-
---
--- TOC entry 5107 (class 2606 OID 176580)
--- Name: identification identification_identificationBasedOnMediaID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+-- Name: identification identification_basedOnMediaID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.identification
-    ADD CONSTRAINT "identification_identificationBasedOnMediaID_fkey" FOREIGN KEY ("identificationBasedOnMediaID") REFERENCES public.media("mediaID");
+    ADD CONSTRAINT "identification_basedOnMediaID_fkey" FOREIGN KEY ("basedOnMediaID") REFERENCES public.media("mediaID");
 
 
 --
--- TOC entry 5108 (class 2606 OID 176565)
--- Name: identification identification_identificationBasedOnOccurrenceID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+-- Name: identification identification_basedOnNucleotideAnalysisID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.identification
-    ADD CONSTRAINT "identification_identificationBasedOnOccurrenceID_fkey" FOREIGN KEY ("identificationBasedOnOccurrenceID") REFERENCES public.occurrence("occurrenceID");
+    ADD CONSTRAINT "identification_basedOnNucleotideAnalysisID_fkey" FOREIGN KEY ("basedOnNucleotideAnalysisID") REFERENCES public."nucleotide-analysis"("nucleotideAnalysisID");
 
 
 --
--- TOC entry 5159 (class 2606 OID 177043)
+-- Name: identification identification_basedOnNucleotideSequenceID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.identification
+    ADD CONSTRAINT "identification_basedOnNucleotideSequenceID_fkey" FOREIGN KEY ("basedOnNucleotideSequenceID") REFERENCES public."nucleotide-sequence"("nucleotideSequenceID");
+
+
+--
+-- Name: identification identification_basedOnOccurrenceID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.identification
+    ADD CONSTRAINT "identification_basedOnOccurrenceID_fkey" FOREIGN KEY ("basedOnOccurrenceID") REFERENCES public.occurrence("occurrenceID");
+
+
+--
 -- Name: material-agent-role material-agent-role_agentID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -11938,7 +12627,6 @@ ALTER TABLE ONLY public."material-agent-role"
 
 
 --
--- TOC entry 5160 (class 2606 OID 177048)
 -- Name: material-agent-role material-agent-role_materialEntityID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -11947,7 +12635,6 @@ ALTER TABLE ONLY public."material-agent-role"
 
 
 --
--- TOC entry 5161 (class 2606 OID 177065)
 -- Name: material-assertion material-assertion_assertionProtocolID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -11956,7 +12643,6 @@ ALTER TABLE ONLY public."material-assertion"
 
 
 --
--- TOC entry 5162 (class 2606 OID 177060)
 -- Name: material-assertion material-assertion_materialEntityID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -11965,7 +12651,6 @@ ALTER TABLE ONLY public."material-assertion"
 
 
 --
--- TOC entry 5163 (class 2606 OID 177077)
 -- Name: material-citation material-citation_materialEntityID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -11974,7 +12659,6 @@ ALTER TABLE ONLY public."material-citation"
 
 
 --
--- TOC entry 5164 (class 2606 OID 177087)
 -- Name: material-identifier material-identifier_materialEntityID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -11983,7 +12667,6 @@ ALTER TABLE ONLY public."material-identifier"
 
 
 --
--- TOC entry 5165 (class 2606 OID 177102)
 -- Name: material-media material-media_materialEntityID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -11992,7 +12675,6 @@ ALTER TABLE ONLY public."material-media"
 
 
 --
--- TOC entry 5166 (class 2606 OID 177097)
 -- Name: material-media material-media_mediaID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -12001,7 +12683,6 @@ ALTER TABLE ONLY public."material-media"
 
 
 --
--- TOC entry 5167 (class 2606 OID 177117)
 -- Name: material-protocol material-protocol_materialEntityID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -12010,7 +12691,6 @@ ALTER TABLE ONLY public."material-protocol"
 
 
 --
--- TOC entry 5168 (class 2606 OID 177112)
 -- Name: material-protocol material-protocol_protocolID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -12019,7 +12699,6 @@ ALTER TABLE ONLY public."material-protocol"
 
 
 --
--- TOC entry 5097 (class 2606 OID 176497)
 -- Name: material material_eventID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -12028,7 +12707,6 @@ ALTER TABLE ONLY public.material
 
 
 --
--- TOC entry 5098 (class 2606 OID 176502)
 -- Name: material material_partOfMaterialEntityID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -12037,7 +12715,6 @@ ALTER TABLE ONLY public.material
 
 
 --
--- TOC entry 5169 (class 2606 OID 177128)
 -- Name: media-agent-role media-agent-role_agentID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -12046,7 +12723,6 @@ ALTER TABLE ONLY public."media-agent-role"
 
 
 --
--- TOC entry 5170 (class 2606 OID 177133)
 -- Name: media-agent-role media-agent-role_mediaID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -12055,7 +12731,6 @@ ALTER TABLE ONLY public."media-agent-role"
 
 
 --
--- TOC entry 5171 (class 2606 OID 177150)
 -- Name: media-assertion media-assertion_assertionProtocolID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -12064,7 +12739,6 @@ ALTER TABLE ONLY public."media-assertion"
 
 
 --
--- TOC entry 5172 (class 2606 OID 177145)
 -- Name: media-assertion media-assertion_mediaID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -12073,7 +12747,6 @@ ALTER TABLE ONLY public."media-assertion"
 
 
 --
--- TOC entry 5173 (class 2606 OID 177160)
 -- Name: media-identifier media-identifier_mediaID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -12082,7 +12755,94 @@ ALTER TABLE ONLY public."media-identifier"
 
 
 --
--- TOC entry 5174 (class 2606 OID 177171)
+-- Name: molecular-protocol-agent-role molecular-protocol-agent-role_agentID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public."molecular-protocol-agent-role"
+    ADD CONSTRAINT "molecular-protocol-agent-role_agentID_fkey" FOREIGN KEY ("agentID") REFERENCES public.agent("agentID");
+
+
+--
+-- Name: molecular-protocol-agent-role molecular-protocol-agent-role_molecularProtocolID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public."molecular-protocol-agent-role"
+    ADD CONSTRAINT "molecular-protocol-agent-role_molecularProtocolID_fkey" FOREIGN KEY ("molecularProtocolID") REFERENCES public."molecular-protocol"("molecularProtocolID");
+
+
+--
+-- Name: molecular-protocol-assertion molecular-protocol-assertion_assertionProtocolID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public."molecular-protocol-assertion"
+    ADD CONSTRAINT "molecular-protocol-assertion_assertionProtocolID_fkey" FOREIGN KEY ("assertionProtocolID") REFERENCES public.protocol("protocolID");
+
+
+--
+-- Name: molecular-protocol-assertion molecular-protocol-assertion_molecularProtocolID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public."molecular-protocol-assertion"
+    ADD CONSTRAINT "molecular-protocol-assertion_molecularProtocolID_fkey" FOREIGN KEY ("molecularProtocolID") REFERENCES public."molecular-protocol"("molecularProtocolID");
+
+
+--
+-- Name: molecular-protocol-citation molecular-protocol-citation_molecularProtocolID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public."molecular-protocol-citation"
+    ADD CONSTRAINT "molecular-protocol-citation_molecularProtocolID_fkey" FOREIGN KEY ("molecularProtocolID") REFERENCES public."molecular-protocol"("molecularProtocolID");
+
+
+--
+-- Name: nucleotide-analysis-assertion nucleotide-analysis-assertion_assertionProtocolID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public."nucleotide-analysis-assertion"
+    ADD CONSTRAINT "nucleotide-analysis-assertion_assertionProtocolID_fkey" FOREIGN KEY ("assertionProtocolID") REFERENCES public.protocol("protocolID");
+
+
+--
+-- Name: nucleotide-analysis-assertion nucleotide-analysis-assertion_nucleotideAnalysisID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public."nucleotide-analysis-assertion"
+    ADD CONSTRAINT "nucleotide-analysis-assertion_nucleotideAnalysisID_fkey" FOREIGN KEY ("nucleotideAnalysisID") REFERENCES public."nucleotide-analysis"("nucleotideAnalysisID");
+
+
+--
+-- Name: nucleotide-analysis nucleotide-analysis_eventID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public."nucleotide-analysis"
+    ADD CONSTRAINT "nucleotide-analysis_eventID_fkey" FOREIGN KEY ("eventID") REFERENCES public.event("eventID");
+
+
+--
+-- Name: nucleotide-analysis nucleotide-analysis_materialEntityID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public."nucleotide-analysis"
+    ADD CONSTRAINT "nucleotide-analysis_materialEntityID_fkey" FOREIGN KEY ("materialEntityID") REFERENCES public.material("materialEntityID");
+
+
+--
+-- Name: nucleotide-analysis nucleotide-analysis_molecularProtocolID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public."nucleotide-analysis"
+    ADD CONSTRAINT "nucleotide-analysis_molecularProtocolID_fkey" FOREIGN KEY ("molecularProtocolID") REFERENCES public."molecular-protocol"("molecularProtocolID");
+
+
+--
+-- Name: nucleotide-analysis nucleotide-analysis_nucleotideSequenceID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public."nucleotide-analysis"
+    ADD CONSTRAINT "nucleotide-analysis_nucleotideSequenceID_fkey" FOREIGN KEY ("nucleotideSequenceID") REFERENCES public."nucleotide-sequence"("nucleotideSequenceID");
+
+
+--
 -- Name: occurrence-agent-role occurrence-agent-role_agentID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -12091,7 +12851,6 @@ ALTER TABLE ONLY public."occurrence-agent-role"
 
 
 --
--- TOC entry 5175 (class 2606 OID 177176)
 -- Name: occurrence-agent-role occurrence-agent-role_occurrenceID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -12100,7 +12859,6 @@ ALTER TABLE ONLY public."occurrence-agent-role"
 
 
 --
--- TOC entry 5176 (class 2606 OID 177193)
 -- Name: occurrence-assertion occurrence-assertion_assertionProtocolID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -12109,7 +12867,6 @@ ALTER TABLE ONLY public."occurrence-assertion"
 
 
 --
--- TOC entry 5177 (class 2606 OID 177188)
 -- Name: occurrence-assertion occurrence-assertion_occurrenceID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -12118,7 +12875,6 @@ ALTER TABLE ONLY public."occurrence-assertion"
 
 
 --
--- TOC entry 5178 (class 2606 OID 177205)
 -- Name: occurrence-citation occurrence-citation_occurrenceID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -12127,7 +12883,6 @@ ALTER TABLE ONLY public."occurrence-citation"
 
 
 --
--- TOC entry 5179 (class 2606 OID 177215)
 -- Name: occurrence-identifier occurrence-identifier_occurrenceID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -12136,7 +12891,6 @@ ALTER TABLE ONLY public."occurrence-identifier"
 
 
 --
--- TOC entry 5180 (class 2606 OID 177225)
 -- Name: occurrence-media occurrence-media_mediaID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -12145,7 +12899,6 @@ ALTER TABLE ONLY public."occurrence-media"
 
 
 --
--- TOC entry 5181 (class 2606 OID 177230)
 -- Name: occurrence-media occurrence-media_occurrenceID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -12154,7 +12907,6 @@ ALTER TABLE ONLY public."occurrence-media"
 
 
 --
--- TOC entry 5182 (class 2606 OID 177245)
 -- Name: occurrence-protocol occurrence-protocol_occurrenceID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -12163,7 +12915,6 @@ ALTER TABLE ONLY public."occurrence-protocol"
 
 
 --
--- TOC entry 5183 (class 2606 OID 177240)
 -- Name: occurrence-protocol occurrence-protocol_protocolID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -12172,7 +12923,6 @@ ALTER TABLE ONLY public."occurrence-protocol"
 
 
 --
--- TOC entry 5184 (class 2606 OID 177256)
 -- Name: organism-interaction-agent-role organism-interaction-agent-role_agentID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -12181,7 +12931,6 @@ ALTER TABLE ONLY public."organism-interaction-agent-role"
 
 
 --
--- TOC entry 5185 (class 2606 OID 177261)
 -- Name: organism-interaction-agent-role organism-interaction-agent-role_organismInteractionID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -12190,7 +12939,6 @@ ALTER TABLE ONLY public."organism-interaction-agent-role"
 
 
 --
--- TOC entry 5186 (class 2606 OID 177278)
 -- Name: organism-interaction-assertion organism-interaction-assertion_assertionProtocolID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -12199,7 +12947,6 @@ ALTER TABLE ONLY public."organism-interaction-assertion"
 
 
 --
--- TOC entry 5187 (class 2606 OID 177273)
 -- Name: organism-interaction-assertion organism-interaction-assertion_organismInteractionID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -12208,7 +12955,6 @@ ALTER TABLE ONLY public."organism-interaction-assertion"
 
 
 --
--- TOC entry 5188 (class 2606 OID 177290)
 -- Name: organism-interaction-citation organism-interaction-citation_organismInteractionID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -12217,7 +12963,6 @@ ALTER TABLE ONLY public."organism-interaction-citation"
 
 
 --
--- TOC entry 5189 (class 2606 OID 177300)
 -- Name: organism-interaction-media organism-interaction-media_mediaID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -12226,7 +12971,6 @@ ALTER TABLE ONLY public."organism-interaction-media"
 
 
 --
--- TOC entry 5190 (class 2606 OID 177305)
 -- Name: organism-interaction-media organism-interaction-media_organismInteractionID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -12235,7 +12979,6 @@ ALTER TABLE ONLY public."organism-interaction-media"
 
 
 --
--- TOC entry 5109 (class 2606 OID 176603)
 -- Name: organism-interaction organism-interaction_eventID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -12244,7 +12987,6 @@ ALTER TABLE ONLY public."organism-interaction"
 
 
 --
--- TOC entry 5110 (class 2606 OID 176613)
 -- Name: organism-interaction organism-interaction_relatedOccurrenceID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -12253,7 +12995,6 @@ ALTER TABLE ONLY public."organism-interaction"
 
 
 --
--- TOC entry 5111 (class 2606 OID 176608)
 -- Name: organism-interaction organism-interaction_subjectOccurrenceID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -12262,7 +13003,6 @@ ALTER TABLE ONLY public."organism-interaction"
 
 
 --
--- TOC entry 5191 (class 2606 OID 177322)
 -- Name: phylogenetic-tree-assertion phylogenetic-tree-assertion_assertionProtocolID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -12271,7 +13011,6 @@ ALTER TABLE ONLY public."phylogenetic-tree-assertion"
 
 
 --
--- TOC entry 5192 (class 2606 OID 177317)
 -- Name: phylogenetic-tree-assertion phylogenetic-tree-assertion_phylogeneticTreeID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -12280,7 +13019,6 @@ ALTER TABLE ONLY public."phylogenetic-tree-assertion"
 
 
 --
--- TOC entry 5193 (class 2606 OID 177334)
 -- Name: phylogenetic-tree-citation phylogenetic-tree-citation_phylogeneticTreeID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -12289,7 +13027,6 @@ ALTER TABLE ONLY public."phylogenetic-tree-citation"
 
 
 --
--- TOC entry 5194 (class 2606 OID 177344)
 -- Name: phylogenetic-tree-identifier phylogenetic-tree-identifier_phylogeneticTreeID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -12298,7 +13035,6 @@ ALTER TABLE ONLY public."phylogenetic-tree-identifier"
 
 
 --
--- TOC entry 5195 (class 2606 OID 177354)
 -- Name: phylogenetic-tree-media phylogenetic-tree-media_mediaID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -12307,7 +13043,6 @@ ALTER TABLE ONLY public."phylogenetic-tree-media"
 
 
 --
--- TOC entry 5196 (class 2606 OID 177359)
 -- Name: phylogenetic-tree-media phylogenetic-tree-media_phylogeneticTreeID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -12316,7 +13051,6 @@ ALTER TABLE ONLY public."phylogenetic-tree-media"
 
 
 --
--- TOC entry 5197 (class 2606 OID 177374)
 -- Name: phylogenetic-tree-protocol phylogenetic-tree-protocol_phylogeneticTreeID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -12325,7 +13059,6 @@ ALTER TABLE ONLY public."phylogenetic-tree-protocol"
 
 
 --
--- TOC entry 5198 (class 2606 OID 177369)
 -- Name: phylogenetic-tree-protocol phylogenetic-tree-protocol_protocolID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -12334,7 +13067,6 @@ ALTER TABLE ONLY public."phylogenetic-tree-protocol"
 
 
 --
--- TOC entry 5199 (class 2606 OID 177391)
 -- Name: phylogenetic-tree-tip-assertion phylogenetic-tree-tip-assertion_assertionProtocolID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -12343,7 +13075,6 @@ ALTER TABLE ONLY public."phylogenetic-tree-tip-assertion"
 
 
 --
--- TOC entry 5200 (class 2606 OID 177386)
 -- Name: phylogenetic-tree-tip-assertion phylogenetic-tree-tip-assertion_phylogeneticTreeTipID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -12352,7 +13083,6 @@ ALTER TABLE ONLY public."phylogenetic-tree-tip-assertion"
 
 
 --
--- TOC entry 5112 (class 2606 OID 176634)
 -- Name: phylogenetic-tree-tip phylogenetic-tree-tip_phylogeneticTreeID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -12361,7 +13091,6 @@ ALTER TABLE ONLY public."phylogenetic-tree-tip"
 
 
 --
--- TOC entry 5201 (class 2606 OID 177403)
 -- Name: protocol-citation protocol-citation_protocolID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -12370,7 +13099,6 @@ ALTER TABLE ONLY public."protocol-citation"
 
 
 --
--- TOC entry 5202 (class 2606 OID 177414)
 -- Name: survey-agent-role survey-agent-role_agentID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -12379,7 +13107,6 @@ ALTER TABLE ONLY public."survey-agent-role"
 
 
 --
--- TOC entry 5203 (class 2606 OID 177419)
 -- Name: survey-agent-role survey-agent-role_surveyID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -12388,7 +13115,6 @@ ALTER TABLE ONLY public."survey-agent-role"
 
 
 --
--- TOC entry 5204 (class 2606 OID 177436)
 -- Name: survey-assertion survey-assertion_assertionProtocolID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -12397,7 +13123,6 @@ ALTER TABLE ONLY public."survey-assertion"
 
 
 --
--- TOC entry 5205 (class 2606 OID 177431)
 -- Name: survey-assertion survey-assertion_surveyID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -12406,7 +13131,6 @@ ALTER TABLE ONLY public."survey-assertion"
 
 
 --
--- TOC entry 5206 (class 2606 OID 177448)
 -- Name: survey-citation survey-citation_surveyID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -12415,7 +13139,6 @@ ALTER TABLE ONLY public."survey-citation"
 
 
 --
--- TOC entry 5207 (class 2606 OID 177458)
 -- Name: survey-identifier survey-identifier_surveyID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -12424,7 +13147,6 @@ ALTER TABLE ONLY public."survey-identifier"
 
 
 --
--- TOC entry 5208 (class 2606 OID 177468)
 -- Name: survey-protocol survey-protocol_protocolID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -12433,7 +13155,6 @@ ALTER TABLE ONLY public."survey-protocol"
 
 
 --
--- TOC entry 5209 (class 2606 OID 177473)
 -- Name: survey-protocol survey-protocol_surveyID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -12442,7 +13163,6 @@ ALTER TABLE ONLY public."survey-protocol"
 
 
 --
--- TOC entry 5114 (class 2606 OID 176664)
 -- Name: survey-target survey-target_surveyID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -12451,15 +13171,12 @@ ALTER TABLE ONLY public."survey-target"
 
 
 --
--- TOC entry 5113 (class 2606 OID 176652)
 -- Name: survey survey_samplingEffortProtocolID_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.survey
     ADD CONSTRAINT "survey_samplingEffortProtocolID_fkey" FOREIGN KEY ("samplingEffortProtocolID") REFERENCES public.protocol("protocolID");
 
-
--- Completed on 2025-03-26 14:23:24
 
 --
 -- PostgreSQL database dump complete

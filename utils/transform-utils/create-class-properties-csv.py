@@ -25,7 +25,6 @@ def generate_properties_csv():
 	df_results = df_results[cols]
 
 	df_results.sort_values(by=['rdfs:Class','rdf:Property'])
-	print(target_csv)
 	df_results.to_csv(target_csv, index=False)
 	#	print(tabulate(df, headers='keys', tablefmt='grid'))
 

@@ -10,11 +10,13 @@ import sqlalchemy
 import csv
 
 # Generate PostgreSQL Database from DWC DP Tableschemas
-# To generate a list of schemas, please run the generate_schema_list function. This will generate a CSV file with tableschema filenames in the order they are listed in the source directory.
-# Tables must be generated in a particular order to avoid foreign key violations. Before generating the tables, the contents of the tableschemas.csv must be copied to the
-# ordered-schemas.csv, then reordered. See project notes for more details.
-
-# Tables cannot be created for tableschemas containing empty foreignKey arrays
+# You must set connection properties in .env before beginning this process
+# Before running script, please run order-schemas-by-foreign-keys.py to generate the order in which tables will be created that will avoid constraint errors.
+# reset_database will clear any existing database objects
+# remove_empty_foreign_keys removes empty foreignKey arrays that will throw validation errors when tables are created
+# generate_tables will create tables in postgresql database
+# May require additional order changes to avoid constraint issues. Errors will occur wehn running script. To fix, alter order of tables in ordered-schemas.csv
+# To generate final pgsql script, please run generate-pgsql-script.py
 
 load_dotenv()  # Load environment variables from .env file
 db = os.getenv('POSTGRES_URL')
@@ -28,19 +30,10 @@ source_path = str(root_dir) + '/sources/dwc-dp/0.1/table-schemas'
 tableschemas = str(root_dir) + '/output/dwc-dp/tableschemas.csv'
 schemas = str(root_dir) + '/utils/config/ordered-schemas.csv'
 
-
-def generate_schema_list():
-	tbls_list = []
-	for fn in os.listdir(source_path):
-		tbls_list.append(fn)
-	with open(tableschemas, 'w', newline='') as file:
-		writer = csv.writer(file)
-		for x in tbls_list:
-			writer.writerow([x])
-
 def generate_tables():
 	with open(schemas, newline='') as csvfile:
 		tbls = csv.reader(csvfile, delimiter=',')
+		print(tbls)
 		for row in tbls:
 			tbl = row[0]
 			print(tbl)
@@ -54,6 +47,22 @@ def generate_tables():
 					for error in exception.errors:
 						print(error)
 
+
+def remove_empty_foreign_keys():
+	with open(schemas, newline='') as csvfile:
+		tbls = csv.reader(csvfile, delimiter=',')
+		for row in tbls:
+			tbl = row[0]
+			tbl_path = str(source_path) + '/' + tbl
+			data = json.load(io.open(tbl_path, encoding='utf-8'))
+			print(tbl_path)
+			if 'foreignKeys' in data.keys():
+				if not data['foreignKeys']:
+					del data['foreignKeys']
+					with open(tbl_path, 'w') as file:
+						json.dump(data, file, indent=2)
+	generate_tables()
+
 def reset_database():
 	inspector = sqlalchemy.inspect(engine)
 	for table_entry in reversed(inspector.get_sorted_table_and_fkc_names()):
@@ -62,7 +71,7 @@ def reset_database():
 			with engine.begin() as conn:
 				conn.execute(sqlalchemy.text(f'DROP TABLE "{table_name}"'))
 				print(f'Dropped table "{table_name}"')
-	generate_tables()
+	remove_empty_foreign_keys()
 
 
 if __name__ == "__main__":

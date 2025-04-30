@@ -33,6 +33,5 @@ def generate_tables_csv():
 	tables = df_results['csvw:table'].unique()
 	df_classes = df_results['csvw:table'].unique() + '.json'
 
-	print(df_classes)
 
 generate_tables_csv()
