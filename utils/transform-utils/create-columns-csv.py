@@ -22,7 +22,7 @@ def generate_columns_csv():
 					columns_lst.append(df)
 
 	df_results = pd.concat(columns_lst, ignore_index=True)
-	df_results.rename(columns={'column_name': 'csvw:column', 'column_description': 'skos:description', 'column_type': 'csvw:datatype', 'column_format': 'csvw:format', 'column_comments': 'skos:note', 'column_examples': 'skos:example', 'column_namespace': 'vann:preferredNamespacePrefix', 'column_iri': 'iri', 'column_constraints.required': 'csvw:required', 'column_constraints.unique': 'dsd:isUnique', 'column_constraints.minimum': 'csvw:minLength', 'name': 'csvw:table', 'title': 'dcterms:title'}, inplace=True)
+	df_results.rename(columns={'column_name': 'csvw:column', 'title': 'skos:prefLabel', 'column_description': 'skos:description', 'column_type': 'csvw:datatype', 'column_format': 'csvw:format', 'column_comments': 'skos:note', 'column_examples': 'skos:example', 'column_namespace': 'vann:preferredNamespacePrefix', 'column_iri': 'iri', 'column_constraints.required': 'csvw:required', 'column_constraints.unique': 'dsd:isUnique', 'column_constraints.minimum': 'csvw:minLength', 'name': 'csvw:table', 'title': 'dcterms:title'}, inplace=True)
 	df_results = df_results[cols]
 	df_results.to_csv(target_csv, index=False)
 

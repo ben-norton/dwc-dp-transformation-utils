@@ -12,7 +12,6 @@ To copy source files to project, you must checkout a copy of gbif/rs.gbif.org to
 | tableschema-py | https://github.com/frictionlessdata/tableschema-py | A Python implementation of the Table Schema standard superceeded by v5 documentation |
 
 
-
 ## Column Glossary
 | Column | Definition |
 | -- | -- |
@@ -34,9 +33,6 @@ To copy source files to project, you must checkout a copy of gbif/rs.gbif.org to
 | tableName | An atomic property that gives a single canonical name for a table. Adopted from CSVW |
 | uri | Uniform resource identifier expressed as a URL |
 | vann:preferredNamespacePrefix | The preferred namespace prefix to use when using terms from this vocabulary |
-
-
-
 
 ## KOS Resources
 

@@ -23,7 +23,7 @@ def generate_tables_csv():
 	df_results = pd.DataFrame(data=tables_lst, columns=cols)
 	# Rename and Reorder Columns
 	df_results.rename(columns={'name':'table_name', 'identifier':'uri', 'url':'source', 'title':'rdfs:Class', 'description':'skos:definition'}, inplace=True)
-	df_results.columns = ['csvw:table', 'uri', 'dcterms:source', 'rdfs:Class', 'skos:definition']
+	df_results.columns = ['csvw:table', 'skos:prefLabel', 'uri', 'dcterms:source', 'rdfs:Class', 'skos:definition']
 	df_results = df_results[cols]
 
 	# Sort by Class
