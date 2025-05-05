@@ -19,8 +19,11 @@ def generate_foreign_keys_csv():
 			if name.endswith('.json'):
 				with open(pathname, 'r', encoding='utf-8') as f:
 					data = json.load(f)
-					df = pd.json_normalize(data, 'foreignKeys', ['name','title'])
-					fk_lst.append(df)
+					if 'foreignKeys' not in data:
+						continue
+					else:
+						df = pd.json_normalize(data, 'foreignKeys', ['name','title'])
+						fk_lst.append(df)
 	df_results = pd.concat(fk_lst, ignore_index=True)
 	df_results.rename(columns={'fields': 'csvw:foreignKey', 'reference.resource': 'csvw:tableReference', 'reference.fields': 'csvw:columnReference', 'name': 'csvw:table', 'title': 'csvw:title'}, inplace=True)
 	df_results = df_results[cols]
