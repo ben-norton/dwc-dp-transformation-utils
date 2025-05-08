@@ -1,0 +1,8 @@
+agent.json Errors: [ValidationError('Descriptor validation error: [] should be non-empty at "foreignKeys" in descriptor and at "properties/foreignKeys/minItems" in profile')]
+collection.json Errors: [ValidationError('Descriptor validation error: [] should be non-empty at "foreignKeys" in descriptor and at "properties/foreignKeys/minItems" in profile')]
+media.json Errors: [ValidationError('Descriptor validation error: [] should be non-empty at "foreignKeys" in descriptor and at "properties/foreignKeys/minItems" in profile')]
+occurrence.json Errors: [ValidationError('Descriptor validation error: [] should be non-empty at "foreignKeys" in descriptor and at "properties/foreignKeys/minItems" in profile')]
+phylogenetic-tree.json Errors: [ValidationError('Descriptor validation error: [] should be non-empty at "foreignKeys" in descriptor and at "properties/foreignKeys/minItems" in profile')]
+protocol.json Errors: [ValidationError('Descriptor validation error: [] should be non-empty at "foreignKeys" in descriptor and at "properties/foreignKeys/minItems" in profile')]
+reference.json Errors: [ValidationError('Descriptor validation error: [] should be non-empty at "foreignKeys" in descriptor and at "properties/foreignKeys/minItems" in profile')]
+relationship.json Errors: [ValidationError('Descriptor validation error: [] should be non-empty at "foreignKeys" in descriptor and at "properties/foreignKeys/minItems" in profile')]

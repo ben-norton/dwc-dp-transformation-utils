@@ -11,20 +11,25 @@ target_csv = Path(target_path + 'dwc-dp-classes.csv')
 
 def generate_tables_csv():
 	tables_lst = []
-	cols = ['rdfs:Class','csvw:table','uri','skos:definition','dcterms:source']
+	cols = ['name', 'title', 'identifier', 'url', 'description']
 	for name in os.listdir(source_path):
 		pathname = os.path.join(source_path, name)
 		if os.path.isfile(pathname):
 			if name.endswith('.json'):
 				with open(pathname, 'r', encoding='utf-8') as f:
 					data = json.load(f)
-					lst = [data['name'], data['identifier'], data['url'], data['title'], data['description']]
+					lst = [data['name'], data['title'], data['identifier'], data['url'], data['description']]
 					tables_lst.append(lst)
 	df_results = pd.DataFrame(data=tables_lst, columns=cols)
 	# Rename and Reorder Columns
-	df_results.rename(columns={'name':'table_name', 'identifier':'uri', 'url':'source', 'title':'rdfs:Class', 'description':'skos:definition'}, inplace=True)
-	df_results.columns = ['csvw:table', 'skos:prefLabel', 'uri', 'dcterms:source', 'rdfs:Class', 'skos:definition']
-	df_results = df_results[cols]
+	df_results.rename(columns={
+		'name':'csvw:table',
+		'title':'rdfs:Class',
+		'identifier':'uri',
+		'url':'dcterms:source',
+		'description':'skos:definition'
+	}, inplace=True)
+	df_results = df_results[['rdfs:Class', 'uri', 'skos:definition', 'dcterms:source', 'csvw:table']]
 
 	# Sort by Class
 	df_results.sort_values('rdfs:Class')

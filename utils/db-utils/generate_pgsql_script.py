@@ -1,8 +1,7 @@
-import gzip
-import subprocess
 from dotenv import load_dotenv
 import os
 import config as cfg
+from datetime import date
 
 # Generate Create Database Script for database created by generate-database-tables
 # Must set parameters in .env before running this script
@@ -11,7 +10,10 @@ import config as cfg
 load_dotenv()  # Load environment variables from .env file
 db = os.getenv('POSTGRES_URL')
 
-f = 'CREATE_dwc_dp_pg16.sql'
+today = date.today()
+dt = today.isoformat()
+
+f = 'CREATE_dwc_dp_pg16-'+dt+'.sql'
 root_dir = cfg.get_project_root()
 target_file = str(root_dir) + '/output/pgsql/' + f
 
