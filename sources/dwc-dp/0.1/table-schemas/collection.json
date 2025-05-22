@@ -87,5 +87,6 @@
       "iri": "http://rs.tdwg.org/dwc/terms/institutionCode"
     }
   ],
-  "primaryKey": "collectionID"
+  "primaryKey": "collectionID",
+  "foreignKeys": []
 }

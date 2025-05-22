@@ -1,4 +1,4 @@
-csvw:table,rdfs:Class,rdf:Property,skos:description,csvw:datatype,csvw:format,skos:note,skos:example,vann:preferredNamespacePrefix,iri,csvw:required,dsd:isUnique,csvw:minLength
+csvw:table,dcterms:title,csvw:column,skos:description,csvw:datatype,csvw:format,skos:note,skos:example,vann:preferredNamespacePrefix,iri,csvw:required,dsd:isUnique,csvw:minLength
 agent-agent-role,AgentAgentRole,agentID,An identifier for an Agent.,string,default,Recommended best practice is to use a globally unique identifier.,,dwcdp,,True,False,
 agent-agent-role,AgentAgentRole,relatedAgentID,An identifier for a related Agent.,string,default,Recommended best practice is to use a globally unique identifier.,,dwcdp,,True,False,
 agent-agent-role,AgentAgentRole,agentRole,A category that best matches the nature of a role of an Agent.,string,default,Recommended best practice is to use a controlled vocabulary for the roles appropriate to the class of resource an AgentRole is related to.,`collector`; `preparator`; `organizer`; `author`; `creator`; `owner`; `observer`; `director`; `husband`,dwcdp,,,,

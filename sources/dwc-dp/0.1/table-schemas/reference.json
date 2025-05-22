@@ -49,7 +49,7 @@
       "type": "string",
       "format": "default",
       "comments": "From Dublin Core, 'Recommended practice is to include sufficient bibliographic detail to identify the resource as unambiguously as possible.' The intended usage of this term in Darwin Core is to provide the preferred way to cite the resource itself. Note that the intended usage of dcterms:references in Darwin Core, by contrast, is to point to the definitive source representation of the resource, if one is available.",
-      "examples": "`Museum of Vertebrate Zoology, UC Berkeley. MVZ Mammal Collection (Arctos). Record ID: http://arctos.database.museum/guid/MVZ:Mamm:165861?seid=101356. Source: http://ipt.vertnet.org:8080/ipt/resource.do?r=mvz_mammal.` (Occurrence example); `https://www.gbif.org/species/2439608 Source: GBIF Taxonomic Backbone` (Taxon example); `Rand, K.M., Logerwell, E.A. The first demersal trawl survey of benthic fish and invertebrates in the Beaufort Sea since the late 1970s. Polar Biol 34, 475\u2013488 (2011). https://doi.org/10.1007/s00300-010-0900-2` (Event example)",
+      "examples": "`Museum of Vertebrate Zoology, UC Berkeley. MVZ Mammal Collection (Arctos). Record ID: http://arctos.database.museum/guid/MVZ:Mamm:165861?seid=101356. Source: http://ipt.vertnet.org:8080/ipt/resource.do?r=mvz_mammal.` (Occurrence example); `https://www.gbif.org/species/2439608 Source: GBIF Taxonomic Backbone` (Taxon example); `Rand, K.M., Logerwell, E.A. The first demersal trawl survey of benthic fish and invertebrates in the Beaufort Sea since the late 1970s. Polar Biol 34, 475–488 (2011). https://doi.org/10.1007/s00300-010-0900-2` (Event example)",
       "namespace": "dcterms",
       "iri": "http://purl.org/dc/terms/bibliographicCitation"
     },
@@ -137,7 +137,7 @@
       "type": "string",
       "format": "default",
       "comments": "",
-      "examples": "`42`; `42\u201347`; `42, 45, 47\u201349`; `xii\u2013xv`",
+      "examples": "`42`; `42–47`; `42, 45, 47–49`; `xii–xv`",
       "namespace": "schema",
       "iri": "https://schema.org/pagination"
     },
@@ -164,5 +164,6 @@
       "iri": ""
     }
   ],
-  "primaryKey": "referenceID"
+  "primaryKey": "referenceID",
+  "foreignKeys": []
 }

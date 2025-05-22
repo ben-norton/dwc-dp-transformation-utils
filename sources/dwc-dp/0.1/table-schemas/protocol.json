@@ -98,5 +98,6 @@
       "iri": ""
     }
   ],
-  "primaryKey": "protocolID"
+  "primaryKey": "protocolID",
+  "foreignKeys": []
 }

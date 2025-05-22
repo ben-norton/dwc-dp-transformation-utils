@@ -53,7 +53,7 @@
       "type": "string",
       "format": "default",
       "comments": "Recommended best practice is to separate the values in a list with space vertical bar space ( | ).",
-      "examples": "`Jos\u00e9 E. Crespo`; `Oliver P. Pearson | Anita K. Pearson`; `FMNH`",
+      "examples": "`José E. Crespo`; `Oliver P. Pearson | Anita K. Pearson`; `FMNH`",
       "namespace": "dwc",
       "iri": "http://rs.tdwg.org/dwc/terms/recordedBy"
     },
@@ -378,7 +378,7 @@
       "type": "string",
       "format": "default",
       "comments": "",
-      "examples": "`Distinguished between Anthus correndera and Anthus hellmayri based on the comparative lengths of the u\u00f1as.`",
+      "examples": "`Distinguished between Anthus correndera and Anthus hellmayri based on the comparative lengths of the uñas.`",
       "namespace": "dwc",
       "iri": "http://rs.tdwg.org/dwc/terms/identificationRemarks"
     },
@@ -449,5 +449,6 @@
       "iri": "http://rs.tdwg.org/dwc/terms/taxonRemarks"
     }
   ],
-  "primaryKey": "occurrenceID"
+  "primaryKey": "occurrenceID",
+  "foreignKeys": []
 }

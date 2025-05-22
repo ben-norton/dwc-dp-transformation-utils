@@ -171,7 +171,7 @@
       "type": "string",
       "format": "default",
       "comments": "",
-      "examples": "`Jos\u00e9 E. Crespo`; `Oliver P. Pearson | Anita K. Pearson`; `FMNH`",
+      "examples": "`José E. Crespo`; `Oliver P. Pearson | Anita K. Pearson`; `FMNH`",
       "namespace": "dwc",
       "iri": "http://rs.tdwg.org/dwc/terms/relationshipAccordingTo"
     },
@@ -209,5 +209,6 @@
       "iri": "http://rs.tdwg.org/dwc/terms/relationshipRemarks"
     }
   ],
-  "primaryKey": "relationshipID"
+  "primaryKey": "relationshipID",
+  "foreignKeys": []
 }
